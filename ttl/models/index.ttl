@@ -1,0 +1,39 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Models index (schema)
+# Purpose: propose a curated list of public model architectures with
+#          GitHub URLs and motif mappings to enable motif detection & analysis.
+##################################
+
+motif:Model a skos:Concept ;
+  skos:prefLabel "Model"@en ;
+  skos:definition "A public implementation of a model architecture (repository, ONNX export, or example) that can be analyzed for motifs."@en .
+
+motif:ModelScheme a skos:ConceptScheme ;
+  skos:prefLabel "Models"@en ;
+  skos:definition "Schema for registering model artifacts and mapping to motifs."@en .
+
+# Properties
+motif:githubRepo a rdf:Property ;
+  skos:prefLabel "github repo"@en ;
+  rdfs:domain motif:Model ;
+  rdfs:range rdfs:Resource ;
+  skos:definition "Canonical GitHub repository (or primary repo) for the model implementation."@en .
+
+motif:framework a rdf:Property ;
+  skos:prefLabel "framework"@en ;
+  rdfs:domain motif:Model ;
+  rdfs:range rdfs:Literal ;
+  skos:definition "Primary ML framework used (e.g., PyTorch, TensorFlow)."@en .
+
+# Reuse existing motif properties for mapping:
+# - motif:primaryMotif (primary/defining motif for the model)
+# - motif:usesMotif (additional motifs present in the model)
+
+# Notes
+# - This file provides the small schema only. Concrete model entries live in models.ttl
+# - Proposed entries are intentionally conservative: map to high-level motifs (Attention, Residual, KV-cache, etc.)
+

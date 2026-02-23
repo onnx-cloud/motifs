@@ -1,0 +1,63 @@
+# Source: papers/typed-reality/sections/07_ebnf.tex
+# EBNF grammar for the Typed Reality AST (cleaned from LaTeX verbatim section)
+
+Type ::= TensorType | MorphRef | GraphRef
+
+TensorType ::= DType Shape [Sem]
+
+DType ::= f16 | f32 | f64 | i8 | i32 | i64 | bool
+
+Shape ::= "[" Dim { "," Dim } "]"
+Dim   ::= Number | Ident | "?" | Range
+Range ::= Number ".." Number
+
+Sem ::= "⊥"
+      | "M" "{" Qty "," Unit "," Frame "," "[" Number "," Number "]" "}"
+      | "D" "{" Kind "," Support "}"
+      | "E" "{" Vocab "," Number "}"
+      | "{" Field { "," Field } "}"
+
+Field ::= Ident ":" Type
+
+# Morph (typed transformation) grammar
+MorphDef ::= morph Ident Sig MorphBlock
+
+Sig ::= "(" [ Param { "," Param } ] ")" "->" Type
+Param ::= Ident ":" Type
+
+MorphBlock ::= "{" 
+                 { ConstDecl }
+                 { WeightDecl }
+                 { CheckDecl }
+               "}"
+
+ConstDecl  ::= "const" ":" Binding { "," Binding }
+WeightDecl ::= "wt"    ":" Binding { "," Binding }
+Binding    ::= Ident ":" Type
+
+CheckDecl  ::= "chk" ":" Constraint { "," Constraint }
+
+Constraint ::= shape(Ident, Ident)
+            | dtype(Ident, Ident)
+            | sem_sub(Ident, Ident)
+            | range(Ident, [Number, Number])
+            | norm(Ident)
+
+# Graph grammar
+GraphDef ::= graph Ident "(" ")" GraphBlock
+
+GraphBlock ::= "{"
+                 { PortDecl }
+                 { NodeDecl }
+                 { EdgeDecl }
+               "}"
+
+PortDecl ::= in ":" Binding { "," Binding }
+           | out ":" Binding { "," Binding }
+
+NodeDecl ::= N ":" Node { "," Node }
+Node     ::= Ident ":" (MorphRef | "Const")
+
+EdgeDecl ::= E ":" Edge { "," Edge }
+Edge ::= "(" Ref ")" "->" "(" Ref ")" [ ":" Type ]
+Ref  ::= Ident "." Ident

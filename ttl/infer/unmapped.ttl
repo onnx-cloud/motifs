@@ -1,0 +1,711 @@
+# Inferred triples from query: unmapped.sparql
+# generated: 2026-01-29T07:08:24.683396Z
+# source ttl: ttl
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://ns.onnx.cloud/cognition#BeamSearch> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Beam Search"@en .
+
+<https://ns.onnx.cloud/cognition#ChainOfThought> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Chain-of-Thought"@en .
+
+<https://ns.onnx.cloud/cognition#HyDE> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Hypothetical Document Embedding"@en .
+
+<https://ns.onnx.cloud/cognition#IterativeRetrieval> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Iterative Retrieval"@en .
+
+<https://ns.onnx.cloud/cognition#MonteCarloTreeSearch> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Monte Carlo Tree Search"@en .
+
+<https://ns.onnx.cloud/cognition#ReAct> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "ReAct"@en .
+
+<https://ns.onnx.cloud/cognition#Reflection> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Reflection"@en .
+
+<https://ns.onnx.cloud/cognition#RetrievalAugmented> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Retrieval-Augmented Generation"@en .
+
+<https://ns.onnx.cloud/cognition#ScratchPad> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Scratchpad"@en .
+
+<https://ns.onnx.cloud/cognition#SelfConsistency> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Self-Consistency"@en .
+
+<https://ns.onnx.cloud/cognition#TaskDecomposition> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Task Decomposition"@en .
+
+<https://ns.onnx.cloud/cognition#TreeOfThoughts> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Tree-of-Thoughts"@en .
+
+<https://ns.onnx.cloud/examples##Fork> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Fork"@en .
+
+<https://ns.onnx.cloud/motif#ActivationSparsify> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Activation Sparsification"@en .
+
+<https://ns.onnx.cloud/motif#AdaptiveGain> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Adaptive Gain"@en .
+
+<https://ns.onnx.cloud/motif#Add> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Add"@en .
+
+<https://ns.onnx.cloud/motif#AdversarialTraining> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Adversarial Training"@en .
+
+<https://ns.onnx.cloud/motif#AllGather> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "AllGather"@en .
+
+<https://ns.onnx.cloud/motif#AllReduce> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "AllReduce"@en .
+
+<https://ns.onnx.cloud/motif#AsynchronousDMA> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Asynchronous DMA"@en .
+
+<https://ns.onnx.cloud/motif#Attention> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Attention / Soft"@en .
+
+<https://ns.onnx.cloud/motif#AttentionMemory> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Attention Memory"@en .
+
+<https://ns.onnx.cloud/motif#AttentionResidual> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Attention Residual"@en .
+
+<https://ns.onnx.cloud/motif#AttentionResidualMemory> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Attention + Residual + Memory"@en .
+
+<https://ns.onnx.cloud/motif#Augment> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Data Augmentation"@en .
+
+<https://ns.onnx.cloud/motif#BenchmarkSuite> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Benchmark Suite"@en .
+
+<https://ns.onnx.cloud/motif#BlockSparseMatMul> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Block-Sparse MatMul"@en .
+
+<https://ns.onnx.cloud/motif#Break> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Break"@en .
+
+<https://ns.onnx.cloud/motif#Broadcast> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Broadcast"@en .
+
+<https://ns.onnx.cloud/motif#BroadcastMap> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Broadcast Map"@en .
+
+<https://ns.onnx.cloud/motif#BroadcastedResidual> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Broadcasted Residual"@en .
+
+<https://ns.onnx.cloud/motif#CacheEvict> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Cache Evict"@en .
+
+<https://ns.onnx.cloud/motif#Calibration> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Calibration"@en .
+
+<https://ns.onnx.cloud/motif#CertifiedDefense> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Certified Defense"@en .
+
+<https://ns.onnx.cloud/motif#Checkpoint> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Checkpoint"@en .
+
+<https://ns.onnx.cloud/motif#CircularBuffer> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Circular Buffer"@en .
+
+<https://ns.onnx.cloud/motif#Concat> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Concat"@en .
+
+<https://ns.onnx.cloud/motif#ConditionalMerge> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Conditional Merge"@en .
+
+<https://ns.onnx.cloud/motif#ConditionalScan> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Conditional Scan"@en .
+
+<https://ns.onnx.cloud/motif#ConditionalSubgraph> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Conditional Subgraph"@en .
+
+<https://ns.onnx.cloud/motif#ConstitutionalCritique> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Constitutional Critique"@en .
+
+<https://ns.onnx.cloud/motif#ConstitutionalRevision> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Constitutional Revision"@en .
+
+<https://ns.onnx.cloud/motif#ConstraintSolver> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Constraint Solver"@en .
+
+<https://ns.onnx.cloud/motif#Continue> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Continue"@en .
+
+<https://ns.onnx.cloud/motif#CrossModalAttention> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Cross-Modal Attention"@en .
+
+<https://ns.onnx.cloud/motif#DPO> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Direct Preference Optimization"@en .
+
+<https://ns.onnx.cloud/motif#DeadZone> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Dead Zone"@en .
+
+<https://ns.onnx.cloud/motif#DerivativeControl> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Derivative Control (D)"@en .
+
+<https://ns.onnx.cloud/motif#DifferentiableLogic> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Differentiable Logic"@en .
+
+<https://ns.onnx.cloud/motif#DifferentiableQueue> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Differentiable Queue"@en .
+
+<https://ns.onnx.cloud/motif#DigitalTwin> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Digital Twin"@en,
+        "Digital Twin Simulation"@en .
+
+<https://ns.onnx.cloud/motif#Distill> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Knowledge Distillation"@en .
+
+<https://ns.onnx.cloud/motif#Div> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Div"@en .
+
+<https://ns.onnx.cloud/motif#DraftVerify> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Draft-Verify"@en .
+
+<https://ns.onnx.cloud/motif#DynamicBatching> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Dynamic Batching"@en .
+
+<https://ns.onnx.cloud/motif#DynamicForkJoin> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Dynamic Fork-Join"@en .
+
+<https://ns.onnx.cloud/motif#DynamicLoopUnroll> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Dynamic Loop Unroll"@en .
+
+<https://ns.onnx.cloud/motif#EagerEval> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Eager Evaluation"@en .
+
+<https://ns.onnx.cloud/motif#EarlyExit> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Early Exit"@en .
+
+<https://ns.onnx.cloud/motif#EarlyFusion> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Early Fusion"@en .
+
+<https://ns.onnx.cloud/motif#EmbeddingLookup> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Embedding Lookup"@en .
+
+<https://ns.onnx.cloud/motif#Emulator> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Hardware-in-the-Loop Emulator"@en .
+
+<https://ns.onnx.cloud/motif#EphemeralState> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Ephemeral State"@en .
+
+<https://ns.onnx.cloud/motif#EventTrigger> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Event Trigger"@en .
+
+<https://ns.onnx.cloud/motif#ExpandDims> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "ExpandDims"@en .
+
+<https://ns.onnx.cloud/motif#ExtremumSeeking> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Extremum Seeking"@en .
+
+<https://ns.onnx.cloud/motif#Fanin> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Fan-in"@en .
+
+<https://ns.onnx.cloud/motif#Fanout> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Fanout"@en .
+
+<https://ns.onnx.cloud/motif#FeedbackLoop> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Feedback Loop"@en .
+
+<https://ns.onnx.cloud/motif#FlashAttention> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Flash Attention"@en .
+
+<https://ns.onnx.cloud/motif#Flatten> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Flatten"@en .
+
+<https://ns.onnx.cloud/motif#FlattenResidual> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Flatten Residual"@en .
+
+<https://ns.onnx.cloud/motif#For> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "For"@en .
+
+<https://ns.onnx.cloud/motif#ForkJoin> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Fork-Join"@en .
+
+<https://ns.onnx.cloud/motif#FunctionTemplate> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Function Template"@en .
+
+<https://ns.onnx.cloud/motif#Gather> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Gather"@en .
+
+<https://ns.onnx.cloud/motif#GraphOfGraphs> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Graph-of-Graphs"@en .
+
+<https://ns.onnx.cloud/motif#GroundedGeneration> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Grounded Generation"@en .
+
+<https://ns.onnx.cloud/motif#GuardedOps> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Guarded Ops"@en .
+
+<https://ns.onnx.cloud/motif#HBMStreaming> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "HBM Streaming"@en .
+
+<https://ns.onnx.cloud/motif#HardRouting> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Hard Routing"@en .
+
+<https://ns.onnx.cloud/motif#HoldoutTest> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Holdout Test"@en .
+
+<https://ns.onnx.cloud/motif#IdentityResidual> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Identity Residual"@en .
+
+<https://ns.onnx.cloud/motif#ImportanceSample> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Importance Sampling"@en .
+
+<https://ns.onnx.cloud/motif#IncrementalUpdate> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Incremental Update"@en .
+
+<https://ns.onnx.cloud/motif#InputFilter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Input Filter"@en .
+
+<https://ns.onnx.cloud/motif#InputSanitization> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Input Sanitization"@en .
+
+<https://ns.onnx.cloud/motif#IntegralControl> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Integral Control (I)"@en .
+
+<https://ns.onnx.cloud/motif#KLPenalty> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "KL Penalty"@en .
+
+<https://ns.onnx.cloud/motif#KVCacheAppend> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "KV-Cache Append"@en .
+
+<https://ns.onnx.cloud/motif#KVCacheLookup> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "KV-Cache Lookup"@en .
+
+<https://ns.onnx.cloud/motif#KVMemory> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Key-Value Memory"@en .
+
+<https://ns.onnx.cloud/motif#KalmanFilter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Kalman Filter"@en .
+
+<https://ns.onnx.cloud/motif#KnowledgeGraphLookup> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Knowledge Graph Lookup"@en .
+
+<https://ns.onnx.cloud/motif#LQR> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Linear-Quadratic Regulator"@en .
+
+<https://ns.onnx.cloud/motif#LateFusion> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Late Fusion"@en .
+
+<https://ns.onnx.cloud/motif#LatencyP95> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Latency P95/P99"@en .
+
+<https://ns.onnx.cloud/motif#Linear> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Linear"@en,
+        "Linear / Algebraic"@en .
+
+<https://ns.onnx.cloud/motif#LookaheadDecode> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Lookahead Decode"@en .
+
+<https://ns.onnx.cloud/motif#LoopConditionalMemory> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Loop + Conditional + Memory"@en .
+
+<https://ns.onnx.cloud/motif#LoopSubgraph> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Loop Subgraph"@en .
+
+<https://ns.onnx.cloud/motif#MCMC> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "MCMC Loop"@en .
+
+<https://ns.onnx.cloud/motif#MRAC> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Model Reference Adaptive Control"@en .
+
+<https://ns.onnx.cloud/motif#Map> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Map"@en .
+
+<https://ns.onnx.cloud/motif#Memoize> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Memoize"@en .
+
+<https://ns.onnx.cloud/motif#MemoryAccumulate> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Memory Accumulate"@en .
+
+<https://ns.onnx.cloud/motif#MemoryBranch> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Memory Branch"@en .
+
+<https://ns.onnx.cloud/motif#MemoryLoop> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Memory Loop"@en .
+
+<https://ns.onnx.cloud/motif#MemoryMerge> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Memory Merge"@en .
+
+<https://ns.onnx.cloud/motif#ModalityAdapter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Modality Adapter"@en .
+
+<https://ns.onnx.cloud/motif#ModalityGating> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Modality Gating"@en .
+
+<https://ns.onnx.cloud/motif#ModelPredictiveControl> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Model Predictive Control"@en .
+
+<https://ns.onnx.cloud/motif#Mul> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Mul"@en .
+
+<https://ns.onnx.cloud/motif#MultiBranchLoop> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Multi-Branch Loop"@en .
+
+<https://ns.onnx.cloud/motif#MultiLevelFork> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Multi-Level Fork"@en .
+
+<https://ns.onnx.cloud/motif#MultiLevelJoin> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Multi-Level Join"@en .
+
+<https://ns.onnx.cloud/motif#MultiResidual> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Multi-Residual"@en .
+
+<https://ns.onnx.cloud/motif#NAS> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Neural Architecture Search (NAS)"@en .
+
+<https://ns.onnx.cloud/motif#NegativeFeedback> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Negative Feedback"@en .
+
+<https://ns.onnx.cloud/motif#NestedConditional> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Nested Conditional"@en .
+
+<https://ns.onnx.cloud/motif#NestedLoop> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Nested Loop"@en .
+
+<https://ns.onnx.cloud/motif#NeuralCompiler> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Neural Program Synthesis"@en .
+
+<https://ns.onnx.cloud/motif#NeuralRuleInduction> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Neural Rule Induction"@en .
+
+<https://ns.onnx.cloud/motif#Normalize> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Normalization"@en .
+
+<https://ns.onnx.cloud/motif#OnlineUpdate> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Online Update"@en .
+
+<https://ns.onnx.cloud/motif#OutputFilter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Output Filter"@en .
+
+<https://ns.onnx.cloud/motif#PDEIter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "PDE Iterative Solver"@en .
+
+<https://ns.onnx.cloud/motif#PIDControl> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "PID Control"@en .
+
+<https://ns.onnx.cloud/motif#PINN> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Physics-Informed Neural Network (PINN)"@en .
+
+<https://ns.onnx.cloud/motif#PPO> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "PPO Update"@en .
+
+<https://ns.onnx.cloud/motif#PagedKVCache> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Paged KV-Cache"@en .
+
+<https://ns.onnx.cloud/motif#PerceiverIO> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Perceiver IO"@en .
+
+<https://ns.onnx.cloud/motif#PermutePaths> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Permute Paths"@en .
+
+<https://ns.onnx.cloud/motif#PersistentState> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Persistent State"@en .
+
+<https://ns.onnx.cloud/motif#PipelineSendRecv> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Pipeline Send/Recv"@en .
+
+<https://ns.onnx.cloud/motif#PositiveFeedback> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Positive Feedback"@en .
+
+<https://ns.onnx.cloud/motif#PredicateMask> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Predicate Mask"@en .
+
+<https://ns.onnx.cloud/motif#PrefixCache> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Prefix Cache"@en .
+
+<https://ns.onnx.cloud/motif#ProportionalControl> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Proportional Control (P)"@en .
+
+<https://ns.onnx.cloud/motif#ProvenanceTracking> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Provenance Tracking"@en .
+
+<https://ns.onnx.cloud/motif#PruneStructured> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Structured Pruning"@en .
+
+<https://ns.onnx.cloud/motif#PruneUnstructured> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Unstructured Pruning"@en .
+
+<https://ns.onnx.cloud/motif#QuantizeAware> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Quantization-Aware Training"@en .
+
+<https://ns.onnx.cloud/motif#QuantizeStatic> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Post-Training Quantization"@en .
+
+<https://ns.onnx.cloud/motif#QuantizedCompute> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Quantized Compute"@en .
+
+<https://ns.onnx.cloud/motif#RLAIF> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "RLAIF"@en .
+
+<https://ns.onnx.cloud/motif#RateLimiter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Rate Limiter"@en .
+
+<https://ns.onnx.cloud/motif#ReadModifyWrite> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Read-Modify-Write"@en .
+
+<https://ns.onnx.cloud/motif#RealTimeDeadline> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Real-Time Deadline"@en .
+
+<https://ns.onnx.cloud/motif#RecursiveAttention> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Recursive Attention"@en .
+
+<https://ns.onnx.cloud/motif#RecursiveCall> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Recursive Call"@en .
+
+<https://ns.onnx.cloud/motif#ReduceMax> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "ReduceMax"@en .
+
+<https://ns.onnx.cloud/motif#ReduceSum> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "ReduceSum"@en .
+
+<https://ns.onnx.cloud/motif#RefusalPattern> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Refusal Pattern"@en .
+
+<https://ns.onnx.cloud/motif#Residual> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Residual"@en .
+
+<https://ns.onnx.cloud/motif#RewardModel> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Reward Model"@en .
+
+<https://ns.onnx.cloud/motif#RingAttention> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Ring Attention"@en .
+
+<https://ns.onnx.cloud/motif#RobustnessBench> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Robustness Benchmark"@en .
+
+<https://ns.onnx.cloud/motif#Rollback> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Rollback"@en .
+
+<https://ns.onnx.cloud/motif#RouteMerge> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Route & Merge"@en .
+
+<https://ns.onnx.cloud/motif#SIMD> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "SIMD/Vector"@en .
+
+<https://ns.onnx.cloud/motif#Sampler> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sampler / Multinomial"@en .
+
+<https://ns.onnx.cloud/motif#Saturation> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Saturation"@en .
+
+<https://ns.onnx.cloud/motif#ScalarOp> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "ScalarOp"@en .
+
+<https://ns.onnx.cloud/motif#Scan> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Scan"@en .
+
+<https://ns.onnx.cloud/motif#Scatter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Scatter"@en .
+
+<https://ns.onnx.cloud/motif#SelfModifying> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Self-Modifying Subgraph"@en .
+
+<https://ns.onnx.cloud/motif#Sharding> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sharding / Partition"@en .
+
+<https://ns.onnx.cloud/motif#Slice> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Slice"@en .
+
+<https://ns.onnx.cloud/motif#SlidingWindowAttention> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sliding Window Attention"@en .
+
+<https://ns.onnx.cloud/motif#SlidingWindowCache> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sliding Window Cache"@en .
+
+<https://ns.onnx.cloud/motif#SoftmaxEdge> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Softmax Edge"@en .
+
+<https://ns.onnx.cloud/motif#SparseAttentionMask> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sparse Attention Mask"@en .
+
+<https://ns.onnx.cloud/motif#SparseGather> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sparse Gather"@en .
+
+<https://ns.onnx.cloud/motif#SparseMoE> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sparse Mixture of Experts"@en,
+        "Sparse MoE Routing"@en .
+
+<https://ns.onnx.cloud/motif#SparseScatter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sparse Scatter"@en .
+
+<https://ns.onnx.cloud/motif#SpeculativeFork> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Speculative Fork"@en .
+
+<https://ns.onnx.cloud/motif#SpeculativeMerge> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Speculative Merge"@en .
+
+<https://ns.onnx.cloud/motif#Split> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Split"@en .
+
+<https://ns.onnx.cloud/motif#Squeeze> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Squeeze"@en .
+
+<https://ns.onnx.cloud/motif#StateObserver> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "State Observer"@en .
+
+<https://ns.onnx.cloud/motif#StochasticRouting> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Stochastic Routing"@en .
+
+<https://ns.onnx.cloud/motif#StreamFusion> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Stream Fusion"@en .
+
+<https://ns.onnx.cloud/motif#StreamingWindow> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Streaming Window"@en .
+
+<https://ns.onnx.cloud/motif#StructuredPrune> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Structured Prune"@en .
+
+<https://ns.onnx.cloud/motif#Sub> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Sub"@en .
+
+<https://ns.onnx.cloud/motif#SubgraphFork> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Subgraph Fork"@en .
+
+<https://ns.onnx.cloud/motif#SubgraphMerge> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Subgraph Merge"@en .
+
+<https://ns.onnx.cloud/motif#SurrogateModel> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Surrogate Model"@en .
+
+<https://ns.onnx.cloud/motif#Switch> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Switch"@en .
+
+<https://ns.onnx.cloud/motif#SymbolicPlanner> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Symbolic Planner"@en .
+
+<https://ns.onnx.cloud/motif#SystolicArray> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Systolic Array"@en .
+
+<https://ns.onnx.cloud/motif#TensorCoreFused> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Tensor Core Fused"@en .
+
+<https://ns.onnx.cloud/motif#Tokenize> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Tokenization"@en .
+
+<https://ns.onnx.cloud/motif#TopKSparsify> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Top-K Sparsify"@en .
+
+<https://ns.onnx.cloud/motif#Transpose> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Transpose"@en .
+
+<https://ns.onnx.cloud/motif#Tuple> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Tuple"@en .
+
+<https://ns.onnx.cloud/motif#UnTuple> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "UnTuple"@en .
+
+<https://ns.onnx.cloud/motif#UncertaintyCalibration> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Uncertainty Calibration"@en .
+
+<https://ns.onnx.cloud/motif#VariationalInfer> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Variational Inference"@en .
+
+<https://ns.onnx.cloud/motif#Watermark> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Watermark"@en .
+
+<https://ns.onnx.cloud/motif#WatermarkDetect> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Watermark Detection"@en .
+
+<https://ns.onnx.cloud/motif#WeightPacking> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Weight Packing"@en .
+
+<https://ns.onnx.cloud/motif#WeightedSum> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Weighted Sum"@en .
+
+<https://ns.onnx.cloud/motif#While> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "While"@en .
+
+<https://ns.onnx.cloud/motif#motif_Barrier> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Barrier"@en .
+
+<https://ns.onnx.cloud/motif#motif_GenerateDispatch> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Generate / Dispatch"@en .
+
+<https://ns.onnx.cloud/motif#motif_MetaAttention> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Meta Attention"@en .
+
+<https://ns.onnx.cloud/motif#motif_MultiHead> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Multi-Head Attention"@en .
+
+<https://ns.onnx.cloud/motif#motif_ProgrammaticLoop> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Programmatic Loop"@en .
+
+<https://ns.onnx.cloud/motif#motif_QKV> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Query-Key-Value"@en .
+
+<https://ns.onnx.cloud/motif#motif_QuantizeDequant> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Quantize-Dequantize"@en .
+
+<https://ns.onnx.cloud/motif#motif_ReduceScatter> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "ReduceScatter"@en .
+
+<https://ns.onnx.cloud/motif#motif_Return> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Return"@en .
+
+<https://ns.onnx.cloud/motif#motif_ShapeDispatch> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Shape-Based Dispatch"@en .
+
+<https://ns.onnx.cloud/motif#motif_SubgraphJoin> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Subgraph Join"@en .
+
+<https://ns.onnx.cloud/motif#motif_VectorSearch> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Vector Search"@en .
+
+<https://ns.onnx.cloud/xai#ActivationPatching> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Activation Patching"@en .
+
+<https://ns.onnx.cloud/xai#AttentionRollout> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Attention Rollout"@en .
+
+<https://ns.onnx.cloud/xai#CausalProbe> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Causal Probe"@en .
+
+<https://ns.onnx.cloud/xai#CircuitAnalysis> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Circuit Analysis"@en .
+
+<https://ns.onnx.cloud/xai#ConceptBottleneck> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Concept Bottleneck"@en .
+
+<https://ns.onnx.cloud/xai#ConceptWhitening> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Concept Whitening"@en .
+
+<https://ns.onnx.cloud/xai#ContrastiveExplanation> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Contrastive Explanation"@en .
+
+<https://ns.onnx.cloud/xai#CounterfactualExplanation> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Counterfactual Explanation"@en .
+
+<https://ns.onnx.cloud/xai#GradCAM> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Grad-CAM"@en .
+
+<https://ns.onnx.cloud/xai#GradientAttribution> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Gradient Attribution"@en .
+
+<https://ns.onnx.cloud/xai#IntegratedGradients> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Integrated Gradients"@en .
+
+<https://ns.onnx.cloud/xai#LIME> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "LIME"@en .
+
+<https://ns.onnx.cloud/xai#LinearProbe> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Linear Probe"@en .
+
+<https://ns.onnx.cloud/xai#RepresentationSimilarity> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Representation Similarity"@en .
+
+<https://ns.onnx.cloud/xai#SHAP> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "SHAP Values"@en .
+
+<https://ns.onnx.cloud/xai#SuperpositionAnalysis> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "Superposition Analysis"@en .
+
+<https://ns.onnx.cloud/xai#TCAV> a <https://ns.onnx.cloud/motif#UnmappedMotif> ;
+    skos:prefLabel "TCAV"@en .
+

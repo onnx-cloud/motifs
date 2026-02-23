@@ -1,0 +1,120 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Graph Machine Learning Use Cases
+# Links graph neural network patterns to computation graph motifs
+##################################
+
+motif:MessagePassing a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Message Passing Neural Network"@en ;
+  skos:definition "Iterative neighborhood aggregation where nodes exchange and aggregate messages along edges."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Loop .
+
+motif:GraphAttention a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Graph Attention Network"@en ;
+  skos:definition "Applying attention mechanism to weight neighbor contributions in graph convolution."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:SoftmaxEdge ;
+  motif:usesMotif motif:WeightedSum .
+
+motif:GraphPooling a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Graph Pooling"@en ;
+  skos:definition "Aggregating node features into graph-level representations for classification or regression."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:ReduceSum ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat .
+
+motif:HierarchicalPooling a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Hierarchical Graph Pooling"@en ;
+  skos:definition "Multi-level graph coarsening creating hierarchical representations for large graphs."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:RecursiveCall ;
+  motif:usesMotif motif:RecursiveCall ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:HardRouting .
+
+motif:NodeClassification a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Node Classification"@en ;
+  skos:definition "Predicting labels for graph nodes using neighborhood structure and features."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:SoftmaxEdge .
+
+motif:LinkPrediction a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Link Prediction"@en ;
+  skos:definition "Predicting missing or future edges in graphs based on node embeddings."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:Mul ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Linear .
+
+motif:GraphGeneration a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Graph Generation"@en ;
+  skos:definition "Autoregressive or one-shot generation of graph structures and node features."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:motif_GenerateDispatch ;
+  motif:usesMotif motif:motif_GenerateDispatch ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Sampler ;
+  motif:usesMotif motif:Scatter .
+
+motif:NeighborSampling a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Neighbor Sampling"@en ;
+  skos:definition "Sampling fixed-size neighborhoods for scalable mini-batch training on large graphs."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:StochasticRouting ;
+  motif:usesMotif motif:StochasticRouting ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Sampler ;
+  motif:usesMotif motif:Loop .
+
+motif:EdgeConditionedConv a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Edge-Conditioned Convolution"@en ;
+  skos:definition "Graph convolution where edge features modulate message computation between nodes."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:Mul ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Concat .
+
+motif:TemporalGraph a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Temporal Graph Network"@en ;
+  skos:definition "Processing dynamic graphs with time-evolving structure and node/edge features."@en ;
+  motif:hasDomain motif:GraphML ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:PersistentState ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat .
+

@@ -1,0 +1,65 @@
+\documentclass[11pt,oneside,article]{memoir}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+% Removed ebproof dependency (not available in CI image). If custom proof trees are
+% required, reintroduce with \usepackage{ebproof} or implement local macros.
+
+% Geometry
+\geometry{margin=1in, headheight=14pt}
+
+% Bibliography
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+% Metadata
+\def\ReportTitle{Cognitive Closure: Formally Bound Learning}
+\def\ReportAuthors{Anonymous}
+\def\ReportDate{\today}
+
+% Commands
+\newcommand{\OnePageSectionStart}{}
+\newcommand{\OnePageSectionEnd}{}
+\newcommand{\Gradient}{\nabla_{\theta}}
+\newcommand{\ConstraintSet}{\mathcal{K}}
+
+% Code listing style
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=flexible,
+  keywordstyle=\color{blue!80!black}\bfseries,
+  commentstyle=\color{gray!80!black}\itshape,
+  stringstyle=\color{red!70!black},
+  showstringspaces=false,
+  tabsize=2,
+  frame=single,
+  backgroundcolor=\color{gray!5}
+}
+
+% Headers/footers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\ReportTitle}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{axiom}{Axiom}
+
+% Semantic math macros
+\newcommand{\RealityFabric}{\mathcal{R}}

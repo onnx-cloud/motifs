@@ -1,0 +1,11 @@
+# Count of distinct component motifs used by each higher-level motif (via motif:isComponentOf inverse)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?parentLabel (COUNT(DISTINCT ?op) AS ?componentCount)
+WHERE {
+  ?op motif:isComponentOf ?parent .
+  ?parent skos:prefLabel ?parentLabel .
+}
+GROUP BY ?parentLabel
+ORDER BY DESC(?componentCount)

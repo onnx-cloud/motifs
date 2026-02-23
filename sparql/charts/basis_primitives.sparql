@@ -1,0 +1,21 @@
+# Basis primitives static table
+SELECT ?id ?primitive ?signature ?category ?fingerprint ?role WHERE {
+  VALUES (?id ?primitive ?signature ?category ?fingerprint ?role) {
+    (1 "Identity" "1→1" "Structural" "∅" "Pass-through")
+    (2 "Fork" "1→n" "Structural" "T.width" "Dataflow split")
+    (3 "Join" "n→1" "Structural" "T.reuse" "Dataflow merge")
+    (4 "Op" "k→1" "Algebraic" "—" "Computation")
+    (5 "Reduce" "n→1" "Algebraic" "T.reuse" "Aggregation")
+    (6 "If" "1→?" "Control" "C.predicate" "Conditional")
+    (7 "Loop" "1→1" "Control" "T.cycles, C.loop" "Iteration")
+    (8 "Read" "1→1" "Memory" "M.local/shared" "Memory load")
+    (9 "Write" "1→1" "Memory" "M.mutable" "Memory store")
+    (10 "Call" "*→*" "Meta" "D.graph-dynamic" "Subgraph invoke")
+    (11 "Reshape" "1→1" "Shape" "D.shape-dynamic" "View change")
+    (12 "Sample" "1→1" "Stochastic" "D.stochastic" "Random draw")
+    (13 "Comm" "1→1" "Distributed" "C.boundary" "Device transfer")
+    (14 "Mutate" "G→G'" "Meta" "D.self-modifying" "Graph edit")
+    (15 "Extern" "1→k" "Memory" "M.external" "External I/O")
+    (16 "Cast" "1→1" "Shape" "D.precision" "Type conversion")
+  }
+}

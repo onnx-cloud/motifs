@@ -1,0 +1,126 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Scientific Research Domain Applications
+# Maps scientific computing and research applications to motifs
+##################################
+
+motif:ClimateModeling a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Climate & Weather Modeling"@en ;
+  skos:definition "Neural network-accelerated climate simulation and weather forecasting."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Residual .
+
+motif:ParticlePhysics a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Particle Physics Analysis"@en ;
+  skos:definition "Event classification and track reconstruction in high-energy physics experiments."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:relatedUseCase motif:MessagePassing .
+
+motif:MaterialsDiscovery a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Materials Discovery"@en ;
+  skos:definition "Predicting material properties and discovering new compounds."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:GraphAttention .
+
+motif:MolecularDynamics a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Molecular Dynamics Simulation"@en ;
+  skos:definition "ML-accelerated force field computation for molecular simulations."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Attention .
+
+motif:AstronomyImageAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Astronomical Image Analysis"@en ;
+  skos:definition "Galaxy classification, exoplanet detection, and cosmic ray removal."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:ImageClassification .
+
+motif:CFDSurrogate a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "CFD Surrogate Modeling"@en ;
+  skos:definition "Neural network surrogates for computational fluid dynamics simulations."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:relatedUseCase motif:MessagePassing .
+
+motif:QuantumChemistry a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Quantum Chemistry Prediction"@en ;
+  skos:definition "Predicting molecular energies, forces, and electronic properties."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Linear .
+
+motif:SeismicAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Seismic Event Analysis"@en ;
+  skos:definition "Earthquake detection, localization, and magnitude estimation."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear .
+
+motif:BioSequenceAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Biological Sequence Analysis"@en ;
+  skos:definition "Sequence alignment, homology detection, and evolutionary analysis."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Linear .
+
+motif:NeuralPDE a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Neural PDE Solvers"@en ;
+  skos:definition "Learning to solve partial differential equations using neural operators."@en ;
+  motif:belongsTo motif:Science ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter .
+

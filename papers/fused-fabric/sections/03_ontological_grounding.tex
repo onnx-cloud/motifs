@@ -1,0 +1,19 @@
+\OnePageSectionStart
+\section{Ontological Grounding: The Architecture of $\RealityFabric$}
+
+Grounding is the process of binding numeric computation to external meaning. We extend the classic tensor type to include a \emph{semantic triple}.
+
+\begin{definition}[Semantic Tensor]
+A semantic tensor $T \in \RealityFabric$ is defined as $T = \langle D, S, \Sigma \rangle$ where $D$ is the numeric precision (DType), $S$ is the geometric extent (Shape), and $\Sigma$ is the semantic grounding (Semantics).
+\end{definition}
+
+\paragraph{Measurement Grounding}
+Observations are grounded in physical reality via the SOSA/SSN ontology. A camera pixel is not an integer but a quantized radiance measurement. By typing observations as \texttt{M\{radiance, srgb, camera\}}, we enable the compiler to enforce physical consistency across the fusion domain.
+
+\paragraph{Symbolic Grounding}
+Symbolic data (text, category labels, entity IDs) are grounded in the SKOS concept scheme \citep{skos2009}. These are typed as \texttt{Enum}, preventing illegal mathematical operations (e.g., averaging category indices) that would lead to semantic collapse.
+
+\paragraph{Probabilistic Grounding}
+Probabilistic states are typed as \texttt{Distribution}, distinguishing between normalized probabilities and raw logits. This ensures that downstream reasoning blocks (Maximum Entropy, Kullback-Leibler divergence) receive mathematically valid inputs \citep{jaynes2003}.
+
+\OnePageSectionEnd

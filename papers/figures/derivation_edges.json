@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Derivation Edges",
+  "description": "Number of derived motifs per B* primitive",
+  "data": {
+    "values": [
+      {
+        "source": "Op"
+      },
+      {
+        "source": "Reduce"
+      },
+      {
+        "source": "Reshape"
+      },
+      {
+        "source": "Fork"
+      },
+      {
+        "source": "Join"
+      },
+      {
+        "source": "Loop"
+      },
+      {
+        "source": "If"
+      },
+      {
+        "source": "Read"
+      },
+      {
+        "source": "Write"
+      },
+      {
+        "source": "Call"
+      },
+      {
+        "source": "Mutate"
+      },
+      {
+        "source": "Sample"
+      },
+      {
+        "source": "Comm"
+      },
+      {
+        "source": "Identity"
+      },
+      {
+        "source": "Extern"
+      },
+      {
+        "source": "Cast"
+      }
+    ]
+  },
+  "width": 700,
+  "height": 360,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "source",
+      "type": "nominal",
+      "sort": {
+        "field": "_count",
+        "order": "descending"
+      }
+    },
+    "x": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Derived targets (count)"
+    },
+    "color": {
+      "field": "source",
+      "type": "nominal"
+    }
+  },
+  "config": {
+    "axis": {
+      "grid": false
+    }
+  }
+}

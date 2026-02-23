@@ -1,0 +1,14 @@
+# Mark motifs that are not mapped to ONNX operators as unmapped (heuristic)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX infer: <https://ns.onnx.cloud/infer#>
+
+CONSTRUCT {
+  ?m a motif:UnmappedMotif ;
+     skos:prefLabel ?label .
+}
+WHERE {
+  ?m a motif:Motif .
+  FILTER NOT EXISTS { ?m skos:exactMatch ?op }
+  OPTIONAL { ?m skos:prefLabel ?label }
+}

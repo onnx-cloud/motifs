@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Use Cases — Motif Models</title>
+  <meta name="description" content="">
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-semibold mb-4">Use Cases</h1>
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="feature-pyramid-network/index.html">
+      <div class="font-semibold text-blue-800">Feature Pyramid Network</div>
+      <div class="text-sm text-gray-600">Multi-scale feature extraction combining bottom-up and top-down pathways with lateral connections.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="human-pose-estimation/index.html">
+      <div class="font-semibold text-blue-800">Human Pose Estimation</div>
+      <div class="text-sm text-gray-600">Detecting and localizing human body keypoints and skeletal structure.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="image-classification/index.html">
+      <div class="font-semibold text-blue-800">Image Classification</div>
+      <div class="text-sm text-gray-600">Categorizing images into predefined classes using convolutional or transformer architectures.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="image-patching/index.html">
+      <div class="font-semibold text-blue-800">Image Patching</div>
+      <div class="text-sm text-gray-600">Dividing images into fixed-size patches for transformer-based processing.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="instance-segmentation/index.html">
+      <div class="font-semibold text-blue-800">Instance Segmentation</div>
+      <div class="text-sm text-gray-600">Detecting and delineating each distinct object instance with pixel-level masks.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="monocular-depth-estimation/index.html">
+      <div class="font-semibold text-blue-800">Monocular Depth Estimation</div>
+      <div class="text-sm text-gray-600">Predicting pixel-wise depth maps from single RGB images.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="object-detection/index.html">
+      <div class="font-semibold text-blue-800">Object Detection</div>
+      <div class="text-sm text-gray-600">Localizing and classifying objects within images using bounding box regression and classification.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="optical-flow-estimation/index.html">
+      <div class="font-semibold text-blue-800">Optical Flow Estimation</div>
+      <div class="text-sm text-gray-600">Computing per-pixel motion vectors between consecutive video frames.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="semantic-segmentation/index.html">
+      <div class="font-semibold text-blue-800">Semantic Segmentation</div>
+      <div class="text-sm text-gray-600">Pixel-wise classification assigning semantic labels to every pixel in an image.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="vision-transformer-vit/index.html">
+      <div class="font-semibold text-blue-800">Vision Transformer (ViT)</div>
+      <div class="text-sm text-gray-600">Applying transformer architecture to image patches for visual recognition tasks.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="controlnet-conditioning/index.html">
+      <div class="font-semibold text-blue-800">ControlNet Conditioning</div>
+      <div class="text-sm text-gray-600">Adding spatial control to diffusion models through auxiliary condition encoders with zero-convolution.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="diffusion-denoising/index.html">
+      <div class="font-semibold text-blue-800">Diffusion Denoising</div>
+      <div class="text-sm text-gray-600">Iterative noise removal process in diffusion models, progressively refining samples from noise to data distribution.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="flow-matching/index.html">
+      <div class="font-semibold text-blue-800">Flow Matching</div>
+      <div class="text-sm text-gray-600">Learning continuous normalizing flows via optimal transport paths between noise and data distributions.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="generative-adversarial-network/index.html">
+      <div class="font-semibold text-blue-800">Generative Adversarial Network</div>
+      <div class="text-sm text-gray-600">Adversarial training framework with generator and discriminator networks competing to produce realistic samples.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="image-inpainting/index.html">
+      <div class="font-semibold text-blue-800">Image Inpainting</div>
+      <div class="text-sm text-gray-600">Filling in missing or masked regions of images with contextually appropriate content.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="image-super-resolution/index.html">
+      <div class="font-semibold text-blue-800">Image Super-Resolution</div>
+      <div class="text-sm text-gray-600">Upscaling low-resolution images to higher resolution with enhanced detail synthesis.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="latent-diffusion/index.html">
+      <div class="font-semibold text-blue-800">Latent Diffusion</div>
+      <div class="text-sm text-gray-600">Diffusion process operating in compressed latent space for efficient high-resolution generation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="neural-style-transfer/index.html">
+      <div class="font-semibold text-blue-800">Neural Style Transfer</div>
+      <div class="text-sm text-gray-600">Applying artistic style from one image to the content of another through feature matching.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="text-to-image-generation/index.html">
+      <div class="font-semibold text-blue-800">Text-to-Image Generation</div>
+      <div class="text-sm text-gray-600">Generating images conditioned on text prompts using cross-attention between text and image features.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="vae-encodingdecoding/index.html">
+      <div class="font-semibold text-blue-800">VAE Encoding/Decoding</div>
+      <div class="text-sm text-gray-600">Variational autoencoder compression and reconstruction of data to/from latent representations.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="edge-conditioned-convolution/index.html">
+      <div class="font-semibold text-blue-800">Edge-Conditioned Convolution</div>
+      <div class="text-sm text-gray-600">Graph convolution where edge features modulate message computation between nodes.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="graph-attention-network/index.html">
+      <div class="font-semibold text-blue-800">Graph Attention Network</div>
+      <div class="text-sm text-gray-600">Applying attention mechanism to weight neighbor contributions in graph convolution.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="graph-generation/index.html">
+      <div class="font-semibold text-blue-800">Graph Generation</div>
+      <div class="text-sm text-gray-600">Autoregressive or one-shot generation of graph structures and node features.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="graph-pooling/index.html">
+      <div class="font-semibold text-blue-800">Graph Pooling</div>
+      <div class="text-sm text-gray-600">Aggregating node features into graph-level representations for classification or regression.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="hierarchical-graph-pooling/index.html">
+      <div class="font-semibold text-blue-800">Hierarchical Graph Pooling</div>
+      <div class="text-sm text-gray-600">Multi-level graph coarsening creating hierarchical representations for large graphs.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="link-prediction/index.html">
+      <div class="font-semibold text-blue-800">Link Prediction</div>
+      <div class="text-sm text-gray-600">Predicting missing or future edges in graphs based on node embeddings.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="message-passing-neural-network/index.html">
+      <div class="font-semibold text-blue-800">Message Passing Neural Network</div>
+      <div class="text-sm text-gray-600">Iterative neighborhood aggregation where nodes exchange and aggregate messages along edges.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="neighbor-sampling/index.html">
+      <div class="font-semibold text-blue-800">Neighbor Sampling</div>
+      <div class="text-sm text-gray-600">Sampling fixed-size neighborhoods for scalable mini-batch training on large graphs.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="node-classification/index.html">
+      <div class="font-semibold text-blue-800">Node Classification</div>
+      <div class="text-sm text-gray-600">Predicting labels for graph nodes using neighborhood structure and features.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="temporal-graph-network/index.html">
+      <div class="font-semibold text-blue-800">Temporal Graph Network</div>
+      <div class="text-sm text-gray-600">Processing dynamic graphs with time-evolving structure and node/edge features.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="audio-text-alignment/index.html">
+      <div class="font-semibold text-blue-800">Audio-Text Alignment</div>
+      <div class="text-sm text-gray-600">Aligning audio segments with text transcriptions for speech recognition or TTS training.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="audio-visual-fusion/index.html">
+      <div class="font-semibold text-blue-800">Audio-Visual Fusion</div>
+      <div class="text-sm text-gray-600">Combining audio and visual streams for joint understanding (e.g., speech recognition, video understanding).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="clip-style-contrastive-learning/index.html">
+      <div class="font-semibold text-blue-800">CLIP-style Contrastive Learning</div>
+      <div class="text-sm text-gray-600">Learning aligned embeddings across modalities through contrastive loss on paired data.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="cross-modal-attention/index.html">
+      <div class="font-semibold text-blue-800">Cross-Modal Attention</div>
+      <div class="text-sm text-gray-600">Attention mechanism where queries from one modality attend to keys/values from another modality.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="image-captioning/index.html">
+      <div class="font-semibold text-blue-800">Image Captioning</div>
+      <div class="text-sm text-gray-600">Generating textual descriptions of images through vision-to-language decoding.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="modality-projection-layer/index.html">
+      <div class="font-semibold text-blue-800">Modality Projection Layer</div>
+      <div class="text-sm text-gray-600">Projecting features from one modality encoder into shared embedding space.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="open-vocabulary-object-detection/index.html">
+      <div class="font-semibold text-blue-800">Open-Vocabulary Object Detection</div>
+      <div class="text-sm text-gray-600">Detecting objects described by free-form text queries through vision-language alignment.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="video-text-retrieval/index.html">
+      <div class="font-semibold text-blue-800">Video-Text Retrieval</div>
+      <div class="text-sm text-gray-600">Matching video clips with text descriptions through temporal and semantic alignment.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="vision-language-model/index.html">
+      <div class="font-semibold text-blue-800">Vision-Language Model</div>
+      <div class="text-sm text-gray-600">Standard VLM: vision encoder -&gt; adapter -&gt; LLM with cross-attention.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="vision-language-model/index.html">
+      <div class="font-semibold text-blue-800">Vision-Language Model</div>
+      <div class="text-sm text-gray-600">Large model combining vision encoder with language model for general visual understanding and generation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="vision-language-model-vlm/index.html">
+      <div class="font-semibold text-blue-800">Vision-Language Model (VLM)</div>
+      <div class="text-sm text-gray-600">Standard VLM: vision encoder -&gt; adapter -&gt; LLM with cross-attention.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="vision-language-model-vlm/index.html">
+      <div class="font-semibold text-blue-800">Vision-Language Model (VLM)</div>
+      <div class="text-sm text-gray-600">Large model combining vision encoder with language model for general visual understanding and generation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="visual-question-answering/index.html">
+      <div class="font-semibold text-blue-800">Visual Question Answering</div>
+      <div class="text-sm text-gray-600">Answering natural language questions about image content through joint reasoning.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="autoregressive-decoding/index.html">
+      <div class="font-semibold text-blue-800">Autoregressive Decoding</div>
+      <div class="text-sm text-gray-600">Sequential token generation where each output depends on previously generated tokens, using KV-cache for efficiency.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="beam-search-decoding/index.html">
+      <div class="font-semibold text-blue-800">Beam Search Decoding</div>
+      <div class="text-sm text-gray-600">Search algorithm maintaining top-k hypotheses at each decoding step to find high-probability sequences.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="continuous-batching/index.html">
+      <div class="font-semibold text-blue-800">Continuous Batching</div>
+      <div class="text-sm text-gray-600">Dynamically adding and removing sequences from inference batch for maximum throughput.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="dynamic-batching/index.html">
+      <div class="font-semibold text-blue-800">Dynamic Batching</div>
+      <div class="text-sm text-gray-600">Grouping inference requests with similar sequence lengths for efficient batch processing.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="early-exit-inference/index.html">
+      <div class="font-semibold text-blue-800">Early Exit Inference</div>
+      <div class="text-sm text-gray-600">Terminating inference at intermediate layers when confidence threshold is reached.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="expert-capacity-limiting/index.html">
+      <div class="font-semibold text-blue-800">Expert Capacity Limiting</div>
+      <div class="text-sm text-gray-600">Dropping tokens exceeding expert capacity to maintain computational bounds.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="expert-load-balancing/index.html">
+      <div class="font-semibold text-blue-800">Expert Load Balancing</div>
+      <div class="text-sm text-gray-600">Auxiliary loss encouraging uniform expert utilization to prevent expert collapse.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="expert-parallelism/index.html">
+      <div class="font-semibold text-blue-800">Expert Parallelism</div>
+      <div class="text-sm text-gray-600">Distributing experts across devices with all-to-all communication for load balancing.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="extractive-question-answering/index.html">
+      <div class="font-semibold text-blue-800">Extractive Question Answering</div>
+      <div class="text-sm text-gray-600">Identifying answer spans within context passages given a question.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="flash-attention/index.html">
+      <div class="font-semibold text-blue-800">Flash Attention</div>
+      <div class="text-sm text-gray-600">FlashAttention (Dao et al., 2022) - IO-aware attention.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="flash-attention/index.html">
+      <div class="font-semibold text-blue-800">Flash Attention</div>
+      <div class="text-sm text-gray-600">Memory-efficient attention using tiling and recomputation to avoid materializing full attention matrix.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="hierarchical-mixture-of-experts/index.html">
+      <div class="font-semibold text-blue-800">Hierarchical Mixture of Experts</div>
+      <div class="text-sm text-gray-600">Multi-level expert routing with coarse-to-fine expert selection.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="kv-cache-for-autoregressive-inference/index.html">
+      <div class="font-semibold text-blue-800">KV-Cache for Autoregressive Inference</div>
+      <div class="text-sm text-gray-600">Caching key-value projections from previous tokens to avoid redundant computation during generation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="machine-translation/index.html">
+      <div class="font-semibold text-blue-800">Machine Translation</div>
+      <div class="text-sm text-gray-600">Sequence-to-sequence translation between languages using encoder-decoder architecture.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="masked-language-modeling/index.html">
+      <div class="font-semibold text-blue-800">Masked Language Modeling</div>
+      <div class="text-sm text-gray-600">Pre-training objective predicting masked tokens from bidirectional context (BERT-style).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="model-quantization/index.html">
+      <div class="font-semibold text-blue-800">Model Quantization</div>
+      <div class="text-sm text-gray-600">Reducing numerical precision of weights and activations for faster inference and lower memory.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="named-entity-recognition/index.html">
+      <div class="font-semibold text-blue-800">Named Entity Recognition</div>
+      <div class="text-sm text-gray-600">Token-level classification identifying entities (persons, organizations, locations) in text.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="paged-attention/index.html">
+      <div class="font-semibold text-blue-800">Paged Attention</div>
+      <div class="text-sm text-gray-600">Managing KV-cache memory in non-contiguous blocks for efficient memory utilization.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="positional-encoding/index.html">
+      <div class="font-semibold text-blue-800">Positional Encoding</div>
+      <div class="text-sm text-gray-600">Injecting sequence position information into token embeddings for position-aware processing.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="retrieval-augmented-generation/index.html">
+      <div class="font-semibold text-blue-800">Retrieval-Augmented Generation</div>
+      <div class="text-sm text-gray-600">Augmenting language model generation with retrieved context documents.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="sequence-classification/index.html">
+      <div class="font-semibold text-blue-800">Sequence Classification</div>
+      <div class="text-sm text-gray-600">Classifying entire sequences into categories (sentiment analysis, topic classification).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="shared-expert-layer/index.html">
+      <div class="font-semibold text-blue-800">Shared Expert Layer</div>
+      <div class="text-sm text-gray-600">Combining sparse expert outputs with a shared dense expert applied to all tokens.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="sliding-window-attention/index.html">
+      <div class="font-semibold text-blue-800">Sliding Window Attention</div>
+      <div class="text-sm text-gray-600">Mistral, Longformer local attention pattern.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="sliding-window-attention/index.html">
+      <div class="font-semibold text-blue-800">Sliding Window Attention</div>
+      <div class="text-sm text-gray-600">Restricting attention to local context window for linear complexity in sequence length.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="soft-mixture-of-experts/index.html">
+      <div class="font-semibold text-blue-800">Soft Mixture of Experts</div>
+      <div class="text-sm text-gray-600">Differentiable expert mixing using soft attention weights instead of hard routing.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="sparse-mixture-of-experts/index.html">
+      <div class="font-semibold text-blue-800">Sparse Mixture of Experts</div>
+      <div class="text-sm text-gray-600">Conditional computation routing inputs to a sparse subset of expert networks based on learned gating.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="sparse-moe-routing/index.html">
+      <div class="font-semibold text-blue-800">Sparse MoE Routing</div>
+      <div class="text-sm text-gray-600">Conditional computation routing inputs to a sparse subset of expert networks based on learned gating.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="speculative-decoding/index.html">
+      <div class="font-semibold text-blue-800">Speculative Decoding</div>
+      <div class="text-sm text-gray-600">Using draft model to propose tokens verified in parallel by target model for faster generation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="token-embedding-lookup/index.html">
+      <div class="font-semibold text-blue-800">Token Embedding Lookup</div>
+      <div class="text-sm text-gray-600">Mapping discrete tokens to dense vector representations via embedding table lookup.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="token-pruning/index.html">
+      <div class="font-semibold text-blue-800">Token Pruning</div>
+      <div class="text-sm text-gray-600">Dynamically removing less important tokens during inference to reduce computation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="top-k-expert-gating/index.html">
+      <div class="font-semibold text-blue-800">Top-K Expert Gating</div>
+      <div class="text-sm text-gray-600">Selecting the top-k experts per token based on router scores for sparse expert activation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="transformer-architecture/index.html">
+      <div class="font-semibold text-blue-800">Transformer Architecture</div>
+      <div class="text-sm text-gray-600">Self-attention based architecture for sequence-to-sequence modeling with parallel processing of input tokens.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="approximate-nearest-neighbor-search/index.html">
+      <div class="font-semibold text-blue-800">Approximate Nearest Neighbor Search</div>
+      <div class="text-sm text-gray-600">Efficient similarity search using index structures (HNSW, IVF) for large-scale retrieval.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="colbert-late-interaction/index.html">
+      <div class="font-semibold text-blue-800">ColBERT Late Interaction</div>
+      <div class="text-sm text-gray-600">Token-level late interaction between query and document embeddings for efficient yet accurate retrieval.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="cross-encoder-reranking/index.html">
+      <div class="font-semibold text-blue-800">Cross-Encoder Reranking</div>
+      <div class="text-sm text-gray-600">Joint encoding of query-document pairs for fine-grained relevance scoring.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="dense-passage-retrieval/index.html">
+      <div class="font-semibold text-blue-800">Dense Passage Retrieval</div>
+      <div class="text-sm text-gray-600">Encoding queries and passages into dense vectors for similarity-based retrieval.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="hybrid-sparse-dense-retrieval/index.html">
+      <div class="font-semibold text-blue-800">Hybrid Sparse-Dense Retrieval</div>
+      <div class="text-sm text-gray-600">Combining sparse lexical matching with dense semantic similarity for robust retrieval.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="knowledge-graph-retrieval/index.html">
+      <div class="font-semibold text-blue-800">Knowledge Graph Retrieval</div>
+      <div class="text-sm text-gray-600">Traversing and querying knowledge graphs to retrieve relevant entities and relations.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="neural-collaborative-filtering/index.html">
+      <div class="font-semibold text-blue-800">Neural Collaborative Filtering</div>
+      <div class="text-sm text-gray-600">Learning user-item interaction patterns through neural embeddings and interaction functions.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="sequential-recommendation/index.html">
+      <div class="font-semibold text-blue-800">Sequential Recommendation</div>
+      <div class="text-sm text-gray-600">Predicting next items based on user&#x27;s historical interaction sequence.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="two-tower-retrieval-model/index.html">
+      <div class="font-semibold text-blue-800">Two-Tower Retrieval Model</div>
+      <div class="text-sm text-gray-600">Separate encoders for queries and items with dot-product similarity for efficient retrieval.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="actor-critic/index.html">
+      <div class="font-semibold text-blue-800">Actor-Critic</div>
+      <div class="text-sm text-gray-600">Combining policy (actor) and value function (critic) networks for stable policy learning.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="environment-vectorization/index.html">
+      <div class="font-semibold text-blue-800">Environment Vectorization</div>
+      <div class="text-sm text-gray-600">Running multiple environment instances in parallel for efficient sample collection.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="experience-replay-buffer/index.html">
+      <div class="font-semibold text-blue-800">Experience Replay Buffer</div>
+      <div class="text-sm text-gray-600">Storing and sampling past transitions for stable off-policy learning.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="generalized-advantage-estimation/index.html">
+      <div class="font-semibold text-blue-800">Generalized Advantage Estimation</div>
+      <div class="text-sm text-gray-600">Computing advantage estimates as exponentially-weighted sum of TD residuals.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="monte-carlo-tree-search/index.html">
+      <div class="font-semibold text-blue-800">Monte Carlo Tree Search</div>
+      <div class="text-sm text-gray-600">Planning by building search tree through simulation and backpropagation of values.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="ppo-clipped-objective/index.html">
+      <div class="font-semibold text-blue-800">PPO Clipped Objective</div>
+      <div class="text-sm text-gray-600">Proximal policy optimization with clipped probability ratio for stable updates.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="policy-gradient/index.html">
+      <div class="font-semibold text-blue-800">Policy Gradient</div>
+      <div class="text-sm text-gray-600">Learning policy parameters by gradient ascent on expected cumulative reward.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="rlhf-reward-modeling/index.html">
+      <div class="font-semibold text-blue-800">RLHF Reward Modeling</div>
+      <div class="text-sm text-gray-600">Training reward models from human preference comparisons for language model alignment.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="target-network-update/index.html">
+      <div class="font-semibold text-blue-800">Target Network Update</div>
+      <div class="text-sm text-gray-600">Periodically copying or soft-updating target network parameters for stable Q-learning.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="temporal-difference-learning/index.html">
+      <div class="font-semibold text-blue-800">Temporal Difference Learning</div>
+      <div class="text-sm text-gray-600">Bootstrapping value estimates from successive state predictions.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="asynchronous-sgd/index.html">
+      <div class="font-semibold text-blue-800">Asynchronous SGD</div>
+      <div class="text-sm text-gray-600">Distributed training without synchronization barriers, allowing stale gradients.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="data-parallelism/index.html">
+      <div class="font-semibold text-blue-800">Data Parallelism</div>
+      <div class="text-sm text-gray-600">Replicating model across devices with synchronized gradient averaging via AllReduce.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="gradient-checkpointing/index.html">
+      <div class="font-semibold text-blue-800">Gradient Checkpointing</div>
+      <div class="text-sm text-gray-600">Trading compute for memory by recomputing activations during backward pass.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="model-sharding/index.html">
+      <div class="font-semibold text-blue-800">Model Sharding</div>
+      <div class="text-sm text-gray-600">Distributing model parameters across devices with dynamic gathering for computation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="pipeline-parallelism/index.html">
+      <div class="font-semibold text-blue-800">Pipeline Parallelism</div>
+      <div class="text-sm text-gray-600">Partitioning model layers across devices with micro-batch pipelining for throughput.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="ring-allreduce/index.html">
+      <div class="font-semibold text-blue-800">Ring AllReduce</div>
+      <div class="text-sm text-gray-600">Bandwidth-optimal reduction algorithm using ring topology for gradient synchronization.</div>
+    </a>
+  </div>
+</div>
+
+  </main>
+</body>
+</html>

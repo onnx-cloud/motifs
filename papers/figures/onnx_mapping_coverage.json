@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "ONNX Mapping Coverage",
+  "description": "Fraction of motifs with canonical ONNX mapping",
+  "data": {
+    "values": [
+      {
+        "status": "mapped",
+        "count": "247"
+      }
+    ]
+  },
+  "width": 400,
+  "height": 300,
+  "mark": {
+    "type": "arc",
+    "innerRadius": 50
+  },
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "status",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "status"
+      },
+      {
+        "field": "count"
+      }
+    ]
+  }
+}

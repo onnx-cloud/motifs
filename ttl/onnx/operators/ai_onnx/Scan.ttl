@@ -1,0 +1,24 @@
+
+# ONNX operator schema — per-operator file
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:Scan a onnx:Operator ;
+  skos:prefLabel "Scan" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "initial_state_and_scan_inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "final_state_and_scan_outputs" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scan_input_axes" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scan_output_axes" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scan_output_directions" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scan_input_directions" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "num_scan_inputs" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "body" ; onnx:attrType "GRAPH" ; onnx:default "" ; ] ;
+  .

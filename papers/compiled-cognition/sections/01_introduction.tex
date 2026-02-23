@@ -1,0 +1,10 @@
+\OnePageSectionStart
+\section{Introduction}
+
+The transition from "learning from data" to "reasoning from principles" requires a new layer in the computing stack: the Cognitive Compiler. While traditional compilers bridge source code to assembly, and neural compilers bridge model graphs to kernels, the Cognitive Compiler bridges \emph{intent} to \emph{operation}.
+
+Current AI deployment relies on the manual translation of algorithmic logic into deep learning frameworks. This translation is prone to error, difficult to audit, and often results in opaque binaries where the original "reasoning" is erased. We propose a methodology where reasoning is expressed as the \emph{fusion} of compute graphs, defined in a domain-specific language (DSL) called Fuse.
+
+The compiler's core task is to take these disparate graph specifications and fuse them into machine-native representations, primarily the Open Neural Network Exchange (ONNX) format. This choice ensures that fused cognitive logic can run on any silicon target with a standard executor, from cloud GPUs to edge-based NPUs, while remaining bit-accurate across environments.
+
+\OnePageSectionEnd

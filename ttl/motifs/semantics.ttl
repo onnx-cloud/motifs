@@ -1,0 +1,6 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+
+# Auto-generated semantics resources (migrated from literal hasSemantics)
+motif:Sem_hasSemantics a motif:Semantics ;
+  skos:definition "Maintain top-K partial hypotheses at each step, expand and prune."@en .

@@ -1,0 +1,30 @@
+\OnePageSectionStart
+\section{Formal Grammar of the Fuse-IR}
+
+The syntax for the cognitive compiler is defined by a strict grammar that enforces the separation of metadata and logic.
+
+\begin{verbatim}
+File ::= { Pragma } { Decl }
+
+Pragma ::= "@" Ident [ Value ]
+Decl   ::= ConstDecl | GraphDef | ProofGraph
+
+ConstDecl ::= "const" Ident ":" Type "=" Value
+
+GraphDef ::= "graph" Name "(" [ Params ] ")" "->" Type "{" 
+               { Statement } 
+             "}"
+
+Statement ::= Binding | OpCall
+Binding   ::= Ident ":" Type "=" Value
+OpCall    ::= Ident "=" Operator "(" [ Args ] ")"
+
+Operator ::= "Sub" | "Abs" | "ReduceSum" | "Div" | "Reshape" | ...
+
+ProofGraph ::= "@proof graph" Name "(" ")" "{" 
+                 { Statement } 
+                 "assert" Expression 
+               "}"
+\end{verbatim}
+
+\OnePageSectionEnd

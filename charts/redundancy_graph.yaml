@@ -1,0 +1,32 @@
+# Figure: Motif Redundancy (Derivable motifs)
+# Shows derived motifs and the B* primitives used to build them
+
+title: Motif Redundancy
+description: Derived motifs and derivation complexity (number of B* primitives)
+
+query: ./sparql/charts/redundancy_graph.sparql
+
+vega:
+  width: 700
+  height: 900
+  mark: bar
+  encoding:
+    y:
+      field: derived
+      type: nominal
+      sort: {field: complexity, order: descending}
+    x:
+      field: complexity
+      type: quantitative
+      title: Derivation Complexity (# B* primitives)
+    color:
+      field: category
+      type: nominal
+      legend: {title: Category}
+    tooltip:
+      - field: derived
+        title: Motif
+      - field: primitives
+        title: B* Expression
+      - field: complexity
+        title: Complexity

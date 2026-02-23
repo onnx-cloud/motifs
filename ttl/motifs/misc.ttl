@@ -1,0 +1,68 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Miscellaneous / Utility motif instances
+
+
+motif:IdentityResidual a motif:Motif ;
+  skos:prefLabel "Identity Residual"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_IdentityResidual .
+
+motif:FlattenResidual a motif:Motif ;
+  skos:prefLabel "Flatten Residual"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_FlattenResidual .
+
+motif:BroadcastedResidual a motif:Motif ;
+  skos:prefLabel "Broadcasted Residual"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_BroadcastedResidual .
+
+motif:NestedLoop a motif:Motif ;
+  skos:prefLabel "Nested Loop"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_NestedLoop .
+
+motif:NestedConditional a motif:Motif ;
+  skos:prefLabel "Nested Conditional"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_NestedConditional .
+
+motif:AttentionResidualMemory a motif:Motif ;
+  skos:prefLabel "Attention + Residual + Memory"@en ;
+  motif:hasSignature motif:Sig_many_to_many ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_AttentionResidualMemory .
+
+motif:MultiLevelFork a motif:Motif ;
+  skos:prefLabel "Multi-Level Fork"@en ;
+  motif:hasSignature motif:Sig_1_to_N_to_N ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_MultiLevelFork .
+
+motif:MultiLevelJoin a motif:Motif ;
+  skos:prefLabel "Multi-Level Join"@en ;
+  motif:hasSignature motif:Sig_N_to_N_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_MultiLevelJoin .
+
+motif:DynamicForkJoin a motif:Motif ;
+  skos:prefLabel "Dynamic Fork-Join"@en ;
+  motif:hasSignature motif:Sig_1_to_N_opt_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_DynamicForkJoin .
+
+motif:LoopConditionalMemory a motif:Motif ;
+  skos:prefLabel "Loop + Conditional + Memory"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_LoopConditionalMemory .

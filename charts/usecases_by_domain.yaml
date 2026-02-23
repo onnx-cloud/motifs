@@ -1,0 +1,43 @@
+# Figure: Use Cases per Domain (Bar Chart)
+# Counts of technical use cases by application domain
+
+title: Use Cases per Domain
+description: Number of technical use cases in each application domain (from use-cases TTL)
+
+query: ./sparql/charts/usecases_per_domain.sparql
+
+transform:
+  rename:
+    domainLabel: domain
+    count: count
+  keep:
+    - domain
+    - count
+
+vega:
+  width: 600
+  height: 350
+  mark: bar
+  encoding:
+    x:
+      field: domain
+      type: nominal
+      axis:
+        labelAngle: -45
+        title: Domain
+    y:
+      field: count
+      type: quantitative
+      axis:
+        title: Number of Use Cases
+    color:
+      field: domain
+      type: nominal
+      scale:
+        scheme: category10
+      legend: false
+    tooltip:
+      - field: domain
+        type: nominal
+      - field: count
+        type: quantitative

@@ -1,0 +1,48 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motifs#> .
+#################################################################
+# Agents semantics & constraints (curated)
+# Generated: 2026-01-29 — manual definitions
+#################################################################
+
+motif:Sem_WorldModel a motif:Semantics ;
+  skos:prefLabel "World Model" ;
+  skos:definition "Learn or maintain an explicit model of the environment used for planning, simulation, or prediction tasks; may be learned or directly specified." .
+
+motif:Constraint_WorldModel_Accuracy a motif:Constraint ;
+  skos:prefLabel "Track accuracy and uncertainty" ;
+  rdfs:comment "Continuously estimate and validate model accuracy and uncertainty; ensure uncertainty-aware planning or conservative policies when confidence is low." .
+
+motif:Sem_MultiAgentComm a motif:Semantics ;
+  skos:prefLabel "Multi-Participant Communication" ;
+  skos:definition "Exchange structured messages between participants to coordinate tasks, share beliefs, or negotiate plans; includes protocol and schema for message semantics." .
+
+motif:Constraint_MultiAgentComm_Protocols a motif:Constraint ;
+  skos:prefLabel "Protocols and message schemas" ;
+  rdfs:comment "Define communication protocols, message schemas, and fault-tolerance behavior for robust coordination across participants." .
+
+motif:Sem_PolicyIteration a motif:Semantics ;
+  skos:prefLabel "Policy Iteration" ;
+  skos:definition "Iterative policy evaluation and greedy policy improvement loop used in reinforcement learning to converge to a (near-)optimal policy given value estimates." .
+
+motif:Constraint_PolicyIteration_StateAction a motif:Constraint ;
+  skos:prefLabel "Bound or approximate state/action spaces" ;
+  rdfs:comment "State and action spaces should be bounded or approximated (e.g., via function approximation, discretization) to enable tractable policy iteration." .
+
+motif:Sem_HierarchicalPlanner a motif:Semantics ;
+  skos:prefLabel "Hierarchical Planning" ;
+  skos:definition "Decompose planning tasks into multiple abstraction levels and subpolicies to improve scalability and reuse; requires clear task boundaries and subtask interfaces." .
+
+motif:Constraint_HierarchicalPlanner_Subtasks a motif:Constraint ;
+  skos:prefLabel "Subtask dependencies must be well-defined" ;
+  rdfs:comment "Specify preconditions, postconditions, and interfaces for subtasks to ensure safe composition and planning correctness." .
+
+motif:Sem_ActivePerception a motif:Semantics ;
+  skos:prefLabel "Active Perception" ;
+  skos:definition "Select sensing actions adaptively to reduce task-relevant uncertainty, balancing sensing cost, latency, and expected information gain." .
+
+motif:Constraint_ActivePerception_Sensing a motif:Constraint ;
+  skos:prefLabel "Sensing cost and latency must be modeled" ;
+  rdfs:comment "Model sensing cost and latency explicitly and include them in planning/decision objectives." .
+

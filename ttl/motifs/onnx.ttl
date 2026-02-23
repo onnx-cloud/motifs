@@ -1,0 +1,87 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ONNX mapping annotations for motif primitives (B* and experimental B+)
+
+motif:Identity skos:exactMatch onnx:Identity .
+motif:Fork skos:exactMatch onnx:Split .
+motif:Join skos:exactMatch onnx:Concat .
+motif:Op skos:exactMatch onnx:Operator .
+motif:Reduce skos:exactMatch onnx:ReduceSum .
+motif:If skos:exactMatch onnx:If .
+motif:Loop skos:exactMatch onnx:Loop .
+
+# Stateful / external primitives require runtime support
+
+onnx:ReadMemory a onnx:CustomOp ; skos:prefLabel "ReadMemory" .
+onnx:WriteMemory a onnx:CustomOp ; skos:prefLabel "WriteMemory" .
+onnx:ExternIO a onnx:CustomOp ; skos:prefLabel "ExternalIO" .
+onnx:CommCollective a onnx:CustomOp ; skos:prefLabel "Collective" .
+onnx:MutateGraphOp a onnx:CustomOp ; skos:prefLabel "GraphMutate" .
+onnx:DelayOp a onnx:CustomOp ; skos:prefLabel "Delay" .
+onnx:RaceOp a onnx:CustomOp ; skos:prefLabel "Race" .
+onnx:RefOp a onnx:CustomOp ; skos:prefLabel "Ref" .
+onnx:CallSubgraph a onnx:CustomOp ; skos:prefLabel "CallSubgraph" .
+
+motif:Read skos:exactMatch onnx:ReadMemory ;
+  onnx:requiresRuntime onnx:MutableStateRuntime .
+
+motif:Write skos:exactMatch onnx:WriteMemory ;
+  onnx:requiresRuntime onnx:MutableStateRuntime .
+
+motif:Call skos:exactMatch onnx:CallSubgraph ;
+  onnx:requiresRuntime onnx:HigherOrderRuntime .
+
+motif:Reshape skos:exactMatch onnx:Reshape .
+
+motif:Sample skos:exactMatch onnx:RandomNormal .
+
+motif:Comm skos:exactMatch onnx:CommCollective ;
+  onnx:requiresRuntime onnx:DistributedRuntime .
+
+motif:Mutate skos:exactMatch onnx:MutateGraphOp ;
+  onnx:requiresRuntime onnx:GraphMutationRuntime .
+
+motif:Extern skos:exactMatch onnx:ExternIO ;
+  onnx:requiresRuntime onnx:ExternalIORuntime .
+
+motif:Cast skos:exactMatch onnx:Cast .
+
+motif:Conv skos:exactMatch onnx:Conv .
+motif:ConvTranspose skos:exactMatch onnx:ConvTranspose .
+motif:Gemm skos:exactMatch onnx:Gemm .
+motif:BatchNormalization skos:exactMatch onnx:BatchNormalization .
+motif:LayerNormalization skos:exactMatch onnx:LayerNormalization .
+motif:Relu skos:exactMatch onnx:Relu .
+motif:Gelu skos:exactMatch onnx:Gelu .
+motif:Softmax skos:exactMatch onnx:Softmax .
+motif:Transpose skos:exactMatch onnx:Transpose .
+motif:Gather skos:exactMatch onnx:Gather .
+motif:Einsum skos:exactMatch onnx:Einsum .
+motif:LSTM skos:exactMatch onnx:LSTM .
+motif:GRU skos:exactMatch onnx:GRU .
+motif:RNN skos:exactMatch onnx:RNN .
+motif:MaxPool skos:exactMatch onnx:MaxPool .
+motif:Pool skos:exactMatch onnx:AveragePool .
+motif:Dropout skos:exactMatch onnx:Dropout .
+motif:Resize skos:exactMatch onnx:Resize .
+motif:TopK skos:exactMatch onnx:TopK .
+motif:Arithmetic skos:exactMatch onnx:Add .
+motif:ConcatSplit skos:exactMatch onnx:Concat .
+motif:ConcatSplit skos:exactMatch onnx:Split .
+motif:ArgMaxArgMin skos:exactMatch onnx:ArgMax .
+motif:ArgMaxArgMin skos:exactMatch onnx:ArgMin .
+
+# Experimental primitives
+
+motif:Delay skos:exactMatch onnx:DelayOp ;
+  onnx:requiresRuntime onnx:StreamingRuntime .
+
+motif:Race skos:exactMatch onnx:RaceOp ;
+  onnx:requiresRuntime onnx:AsyncRuntime .
+
+motif:Ref skos:exactMatch onnx:RefOp ;
+  onnx:requiresRuntime onnx:HigherOrderRuntime .

@@ -1,0 +1,23 @@
+
+# ONNX operator schema — per-operator file
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:NonMaxSuppression a onnx:Operator ;
+  skos:prefLabel "NonMaxSuppression" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "boxes" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scores" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "max_output_boxes_per_class" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "iou_threshold" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "score_threshold" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "selected_indices" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "center_point_box" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .

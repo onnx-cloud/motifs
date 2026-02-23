@@ -1,0 +1,3 @@
+node dense(x: f32[batch, in_dim], w: f32[in_dim, out_dim]) -> f32[batch, out_dim] {
+  MatMul(x, w)
+}

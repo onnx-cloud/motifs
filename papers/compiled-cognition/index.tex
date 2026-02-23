@@ -1,0 +1,28 @@
+\input{preamble.tex}
+
+\title{\ReportTitle}
+\author{\ReportAuthors}
+\date{\ReportDate}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+As machine intelligence moves from monolithic models to complex reasoning pipelines, the gap between high-level cognitive intent and low-level machine execution (silicon) becomes a critical bottleneck. We introduce the \emph{Cognitive Compiler}, a system that transforms high-level reasoning specifications into optimized, machine-native intermediate representations (IR), specifically targeting the ONNX standard. By treating reasoning as a first-class compilation target, we enable the formal fusion of heterogeneous compute graphs directly into verifiable, executable structures. This paper details the architecture of the Fuse-based cognitive IR, the graph-fusion strategies that preserve semantic invariants, and demonstrates the system's utility through the compilation of complex scoring and decision-making logic into performant silicon-ready code.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+% Sections
+\input{sections/01_introduction.tex}
+\input{sections/02_cognitive_ir.tex}
+\input{sections/03_dsl_specification.tex}
+\input{sections/04_example_lof.tex}
+\input{sections/05_lowering_logic.tex}
+\input{sections/05_training_extensions.tex}
+\input{sections/06_silicon_execution.tex}
+\input{sections/07_grammar.tex}
+\input{sections/08_conclusion.tex}
+
+\end{document}

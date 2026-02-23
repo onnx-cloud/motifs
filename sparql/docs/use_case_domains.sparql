@@ -1,0 +1,13 @@
+# Use cases grouped by application domain
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?domain ?domainLabel ?domainDefinition (COUNT(DISTINCT ?useCase) AS ?useCaseCount)
+WHERE {
+  ?domain a motif:Domain ;
+    skos:prefLabel ?domainLabel .
+  OPTIONAL { ?domain skos:definition ?domainDefinition . }
+  OPTIONAL { ?useCase motif:hasDomain ?domain . }
+}
+GROUP BY ?domain ?domainLabel ?domainDefinition
+ORDER BY DESC(?useCaseCount)

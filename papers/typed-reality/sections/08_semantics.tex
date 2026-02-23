@@ -1,0 +1,81 @@
+\OnePageSectionStart
+\section{Semantic Foundations and RDF Grounding}
+
+Semantics are not merely informal annotations---they are first-class objects in the type system. We ground semantics in RDF (Resource Description Framework) and IRIs (Internationalized Resource Identifiers), establishing a global namespace for meaning.
+
+\subsection{Semantic Types as RDF Entities}
+Each semantic class (Measurement, Distribution, Enum, Structured) is instantiated as an RDF class, enabling interoperability and formal reasoning:
+
+\begin{verbatim}
+Measurement rdf:type owl:Class
+  rdfs:subClassOf Semantic
+  dcterms:hasPhysicalQuantity IRI
+  qudt:hasUnit IRI
+  sosa:hasResultTime xsd:dateTime
+  sosa:isObservedBy IRI  // sensor/observer IRI
+  sosa:madeBySensor IRI
+\end{verbatim}
+
+Example instantiation:
+\begin{verbatim}
+ex:camera_radiance rdf:type Measurement
+  ex:quantityOf ex:Radiance
+  qudt:unit qudt:Watt-Per-Steradian-Per-Meter_Squared
+  sosa:madeBySensor ex:FrontCamera
+  ex:frame ex:CameraFrame_320x240
+\end{verbatim}
+
+\subsection{Enum Semantics: Symbolic Knowledge as Controlled Vocabularies}
+Enum types map to SKOS (Simple Knowledge Organization System) concept schemes:
+
+\begin{verbatim}
+ex:BPE50kVocab rdf:type skos:ConceptScheme
+  skos:prefLabel "BPE 50k Vocabulary"
+  skos:hasTopConcept [multiple BPE token IRIs]
+
+ex:ImageNet1kClasses rdf:type skos:ConceptScheme
+  skos:prefLabel "ImageNet 1000 Classes"
+  skos:hasTopConcept [1000 class IRIs]
+\end{verbatim}
+
+Each token/class is an IRI pointing to semantic meaning in a knowledge graph (WordNet, DBpedia, or domain-specific ontologies).
+
+\subsection{Distribution Semantics: Probabilistic Grounding}
+Distribution types carry semantic information about what is being modeled:
+
+\begin{verbatim}
+Distribution rdf:type owl:Class
+  ex:overId IRI          // IRI of entity being modeled
+  ex:supports IRI        // support space IRI
+  ex:isNormalized xsd:boolean
+  ex:hasStochasticProcess IRI  // Poisson, Gaussian, etc.
+\end{verbatim}
+
+Example:
+\begin{verbatim}
+ex:action_distribution rdf:type Distribution
+  ex:overId ex:DiscreteActions
+  ex:supports ex:ActionSpace_3ways
+  ex:isNormalized true
+  // Softmax output over {left, straight, right}
+\end{verbatim}
+
+\subsection{The Fabric of Meaning: Semantic Graph Structure}
+Semantics form a graph structure (the ``fabric of meaning'') orthogonal to the computation graph:
+
+\begin{itemize}
+  \item **Nodes**: RDF entities (measurements, symbols, distributions, physical quantities)
+  \item **Edges**: RDF predicates (``unit of'', ``instance of'', ``hasStochasticProcess'', ``observedBy'')
+  \item **Namespace**: Global IRIs enable linking across systems and domains
+\end{itemize}
+
+When a morph transforms a tensor, it must preserve semantic coherence: if input is a Measurement with ``unit: Kelvin'', output must either remain Kelvin or use an explicit conversion semantic (e.g., to Celsius via \texttt{owl:hasConversion}).
+
+This fabric enables:
+\begin{itemize}
+  \item \textbf{Semantic interoperability}: two systems using same IRIs can verify semantic compatibility
+  \item \textbf{Ontology-driven verification}: reason over semantic constraints (e.g., cannot mix Celsius and Kelvin without conversion)
+  \item \textbf{Formal grounding}: semantics are not strings but globally resolvable IRIs with formal definitions
+\end{itemize}
+
+\OnePageSectionEnd

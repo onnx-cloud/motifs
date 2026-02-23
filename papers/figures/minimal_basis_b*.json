@@ -1,0 +1,188 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Minimal Basis B*",
+  "description": "The 16 irreducible primitives that span the motif algebra",
+  "data": {
+    "values": [
+      {
+        "id": "1",
+        "primitive": "Identity",
+        "signature": "1\u21921",
+        "category": "Structural",
+        "fingerprint": "\u2205",
+        "role": "Pass-through"
+      },
+      {
+        "id": "2",
+        "primitive": "Fork",
+        "signature": "1\u2192n",
+        "category": "Structural",
+        "fingerprint": "T.width",
+        "role": "Dataflow split"
+      },
+      {
+        "id": "3",
+        "primitive": "Join",
+        "signature": "n\u21921",
+        "category": "Structural",
+        "fingerprint": "T.reuse",
+        "role": "Dataflow merge"
+      },
+      {
+        "id": "4",
+        "primitive": "Op",
+        "signature": "k\u21921",
+        "category": "Algebraic",
+        "fingerprint": "\u2014",
+        "role": "Computation"
+      },
+      {
+        "id": "5",
+        "primitive": "Reduce",
+        "signature": "n\u21921",
+        "category": "Algebraic",
+        "fingerprint": "T.reuse",
+        "role": "Aggregation"
+      },
+      {
+        "id": "6",
+        "primitive": "If",
+        "signature": "1\u2192?",
+        "category": "Control",
+        "fingerprint": "C.predicate",
+        "role": "Conditional"
+      },
+      {
+        "id": "7",
+        "primitive": "Loop",
+        "signature": "1\u21921",
+        "category": "Control",
+        "fingerprint": "T.cycles, C.loop",
+        "role": "Iteration"
+      },
+      {
+        "id": "8",
+        "primitive": "Read",
+        "signature": "1\u21921",
+        "category": "Memory",
+        "fingerprint": "M.local/shared",
+        "role": "Memory load"
+      },
+      {
+        "id": "9",
+        "primitive": "Write",
+        "signature": "1\u21921",
+        "category": "Memory",
+        "fingerprint": "M.mutable",
+        "role": "Memory store"
+      },
+      {
+        "id": "10",
+        "primitive": "Call",
+        "signature": "*\u2192*",
+        "category": "Meta",
+        "fingerprint": "D.graph-dynamic",
+        "role": "Subgraph invoke"
+      },
+      {
+        "id": "11",
+        "primitive": "Reshape",
+        "signature": "1\u21921",
+        "category": "Shape",
+        "fingerprint": "D.shape-dynamic",
+        "role": "View change"
+      },
+      {
+        "id": "12",
+        "primitive": "Sample",
+        "signature": "1\u21921",
+        "category": "Stochastic",
+        "fingerprint": "D.stochastic",
+        "role": "Random draw"
+      },
+      {
+        "id": "13",
+        "primitive": "Comm",
+        "signature": "1\u21921",
+        "category": "Distributed",
+        "fingerprint": "C.boundary",
+        "role": "Device transfer"
+      },
+      {
+        "id": "14",
+        "primitive": "Mutate",
+        "signature": "G\u2192G'",
+        "category": "Meta",
+        "fingerprint": "D.self-modifying",
+        "role": "Graph edit"
+      },
+      {
+        "id": "15",
+        "primitive": "Extern",
+        "signature": "1\u2192k",
+        "category": "Memory",
+        "fingerprint": "M.external",
+        "role": "External I/O"
+      },
+      {
+        "id": "16",
+        "primitive": "Cast",
+        "signature": "1\u21921",
+        "category": "Shape",
+        "fingerprint": "D.precision",
+        "role": "Type conversion"
+      }
+    ]
+  },
+  "width": 700,
+  "height": 420,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "primitive",
+      "type": "nominal",
+      "sort": {
+        "field": "id"
+      },
+      "axis": {
+        "labelFontSize": 12
+      }
+    },
+    "x": {
+      "field": "id",
+      "type": "quantitative",
+      "title": "Primitive Index",
+      "scale": {
+        "motif": [
+          0,
+          15
+        ]
+      }
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "legend": {
+        "title": "Category"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "primitive",
+        "title": "Primitive"
+      },
+      {
+        "field": "signature",
+        "title": "Signature"
+      },
+      {
+        "field": "fingerprint",
+        "title": "Fingerprint"
+      },
+      {
+        "field": "role",
+        "title": "Role"
+      }
+    ]
+  }
+}

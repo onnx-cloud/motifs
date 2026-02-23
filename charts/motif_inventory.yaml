@@ -1,0 +1,38 @@
+# Figure: Motif Inventory
+# Detailed table of all motifs with properties
+title: Motif Inventory
+description: Complete listing of all motifs with signatures and categories
+
+query: ./sparql/charts/list_all_motifs.sparql
+
+transform:
+  rename:
+    label: Name
+    signature: Signature
+    categoryLabel: Category
+
+vega:
+  width: 1024
+  height: 2048
+  mark: point
+  encoding:
+    x:
+      field: Category
+      type: nominal
+      title: Category
+    y:
+      field: Name
+      type: nominal
+      title: Motif
+    tooltip:
+      - field: Name
+        type: nominal
+      - field: Signature
+        type: nominal
+      - field: Category
+        type: nominal
+    color:
+      field: Category
+      type: nominal
+      scale:
+        scheme: category10

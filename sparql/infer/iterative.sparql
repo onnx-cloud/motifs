@@ -1,0 +1,23 @@
+# Infer Iterative constructs (Loop/Scan/While/For present in composedOf or usesMotif)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?container a ?containerType .
+  ?container motif:hasIterative ?loop .
+  ?loop a motif:Iterative .
+  ?loop skos:prefLabel ?loopLabel .
+}
+WHERE {
+  # Bind concrete loop motif instances directly
+  VALUES ?loop { motif:Loop motif:Scan motif:While motif:For motif:ConditionalScan motif:MultiBranchLoop }
+
+  # case 1: container (model or motif) explicitly composes a known loop motif
+  { ?container motif:composedOf ?loop . }
+  UNION
+  # case 2: container uses a loop motif
+  { ?container motif:usesMotif ?loop . }
+  OPTIONAL { ?loop skos:prefLabel ?loopLabel }
+  OPTIONAL { ?container rdf:type ?containerType }
+}

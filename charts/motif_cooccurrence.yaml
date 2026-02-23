@@ -1,0 +1,29 @@
+# Figure: Motif co-occurrence matrix
+# Heatmap showing how often pairs of motifs co-occur across models
+
+title: Motif Co-occurrence Matrix
+description: Pairwise motif co-occurrence counts across models
+
+query: ./sparql/charts/motif_cooccurrence.sparql
+
+vega:
+  width: 900
+  height: 900
+  mark: rect
+  encoding:
+    x:
+      field: m1Label
+      type: nominal
+      axis: {title: "Motif A"}
+    y:
+      field: m2Label
+      type: nominal
+      axis: {title: "Motif B"}
+    color:
+      field: count
+      type: quantitative
+      scale: {scheme: "greens"}
+    tooltip:
+      - field: m1Label
+      - field: m2Label
+      - field: count

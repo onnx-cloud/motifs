@@ -1,0 +1,22 @@
+# Ontology statistics: counts of motifs, categories, mappings, use cases
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+
+SELECT 
+  (COUNT(DISTINCT ?motif) AS ?motifCount)
+  (COUNT(DISTINCT ?category) AS ?categoryCount)
+  (COUNT(DISTINCT ?mapping) AS ?mappingCount)
+  (COUNT(DISTINCT ?useCase) AS ?useCaseCount)
+  (COUNT(DISTINCT ?domain) AS ?domainCount)
+WHERE {
+  { ?motif a motif:Motif . }
+  UNION
+  { ?category a skos:Concept ; skos:inScheme motif:CategoryScheme . }
+  UNION
+  { ?mapping skos:exactMatch ?op . ?op a onnx:Operator . }
+  UNION
+  { ?useCase a motif:UseCase . }
+  UNION
+  { ?domain a motif:IndustryDomain . }
+}

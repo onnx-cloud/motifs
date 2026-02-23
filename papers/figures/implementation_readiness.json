@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Implementation Readiness",
+  "description": "Ratio of motifs with concrete code examples vs. theoretical specifications",
+  "data": {
+    "values": [
+      {
+        "status": "Theoretical (Spec-only)",
+        "count": "242"
+      },
+      {
+        "status": "Implemented",
+        "count": "5"
+      }
+    ]
+  },
+  "width": 400,
+  "height": 300,
+  "mark": {
+    "type": "arc",
+    "innerRadius": 70
+  },
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "status",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#4682b4",
+          "#ced4da"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "status"
+      },
+      {
+        "field": "count"
+      }
+    ]
+  }
+}

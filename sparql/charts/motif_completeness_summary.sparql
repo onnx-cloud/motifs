@@ -1,0 +1,15 @@
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT (IF(
+  BOUND(?signature) && BOUND(?category) && BOUND(?semantic),
+  "Complete",
+  "Incomplete"
+) AS ?completeness) (COUNT(?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif .
+  OPTIONAL { ?motif motif:hasSignature ?signature . }
+  OPTIONAL { ?motif motif:hasCategory ?category . }
+  OPTIONAL { ?motif motif:hasSemantics ?semantic . }
+}
+GROUP BY ?completeness

@@ -1,0 +1,9 @@
+# List runtimes and basic metadata
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?runtime ?label ?description WHERE {
+  ?runtime a motif:Runtime ; skos:prefLabel ?label .
+  OPTIONAL { ?runtime skos:definition ?description }
+}
+ORDER BY ?label

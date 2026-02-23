@@ -1,0 +1,9 @@
+# List containers (models/motifs) with fusion candidate patterns
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?container ?containerLabel ?pattern WHERE {
+  ?container motif:hasFusionCandidate ?cand .
+  ?cand motif:pattern ?pattern .
+  OPTIONAL { ?container skos:prefLabel ?containerLabel }
+}
+ORDER BY ?pattern ?containerLabel

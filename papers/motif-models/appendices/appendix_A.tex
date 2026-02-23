@@ -1,0 +1,50 @@
+% appendix_A.tex — Formal Semantics and Rewrite Rules
+
+\section*{Appendix A: Formal Semantics and Rewrite Rules}
+
+\subsection*{A.1 Motif Semantics Formalism}
+
+Each motif $\mathcal{M}$ is formally defined by a tuple:
+$$\mathcal{M} = (\text{sig}, \text{fingerprint}, \text{sem}, \text{constraints})$$
+
+where:
+\begin{itemize}
+  \item \textbf{sig}: $I \to O$ tuple counts.
+  \item \textbf{fingerprint}: Property vector (T=topology, C=control, S=state, R=routing, M=memory, D=dynamics).
+  \item \textbf{sem}: Semantic function $\text{sem}: T^I \to T^O$ (where $T$ is a tensor type).
+  \item \textbf{constraints}: Composition and rewrite legality conditions.
+\end{itemize}
+
+Example: \textbf{Add} motif:
+\begin{align*}
+  \text{sig} &: 2 \to 1 \\
+  \text{fingerprint} &: \{\text{T.reuse}+1\} \\
+  \text{sem}(x_1, x_2) &= x_1 + x_2 \\
+  \text{constraints} &: \text{shapes must broadcast}
+\end{align*}
+
+\subsection*{A.2 Rewrite Rules}
+
+A \emph{rewrite rule} transforms one motif composition into another while preserving semantics:
+$$\mathcal{M}_1 \circ \cdots \circ \mathcal{M}_k \Rightarrow \mathcal{M}'_1 \circ \cdots \circ \mathcal{M}'_m$$
+
+Example: \textbf{Fork--Join Fusion}
+$$\text{Fork}(x) \circ \text{Op}_1, \text{Op}_2 \circ \text{Join} \Rightarrow \text{Vectorized}(\text{Op})$$
+
+Legality conditions:
+\begin{enumerate}
+  \item \textbf{Data flow}: $\forall \text{ inputs } x, \text{sem}_1(x) = \text{sem}_2(x)$.
+  \item \textbf{Control}: No new control dependencies introduced.
+  \item \textbf{State}: Mutable state and side effects must be preserved.
+  \item \textbf{Bounds}: Resource constraints (memory, latency budgets) must not be violated.
+\end{enumerate}
+
+\subsection*{A.3 Composition Rules}
+
+Two motifs $\mathcal{M}_1$ (sig: $I_1 \to O_1$) and $\mathcal{M}_2$ (sig: $I_2 \to O_2$) compose iff $O_1 = I_2$ (or tensor broadcasting allows it).
+
+The composed motif has:
+$$\text{sig}: I_1 \to O_2, \quad \text{sem} = \text{sem}_2 \circ \text{sem}_1$$
+
+Example: \textbf{Linear} = \textbf{MatMul} $\circ$ \textbf{Add}:
+$$\text{sem}(x) = \text{Add}(\text{MatMul}(x, W), b)$$

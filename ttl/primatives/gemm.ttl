@@ -1,0 +1,11 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+
+# General matrix multiplication with bias/scale
+
+motif:Gemm a motif:Motif ;
+  skos:prefLabel "Gemm (General Matrix Multiply)"@en ;
+  skos:definition "Affine linear transform (matrix multiply + bias/scale), frequently used for fully-connected layers."@en ;
+  motif:isComponentOf motif:Linear , motif:MLP .

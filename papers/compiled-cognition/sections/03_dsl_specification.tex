@@ -1,0 +1,15 @@
+\OnePageSectionStart
+\section{Fuse Syntax: Expressing Intent}
+
+The Fuse DSL provides a human-readable interface to the cognitive compiler. It combines the declarative nature of a graph specification with the imperative logic of localized transformations.
+
+\paragraph{Declarations}
+Programs begin with metadata declarations (`@fuse`, `@opset`) that configure the compiler's backend.
+
+\paragraph{Graph Definition}
+Graphs define the macro-structure of the reasoning pipeline. They use a typed-edge syntax reflecting the dataflow between internal components and external ports.
+
+\paragraph{Constants and Parameters}
+The language distinguishes between `const` (fixed at compile time) and `param` (dynamically bound or trained), allowing the compiler to perform aggressive constant folding on reasoning logic (e.g., pre-calculating distance references).
+
+\OnePageSectionEnd

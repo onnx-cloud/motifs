@@ -1,0 +1,46 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Data / Preprocessing Motifs
+# Purpose: Tokenization, augmentation, normalization, batching
+#################
+
+motif:Data a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Data / Preprocessing"@en ;
+  skos:definition "Patterns for transforming and preparing data for model consumption." .
+
+motif:Tokenize a motif:Motif ;
+  skos:prefLabel "Tokenization"@en ;
+  motif:hasCategory motif:Data ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:Augment a motif:Motif ;
+  skos:prefLabel "Data Augmentation"@en ;
+  motif:hasCategory motif:Data ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:Normalize a motif:Motif ;
+  skos:prefLabel "Normalization"@en ;
+  motif:hasCategory motif:Data ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:DynamicBatching a motif:Motif ;
+  skos:prefLabel "Dynamic Batching"@en ;
+  motif:hasCategory motif:Data ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:Sharding a motif:Motif ;
+  skos:prefLabel "Sharding / Partition"@en ;
+  motif:hasCategory motif:Data ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+

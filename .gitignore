@@ -1,0 +1,21 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+
+# Temporary build outputs (site, fuse outputs)
+tmp/
+
+# Test caches
+.pytest_cache/
+
+# Editor directories
+.vscode/
+.idea/
+
+# OS files
+.DS_Store

@@ -1,0 +1,119 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Retrieval & Recommendation Use Cases
+# Links information retrieval patterns to computation graph motifs
+##################################
+
+motif:DenseRetrieval a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Dense Passage Retrieval"@en ;
+  skos:definition "Encoding queries and passages into dense vectors for similarity-based retrieval."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Gather .
+
+motif:RAGRetrieval a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Retrieval-Augmented Generation"@en ;
+  skos:definition "Augmenting language model generation with retrieved context documents."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan .
+
+motif:TwoTowerRetrieval a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Two-Tower Retrieval Model"@en ;
+  skos:definition "Separate encoders for queries and items with dot-product similarity for efficient retrieval."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:Fork ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Linear .
+
+motif:CrossEncoder a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Cross-Encoder Reranking"@en ;
+  skos:definition "Joint encoding of query-document pairs for fine-grained relevance scoring."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Map .
+
+motif:ColBERT a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "ColBERT Late Interaction"@en ;
+  skos:definition "Token-level late interaction between query and document embeddings for efficient yet accurate retrieval."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:ReduceMax ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Linear .
+
+motif:HybridRetrieval a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Hybrid Sparse-Dense Retrieval"@en ;
+  skos:definition "Combining sparse lexical matching with dense semantic similarity for robust retrieval."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:WeightedSum ;
+  motif:usesMotif motif:WeightedSum ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join ;
+  motif:usesMotif motif:motif_VectorSearch .
+
+motif:CollaborativeFiltering a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Neural Collaborative Filtering"@en ;
+  skos:definition "Learning user-item interaction patterns through neural embeddings and interaction functions."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear .
+
+motif:SequentialRecommendation a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Sequential Recommendation"@en ;
+  skos:definition "Predicting next items based on user's historical interaction sequence."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Linear .
+
+motif:KnowledgeGraphRetrieval a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Knowledge Graph Retrieval"@en ;
+  skos:definition "Traversing and querying knowledge graphs to retrieve relevant entities and relations."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop .
+
+motif:ApproximateNearestNeighbor a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Approximate Nearest Neighbor Search"@en ;
+  skos:definition "Efficient similarity search using index structures (HNSW, IVF) for large-scale retrieval."@en ;
+  motif:hasDomain motif:Recommender ;
+  motif:primaryMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:ReduceMax .
+

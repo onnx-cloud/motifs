@@ -1,0 +1,75 @@
+\OnePageSectionStart
+\section{EBNF Grammar of the AST}
+
+The type-safe ABI is defined by a formal grammar. Tensors, morphs, and graphs are syntactic objects subject to type checking before lowering.
+
+\subsection{Type Grammar}
+\begin{verbatim}
+Type ::= TensorType | MorphRef | GraphRef
+
+TensorType ::= DType Shape [Sem]
+
+DType ::= f16 | f32 | f64 | i8 | i32 | i64 | bool
+
+Shape ::= "[" Dim { "," Dim } "]"
+Dim   ::= Number | Ident | "?" | Range
+Range ::= Number ".." Number
+
+Sem ::= "⊥"
+      | "M" "{" Qty "," Unit "," Frame "," "[" Number "," Number "]" "}"
+      | "D" "{" Kind "," Support "}"
+      | "E" "{" Vocab "," Number "}"
+      | "{" Field { "," Field } "}"
+
+Field ::= Ident ":" Type
+\end{verbatim}
+
+\subsection{Morph Grammar}
+Morphs are typed transformations (morphisms) with declared signatures and internal constraints:
+\begin{verbatim}
+MorphDef ::= morph Ident Sig MorphBlock
+
+Sig ::= "(" [ Param { "," Param } ] ")" "->" Type
+Param ::= Ident ":" Type
+
+MorphBlock ::= "{"
+                 { ConstDecl }
+                 { WeightDecl }
+                 { CheckDecl }
+               "}"
+
+ConstDecl  ::= "const" ":" Binding { "," Binding }
+WeightDecl ::= "wt"    ":" Binding { "," Binding }
+Binding    ::= Ident ":" Type
+
+CheckDecl  ::= "chk" ":" Constraint { "," Constraint }
+
+Constraint ::= shape(Ident, Ident)
+            | dtype(Ident, Ident)
+            | sem_sub(Ident, Ident)
+            | range(Ident, [Number, Number])
+            | norm(Ident)
+\end{verbatim}
+
+\subsection{Graph Grammar}
+\begin{verbatim}
+GraphDef ::= graph Ident "(" ")" GraphBlock
+
+GraphBlock ::= "{"
+                 { PortDecl }
+                 { NodeDecl }
+                 { EdgeDecl }
+               "}"
+
+PortDecl ::= in ":" Binding { "," Binding }
+           | out ":" Binding { "," Binding }
+
+NodeDecl ::= N ":" Node { "," Node }
+Node     ::= Ident ":" (MorphRef | "Const")
+
+EdgeDecl ::= E ":" Edge { "," Edge }
+Edge ::= "(" Ref ")" "->" "(" Ref ")" [ ":" Type ]
+Ref  ::= Ident "." Ident
+\end{verbatim}
+
+\OnePageSectionEnd

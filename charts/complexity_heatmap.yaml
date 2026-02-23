@@ -1,0 +1,35 @@
+# Figure: Derivation Complexity Heatmap
+# Average number of B* primitives used per motif by category
+
+title: Derivation Complexity by Category
+description: Heatmap of primitive usage frequency per category
+
+query: ./sparql/charts/complexity_heatmap.sparql
+
+vega:
+  width: 900
+  height: 420
+  mark: rect
+  encoding:
+    x:
+      field: primitive
+      type: nominal
+      title: B* Primitive
+      axis: {labelAngle: -45}
+    y:
+      field: category
+      type: nominal
+      title: Motif Category
+    color:
+      field: usage
+      type: quantitative
+      title: Usage Count
+      scale:
+        scheme: blues
+    tooltip:
+      - field: category
+        title: Category
+      - field: primitive
+        title: Primitive
+      - field: usage
+        title: Times Used

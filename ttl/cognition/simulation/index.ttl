@@ -1,0 +1,46 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Simulation / Scientific Motifs
+# Purpose: Physics-informed neural networks, PDE solvers, digital twins
+#################
+
+motif:Simulation a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Simulation / Scientific"@en ;
+  skos:definition "Patterns for physics-informed, simulation-based, and scientific computing models." .
+
+motif:PINN a motif:Motif ;
+  skos:prefLabel "Physics-Informed Neural Network (PINN)"@en ;
+  motif:hasCategory motif:Simulation ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:PDEIter a motif:Motif ;
+  skos:prefLabel "PDE Iterative Solver"@en ;
+  motif:hasCategory motif:Simulation ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:DigitalTwin a motif:Motif ;
+  skos:prefLabel "Digital Twin"@en ;
+  motif:hasCategory motif:Simulation ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:SurrogateModel a motif:Motif ;
+  skos:prefLabel "Surrogate Model"@en ;
+  motif:hasCategory motif:Simulation ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:Emulator a motif:Motif ;
+  skos:prefLabel "Hardware-in-the-Loop Emulator"@en ;
+  motif:hasCategory motif:Simulation ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+

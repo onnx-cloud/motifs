@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Ontology Metrics",
+  "description": "High-level statistics about the motif ontology",
+  "data": {
+    "values": [
+      {
+        "totalMotifs": "247",
+        "totalCategories": "24",
+        "totalFingerprints": "36",
+        "totalSemantics": "110"
+      }
+    ]
+  },
+  "width": 500,
+  "height": 200,
+  "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "top",
+    "fontSize": 14
+  },
+  "encoding": {
+    "text": {
+      "aggregate": "values",
+      "field": "totalMotifs"
+    },
+    "y": {
+      "field": "metric",
+      "type": "nominal",
+      "axis": null
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.totalMotifs + ' total motifs'",
+      "as": "metric"
+    }
+  ]
+}

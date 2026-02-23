@@ -1,0 +1,13 @@
+# Use-case detail (expects ?targetUseCase bound)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?label ?definition ?domain ?domainLabel ?motif ?motifLabel
+WHERE {
+  ?targetUseCase a motif:UseCase .
+  OPTIONAL { ?targetUseCase skos:prefLabel ?label }
+  OPTIONAL { ?targetUseCase skos:definition ?definition }
+  OPTIONAL { ?targetUseCase motif:hasDomain ?domain . ?domain skos:prefLabel ?domainLabel }
+  OPTIONAL { ?targetUseCase motif:usesMotif ?motif . ?motif skos:prefLabel ?motifLabel }
+}
+ORDER BY ?motifLabel

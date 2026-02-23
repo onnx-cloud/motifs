@@ -1,0 +1,15 @@
+<div class="chart-page">
+  <h1 class="text-2xl font-bold mb-4">{{title}}</h1>
+  <div id="vis" class="flex justify-center"></div>
+  <script type="text/javascript">
+    var spec = {{{spec_json}}};
+    (function() {
+      if (typeof vegaEmbed === 'undefined') return;
+      try {
+        vegaEmbed('#vis', spec);
+      } catch(e) {
+        console.warn('vegaEmbed failed:', e);
+      }
+    })();
+  </script>
+</div>

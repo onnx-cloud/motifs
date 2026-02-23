@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Extended Basis B+ (Proposed)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        #vis { display: flex; justify-content: center; }
+        h1 { color: #333; }
+        p { color: #666; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <h1>Extended Basis B+ (Proposed)</h1>
+    <div id="vis"></div>
+    <script type="text/javascript">
+        var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "Extended Basis B+ (Proposed)", "description": "Experimental primitives for Temporal, Async, and Functional domains.", "data": {"values": [{"id": "17", "primitive": "Delay", "signature": "1\u21921", "category": "Experimental", "domain": "Temporal / Streaming"}, {"id": "18", "primitive": "Race", "signature": "N\u21921", "category": "Experimental", "domain": "Asynchronous"}, {"id": "19", "primitive": "Ref", "signature": "0\u21921", "category": "Experimental", "domain": "Functional / Meta"}]}, "width": 500, "height": 200, "mark": "bar", "encoding": {"y": {"field": "primitive", "type": "nominal", "sort": {"field": "id"}, "axis": {"labelFontSize": 12, "title": "Primitive"}}, "x": {"field": "id", "type": "ordinal", "axis": {"title": "ID"}}, "color": {"field": "category", "type": "nominal", "scale": {"scheme": "category20b"}}, "tooltip": [{"field": "primitive"}, {"field": "signature"}, {"field": "domain"}]}};
+        vegaEmbed('#vis', spec);
+    </script>
+</body>
+</html>

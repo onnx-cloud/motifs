@@ -1,0 +1,12 @@
+\OnePageSectionStart
+\section{Typed Differentiation and Semantic Preservation}
+
+The central innovation of Cognitive Closure is \emph{Typed Differentiation}. In traditional backpropagation, gradients are untyped updates applied to latent weights. In our system, the gradient itself is a typed object in the Reality Fabric $\RealityFabric$.
+
+\begin{axiom}[Gradient Grounding]
+For any update $\Delta \theta$ applied to a parameter $\theta \in \RealityFabric$, the resulting state $\theta' = \theta + \Delta \theta$ must satisfy the semantic invariants $\Sigma(\theta)$ defined in the initial grounding.
+\end{axiom}
+
+If a parameter is grounded as a "Normalized Distribution," the optimizer is formally prevented from applying an update that would lead to a non-normalized state. By embedding constraints (normalization, physical ranges, symbolic boundaries) directly into the backward pass, we achieve a form of "Self-Correcting Reasoning" that is mathematically impossible to exit the bounds of reality.
+
+\OnePageSectionEnd

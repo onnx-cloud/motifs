@@ -1,0 +1,12 @@
+# Motif usage frequency: count how many models reference each motif
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?motifLabel (COUNT(DISTINCT ?model) AS ?count)
+WHERE {
+  ?model a ?modelType ;
+         motif:usesMotif ?motif .
+  ?motif skos:prefLabel ?motifLabel .
+}
+GROUP BY ?motifLabel
+ORDER BY DESC(?count)

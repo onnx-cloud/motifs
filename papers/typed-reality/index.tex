@@ -1,0 +1,37 @@
+\input{preamble.tex}
+
+\title{\ReportTitle}
+\author{\ReportAuthors}
+\date{\ReportDate}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a statically typed ABI and abstract syntax tree (AST) that bridges observation and computation: sensors, symbolic knowledge, and probabilistic models are unified as typed tensors, fused through type-preserving primitives, and lowered to any runtime (ONNX, GPU kernels, hardware accelerators, or domain-specific interpreters). Each tensor is a triple---\emph{DType, Shape, Semantics}---that grounds computation in measurable reality and abstract knowledge. This enables deterministic interpretation of the world, where perception (vision, audio, language), reasoning (distributed, probabilistic, symbolic), and action (motor, communication, control) are formally connected. Test and train graphs are identical in structure and semantics, enabling reproducible evaluation and formal validation. Compile-time verification rejects type-unsafe programs; where checks remain dynamic, explicit assertions are generated and elided when provably safe.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+% Sections
+\input{sections/01_introduction.tex}
+\input{sections/02_type_system.tex}
+\input{sections/03_sensors_modalities.tex}
+\input{sections/04_typed_primitives.tex}
+\input{sections/05_graph_construction.tex}
+\input{sections/06_lowering.tex}
+\input{sections/07_ebnf.tex}
+\input{sections/08_semantics.tex}
+\input{sections/09_formalism.tex}
+\input{sections/10_related_work.tex}
+\input{sections/11_type_checking.tex}
+\input{sections/12_llm_generatability.tex}
+\input{sections/13_discussion.tex}
+\input{sections/14_conclusion.tex}
+
+% Bibliography
+\clearpage
+\bibliography{bib/references}
+
+\end{document}

@@ -1,0 +1,28 @@
+# Figure: Mapping Coverage by Category
+# Stacked bars showing mapped vs unmapped motifs per category
+
+title: Mapping Coverage by Category
+description: Mapped vs unmapped motif counts per category
+
+query: ./sparql/charts/mapping_by_category.sparql
+
+vega:
+  width: 800
+  height: 400
+  mark: bar
+  encoding:
+    x:
+      field: categoryLabel
+      type: nominal
+      axis: {title: "Category"}
+    y:
+      field: count
+      type: quantitative
+      title: "Count"
+    color:
+      field: status
+      type: nominal
+    tooltip:
+      - field: categoryLabel
+      - field: status
+      - field: count

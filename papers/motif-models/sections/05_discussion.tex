@@ -1,0 +1,63 @@
+% Section 5: Discussion
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Strengths}
+
+\begin{itemize}
+  \item \textbf{Expressiveness}: 100 motifs capture 93\% of operators in contemporary workloads.
+  \item \textbf{Composability}: Real models decompose cleanly with nesting depth 2--4.
+  \item \textbf{Formality}: Explicit semantics enable rigorous verification and proofs.
+  \item \textbf{Tool support}: TTL ontology and reference implementations facilitate integration.
+\end{itemize}
+
+\subsection{Limitations}
+
+\begin{enumerate}
+  \item \textbf{Discrete vs. continuous}: Some motifs (e.g., sparse routing) need continuous relaxations for differentiability.
+  \item \textbf{Platform-specific semantics}: Determinism and precision vary by accelerator.
+  \item \textbf{Dynamic graphs}: Motifs with \texttt{D.graph-dynamic=1} assume known upper bounds.
+  \item \textbf{Optimization legality}: Motif structure is necessary but not sufficient; resource constraints may prohibit rewrites.
+\end{enumerate}
+
+\subsection{Uncovered Operators}
+
+A small fraction lacks clear motif analogues:
+\begin{itemize}
+  \item \textbf{Quantization}: Orthogonal to structure; extends ScalarOp.
+  \item \textbf{Custom operators}: Map to Call with opaque semantics.
+  \item \textbf{Multi-GPU communication}: AllReduce motifs deferred to appendix.
+\end{itemize}
+
+\subsection{Reproducibility}
+
+\begin{itemize}
+  \item \textbf{Code}: GitHub repo with Python, ONNX, LaTeX artifacts.
+  \item \textbf{Tests}: pytest suite for 80+ motifs on CI/CD.
+  \item \textbf{Validation}: Correctness tests, coverage analysis, rewrite legality checks, performance micro-benchmarks.
+\end{itemize}
+
+\subsection{Future Directions}
+
+\begin{itemize}
+  \item Automatic motif synthesis from arbitrary graphs.
+  \item Cost models for performance-aware rewriting.
+  \item Formal verification integration (Coq, Isabelle), including proof artifacts that assert projection correctness and optimizer convergence in semantically-constrained settings.
+  \item Cross-framework mapping (PyTorch, TensorFlow, JAX) and interoperability with ONNX Training IR.
+  \item Hardware specialization by target (CPU, GPU, TPU, NPU).
+  \item Integration with a broader "Fused Fabric" (see companion papers): motifs will serve as the canonical reasoning motifs that are fused and lowered by a Cognitive Compiler and trained under Cognitive Closure constraints.
+\end{itemize}
+
+\subsection{Towards Cognitive Closure}
+
+The motif taxonomy is a natural enabler for the higher-level architectures introduced in the \emph{Fused Fabric} and \emph{Cognitive Closure} papers. Motifs provide the canonical building blocks that can be annotated with ontological metadata (semantics) and then fused into larger reasoning graphs. When these fused graphs are subject to typed differentiation and projection-based training, they form the substrate for a Formally Bound Latent Space where human experts and AI systems may co-train and co-comprehend. Initial experimental artifacts (Jupyter notebook demonstrating LOF training with projection and Coq proof skeletons) accompany this work to illustrate practicality and formal soundness.
+
+\subsection{Formal Proposition: Motif Soundness under Fusion}
+\begin{theorem}
+Given a motif $m$ with well-defined signature and semantics $\sigma(m)$, and two motifs $m_1, m_2$ such that their interface ports are pairwise compatible under $\sigma$, their fusion $m_1 \oplus_{P} m_2$ satisfies the $\text{FUSE}$ predicate with grounding $\sigma$.
+\end{theorem}
+\begin{proof}[Sketch]
+Compatibility of ports ensures that DType, Shape, and Semantics unify under the Reality Fabric. The Cognitive Compiler performs structural and semantic checks during fusion, rejecting incompatible bindings. Because motifs have canonical implementations and verified rewrites, the fused graph inherits the motifs' local correctness and thus satisfies the grounding predicate by structural induction on fusion depth.
+\end{proof}
+

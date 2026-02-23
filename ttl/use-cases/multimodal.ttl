@@ -1,0 +1,119 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Multimodal Learning Use Cases
+# Links cross-modal patterns to computation graph motifs
+##################################
+
+motif:CrossAttention a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Cross-Modal Attention"@en ;
+  skos:definition "Attention mechanism where queries from one modality attend to keys/values from another modality."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:motif_QKV ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear .
+
+motif:CLIPContrastive a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "CLIP-style Contrastive Learning"@en ;
+  skos:definition "Learning aligned embeddings across modalities through contrastive loss on paired data."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Mul ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:SoftmaxEdge ;
+  motif:usesMotif motif:ReduceSum .
+
+motif:VisualQuestionAnswering a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Visual Question Answering"@en ;
+  skos:definition "Answering natural language questions about image content through joint reasoning."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:EmbeddingLookup .
+
+motif:ImageCaptioning a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Image Captioning"@en ;
+  skos:definition "Generating textual descriptions of images through vision-to-language decoding."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Sampler .
+
+motif:AudioVisualFusion a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Audio-Visual Fusion"@en ;
+  skos:definition "Combining audio and visual streams for joint understanding (e.g., speech recognition, video understanding)."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join .
+
+motif:ModalityProjection a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Modality Projection Layer"@en ;
+  skos:definition "Projecting features from one modality encoder into shared embedding space."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Linear ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Reshape ;
+  motif:usesMotif motif:Flatten .
+
+motif:GroundingDINO a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Open-Vocabulary Object Detection"@en ;
+  skos:definition "Detecting objects described by free-form text queries through vision-language alignment."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Mul .
+
+motif:VideoTextMatching a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Video-Text Retrieval"@en ;
+  skos:definition "Matching video clips with text descriptions through temporal and semantic alignment."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:ReduceSum ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Mul .
+
+motif:VisionLanguageModel a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Vision-Language Model (VLM)"@en ;
+  skos:definition "Large model combining vision encoder with language model for general visual understanding and generation."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Call ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:KVMemory .
+
+motif:AudioTextAlignment a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Audio-Text Alignment"@en ;
+  skos:definition "Aligning audio segments with text transcriptions for speech recognition or TTS training."@en ;
+  motif:hasDomain motif:Multimodal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:Gather .
+

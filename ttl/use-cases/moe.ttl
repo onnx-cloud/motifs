@@ -1,0 +1,98 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Mixture of Experts & Routing Use Cases
+# Links MoE and expert routing patterns to computation graph motifs
+##################################
+
+motif:SparseMoE a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Sparse Mixture of Experts"@en ;
+  skos:definition "Conditional computation routing inputs to a sparse subset of expert networks based on learned gating."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:SparseMoE ;
+  motif:usesMotif motif:SparseMoE ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:WeightedSum .
+
+motif:TopKGating a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Top-K Expert Gating"@en ;
+  skos:definition "Selecting the top-k experts per token based on router scores for sparse expert activation."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:HardRouting ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:SoftmaxEdge ;
+  motif:usesMotif motif:Gather .
+
+motif:ExpertParallelism a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Expert Parallelism"@en ;
+  skos:definition "Distributing experts across devices with all-to-all communication for load balancing."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:AllGather ;
+  motif:usesMotif motif:AllGather ;
+  motif:usesMotif motif:AllReduce ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Fork .
+
+motif:SoftMoE a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Soft Mixture of Experts"@en ;
+  skos:definition "Differentiable expert mixing using soft attention weights instead of hard routing."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:WeightedSum ;
+  motif:usesMotif motif:WeightedSum ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:SoftmaxEdge ;
+  motif:usesMotif motif:Linear .
+
+motif:LoadBalancing a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Expert Load Balancing"@en ;
+  skos:definition "Auxiliary loss encouraging uniform expert utilization to prevent expert collapse."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:ReduceSum ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:Add .
+
+motif:CapacityFactor a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Expert Capacity Limiting"@en ;
+  skos:definition "Dropping tokens exceeding expert capacity to maintain computational bounds."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:If ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:PredicateMask ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:ReduceSum .
+
+motif:HierarchicalMoE a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Hierarchical Mixture of Experts"@en ;
+  skos:definition "Multi-level expert routing with coarse-to-fine expert selection."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:RecursiveCall ;
+  motif:usesMotif motif:RecursiveCall ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:Fork .
+
+motif:SharedExpert a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Shared Expert Layer"@en ;
+  skos:definition "Combining sparse expert outputs with a shared dense expert applied to all tokens."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Add ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:WeightedSum .
+

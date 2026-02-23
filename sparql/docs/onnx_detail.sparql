@@ -1,0 +1,19 @@
+# ONNX operator detail (expects ?targetOperator bound)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+
+SELECT DISTINCT ?opLabel ?motif ?motifLabel ?mappingType
+WHERE {
+  ?targetOperator a ?t .
+  OPTIONAL { ?targetOperator skos:prefLabel ?opLabel }
+
+  { ?motif skos:exactMatch ?targetOperator . BIND("exact" AS ?mappingType) }
+  UNION
+  { ?motif skos:closeMatch ?targetOperator . BIND("close" AS ?mappingType) }
+  UNION
+  { ?motif skos:broadMatch ?targetOperator . BIND("broad" AS ?mappingType) }
+
+  OPTIONAL { ?motif skos:prefLabel ?motifLabel }
+}
+ORDER BY ?motifLabel

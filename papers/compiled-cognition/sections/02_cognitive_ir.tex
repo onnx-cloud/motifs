@@ -1,0 +1,15 @@
+\OnePageSectionStart
+\section{Cognitive Intermediate Representation (IR)}
+
+At the heart of the compiler is a multi-level Intermediate Representation. Unlike standard tensor IRs that focus on operator fusion and memory layout, the Cognitive IR prioritizes \emph{semantic provenance}.
+
+\paragraph{Fused Subgraphs as Units}
+A fused subgraph is a self-contained unit of reasoning that preserves its identity through compilation. Whether it is a distance calculation, a Bayesian update, or a symbolic search, it is represented as a coherent graph structure.
+
+\paragraph{Type-Safe Graph Fusion}
+The IR maintains strict type safety across the fusion boundaries, referencing the DType and Shape of inputs/outputs throughout the process. By the time the IR reaches ONNX level, every operator is bound to a specific opset version, ensuring deterministic behavior across fused domains.
+
+\paragraph{Contextual Metadata}
+The IR carries rich contextual metadata, encoded via the `@` pragma syntax, which links each computational unit to its semantic origin, provenance, and intended use. This metadata enables bidirectional traceability between the IR and the source cognitive algorithm, supporting tasks such as debugging, auditing, and interpretability. By embedding information such as motif lineage, data source, and transformation history, the IR facilitates transparent reasoning about how each fused subgraph was constructed and why specific design choices were made.
+
+\OnePageSectionEnd

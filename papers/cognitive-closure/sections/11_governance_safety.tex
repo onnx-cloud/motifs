@@ -1,0 +1,20 @@
+\OnePageSectionStart
+\section{Governance, Safety, and Human-in-the-Loop}
+
+Closing the cognitive loop introduces responsibilities. We outline governance patterns and safety mechanisms that ensure the Fused Fabric is auditable, safe, and aligned with human values.
+
+\subsection{Auditing and Traceability}
+Every update cycle preserves provenance information in RDF: which data samples were used, what optimizer produced the update, which projection operator was applied, and which assertion checks were executed. This enables ex-post-facto inspection and automated auditing pipelines.
+
+\subsection{Safety Policies}
+We recommend policy tiers for update acceptance:
+\begin{itemize}
+  \item \textbf{Soft Guard}: runtime assertion graphs execute post-update; violations trigger logging and alert but allow rollbacks.
+  \item \textbf{Hard Guard}: firmware or secure enclave refuses updates that violate critical safety constraints (e.g., actuator bounds).
+  \item \textbf{Human-in-the-Loop}: parameter updates flagged as semantically significant require manual approval before commit; this is enacted via a review API.
+\end{itemize}
+
+\subsection{Ethical Considerations}
+Because the latent space is now interpretable and manipulable, we define ethical guidelines for data provenance, bias auditing (ensure fairness constraints are expressible in RDF), and mechanisms for redress when models produce harmful outputs. The project provides templates for policy encoding in RDF to ensure machine-readable governance.
+
+\OnePageSectionEnd

@@ -1,0 +1,8 @@
+# List categories with label and optional counts (count may be computed separately)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?category ?label WHERE {
+  ?category a skos:Concept ; skos:inScheme motif:CategoryScheme ; skos:prefLabel ?label .
+}
+ORDER BY ?label

@@ -1,0 +1,19 @@
+
+# ONNX operator schema — per-operator file
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:Sub a onnx:Operator ;
+  skos:prefLabel "Sub" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "14"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .

@@ -1,0 +1,16 @@
+\OnePageSectionStart
+\section{Discussion}
+
+\subsection{Scope and Ground Truth}
+Types guarantee \emph{logical} consistency: every morph respects its input types, and output types are verifiably correct. They do \emph{not} guarantee \emph{physical} truth. A camera sensor may be misaligned, low-light, or occluded; the resulting tensor will still have type \texttt{f32[B,C,H,W] M\{radiance,srgb,camera\}} even if content is corrupted. Empirical validation (train/test splits, unit tests, sensor calibration) remains essential. The type system makes failures \emph{explicit and auditable}: when a sensor or morph produces surprising output, the type system preserves evidence (types, semantics, bounds) enabling root-cause diagnosis.
+
+\subsection{Extensibility}
+The ontology of Semantics (Atomic, Measurement, Distribution, Enum, Structured) is intentionally minimal but extensible. Rich unit systems (SI, custom), physical constraints, and domain-specific types (e.g., poses, graph structures) can be added without breaking the core type checker.
+
+\subsection{Performance}
+Assertion elision via symbolic analysis and range inference minimizes runtime overhead. For large models, the cost of metadata and type checks is amortized across thousands of operations. Benchmarking against untyped baselines (raw ONNX) is needed; preliminary evidence suggests overhead $<5\%$ with aggressive elision.
+
+\subsection{Test/Train Reproducibility}
+The type system makes test and train graphs identical in structure and semantics. Determinism is enforced: same sensor input + same model weights $\Rightarrow$ same output (modulo floating-point rounding). This enables reproducible evaluation, ablation studies, and formal validation—critical for safety-critical AI.
+
+\OnePageSectionEnd

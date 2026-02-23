@@ -1,0 +1,13 @@
+# List all motifs with labels, signatures, and category labels
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?motif ?label ?signature ?category ?categoryLabel
+WHERE {
+  ?motif a motif:Motif ;
+         skos:prefLabel ?label .
+  OPTIONAL { ?motif motif:hasSignature ?signature }
+  OPTIONAL { ?motif motif:hasCategory ?category .
+             OPTIONAL { ?category skos:prefLabel ?categoryLabel } }
+}
+ORDER BY ?label

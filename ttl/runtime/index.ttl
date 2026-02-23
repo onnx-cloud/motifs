@@ -1,0 +1,58 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Hardware / Execution Backend Motifs
+# Purpose: Describe hardware capabilities and execution patterns (GPU/TPU/NPU, memory hierarchy, parallelism)
+#################
+
+motif:Hardware a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Runtime / Execution"@en ;
+  skos:definition "Runtime, hardware and memory patterns." .
+
+motif:CPU a skos:Concept ; skos:prefLabel "CPU"@en ; skos:definition "General-purpose CPU." .
+motif:GPU a skos:Concept ; skos:prefLabel "GPU"@en ; skos:definition "General-purpose GPU with SIMT execution." .
+motif:TPU a skos:Concept ; skos:prefLabel "TPU"@en ; skos:definition "Tensor Processing Unit with systolic array semantics." .
+motif:NPU a skos:Concept ; skos:prefLabel "NPU"@en ; skos:definition "Neural Processing Unit / accelerator." .
+
+motif:MemoryHierarchy a skos:Concept ; skos:prefLabel "Memory Hierarchy"@en ; skos:definition "L1/L2/HBM/DRAM and on-chip caches." .
+
+motif:SystolicArray a motif:Motif ;
+  skos:prefLabel "Systolic Array"@en ;
+  motif:hasCategory motif:Hardware ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:SIMD a motif:Motif ;
+  skos:prefLabel "SIMD/Vector"@en ;
+  motif:hasCategory motif:Hardware ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:HBMStreaming a motif:Motif ;
+  skos:prefLabel "HBM Streaming"@en ;
+  motif:hasCategory motif:Hardware ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:QuantizedCompute a motif:Motif ;
+  skos:prefLabel "Quantized Compute"@en ;
+  motif:hasCategory motif:Hardware ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:AsynchronousDMA a motif:Motif ;
+  skos:prefLabel "Asynchronous DMA"@en ;
+  motif:hasCategory motif:Hardware ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:TensorCoreFused a motif:Motif ;
+  skos:prefLabel "Tensor Core Fused"@en ;
+  motif:hasCategory motif:Hardware ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .

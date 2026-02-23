@@ -1,0 +1,69 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Distributed & Specialized motif instances
+
+
+motif:AllReduce a motif:Motif ;
+  skos:prefLabel "AllReduce"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_AllReduce ;
+  motif:hasConstraint motif:Constraint_Boundary_Communication .
+
+motif:AllGather a motif:Motif ;
+  skos:prefLabel "AllGather"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_AllGather .
+
+motif:motif_QuantizeDequant a motif:Motif ;
+  skos:prefLabel "Quantize-Dequantize"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_QuantizeDequant .
+
+motif:motif_VectorSearch a motif:Motif ;
+  skos:prefLabel "Vector Search"@en ;
+  motif:hasSignature motif:Sig_1_to_k ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_VectorSearch .
+
+motif:PipelineSendRecv a motif:Motif ;
+  skos:prefLabel "Pipeline Send/Recv"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_PipelineSendRecv .
+
+motif:motif_ReduceScatter a motif:Motif ;
+  skos:prefLabel "ReduceScatter"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_ReduceScatter .
+
+motif:motif_Barrier a motif:Motif ;
+  skos:prefLabel "Barrier"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_Barrier .
+
+motif:WeightPacking a motif:Motif ;
+  skos:prefLabel "Weight Packing"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_WeightPacking .
+
+motif:EmbeddingLookup a motif:Motif ;
+  skos:prefLabel "Embedding Lookup"@en ;
+  motif:hasSignature motif:Sig_idx_to_vec ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_EmbeddingLookup .
+
+motif:Sampler a motif:Motif ;
+  skos:prefLabel "Sampler / Multinomial"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Misc ;
+  motif:hasSemantics motif:Sem_Sampler .

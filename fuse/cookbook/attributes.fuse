@@ -1,0 +1,16 @@
+@fuse 1.2
+@opset onnx 18
+@domain examples.cookbook
+
+# Cookbook: Attribute syntax demonstration (`keepdims@=0`)
+# Ops: ReduceSum
+
+node attr_new(x: f32[3]) -> f32[1] {
+  axes: i64[1] = [0]
+  ReduceSum(x, axes, keepdims@=0)
+}
+
+@proof node test_attrs() {
+  out = attr_new([1.0, 0.0, 0.0])
+  assert out == [1.0]
+}

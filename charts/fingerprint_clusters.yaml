@@ -1,0 +1,17 @@
+# Figure: Fingerprint Tag Clusters
+# Heatmap showing which tags often appear together in the same motif
+
+title: Fingerprint Co-occurrence
+description: Clusters of semantic tags (e.g., T.width often co-occurs with T.reuse)
+
+query: ./sparql/charts/fingerprint_clusters.sparql
+
+vega:
+  width: 500
+  height: 500
+  mark: rect
+  encoding:
+    x: {field: "tagA", type: "nominal", title: "Tag A"}
+    y: {field: "tagB", type: "nominal", title: "Tag B"}
+    color: {field: "count", type: "quantitative", scale: {scheme: "blues"}}
+    tooltip: [{field: "tagA"}, {field: "tagB"}, {field: "count"}]

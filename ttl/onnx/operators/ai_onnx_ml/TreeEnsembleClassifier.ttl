@@ -1,0 +1,37 @@
+
+# ONNX operator schema — per-operator file
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:TreeEnsembleClassifier a onnx:Operator ;
+  skos:prefLabel "TreeEnsembleClassifier" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "5"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "base_values_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "classlabels_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_weights_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_weights" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_ids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_nodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_treeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_featureids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_values_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_falsenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_hitrates" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "base_values" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_missing_value_tracks_true" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_values" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_hitrates_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_truenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_treeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_nodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .

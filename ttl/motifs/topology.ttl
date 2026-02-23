@@ -1,0 +1,102 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Topology / Composition motif instances
+
+
+motif:Fork a motif:Motif ;
+  skos:prefLabel "Fork"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Topology ;
+  motif:hasFingerprint motif:T_width_plus_N ;
+  motif:hasSemantics motif:Sem_Fork ;
+  motif:example ex:fork_join.fuse .
+
+motif:Join a motif:Motif ;
+  skos:prefLabel "Join"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Topology ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_Join .
+
+motif:ForkJoin a motif:Motif ;
+  skos:prefLabel "Fork-Join"@en ;
+  motif:hasSignature motif:Sig_1_to_N_to_1 ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_ForkJoin .
+
+motif:Residual a motif:Motif ;
+  skos:prefLabel "Residual"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_Residual .
+
+motif:Concat a motif:Motif ;
+  skos:prefLabel "Concat"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_Concat .
+
+motif:Split a motif:Motif ;
+  skos:prefLabel "Split"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_Split .
+
+motif:Tuple a motif:Motif ;
+  skos:prefLabel "Tuple"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_Tuple .
+
+motif:UnTuple a motif:Motif ;
+  skos:prefLabel "UnTuple"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_UnTuple .
+
+motif:Map a motif:Motif ;
+  skos:prefLabel "Map"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_Map .
+
+motif:BroadcastMap a motif:Motif ;
+  skos:prefLabel "Broadcast Map"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_BroadcastMap .
+
+motif:MultiResidual a motif:Motif ;
+  skos:prefLabel "Multi-Residual"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_MultiResidual .
+
+motif:Fanout a motif:Motif ;
+  skos:prefLabel "Fanout"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_Fanout .
+
+motif:Fanin a motif:Motif ;
+  skos:prefLabel "Fan-in"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_Fanin .
+
+motif:Flatten a motif:Motif ;
+  skos:prefLabel "Flatten"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_Flatten .
+
+motif:PermutePaths a motif:Motif ;
+  skos:prefLabel "Permute Paths"@en ;
+  motif:hasSignature motif:Sig_N_to_N ;
+  motif:hasCategory motif:Topology ;
+  motif:hasSemantics motif:Sem_PermutePaths .

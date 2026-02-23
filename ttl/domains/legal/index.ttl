@@ -1,0 +1,126 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Legal & Compliance Domain Applications
+# Maps legal tech and compliance applications to motifs
+##################################
+
+motif:ContractAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Contract Analysis"@en ;
+  skos:definition "Extracting key clauses, obligations, and risks from legal contracts."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:NamedEntityRecognition .
+
+motif:LegalResearch a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Legal Research & Discovery"@en ;
+  skos:definition "Searching and analyzing case law, statutes, and legal documents."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:DenseRetrieval .
+
+motif:ComplianceMonitoring a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Regulatory Compliance Monitoring"@en ;
+  skos:definition "Monitoring communications and documents for regulatory compliance."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:SequenceClassification .
+
+motif:EDiscovery a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "E-Discovery Document Review"@en ;
+  skos:definition "Technology-assisted review of documents for litigation discovery."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear .
+
+motif:PatentAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Patent Analysis & Search"@en ;
+  skos:definition "Prior art search, patent classification, and infringement analysis."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:CrossEncoder .
+
+motif:RiskAssessment a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Legal Risk Assessment"@en ;
+  skos:definition "Assessing litigation risk and predicting case outcomes."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:SoftmaxEdge .
+
+motif:DueDiligence a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Due Diligence Automation"@en ;
+  skos:definition "Automated review of documents for M&A and investment due diligence."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Concat .
+
+motif:KYCVerification a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "KYC/AML Verification"@en ;
+  skos:definition "Know-your-customer identity verification and anti-money laundering checks."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:GraphAttention .
+
+motif:LegalDocGen a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Legal Document Generation"@en ;
+  skos:definition "Automated drafting of contracts, briefs, and legal documents."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:KVMemory ;
+  motif:usesMotif motif:Sampler ;
+  motif:relatedUseCase motif:AutoregressiveDecoding .
+
+motif:TrademarkSearch a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Trademark Similarity Search"@en ;
+  skos:definition "Searching for similar trademarks and analyzing potential conflicts."@en ;
+  motif:belongsTo motif:Legal ;
+  motif:primaryMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:relatedUseCase motif:HybridRetrieval .
+

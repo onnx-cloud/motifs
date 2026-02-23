@@ -1,0 +1,14 @@
+# List models grouped by category (Model families & architectures)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?model ?label ?categoryLabel WHERE {
+  ?model a ?type ;
+    skos:prefLabel ?label .
+  OPTIONAL {
+    ?model motif:hasCategory ?category .
+    ?category skos:prefLabel ?categoryLabel .
+  }
+  FILTER(?type IN (motif:ModelArchitecture, motif:ModelFamily, motif:Model))
+}
+ORDER BY ?categoryLabel ?label

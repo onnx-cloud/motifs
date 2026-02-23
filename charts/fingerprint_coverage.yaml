@@ -1,0 +1,41 @@
+# Figure: Fingerprint Usage Heatmap
+# Shows which fingerprints appear most frequently
+title: Fingerprint Coverage
+description: Frequency of fingerprint dimensions across motifs
+
+query: ./sparql/charts/motif_fingerprints.sparql
+
+transform:
+  rename:
+    fingerprint: dimension
+    count: frequency
+  keep:
+    - dimension
+    - frequency
+
+vega:
+  width: 800
+  height: 400
+  mark: bar
+  encoding:
+    x:
+      field: dimension
+      type: nominal
+      axis:
+        labelAngle: -45
+        title: Fingerprint Dimension
+    y:
+      field: frequency
+      type: quantitative
+      axis:
+        title: Number of Motifs
+    color:
+      field: frequency
+      type: quantitative
+      scale:
+        scheme: viridis
+    tooltip:
+      - field: dimension
+        type: nominal
+      - field: frequency
+        type: quantitative

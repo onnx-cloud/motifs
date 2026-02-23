@@ -1,0 +1,126 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Automotive & Transportation Domain Applications
+# Maps autonomous vehicles and transportation to motifs
+##################################
+
+motif:AutonomousDriving a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Autonomous Vehicle Perception"@en ;
+  skos:definition "End-to-end perception system for self-driving cars combining camera, LiDAR, and radar."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Loop ;
+  motif:relatedUseCase motif:ObjectDetection .
+
+motif:LiDARProcessing a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "LiDAR Point Cloud Processing"@en ;
+  skos:definition "3D object detection and segmentation from LiDAR sensor data."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:relatedUseCase motif:GraphAttention .
+
+motif:MotionPlanning a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Motion Planning & Prediction"@en ;
+  skos:definition "Predicting participant trajectories and planning safe vehicle paths."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Sampler .
+
+motif:TrafficOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Traffic Flow Optimization"@en ;
+  skos:definition "Optimizing traffic signal timing and flow using multi-participant reinforcement learning."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:relatedUseCase motif:MessagePassing .
+
+motif:FleetManagement a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Fleet Route Optimization"@en ;
+  skos:definition "Vehicle routing and scheduling for delivery and logistics fleets."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:HardRouting .
+
+motif:DriverMonitoring a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Driver Monitoring System"@en ;
+  skos:definition "Detecting driver drowsiness, distraction, and attention state."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EarlyExit ;
+  motif:relatedUseCase motif:PoseEstimation .
+
+motif:LaneDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Lane Detection & Tracking"@en ;
+  skos:definition "Detecting and tracking lane markings for lane-keeping assistance."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:SemanticSegmentation .
+
+motif:ParkingAssist a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Automated Parking"@en ;
+  skos:definition "Autonomous parking using surround-view cameras and ultrasonic sensors."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If .
+
+motif:VehicleDiagnostics a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Predictive Vehicle Diagnostics"@en ;
+  skos:definition "Predicting vehicle component failures from onboard sensor telemetry."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:PersistentState .
+
+motif:V2XCommunication a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Vehicle-to-Everything (V2X)"@en ;
+  skos:definition "Processing and fusing data from vehicle-to-vehicle and vehicle-to-infrastructure communication."@en ;
+  motif:belongsTo motif:Automotive ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:AllGather ;
+  motif:usesMotif motif:AllReduce .
+

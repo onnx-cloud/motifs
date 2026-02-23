@@ -1,0 +1,123 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+#################
+# Sparse / Structured Computation Motifs
+# Purpose: Block-sparse, masked attention, pruning patterns
+#################
+
+motif:Sparse a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Sparse / Structured"@en ;
+  skos:definition "Sparse computation : block-sparse, masked attention, dynamic pruning." .
+
+# New fingerprints for sparsity
+motif:M_sparse_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "M.sparse=1"@en ;
+  skos:definition "Sparse memory/computation flmotif: only non-zero elements are stored/computed." .
+
+motif:T_block_sparse a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.block-sparse"@en ;
+  skos:definition "Block-sparse structure: sparsity organized in contiguous blocks." .
+#################
+# Sparse Motif Instances
+#################
+
+motif:BlockSparseMatMul a motif:Motif ;
+  skos:prefLabel "Block-Sparse MatMul"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasFingerprint motif:M_sparse_eq_1 ;
+  motif:hasFingerprint motif:T_block_sparse ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Efficient on hardware with block-sparse support (e.g., Ampere tensor cores)." .
+
+motif:SparseAttentionMask a motif:Motif ;
+  skos:prefLabel "Sparse Attention Mask"@en ;
+  motif:hasSignature motif:Sig_N_to_N ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasFingerprint motif:M_sparse_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2004.05150> ;
+  skos:definition "Longformer, BigBird style sparse attention." .
+
+motif:TopKSparsify a motif:Motif ;
+  skos:prefLabel "Top-K Sparsify"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasFingerprint motif:M_sparse_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Activation sparsification for efficient inference." .
+
+motif:StructuredPrune a motif:Motif ;
+  skos:prefLabel "Structured Prune"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:D_Dynamics ;
+  motif:hasFingerprint motif:M_sparse_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "N:M sparsity, channel pruning patterns." .
+
+motif:SparseGather a motif:Motif ;
+  skos:prefLabel "Sparse Gather"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:M_sparse_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Efficient lookup in sparse embedding tables." .
+
+motif:SparseScatter a motif:Motif ;
+  skos:prefLabel "Sparse Scatter"@en ;
+  motif:hasSignature motif:Sig_3_to_1 ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:M_sparse_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Building sparse tensors from dense indices and values." .
+
+motif:FlashAttention a motif:Motif ;
+  skos:prefLabel "Flash Attention"@en ;
+  motif:hasSignature motif:Sig_3_to_1 ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2205.14135> ;
+  skos:definition "FlashAttention (Dao et al., 2022) - IO-aware attention." .
+
+motif:RingAttention a motif:Motif ;
+  skos:prefLabel "Ring Attention"@en ;
+  motif:hasSignature motif:Sig_3_to_1 ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasFingerprint motif:C_Control ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2310.01889> ;
+  skos:definition "Ring Attention for near-infinite context (Liu et al., 2023)." .
+
+motif:SlidingWindowAttention a motif:Motif ;
+  skos:prefLabel "Sliding Window Attention"@en ;
+  motif:hasSignature motif:Sig_3_to_1 ;
+  motif:hasCategory motif:Sparse ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasFingerprint motif:M_sparse_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Mistral, Longformer local attention pattern." .
+

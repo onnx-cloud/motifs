@@ -1,0 +1,127 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Finance & Trading Domain Applications
+# Maps financial services applications to motifs
+##################################
+
+motif:AlgorithmicTrading a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Algorithmic Trading"@en ;
+  skos:definition "Automated trading strategies using time-series prediction and market microstructure analysis."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EarlyExit .
+
+motif:FraudDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Transaction Fraud Detection"@en ;
+  skos:definition "Real-time detection of fraudulent transactions using anomaly detection and sequence modeling."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EarlyExit ;
+  motif:usesMotif motif:Linear .
+
+motif:CreditScoring a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Credit Risk Scoring"@en ;
+  skos:definition "Assessing creditworthiness using tabular data, sequences, and graph-based features."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:SoftmaxEdge .
+
+motif:PortfolioOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Portfolio Optimization"@en ;
+  skos:definition "Optimal asset allocation using reinforcement learning and convex optimization."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:SoftmaxEdge ;
+  motif:relatedUseCase motif:PolicyGradient .
+
+motif:MarketForecasting a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Market Price Forecasting"@en ;
+  skos:definition "Predicting asset prices, volatility, and market trends using temporal models."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Linear .
+
+motif:SentimentAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Financial Sentiment Analysis"@en ;
+  skos:definition "Analyzing news, social media, and reports for market sentiment signals."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:relatedUseCase motif:SequenceClassification .
+
+motif:AntiMoneyLaundering a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Anti-Money Laundering (AML)"@en ;
+  skos:definition "Detecting suspicious transaction patterns and money laundering networks using graph analysis."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:relatedUseCase motif:MessagePassing .
+
+motif:InsuranceClaims a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Insurance Claims Processing"@en ;
+  skos:definition "Automated claims assessment, damage estimation, and fraud detection."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear .
+
+motif:RiskModeling a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Financial Risk Modeling"@en ;
+  skos:definition "Value-at-Risk, stress testing, and scenario analysis using Monte Carlo simulation."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Sampler ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:Fork .
+
+motif:DocumentProcessing a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Financial Document Processing"@en ;
+  skos:definition "Extracting data from invoices, contracts, and financial statements."@en ;
+  motif:belongsTo motif:Finance ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:NamedEntityRecognition .
+

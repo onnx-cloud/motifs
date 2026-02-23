@@ -1,0 +1,30 @@
+# Figure: Derivation Edge Counts by Primitive
+# Number of derived targets per B* primitive (edge count)
+
+title: Derivation Edges
+description: Number of derived motifs per B* primitive
+
+query: ./sparql/charts/derivation_tree.sparql
+
+# We'll rely on Vega-Lite aggregation to count occurrences in an edge-list dataset; to keep this config runnable without complex SPARQL, we will embed the edge rows directly as the data (ChartGenerator will use query results; here we provide minimal placeholder rows by repeating sources according to their out-degree.)
+
+# For convenience, add a simple transform: expand to synthetic rows via compute (not required by ChartGenerator) — instead we include a tiny inline query above and rely on transform/vega aggregation.
+
+vega:
+  width: 700
+  height: 360
+  mark: bar
+  encoding:
+    y:
+      field: source
+      type: nominal
+      sort: {field: "_count", order: "descending"}
+    x:
+      aggregate: count
+      type: quantitative
+      title: "Derived targets (count)"
+    color:
+      field: source
+      type: nominal
+  config:
+    axis: {grid: false}

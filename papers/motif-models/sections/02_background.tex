@@ -1,0 +1,43 @@
+% Section 2: Background and Related Work
+
+\section{Background and Related Work}
+\label{sec:background}
+
+\subsection{Graph Motifs in Biology}
+
+Graph motifs originate in computational biology and network science.
+A motif is a recurring subgraph pattern appearing significantly more often than expected by chance.
+Classical motif discovery algorithms (ESU, FANMOD) identify patterns and infer functional roles.
+
+In computation graphs, we adopt a related but distinct perspective: rather than detecting
+statistically significant patterns, we \emph{design} a catalog of semantically meaningful motifs
+that capture common computation structures.
+
+\subsection{Intermediate Representations}
+
+Modern ML frameworks use computation graphs as IRs:
+\begin{itemize}
+  \item \textbf{TensorFlow}: Static and eager graphs with fused ops.
+  \item \textbf{PyTorch}: Dynamic control flow; TorchScript converts to static graphs.
+  \item \textbf{ONNX}: Standard IR supporting fusion, quantization, shape inference.
+  \item \textbf{XLA}: Compiles graphs to optimized accelerator code via pattern matching.
+\end{itemize}
+
+Existing optimizers rely on hand-crafted rewrite rules. A motif taxonomy provides a principled,
+reusable foundation for specifying these rules formally.
+
+\subsection{Dataflow and Control Flow}
+
+Classical dataflow analysis models computation as DAGs with fixed control flow.
+Many modern workloads introduce stateful loops, conditionals, and memory patterns beyond pure dataflow.
+Our taxonomy includes control flow primitives and memory/state motifs, bridging dataflow and imperative programming.
+
+\subsection{Gaps in Current Tools}
+
+Current tools lack:
+\begin{itemize}
+  \item A \emph{principled vocabulary} for discussing graph transformations across frameworks.
+  \item \emph{Formal semantics} linking motif structure to rewrite legality and resource bounds.
+  \item \emph{Machine-readable} definitions (ontology) of motif classes and properties.
+  \item \emph{Canonical reference implementations}.
+\end{itemize}

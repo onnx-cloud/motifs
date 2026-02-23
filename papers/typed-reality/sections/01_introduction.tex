@@ -1,0 +1,16 @@
+\OnePageSectionStart
+\section{Introduction}
+
+Machine intelligence operates at the boundary between perception and abstraction. Sensors observe the physical world; models compute over symbolic and probabilistic abstractions; actuators effect change in reality. Yet current frameworks treat tensors as untyped arrays, creating a semantic gap: the mapping from observations to computation, through reasoning, to action remains implicit. Runtime errors, shape mismatches, and silent semantic drift are endemic.
+
+\emph{The core problem:} How do we ground computation in reality while fusing heterogeneous knowledge domains (visual, linguistic, probabilistic, symbolic) into coherent reasoning?
+
+We present a statically typed ABI (Application Binary Interface) and AST (Abstract Syntax Tree) for machine intelligence that bridges this gap. The ABI maps observations---from sensors, symbolic data, and probabilistic models---onto a unified, type-safe representation. Each tensor is ground-truth linking reality to computation:
+\begin{itemize}
+  \item \textbf{DType}: numeric or categorical precision
+  \item \textbf{Shape}: constant, symbolic, or ranged dimensions  
+  \item \textbf{Semantics}: measurement (physical reality), distribution (probabilistic knowledge), enum (symbolic knowledge), or structured (composite)
+\end{itemize}
+The AST comprises typed morphs (Linear, Attention, Softmax) that preserve semantics through composition. The ABI lowers to \emph{any} runtime---ONNX, custom GPU kernels, CPU optimizers, or specialized accelerators---ensuring semantic preservation regardless of execution target. This enables deterministic interpretation of reality where every sensor read, every reasoning step, and every actuator command is formally verified and auditable.
+
+\OnePageSectionEnd

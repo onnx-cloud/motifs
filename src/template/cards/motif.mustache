@@ -1,0 +1,26 @@
+{% include 'wiki/header.mustache' %}
+
+<div class="container" style="max-width:700px; margin:1.5rem auto; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;">
+  <a href="../motifs.html" style="text-decoration:none;color:#1a73e8">← Back to motifs</a>
+  <h1 style="margin-top:.5rem">{{ detail.label | default(page.title) }}</h1>
+  <p class="small">{{ detail.category | default(detail.categoryLabel | default('')) }}</p>
+  {% if detail.isPrimitive %}
+    <div style="display:inline-block;padding:.2rem .6rem;background:#e6f2ff;border-radius:6px;font-weight:600;margin-bottom:.6rem">Primitive</div>
+  {% endif %}
+  <section style="margin-top:1rem">
+    <h3>Signature</h3>
+    <pre style="background:#f7fafc;padding:.6rem;border-radius:6px">{{ detail.signature | default(detail.hasSignature | default('')) }}</pre>
+  </section>
+  <section style="margin-top:1rem">
+    <h3>Description</h3>
+    <p>{{ detail.definition | default(detail.description | default('No description available.')) }}</p>
+  </section>
+  {% if detail.semantics %}
+  <section style="margin-top:1rem">
+    <h3>Semantics</h3>
+    <pre style="background:#f7fafc;padding:.6rem;border-radius:6px">{{ detail.semantics }}</pre>
+  </section>
+  {% endif %}
+</div>
+
+{% include 'wiki/footer.mustache' %}

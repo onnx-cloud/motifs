@@ -1,0 +1,229 @@
+# Inferred triples from query: conditional.sparql
+# generated: 2026-01-29T07:08:24.163807Z
+# source ttl: ttl
+
+@prefix ns1: <https://ns.onnx.cloud/motif#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ns1:AccessControl a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:AlgorithmicTrading a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:AquacultureMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:AssemblyVerification a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:AstronomyImageAnalysis a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:BehaviorAnalysis a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:BuildingEnergy a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:CapacityFactor a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasConditional ns1:If .
+
+ns1:CellularHandover a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:ClinicalNLP a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:ComplianceMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:ContentModeration a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:CropMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:CyberThreatDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:DeepfakeDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:DefectDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:DriverMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:DroneDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:EDiscovery a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:EVCharging a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:EarlyExitInference a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasConditional ns1:If .
+
+ns1:EnergyTrading a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:FoodQuality a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:FraudDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:GameAI a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:InsuranceClaims a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:KYCVerification a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:LivestockMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:MeterAnalytics a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:MonteCarloTreeSearch a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasConditional ns1:If .
+
+ns1:MotionPlanning a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:NamedEntityRecognition a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasConditional ns1:If .
+
+ns1:NetworkAnomaly a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:OutageDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:PPOClipping a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasConditional ns1:If .
+
+ns1:ParkingAssist a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:PersonalizationEngine a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:PhishingDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:PrecisionIrrigation a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:PredictiveMaintenance a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:PricingOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:ProcessOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:QoSPrediction a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:RL_PPO a ns1:ModelArchitecture ;
+    ns1:hasConditional ns1:If .
+
+ns1:RobotControl a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:SeismicAnalysis a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:ShelfMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:SignalIntelligence a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:SpectrumManagement a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:SpeculativeDecoding a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasConditional ns1:If .
+
+ns1:StreamOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:SurveillanceAnalytics a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:ThreatDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:VehicleDiagnostics a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:WeedDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasConditional ns1:If .
+
+ns1:If a ns1:Conditional ;
+    skos:prefLabel "If"@en .
+

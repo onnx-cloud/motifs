@@ -1,0 +1,41 @@
+% Section 1: Introduction
+
+\section{Introduction}
+\label{sec:intro}
+
+Computation graphs form the backbone of modern machine learning systems.
+From TensorFlow and PyTorch to ONNX and specialized accelerators, these
+intermediate representations (IRs) must be analyzed, optimized, and verified
+for correctness.
+Yet existing tools treat graphs as monolithic structures, lacking a principled vocabulary
+for discussing recurring patterns.
+
+We propose a systematic \emph{taxonomy of computation-only graph motifs}---composable,
+reusable patterns that capture the essential structure of graph computation.
+Motifs enable:
+
+\begin{itemize}
+  \item \textbf{Equivalence reasoning}: Prove that different graph rewrites preserve semantics.
+  \item \textbf{Transformation legality}: Define which graph manipulations are safe.
+  \item \textbf{Parallelism analysis}: Reason about data-flow dependencies and bounds.
+  \item \textbf{IR semantics}: Specify computation without imperative control flow.
+  \item \textbf{Resource analysis}: Predict memory, latency, and determinism properties.
+\end{itemize}
+
+\subsection{Contributions}
+
+\begin{enumerate}
+  \item A \textbf{representative set} of core computation motifs, organized by category.
+  \item \textbf{Canonical ONNX reference implementations} and Python examples for each motif.
+  \item An \textbf{RDF/TTL ontology} defining motif terms and relationships.
+  \item \textbf{Case studies} showing how real workloads decompose into motif compositions.
+  \item A \textbf{verification framework} using motif structure to speed up correctness proofs.
+\end{enumerate}
+
+\subsection{Roadmap}
+
+The remainder: \S\ref{sec:background} reviews prior work.
+\S\ref{sec:methods} introduces our taxonomy and formalism.
+\S\ref{sec:results} presents examples and experiments.
+\S\ref{sec:discussion} discusses limitations.
+\S\ref{sec:conclusion} summarizes contributions.

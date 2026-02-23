@@ -1,0 +1,39 @@
+\OnePageSectionStart
+\section{Case Study: Compiled LOF Scoring}
+
+To demonstrate the compiler's capability, we examine the Local Outlier Factor (LOF) inspired scoring mechanism, a classic reasoning pattern for novelty detection.
+
+\begin{verbatim}
+# LOF-inspired score comparing sample distance to a reference
+# Ops: Sub, Abs, ReduceSum, Div, Reshape
+
+@fuse 0.7
+@opset onnx 18
+@version 0.7.0
+@domain jupyter.cookbook
+
+const axes0: i64[1] = [0]
+
+@type "urn:jupyter.cookbook.lof_score"
+
+graph lof_score(x: f32[3]) -> f32[1] {
+  center: f32[3] = [0.0, 0.0, 0.0]
+  reference: f32[3] = [0.1, -0.1, 0.0]
+  shape_one: i64[1] = [1]
+  dist = ReduceSum(Abs(Sub(x, center)), axes0, keepdims@=0)
+  ref_dist = ReduceSum(Abs(Sub(reference, center)), axes0, keepdims@=0)
+  ratio = Div(dist, Add(ref_dist, 1.0))
+  Reshape(ratio, shape_one)
+}
+
+@proof graph test_lof_score() {
+  sample = [1.0, 0.0, 0.0]
+  out = lof_score(sample)
+  assert out == [0.8333333]
+}
+\end{verbatim}
+
+\paragraph{Analysis of compiled logic}
+The compiler identifies that `ref_dist` involves only `const` inputs (`reference`, `center`) in the inference variant. Consequently, it calculates this value during the compile phase and folds the entire `Add(ref_dist, 1.0)` chain into a single scalar constant in the final ONNX graph. For training variants (see Section 5), when `reference` is annotated with `@train`, the compiler instead preserves the parameter and emits the adjoint graph for efficient gradient updates. In both modes the compiler performs symbolic simplification, constant folding, and shape specialization to reduce runtime complexity while preserving semantic invariants.
+
+\OnePageSectionEnd

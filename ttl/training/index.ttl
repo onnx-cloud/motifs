@@ -1,0 +1,236 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix motif: <https://ns.onnx.cloud/motifs#> .
+#################
+# Training / Optimization Motifs
+# Purpose: Gradient computation, optimization, distributed training patterns
+#################
+
+motif:Training a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Training / Optimization"@en ;
+  skos:definition "Patterns for model training: gradients, optimizers, distributed training." .
+#################
+# Training Fingerprints
+#################
+
+motif:G_gradient_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "G.gradient=1"@en ;
+  skos:definition "Involves gradient computation." .
+
+motif:G_backward_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "G.backward=1"@en ;
+  skos:definition "Backward pass / reverse-mode autodiff." .
+
+motif:D_distributed_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "D.distributed=1"@en ;
+  skos:definition "Distributed across multiple devices/nodes." .
+#################
+# Autodiff Motifs
+#################
+
+motif:ForwardMode a motif:Motif ;
+  skos:prefLabel "Forward-Mode Autodiff"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasSemantics motif:Sem_ForwardMode ;
+  motif:hasConstraint motif:Constraint_ForwardMode_Efficiency ;
+  skos:definition "Forward-mode AD, tangent propagation." .
+
+motif:ReverseMode a motif:Motif ;
+  skos:prefLabel "Reverse-Mode Autodiff"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasFingerprint motif:G_backward_eq_1 ;
+  motif:hasSemantics motif:Sem_ReverseMode ;
+  motif:hasConstraint motif:Constraint_ReverseMode_Memory ;
+  skos:definition "Backpropagation, reverse-mode AD." .
+
+motif:GradientCheckpoint a motif:Motif ;
+  skos:prefLabel "Gradient Checkpoint"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_backward_eq_1 ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasSemantics motif:Sem_GradientCheckpoint ;
+  motif:hasConstraint motif:Constraint_GradientCheckpoint_Boundaries ;
+  skos:definition "Activation checkpointing for memory efficiency." .
+
+motif:GradientAccumulate a motif:Motif ;
+  skos:prefLabel "Gradient Accumulate"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_GradientAccumulate ;
+  motif:hasConstraint motif:Constraint_GradientAccumulate_Batch ;
+  skos:definition "Simulate large batches with limited memory." .
+
+motif:GradientClip a motif:Motif ;
+  skos:prefLabel "Gradient Clip"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasSemantics motif:Sem_GradientClip ;
+  motif:hasConstraint motif:Constraint_GradientClip_Threshold ;
+  skos:definition "Gradient clipping for training stability." .
+#################
+# Optimizer Motifs
+#################
+
+motif:SGD a motif:Motif ;
+  skos:prefLabel "SGD"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasSemantics motif:Sem_SGD ;
+  motif:hasConstraint motif:Constraint_SGD_LR ;
+  skos:definition "Vanilla stochastic gradient descent." .
+
+motif:Momentum a motif:Motif ;
+  skos:prefLabel "SGD with Momentum"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_Momentum ;
+  motif:hasConstraint motif:Constraint_Momentum_Coefficient ;
+  skos:definition "Accelerated SGD with velocity." .
+
+motif:Adam a motif:Motif ;
+  skos:prefLabel "Adam"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_Adam ;
+  motif:hasConstraint motif:Constraint_Adam_Hyperparams ;
+  rdfs:seeAlso <https://arxiv.org/abs/1412.6980> ;
+  skos:definition "Adam optimizer (Kingma & Ba, 2014)." .
+
+motif:AdamW a motif:Motif ;
+  skos:prefLabel "AdamW"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_AdamW ;
+  motif:hasConstraint motif:Constraint_AdamW_WeightDecay ;
+  rdfs:seeAlso <https://arxiv.org/abs/1711.05101> ;
+  skos:definition "Decoupled weight decay (Loshchilov & Hutter, 2017)." .
+
+motif:LAMB a motif:Motif ;
+  skos:prefLabel "LAMB"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:G_gradient_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_LAMB ;
+  motif:hasConstraint motif:Constraint_LAMB_PerLayerNormalization ;
+  rdfs:seeAlso <https://arxiv.org/abs/1904.00962> ;
+  skos:definition "Large batch training optimizer." .
+#################
+# Learning Rate Schedule Motifs
+#################
+
+motif:LRWarmup a motif:Motif ;
+  skos:prefLabel "Learning Rate Warmup"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasSemantics motif:Sem_LRWarmup ;
+  motif:hasConstraint motif:Constraint_LRWarmup_Steps ;
+  skos:definition "Stabilize early training." .
+
+motif:CosineDecay a motif:Motif ;
+  skos:prefLabel "Cosine Learning Rate Decay"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasSemantics motif:Sem_CosineDecay ;
+  motif:hasConstraint motif:Constraint_CosineDecay_TotalSteps ;
+  skos:definition "Smooth decay to minimum learning rate." .
+
+motif:StepDecay a motif:Motif ;
+  skos:prefLabel "Step Learning Rate Decay"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasSemantics motif:Sem_StepDecay ;
+  motif:hasConstraint motif:Constraint_StepDecay_Spec ;
+  skos:definition "Discrete learning rate drops." .
+#################
+# Distributed Training Motifs
+#################
+
+motif:DataParallel a motif:Motif ;
+  skos:prefLabel "Data Parallel"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:D_distributed_eq_1 ;
+  motif:hasSemantics motif:Sem_DataParallel ;
+  motif:hasConstraint motif:Constraint_DataParallel_Memory ;
+  skos:definition "DDP, Horovod-style data parallelism." .
+
+motif:ModelParallel a motif:Motif ;
+  skos:prefLabel "Model Parallel"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:D_distributed_eq_1 ;
+  motif:hasSemantics motif:Sem_ModelParallel ;
+  motif:hasConstraint motif:Constraint_ModelParallel_Activation ;
+  skos:definition "Pipeline parallelism, tensor parallelism." .
+
+motif:TensorParallel a motif:Motif ;
+  skos:prefLabel "Tensor Parallel"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:D_distributed_eq_1 ;
+  motif:hasSemantics motif:Sem_TensorParallel ;
+  motif:hasConstraint motif:Constraint_TensorParallel_Aggregation ;
+  rdfs:seeAlso <https://arxiv.org/abs/1909.08053> ;
+  skos:definition "Megatron-LM style tensor parallelism." .
+
+motif:PipelineParallel a motif:Motif ;
+  skos:prefLabel "Pipeline Parallel"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:D_distributed_eq_1 ;
+  motif:hasSemantics motif:Sem_PipelineParallel ;
+  motif:hasConstraint motif:Constraint_PipelineParallel_Bubble ;
+  rdfs:seeAlso <https://arxiv.org/abs/1811.06965> ;
+  skos:definition "GPipe, PipeDream pipeline parallelism." .
+
+motif:ZeRO a motif:Motif ;
+  skos:prefLabel "ZeRO"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasFingerprint motif:D_distributed_eq_1 ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasSemantics motif:Sem_ZeRO ;
+  motif:hasConstraint motif:Constraint_ZeRO_Communication ;
+  rdfs:seeAlso <https://arxiv.org/abs/1910.02054> ;
+  skos:definition "Zero Redundancy Optimizer (DeepSpeed)." .
+#################
+# Mixed Precision Motifs
+#################
+
+motif:MixedPrecision a motif:Motif ;
+  skos:prefLabel "Mixed Precision Training"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasSemantics motif:Sem_MixedPrecision ;
+  motif:hasConstraint motif:Constraint_MixedPrecision_LossScale ;
+  skos:definition "AMP, BF16 training." .
+
+motif:LossScale a motif:Motif ;
+  skos:prefLabel "Loss Scaling"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Training ;
+  motif:hasSemantics motif:Sem_LossScale ;
+  motif:hasConstraint motif:Constraint_LossScale_Adjustment ;
+  skos:definition "Prevent gradient underflow in FP16." .
+

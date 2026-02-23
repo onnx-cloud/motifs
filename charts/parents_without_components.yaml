@@ -1,0 +1,21 @@
+# Figure: Parent motifs without components
+
+title: Parent motifs without components
+description: Parent motifs that currently list no lower-level components via `motif:isComponentOf` (review for completeness)
+
+query: ./sparql/charts/parents_without_components.sparql
+
+vega:
+  width: 900
+  height: 420
+  mark: bar
+  encoding:
+    y:
+      field: parentLabel
+      type: ordinal
+      axis: {title: "Parent Motif"}
+    x:
+      value: 1
+      title: "No components"
+    tooltip:
+      - field: parentLabel

@@ -1,0 +1,16 @@
+\OnePageSectionStart
+\section{Code Synthesis and Automation}
+
+A declarative ABI enables deterministic code generation by LLMs and automated tools. Sensor bindings, pipeline wiring, and safety wrappers (assertions, bounds checks) can be synthesized from high-level specifications. Example:
+
+\paragraph{From spec to pipeline}
+An LLM given a type schema (sensor outputs, model architecture, actuator constraints) can generate:
+\begin{itemize}
+  \item Sensor binding code: \texttt{bind CameraRGB.output -> ConvStem.input} with type validation
+  \item Graph interconnect: ensuring shape/semantic compatibility at each edge
+  \item Safety wrappers: explicit assertions for dynamic ranges, with justification for which checks are elided
+\end{itemize}
+
+This reduces manual engineering effort and improves reproducibility: two teams using the same type schema will generate semantically equivalent pipelines.
+
+\OnePageSectionEnd

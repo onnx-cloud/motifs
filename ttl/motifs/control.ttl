@@ -1,0 +1,101 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Control / Conditional motif instances
+
+
+motif:If a motif:Motif ;
+  skos:prefLabel "If"@en ;
+  motif:hasSignature motif:Sig_1_to_N_optional ;
+  motif:hasCategory motif:Control ;
+  motif:hasFingerprint motif:C_Control ;
+  motif:hasSemantics motif:Sem_If .
+
+motif:Switch a motif:Motif ;
+  skos:prefLabel "Switch"@en ;
+  motif:hasSignature motif:Sig_1_to_N_optional ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_Switch .
+
+motif:EarlyExit a motif:Motif ;
+  skos:prefLabel "Early Exit"@en ;
+  motif:hasSignature motif:Sig_1_to_0_or_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_EarlyExit .
+
+motif:Loop a motif:Motif ;
+  skos:prefLabel "Loop"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasFingerprint motif:T_cycles_eq_1_C_loop_eq_1 ;
+  motif:hasSemantics motif:Sem_Loop .
+
+motif:Scan a motif:Motif ;
+  skos:prefLabel "Scan"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasFingerprint motif:T_cycles_eq_1_S_carried_eq_1 ;
+  motif:hasSemantics motif:Sem_Scan .
+
+motif:While a motif:Motif ;
+  skos:prefLabel "While"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_While .
+
+motif:For a motif:Motif ;
+  skos:prefLabel "For"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_For .
+
+motif:ConditionalMerge a motif:Motif ;
+  skos:prefLabel "Conditional Merge"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_ConditionalMerge .
+
+motif:GuardedOps a motif:Motif ;
+  skos:prefLabel "Guarded Ops"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_GuardedOps .
+
+motif:MultiBranchLoop a motif:Motif ;
+  skos:prefLabel "Multi-Branch Loop"@en ;
+  motif:hasSignature motif:Sig_1_to_N_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_MultiBranchLoop .
+
+motif:PredicateMask a motif:Motif ;
+  skos:prefLabel "Predicate Mask"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_PredicateMask .
+
+motif:Break a motif:Motif ;
+  skos:prefLabel "Break"@en ;
+  motif:hasSignature motif:Sig_1_to_0_or_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_Break .
+
+motif:Continue a motif:Motif ;
+  skos:prefLabel "Continue"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_Continue .
+
+motif:ConditionalScan a motif:Motif ;
+  skos:prefLabel "Conditional Scan"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_ConditionalScan .
+
+motif:DynamicLoopUnroll a motif:Motif ;
+  skos:prefLabel "Dynamic Loop Unroll"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control ;
+  motif:hasSemantics motif:Sem_DynamicLoopUnroll .

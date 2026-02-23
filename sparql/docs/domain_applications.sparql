@@ -1,0 +1,18 @@
+# Domain applications with their motifs
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?domain ?domainLabel ?app ?appLabel ?motif ?motifLabel ?isPrimary
+WHERE {
+  ?app a motif:Application ;
+    skos:prefLabel ?appLabel ;
+    motif:belongsTo ?domain .
+  ?domain skos:prefLabel ?domainLabel .
+  OPTIONAL {
+    { ?app motif:primaryMotif ?motif . BIND(true AS ?isPrimary) }
+    UNION
+    { ?app motif:usesMotif ?motif . BIND(false AS ?isPrimary) }
+    ?motif skos:prefLabel ?motifLabel .
+  }
+}
+ORDER BY ?domainLabel ?appLabel DESC(?isPrimary)

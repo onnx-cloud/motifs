@@ -1,0 +1,50 @@
+\documentclass[11pt,oneside]{article}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Geometry
+\geometry{margin=1in, headheight=14pt}
+
+% Bibliography (plain natbib)
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+% Metadata
+\def\ReportTitle{Cognitive Compiler: Lowering Reasoning to Machine-Native IR}
+\def\ReportAuthors{Anonymous}
+\def\ReportDate{\today}
+
+% Commands
+\newcommand{\OnePageSectionStart}{}
+\newcommand{\OnePageSectionEnd}{}
+
+% Code listing style
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=flexible,
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!60!black},
+  stringstyle=\color{purple},
+  showstringspaces=false,
+  tabsize=2
+}
+
+% Headers/footers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\ReportTitle}

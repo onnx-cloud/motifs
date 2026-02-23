@@ -1,0 +1,11 @@
+# Summary of motifs with ONNX exact mapping vs unmapped
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT (IF(BOUND(?op), "mapped", "unmapped") AS ?status) (COUNT(?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif .
+  OPTIONAL { ?motif skos:exactMatch ?op . }
+}
+GROUP BY ?status
+ORDER BY DESC(?count)

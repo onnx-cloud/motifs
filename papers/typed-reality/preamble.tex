@@ -1,0 +1,57 @@
+\documentclass[11pt,oneside]{article}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\DeclareUnicodeCharacter{22A5}{\ensuremath{\bot}} % map Unicode '⊥' to LaTeX \bot
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Geometry
+\geometry{margin=1in, headheight=14pt}
+
+% Bibliography (plain natbib - no biber required)
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+% Fallbacks for uncommon packages
+% If stmaryrd isn't installed, define bracket macros to avoid build failure
+\providecommand{\llbracket}{[\![}
+\providecommand{\rrbracket}{]\!]}
+
+
+% Metadata
+\def\ReportTitle{Statically Typed Reality: A Type-Preserving ABI for Machine Intelligences}
+\def\ReportAuthors{Anonymous}
+\def\ReportDate{\today}
+
+% Commands
+\newcommand{\Tensor}[1]{\texttt{#1}}
+\newcommand{\OnePageSectionStart}{}
+\newcommand{\OnePageSectionEnd}{}
+
+% Code listing style
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=flexible,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{red},
+  showstringspaces=false,
+  tabsize=2
+}
+
+% Headers/footers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\ReportTitle}

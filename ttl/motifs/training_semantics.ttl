@@ -1,0 +1,169 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motifs#> .
+#################################################################
+# Training-specific Semantics and Constraints (curated)
+# Generated: 2026-01-29 — curated definitions (manual review required)
+#################################################################
+
+motif:Sem_ForwardMode a motif:Semantics ;
+  skos:prefLabel "Forward-Mode Autodiff (JVP)" ;
+  skos:definition "Compute the Jacobian-vector product (JVP) by propagating directional derivatives (tangents) forward through the computation graph. Efficient when the number of outputs is small relative to inputs; used for directional derivatives and higher-order derivatives when appropriate." .
+
+motif:Constraint_ForwardMode_Efficiency a motif:Constraint ;
+  skos:prefLabel "Efficient when outputs >> inputs" ;
+  rdfs:comment "Prefer forward-mode auto-diff implementations when the dimensionality of outputs is much smaller than inputs, otherwise reverse-mode may be more efficient." .
+
+motif:Sem_ReverseMode a motif:Semantics ;
+  skos:prefLabel "Reverse-Mode Autodiff (VJP / Backprop)" ;
+  skos:definition "Compute the vector-Jacobian product (VJP) by propagating cotangent (adjoint) information backward through the graph (backpropagation). Efficient for scalar outputs and high-dimensional inputs; may require storing activations or applying checkpointing strategies." .
+
+motif:Constraint_ReverseMode_Memory a motif:Constraint ;
+  skos:prefLabel "May require storing activations" ;
+  rdfs:comment "Reverse-mode typically requires access to intermediate activations from the forward pass; consider checkpointing or recomputation for large models to trade compute for memory." .
+
+motif:Sem_GradientCheckpoint a motif:Semantics ;
+  skos:prefLabel "Gradient Checkpointing (Recompute Activations)" ;
+  skos:definition "Save a subset of activations during forward pass and recompute intermediate activations during the backward pass to reduce peak memory usage at the cost of extra computation." .
+
+motif:Constraint_GradientCheckpoint_Boundaries a motif:Constraint ;
+  skos:prefLabel "Checkpoint boundary selection" ;
+  rdfs:comment "Checkpoint boundaries must be chosen to balance recomputation cost with memory savings; correctness requires identical recomputation semantics." .
+
+motif:Sem_GradientAccumulate a motif:Semantics ;
+  skos:prefLabel "Gradient Accumulation" ;
+  skos:definition "Accumulate gradients across multiple micro-batches before applying an optimizer step to emulate larger effective batch sizes when hardware memory is limited." .
+
+motif:Constraint_GradientAccumulate_Batch a motif:Constraint ;
+  skos:prefLabel "Accumulation count divides effective batch" ;
+  rdfs:comment "The accumulation count should divide the effective batch size used for learning rate scaling and optimization stability." .
+
+motif:Sem_GradientClip a motif:Semantics ;
+  skos:prefLabel "Gradient Clipping" ;
+  skos:definition "Clip gradient norms or individual parameter gradients to prevent exploding gradients and improve training stability; common strategies include global norm clipping and per-parameter clipping." .
+
+motif:Constraint_GradientClip_Threshold a motif:Constraint ;
+  skos:prefLabel "Clipping threshold required" ;
+  rdfs:comment "A numerical threshold (norm or value) must be specified and tuned to avoid harming convergence; document chosen strategy in training config." .
+
+motif:Sem_SGD a motif:Semantics ;
+  skos:prefLabel "Stochastic Gradient Descent (SGD)" ;
+  skos:definition "Update parameters by moving along negative gradient: θ ← θ - lr * ∇L. Simple, widely used optimizer; effectiveness depends on learning rate and data noise properties." .
+
+motif:Constraint_SGD_LR a motif:Constraint ;
+  skos:prefLabel "Learning rate must be tuned" ;
+  rdfs:comment "Learning rate is a critical hyperparameter for SGD; specify schedule, decay, or adaptive scheme as needed." .
+
+motif:Sem_Adam a motif:Semantics ;
+  skos:prefLabel "Adam Optimizer" ;
+  skos:definition "Adaptive learning rate optimizer using estimates of first and second moments of gradients (β1, β2) with bias correction; commonly used default optimizer for many models." .
+
+motif:Constraint_Adam_Hyperparams a motif:Constraint ;
+  skos:prefLabel "Adam hyperparameters and bias correction" ;
+  rdfs:comment "Specify β1, β2, ε and whether bias correction is applied; document weight decay semantics (decoupled or L2)." .
+
+motif:Sem_AdamW a motif:Semantics ;
+  skos:prefLabel "AdamW (Decoupled Weight Decay)" ;
+  skos:definition "Adam variant that decouples weight decay from gradient-based parameter updates, applying L2-style decay directly to parameters rather than gradients." .
+
+motif:Constraint_AdamW_WeightDecay a motif:Constraint ;
+  skos:prefLabel "Weight decay applies to parameters not gradients" ;
+  rdfs:comment "Clarify whether weight decay is implemented as decoupled (AdamW) or as L2 regularization on gradients." .
+
+motif:Sem_DataParallel a motif:Semantics ;
+  skos:prefLabel "Data Parallel Training" ;
+  skos:definition "Replicate model across devices, split data batches, compute gradients locally and aggregate (e.g., AllReduce) to keep model replicas synchronized." .
+
+motif:Constraint_DataParallel_Memory a motif:Constraint ;
+  skos:prefLabel "Model must fit in device memory" ;
+  rdfs:comment "Each replica must fit within a device's memory; otherwise use model or tensor parallelism strategies." .
+
+motif:Sem_ZeRO a motif:Semantics ;
+  skos:prefLabel "ZeRO (Optimizer State Sharding)" ;
+  skos:definition "Partition optimizer state, gradients, and parameters across data-parallel ranks to reduce memory footprint and enable larger models; trade-offs include increased communication overhead." .
+
+motif:Constraint_ZeRO_Communication a motif:Constraint ;
+  skos:prefLabel "Communication overhead increases with partitioning" ;
+  rdfs:comment "Quantify communication/latency trade-offs and ensure network/support for required collective primitives." .
+
+motif:Sem_Momentum a motif:Semantics ;
+  skos:prefLabel "SGD with Momentum" ;
+  skos:definition "Maintain a velocity term v; update v ← μ v + ∇L and parameter update θ ← θ - lr * v. Improves convergence on shallow minima and noisy gradients." .
+
+motif:Constraint_Momentum_Coefficient a motif:Constraint ;
+  skos:prefLabel "Typical momentum coefficient" ;
+  rdfs:comment "Specify the momentum coefficient μ (commonly 0.9) and document its effect on convergence and stability." .
+
+motif:Sem_LAMB a motif:Semantics ;
+  skos:prefLabel "LAMB (Layer-wise Adaptive Moments)" ;
+  skos:definition "Optimizer that scales layer-wise updates using a trust ratio allowing stable large-batch training; often combined with adaptive per-parameter moments." .
+
+motif:Constraint_LAMB_PerLayerNormalization a motif:Constraint ;
+  skos:prefLabel "Per-layer normalization required" ;
+  rdfs:comment "Document per-layer normalization and trust ratio usage for stable large-batch training." .
+
+motif:Sem_LRWarmup a motif:Semantics ;
+  skos:prefLabel "Learning Rate Warmup" ;
+  skos:definition "Gradually increase learning rate from a small initial value to the target learning rate over a specified number of steps to stabilize early training dynamics." .
+
+motif:Constraint_LRWarmup_Steps a motif:Constraint ;
+  skos:prefLabel "Warmup steps must be specified" ;
+  rdfs:comment "Specify number of warmup steps and schedule shape (linear, exponential, etc.) in training configuration." .
+
+motif:Sem_CosineDecay a motif:Semantics ;
+  skos:prefLabel "Cosine Learning Rate Decay" ;
+  skos:definition "Smoothly decay learning rate from lr_max to lr_min using a cosine schedule over T steps: lr = lr_min + 0.5*(lr_max - lr_min)*(1+cos(π*t/T))." .
+
+motif:Constraint_CosineDecay_TotalSteps a motif:Constraint ;
+  skos:prefLabel "Total steps T must be known" ;
+  rdfs:comment "Specify total training steps T for proper decay schedule timing." .
+
+motif:Sem_MixedPrecision a motif:Semantics ;
+  skos:prefLabel "Mixed Precision Training" ;
+  skos:definition "Use lower-precision (FP16/BF16) for most computation while keeping master weights in FP32; requires loss-scaling and careful numerical stability handling." .
+
+motif:Constraint_MixedPrecision_LossScale a motif:Constraint ;
+  skos:prefLabel "Requires loss scaling" ;
+  rdfs:comment "Define loss-scaling policy (static/dynamic) to prevent underflow in low-precision gradients." .
+
+motif:Sem_LossScale a motif:Semantics ;
+  skos:prefLabel "Loss Scaling" ;
+  skos:definition "Multiply loss by a scale factor before backprop and divide gradients after to avoid underflow with reduced precision arithmetic; dynamic schemes adjust scale adaptively." .
+
+motif:Constraint_LossScale_Adjustment a motif:Constraint ;
+  skos:prefLabel "Scale must be adjusted dynamically if overflow/underflow detected" ;
+  rdfs:comment "Implement dynamic loss scaling when training with mixed precision; document detection and adjustment policy." .
+
+motif:Sem_StepDecay a motif:Semantics ;
+  skos:prefLabel "Step Learning Rate Decay" ;
+  skos:definition "Decrease the learning rate by a multiplicative factor at predefined epoch steps; simple and effective schedule for many models." .
+
+motif:Constraint_StepDecay_Spec a motif:Constraint ;
+  skos:prefLabel "Decay epochs and factor must be specified" ;
+  rdfs:comment "List decay epochs and multiplicative factors in training configuration." .
+
+motif:Sem_ModelParallel a motif:Semantics ;
+  skos:prefLabel "Model Parallelism" ;
+  skos:definition "Partition model parameters or layers across devices when a single device cannot hold the full model; requires activation communication and synchronization." .
+
+motif:Constraint_ModelParallel_Activation a motif:Constraint ;
+  skos:prefLabel "Activations must be communicated between devices" ;
+  rdfs:comment "Specify required communication primitives and scheduling to transfer activations between devices when partitioning model structure." .
+
+motif:Sem_TensorParallel a motif:Semantics ;
+  skos:prefLabel "Tensor Parallelism" ;
+  skos:definition "Partition tensors/operations across devices with collective communication (AllReduce/AllGather) for aggregated updates; requires alignment of tensor shapes and dimension splits." .
+
+motif:Constraint_TensorParallel_Aggregation a motif:Constraint ;
+  skos:prefLabel "Requires AllReduce or AllGather for aggregation" ;
+  rdfs:comment "Document which collective operations are required and how tensor partitions are aligned across devices." .
+
+motif:Sem_PipelineParallel a motif:Semantics ;
+  skos:prefLabel "Pipeline Parallelism" ;
+  skos:definition "Split model into sequential stages across devices and pipeline microbatches to improve device utilization at the cost of bubble overhead and pipeline complexity." .
+
+motif:Constraint_PipelineParallel_Bubble a motif:Constraint ;
+  skos:prefLabel "Pipeline bubble overhead" ;
+  rdfs:comment "Quantify pipeline bubble cost and provide guidance on microbatch sizing and scheduling to limit overhead." .
+
+# End of curated training semantics/constraints

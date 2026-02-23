@@ -1,0 +1,37 @@
+\OnePageSectionStart
+\section{Constrained Optimization in the Fused Fabric}
+
+We formalize the constrained update rule that enforces semantic invariants during learning.
+
+\subsection{Projection-Based Updates}
+Let $\theta$ be a parameter tensor with semantics $\Sigma$. Let $g = \nabla_\theta \mathcal{L}$ be the gradient produced by the adjoint graph. The update in a generic optimizer (e.g., SGD with step-size $\eta$) becomes:
+\[ \theta' = \Pi_{\Sigma}\left(\theta - \eta g\right) \]
+where $\Pi_{\Sigma}$ is a projection operator onto the set of semantically valid states for $\theta$ (e.g., simplex projection for probability distributions, clipping for bounded measurements, vocabulary-preserving projection for enums).
+
+\paragraph{Projected Gradient Descent (PGD)}
+When $\Sigma$ defines a convex feasible set, the above projection yields classical projected gradient descent. We present the generic algorithm below.
+
+\begin{verbatim}
+# Pseudo-code: Typed Projected Gradient Descent
+initialize theta_0 respecting Sigma
+for t in 0..T:
+  g_t = AD(Primal, theta_t)         # adjoint graph returns gradient
+  theta_temp = theta_t - eta * g_t  # gradient step
+  theta_{t+1} = Project_Sigma(theta_temp)  # semantic projection
+end
+
+author: converge_if_convex(Sigma, eta)
+\end{verbatim}
+
+\subsection{Convergence Guarantees}
+\begin{theorem}
+If $\Sigma$ is convex and the loss $\mathcal{L}$ is Lipschitz-smooth, then with a sufficiently small step-size $\eta$, Typed PGD converges to a stationary point of $\mathcal{L}$ restricted to $\Sigma$.
+\end{theorem}
+\begin{proof}[Sketch]
+Standard PGD convergence proofs apply (\citep{optimization2006}). The novelty here is that each projection is semantics-aware (the projection operator implements type-specific constraints). Convergence properties follow from convexity of $\Sigma$ and smoothness of $\mathcal{L}$.
+\end{proof}
+
+\subsection{Non-Convex and Discrete Semantics}
+When $\Sigma$ is non-convex (structured combinatorial constraints) or contains discrete components (e.g., Enums), we combine projection with approximation (soft-relaxations) or with specialized combinatorial solvers injected as optimizer primitives. For discrete enums, the system learns an embedding and maps updates back with an argmax or Gumbel-softmax relaxation during training.
+
+\OnePageSectionEnd

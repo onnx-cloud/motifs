@@ -1,0 +1,128 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Manufacturing & Industrial Domain Applications
+# Maps manufacturing and industrial automation to motifs
+##################################
+
+motif:DefectDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Visual Defect Detection"@en ;
+  skos:definition "Automated quality inspection using computer vision to identify product defects."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:ObjectDetection .
+
+motif:PredictiveMaintenance a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Predictive Maintenance"@en ;
+  skos:definition "Forecasting equipment failures from sensor data to schedule proactive maintenance."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:PersistentState .
+
+motif:ProcessOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Manufacturing Process Optimization"@en ;
+  skos:definition "Optimizing production parameters using reinforcement learning and simulation."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:PolicyGradient .
+
+motif:RobotControl a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Industrial Robot Control"@en ;
+  skos:definition "Motion planning and control for robotic arms and automated machinery."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:ActorCritic .
+
+motif:SupplyChainOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Supply Chain Optimization"@en ;
+  skos:definition "Inventory management, demand forecasting, and logistics optimization."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Loop .
+
+motif:DigitalTwin a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Digital Twin Simulation"@en ;
+  skos:definition "Real-time virtual models of physical assets for monitoring and optimization."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:PersistentState ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join ;
+  motif:usesMotif motif:Linear .
+
+motif:WeldInspection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Weld Quality Inspection"@en ;
+  skos:definition "Detecting weld defects using X-ray or ultrasonic imaging analysis."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:relatedUseCase motif:SemanticSegmentation .
+
+motif:BinPicking a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Robotic Bin Picking"@en ;
+  skos:definition "Vision-guided robot picking of objects from unstructured bins."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:InstanceSegmentation .
+
+motif:EnergyOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Factory Energy Optimization"@en ;
+  skos:definition "Optimizing energy consumption across manufacturing processes."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:ReduceSum .
+
+motif:AssemblyVerification a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Assembly Verification"@en ;
+  skos:definition "Verifying correct assembly of components using vision systems."@en ;
+  motif:belongsTo motif:Manufacturing ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:ObjectDetection .
+

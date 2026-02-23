@@ -1,0 +1,18 @@
+# Generic detail query for any resource; expects ?targetItem bound via VALUES injection
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?label ?definition ?type ?repo ?example ?notes ?signature ?semantics
+WHERE {
+  # bound variable: ?targetItem
+  OPTIONAL { ?targetItem skos:prefLabel ?label }
+  OPTIONAL { ?targetItem skos:definition ?definition }
+  OPTIONAL { ?targetItem rdf:type ?type }
+  OPTIONAL { ?targetItem motif:githubRepo ?repo }
+  OPTIONAL { ?targetItem motif:hasExample ?example }
+  OPTIONAL { ?targetItem motif:notes ?notes }
+  OPTIONAL { ?targetItem motif:hasSignature ?signature }
+  OPTIONAL { ?targetItem motif:hasSemantics ?semantics }
+}

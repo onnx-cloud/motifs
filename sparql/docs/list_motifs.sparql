@@ -1,0 +1,17 @@
+# List all motifs with basic metadata
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?motif ?label ?signature ?definition ?categoryLabel ?isPrimitive
+WHERE {
+  ?motif a motif:Motif ;
+    skos:prefLabel ?label .
+  OPTIONAL { ?motif skos:definition ?definition . }
+  OPTIONAL { ?motif motif:hasSignature ?signature . }
+  OPTIONAL { 
+    ?motif motif:hasCategory ?category .
+    ?category skos:prefLabel ?categoryLabel .
+  }
+  OPTIONAL { ?motif motif:isPrimitive ?isPrimitive . }
+}
+ORDER BY ?categoryLabel ?label

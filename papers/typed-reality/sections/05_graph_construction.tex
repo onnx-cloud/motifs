@@ -1,0 +1,52 @@
+\OnePageSectionStart
+\section{Fusing Knowledge Realms: From Observation to Action}
+
+A complete pipeline from observation to action is a DAG where every edge carries a tensor type. The graph fuses three distinct realms of intelligence: \emph{perception} (grounded measurement), \emph{knowledge} (symbolic and probabilistic), and \emph{reasoning} (deterministic and stochastic computation).
+
+\paragraph{Perception Realm: Grounding in Physical Reality}
+\begin{itemize}
+  \item \textbf{CameraRGB} $\to$ \texttt{f32[B,3,H,W] M\{radiance,srgb,camera,[0,1]\}}—raw pixels are physical measurements
+  \item \textbf{Microphone} $\to$ \texttt{f32[B,F,T] M\{amplitude,log\_mel,acoustic,[-1,1]\}}—audio is acoustic measurement
+  \item \textbf{Tactile Sensor} $\to$ \texttt{f32[B,N] M\{pressure,pascals,tactile,[0,100k]\}}—touch is force measurement
+\end{itemize}
+All perception inputs are Measurement (\texttt{M}) types: they ground the computation in physical reality with explicit units, frames, and valid ranges. A malfunctioning sensor produces a Measurement of the correct type with wrong content—the type system ensures this is processed consistently and fails explicitly if constraints are violated.
+
+\paragraph{Knowledge Realm: Symbolic and Probabilistic Abstraction}
+\begin{itemize}
+  \item \textbf{Tokenizer} $\to$ \texttt{i32[B,T] E\{BPE50k,50000\}}—raw text as symbolic vocabulary
+  \item \textbf{Ontology/KG} $\to$ \texttt{i32[B,E] E\{DBpedia,1e9\}}—structured knowledge as symbols
+\end{itemize}
+Symbolic knowledge is typed as Enum (\texttt{E}): discrete, finite vocabulary. Probabilistic knowledge (language model output, belief states) is typed as Distribution (\texttt{D}): normalized over a support space.
+
+\paragraph{Reasoning Realm: Fusing Knowledge Through Type-Preserving Morphs}
+\textbf{Embedding projection}: Bridge symbolic knowledge into latent space:
+\begin{itemize}
+  \item \texttt{TextEmbed}: \texttt{E\{vocab\}} $\to$ \texttt{⊥} (project tokens to embeddings)
+  \item \texttt{EntityEmbed}: \texttt{E\{entities\}} $\to$ \texttt{⊥} (project knowledge graph entities to embeddings)
+  \item \texttt{MeasurementNorm}: \texttt{M} $\to$ \texttt{⊥} (normalize physical quantities to standard ranges)
+\end{itemize}
+
+\textbf{Fusion across realms}:
+\[ \text{X} = \text{Concat}([\text{text\_emb}, \text{vision\_emb}, \text{entity\_emb}, \text{tactile\_emb}], \text{axis}=1) \]
+All inputs to Concat are now Atomic (\texttt{⊥}, latent, dimensionless). The type system ensures shape alignment and semantic compatibility. Mixing a Measurement directly with a symbolic Enum is impossible—all knowledge realms must first be projected to a common latent space.
+
+\textbf{Integrated reasoning}:
+Apply \emph{N} transformer blocks to fused representation. Each block composes morphs that preserve semantic structure:
+\[ \text{X'} = \text{Attention}(\text{X}) \to \text{f32[B,T,D] ⊥} \]
+\[ \text{X''} = \text{Linear}(\text{LayerNorm}(\text{X'})) \to \text{f32[B,T,D] ⊥} \]
+\[ \text{logits} = \text{Linear}(\text{X''}) \to \text{f32[B,1,C] ⊥} \]
+The output logits are still Atomic (\texttt{⊥})—pure latent vectors. No semantic information flows from this layer; it is deterministic (no Distribution) because reasoning over fused knowledge is deterministic until explicitly stochastic.
+
+\textbf{Decision and action}:
+Bridge reasoning output back to action in physical and symbolic realms:
+\[ \text{action\_logits} = \text{Linear}(\text{X''}) \to \text{f32[B,1,A] ⊥} \]
+\[ \text{action\_probs} = \text{Softmax}(\text{action\_logits}) \to \text{f32[B,1,A] D\{categorical, [0,1]\}} \]
+Actuators bind to Distribution (\texttt{D}) or Measurement (\texttt{M}) outputs:
+\begin{itemize}
+  \item \textbf{Motor}: Sample from Distribution, e.g., $\text{action} \sim \text{action\_probs}[\text{``left''},\text{``straight''},\text{``right''}]$
+  \item \textbf{Controller}: Project back to physical Measurement, e.g., \texttt{speed\_ctrl: f32[B,1] M\{speed,m/s,motor,[0,10]\}}
+\end{itemize}
+
+\textbf{Semantic invariant:} Every edge in the graph is typed. Perception (\texttt{M}) grounds input. Knowledge (\texttt{E}, \texttt{D}) enters via symbolic/probabilistic projections. Reasoning fuses and transforms Atomic (\texttt{⊥}) representations. Decision outputs (\texttt{D}) drive stochastic action; Motor control (\texttt{M}) enforces physical safety. The type system rejects (at compile time) any crossing of knowledge realms without explicit type bridge morphs.
+
+\OnePageSectionEnd

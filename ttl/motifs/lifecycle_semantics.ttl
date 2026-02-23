@@ -1,0 +1,57 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motifs#> .
+#################################################################
+# Lifecycle semantics & constraints (curated)
+# Generated: 2026-01-29 — manual definitions
+#################################################################
+
+motif:Sem_CanaryDeploy a motif:Semantics ;
+  skos:prefLabel "Canary Deployment" ;
+  skos:definition "Deploy a model variant to a small subset of traffic, monitor key metrics, and progressively roll out if performance is acceptable; allows detection of regressions on live traffic." .
+
+motif:Constraint_CanaryDeploy_TrafficPolicy a motif:Constraint ;
+  skos:prefLabel "Traffic split and rollback policy" ;
+  rdfs:comment "Specify traffic percentage, monitoring window, thresholds for abort/rollback and automated rollback policies." .
+
+motif:Sem_ABTesting a motif:Semantics ;
+  skos:prefLabel "A/B Testing" ;
+  skos:definition "Run controlled experiments comparing two or more model variants on randomized traffic splits to measure performance and statistical significance." .
+
+motif:Constraint_ABTesting_Stats a motif:Constraint ;
+  skos:prefLabel "Statistical power and metrics selection" ;
+  rdfs:comment "Specify primary/secondary metrics, required sample sizes, hypothesis testing procedures, and monitoring duration to ensure valid conclusions." .
+
+motif:Sem_ModelVersion a motif:Semantics ;
+  skos:prefLabel "Model Versioning" ;
+  skos:definition "Assign and track version identifiers and metadata for model artifacts to enable reproducibility and rollbacks; integrate with provenance storage and CI/CD pipelines." .
+
+motif:Constraint_ModelVersion_Provenance a motif:Constraint ;
+  skos:prefLabel "Provenance must be tamper-evident and queryable" ;
+  rdfs:comment "Store immutable metadata (data, code, config, model hashes) and ensure queryable provenance for audit and rollback." .
+
+motif:Sem_RetrainingPipeline a motif:Semantics ;
+  skos:prefLabel "Retraining Pipeline" ;
+  skos:definition "Automate data collection, validation, training, evaluation, and deployment steps with CI/CD practices, including monitoring for drift and triggers for retraining." .
+
+motif:Constraint_RetrainingPipeline_Governance a motif:Constraint ;
+  skos:prefLabel "Data validation and governance enforced" ;
+  rdfs:comment "Enforce data quality, validation, and governance policies; log model lineage and ensure reproducibility of retraining." .
+
+motif:Sem_Rollback a motif:Semantics ;
+  skos:prefLabel "Rollback" ;
+  skos:definition "Revert deployed model to a prior stable version upon detection of regression or critical issue; ensure traffic re-routing and state consistency during rollback." .
+
+motif:Constraint_Rollback_Integrity a motif:Constraint ;
+  skos:prefLabel "Rollback must preserve online consistency and data integrity" ;
+  rdfs:comment "Define data/state consistency requirements and ensure idempotent rollback procedures with monitoring." .
+
+motif:Sem_Monitoring a motif:Semantics ;
+  skos:prefLabel "Model Monitoring" ;
+  skos:definition "Continuously monitor model performance, data distribution, and system metrics; set alerts and thresholds to detect degradation and trigger investigations or automated actions." .
+
+motif:Constraint_Monitoring_Alerts a motif:Constraint ;
+  skos:prefLabel "Alerts, thresholds, and retraining triggers" ;
+  rdfs:comment "Define concrete alert thresholds, monitoring windows, and actions to take when alerts fire (investigate, revert, retrain)." .
+
+# End of lifecycle semantics

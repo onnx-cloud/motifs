@@ -1,0 +1,22 @@
+# ONNX mapping coverage statistics
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+
+SELECT 
+  (COUNT(DISTINCT ?allMotif) AS ?totalMotifs)
+  (COUNT(DISTINCT ?mappedMotif) AS ?mappedMotifs)
+  (COUNT(DISTINCT ?exactMotif) AS ?exactMatches)
+  (COUNT(DISTINCT ?closeMotif) AS ?closeMatches)
+  (COUNT(DISTINCT ?runtimeMotif) AS ?requiresRuntime)
+WHERE {
+  { ?allMotif a motif:Motif . }
+  UNION
+  { ?mappedMotif a motif:Motif . { ?mappedMotif skos:exactMatch ?op1 } UNION { ?mappedMotif skos:closeMatch ?op2 } UNION { ?mappedMotif skos:broadMatch ?op3 } }
+  UNION
+  { ?exactMotif a motif:Motif ; skos:exactMatch ?exactOp . }
+  UNION
+  { ?closeMotif a motif:Motif ; skos:closeMatch ?closeOp . }
+  UNION
+  { ?runtimeMotif a motif:Motif ; onnx:requiresRuntime ?rt . }
+}

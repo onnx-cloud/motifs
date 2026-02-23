@@ -1,0 +1,25 @@
+# Find motifs missing key properties
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?label ?missingProperties
+WHERE {
+  ?motif a motif:Motif ;
+    skos:prefLabel ?label .
+  FILTER (
+    !BOUND(?signature) ||
+    !BOUND(?category) ||
+    !BOUND(?semantic)
+  )
+  BIND(
+    CONCAT(
+      IF(!BOUND(?signature), "Signature, ", ""),
+      IF(!BOUND(?category), "Category, ", ""),
+      IF(!BOUND(?semantic), "Semantics", "")
+    ) AS ?missingProperties
+  )
+  OPTIONAL { ?motif motif:hasSignature ?signature . }
+  OPTIONAL { ?motif motif:hasCategory ?category . }
+  OPTIONAL { ?motif motif:hasSemantics ?semantic . }
+}
+ORDER BY ?label

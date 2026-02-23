@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{title}}</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  {{{head_extra}}}
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-blue-900 text-white py-4 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-xl font-semibold">{{title}}</h1>
+      {{#subtitle}}<p class="mt-1 text-sm">{{subtitle}}</p>{{/subtitle}}
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <nav class="w-80 border-r pr-4">
+      <h2 class="text-lg font-semibold mb-2">Charts</h2>
+      {{{nav}}}
+      <hr class="my-4">
+      {{{nav_footer}}}
+      {{> footer}}
+    </nav>
+
+    <section id="viewer" class="flex-1 min-h-[500px]">
+      {{{content}}}
+    </section>
+  </main>
+</body>
+</html>

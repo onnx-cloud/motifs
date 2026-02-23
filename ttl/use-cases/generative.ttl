@@ -1,0 +1,123 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Generative Model Use Cases
+# Links generative AI applications to computation graph motifs
+##################################
+
+motif:DiffusionDenoising a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Diffusion Denoising"@en ;
+  skos:definition "Iterative noise removal process in diffusion models, progressively refining samples from noise to data distribution."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Add ;
+  motif:usesMotif motif:EphemeralState .
+
+motif:LatentDiffusion a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Latent Diffusion"@en ;
+  skos:definition "Diffusion process operating in compressed latent space for efficient high-resolution generation."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:Call ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Linear .
+
+motif:VAEEncoding a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "VAE Encoding/Decoding"@en ;
+  skos:definition "Variational autoencoder compression and reconstruction of data to/from latent representations."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join ;
+  motif:usesMotif motif:Sampler ;
+  motif:usesMotif motif:Linear .
+
+motif:GAN a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Generative Adversarial Network"@en ;
+  skos:definition "Adversarial training framework with generator and discriminator networks competing to produce realistic samples."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Sampler .
+
+motif:TextToImage a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Text-to-Image Generation"@en ;
+  skos:definition "Generating images conditioned on text prompts using cross-attention between text and image features."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:motif_QKV ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:EmbeddingLookup .
+
+motif:ImageInpainting a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Image Inpainting"@en ;
+  skos:definition "Filling in missing or masked regions of images with contextually appropriate content."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:PredicateMask ;
+  motif:usesMotif motif:PredicateMask ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Concat .
+
+motif:SuperResolution a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Image Super-Resolution"@en ;
+  skos:definition "Upscaling low-resolution images to higher resolution with enhanced detail synthesis."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Broadcast ;
+  motif:usesMotif motif:Add .
+
+motif:StyleTransfer a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Neural Style Transfer"@en ;
+  skos:definition "Applying artistic style from one image to the content of another through feature matching."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Sub ;
+  motif:usesMotif motif:Linear .
+
+motif:FlowMatching a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Flow Matching"@en ;
+  skos:definition "Learning continuous normalizing flows via optimal transport paths between noise and data distributions."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Add ;
+  motif:usesMotif motif:Residual .
+
+motif:ControlNet a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "ControlNet Conditioning"@en ;
+  skos:definition "Adding spatial control to diffusion models through auxiliary condition encoders with zero-convolution."@en ;
+  motif:hasDomain motif:Generative ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Add ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:Fork .
+

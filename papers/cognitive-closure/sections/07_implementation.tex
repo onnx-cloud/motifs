@@ -1,0 +1,59 @@
+\OnePageSectionStart
+\section{Implementation: Silicon Closure}
+
+The Cognitive Compiler lowers this closed loop to silicon-native representations. 
+
+\paragraph{Adjoint Graph Generation}
+When the compiler encounters the \texttt{@training} context, it perform Automatic Differentiation (AD) on the fused graph. It translates high-level reasoning intents into a dual-graph structure: 
+1. The **Primal Graph** (forward pass/inference).
+2. The **Adjoint Graph** (backward pass/gradients).
+
+\paragraph{ONNX Training Extensions}
+We target ONNX Training IR, which supports the execution of gradient graphs on standard hardware. The compiler emits the dual graph (primal + adjoint) as a single ModelProto with separate graph entries for inference and training. Pragma metadata (\texttt{@training}, \texttt{@frozen}, \texttt{@train}) is stored in \texttt{metadata\_props} and \texttt{doc\_string} fields. During on-device updates, runtime checkers validate post-update invariants via the assertion graphs and perform semantic projections as part of the update kernel when required.
+
+\paragraph{Hardware-Side Enforcements}
+For edge or secure environments, we provide optional hardware-enforced guards that refuse to commit weight updates violating semantic constraints. These guards can be expressed as microcode or runtime policies in the device's firmware, enabling certified updates where regulatory or safety concerns demand absolute guarantees on post-update semantics.
+
+\paragraph{Verification Workflows}
+Formal verification is integrated into the build pipeline: the compiler emits assertion graphs and proof obligations alongside ModelProto artifacts. We use a layered strategy:
+\begin{enumerate}
+  \item Lightweight runtime assertions encoded in ONNX graph nodes (Clip, Assert) that are executed during training and inference.
+  \item Post-update assertion graphs that verify semantic invariants and trigger rollback when violations are detected.
+  \item Off-line mechanized proofs (Coq) for projection operators and key optimizer invariants.
+\end{enumerate}
+
+\paragraph{Encoding Pragmas in ModelProto}
+Pragmas are encoded as follows:
+\begin{itemize}
+  \item \texttt{@training\{loss:.., opt:..\}} \(\to\) ModelProto.metadata\_props[\texttt{"training"}] = serialized configuration.
+  \item \texttt{@train} parameters \(\to\) TensorProto attributes labeled \texttt{trainable=1} and recorded in \texttt{metadata\_props}.
+  \item \texttt{@frozen} subgraphs \(\to\) Marked with \texttt{frozen=1} and excluded from adjoint generation and optimizer updates.
+\end{itemize}
+
+\paragraph{Adjoint \& Optimizer State}
+Optimizer state (moments for Adam, momentum buffers) is represented as auxiliary tensors in the ModelProto. Update kernels incorporate \texttt{Project\_Sigma} operators immediately prior to write-back to parameter storage. This design minimizes the window during which invalid states exist and enables atomic commits guarded by hardware or software checks.
+
+\paragraph{Praxis Checklist: Safe Self-Modification}
+When a praxis allows reconfiguration, runtimes should implement the following minimal workflow to ensure safe deployable updates:
+\begin{enumerate}
+  \item **Declare**: encode the reconfiguration \texttt{scope} and invariant set in the ModelProto metadata.
+  \item **Sandbox**: run candidate updates in an isolated environment using the same runtime checks and data distributions.
+  \item **Verify**: execute assertion graphs and test-suites; apply semantic projection operators where necessary.
+  \item **Audit**: log update artifacts and verification outcomes into the provenance graph for human review.
+  \item **Commit / Rollback**: atomically commit only when all checks pass; otherwise rollback and raise alerts.
+\end{enumerate}
+
+\paragraph{Safe Self-Modify (pseudocode)}
+\begin{verbatim}
+candidate = propose_update(praxis, candidate_params)
+trial_state = sandbox_run(candidate, budget)
+if verify(trial_state, invariants):
+    commit(candidate)
+    record_provenance(candidate, outcome='committed')
+else:
+    rollback(trial_state)
+    record_provenance(candidate, outcome='rejected')
+\end{verbatim}
+
+\OnePageSectionEnd
+\OnePageSectionEnd

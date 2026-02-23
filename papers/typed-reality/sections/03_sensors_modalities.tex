@@ -1,0 +1,15 @@
+\OnePageSectionStart
+\section{Sensors as Data Sources}
+
+Sensors are typed producers. The type specifies what semantic information the data carries, enabling deterministic mapping to computation.
+
+\begin{itemize}
+  \item \textbf{CameraRGB}: \texttt{f32[B,C,H,W] M\{radiance,srgb,camera,[0,1]\}} \quad Converts pixel radiance to normalized $[0,1]$ RGB.
+  \item \textbf{Microphone}: \texttt{f32[B,F,T] M\{amplitude,log\_mel,acoustic,[-1,1]\}} \quad Mel-spectrogram: log-energy features over frequency/time.
+  \item \textbf{Tokenizer}: \texttt{i32[B,T] E\{BPE\_50k, 50000\}} \quad Text to token indices.
+  \item \textbf{ClassificationLabel}: \texttt{i32[B] E\{ImageNet1k, 1000\}} \quad Train-time: ground-truth class index.
+\end{itemize}
+
+Sensor bindings are explicit: \texttt{bind CameraRGB.output $\to$ ConvStem.input} enforces that the downstream morph expects a Measurement with matching unit and frame. Types guarantee \emph{semantic coherence}---every operation respects the data's origin and meaning---but not physical truth. A malfunctioning sensor will produce a tensor of the correct type with incorrect content; the type system ensures correct composition regardless.
+
+\OnePageSectionEnd

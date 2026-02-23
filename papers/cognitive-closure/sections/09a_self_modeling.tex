@@ -1,0 +1,18 @@
+\OnePageSectionStart
+\section{Self-Modeling and On-Device Learning}
+
+We include a short reproducible example of on-device self-modeling where an agent learns a sensor calibration parameter online. The example demonstrates stability of the projection operators and the role of runtime assertion graphs in detecting and recovering from invalid updates. Detailed experiments and notebooks are available in the repository under \texttt{papers/cognitive-closure/experiments/self\_modeling\_sensor/}.
+
+\paragraph{Praxis for Self-Modeling} Every self-modifying praxis should explicitly declare a \texttt{reconfigure} policy and verification artifact. The \texttt{self\_modeling\_sensor} experiment follows the Praxis Checklist: candidate updates are evaluated in a sandboxed trial, verified with assertion graphs and a simple prediction-error reduction test, and recorded with provenance (figure + npz). The canonical loop used is:
+\begin{verbatim}
+for t in timesteps:
+  s = sense(g)
+  pred = model.predict(s)
+  loss = L(pred, target)
+  model.update(loss)
+  g = propose_and_verify_update(g, model, invariants)
+\end{verbatim}
+
+This pattern generalizes to sensor (S), action (A), and computation (C) reconfiguration by extending the verification artifacts and sandbox budgets accordingly.
+
+\OnePageSectionEnd

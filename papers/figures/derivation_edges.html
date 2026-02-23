@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Derivation Edges</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-blue-900 text-white py-4 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-xl font-semibold">Derivation Edges</h1>
+      
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <nav class="w-80 border-r pr-4">
+      <h2 class="text-lg font-semibold mb-2">Charts</h2>
+      
+      <hr class="my-4">
+      
+      <footer class="text-center py-6 text-sm text-gray-500 border-t">
+         v · <a class="text-gray-500 hover:text-blue-700" href="">GitHub</a> · Generated 
+      </footer>    </nav>
+
+    <section id="viewer" class="flex-1 min-h-[500px]">
+      <div class="chart-page">
+  <h1 class="text-2xl font-bold mb-4">Derivation Edges</h1>
+  <div id="vis" class="flex justify-center"></div>
+  <script type="text/javascript">
+    var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "Derivation Edges", "description": "Number of derived motifs per B* primitive", "data": {"values": [{"source": "Op"}, {"source": "Reduce"}, {"source": "Reshape"}, {"source": "Fork"}, {"source": "Join"}, {"source": "Loop"}, {"source": "If"}, {"source": "Read"}, {"source": "Write"}, {"source": "Call"}, {"source": "Mutate"}, {"source": "Sample"}, {"source": "Comm"}, {"source": "Identity"}, {"source": "Extern"}, {"source": "Cast"}]}, "width": 700, "height": 360, "mark": "bar", "encoding": {"y": {"field": "source", "type": "nominal", "sort": {"field": "_count", "order": "descending"}}, "x": {"aggregate": "count", "type": "quantitative", "title": "Derived targets (count)"}, "color": {"field": "source", "type": "nominal"}}, "config": {"axis": {"grid": false}}};
+    (function() {
+      if (typeof vegaEmbed === 'undefined') return;
+      try {
+        vegaEmbed('#vis', spec);
+      } catch(e) {
+        console.warn('vegaEmbed failed:', e);
+      }
+    })();
+  </script>
+</div>
+
+    </section>
+  </main>
+</body>
+</html>

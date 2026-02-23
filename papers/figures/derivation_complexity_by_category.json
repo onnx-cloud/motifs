@@ -1,0 +1,254 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Derivation Complexity by Category",
+  "description": "Heatmap of primitive usage frequency per category",
+  "data": {
+    "values": [
+      {
+        "category": "A. Linear",
+        "primitive": "Identity",
+        "usage": "1"
+      },
+      {
+        "category": "A. Linear",
+        "primitive": "Op",
+        "usage": "15"
+      },
+      {
+        "category": "A. Linear",
+        "primitive": "Reduce",
+        "usage": "2"
+      },
+      {
+        "category": "A. Linear",
+        "primitive": "Reshape",
+        "usage": "8"
+      },
+      {
+        "category": "A. Linear",
+        "primitive": "Fork",
+        "usage": "1"
+      },
+      {
+        "category": "B. Topology",
+        "primitive": "Fork",
+        "usage": "12"
+      },
+      {
+        "category": "B. Topology",
+        "primitive": "Join",
+        "usage": "10"
+      },
+      {
+        "category": "B. Topology",
+        "primitive": "Identity",
+        "usage": "3"
+      },
+      {
+        "category": "B. Topology",
+        "primitive": "Reshape",
+        "usage": "2"
+      },
+      {
+        "category": "C. Control",
+        "primitive": "If",
+        "usage": "10"
+      },
+      {
+        "category": "C. Control",
+        "primitive": "Loop",
+        "usage": "8"
+      },
+      {
+        "category": "C. Control",
+        "primitive": "Call",
+        "usage": "3"
+      },
+      {
+        "category": "C. Control",
+        "primitive": "Read",
+        "usage": "2"
+      },
+      {
+        "category": "C. Control",
+        "primitive": "Write",
+        "usage": "2"
+      },
+      {
+        "category": "D. Routing",
+        "primitive": "Fork",
+        "usage": "8"
+      },
+      {
+        "category": "D. Routing",
+        "primitive": "Join",
+        "usage": "6"
+      },
+      {
+        "category": "D. Routing",
+        "primitive": "Op",
+        "usage": "10"
+      },
+      {
+        "category": "D. Routing",
+        "primitive": "Reduce",
+        "usage": "5"
+      },
+      {
+        "category": "D. Routing",
+        "primitive": "If",
+        "usage": "3"
+      },
+      {
+        "category": "D. Routing",
+        "primitive": "Sample",
+        "usage": "2"
+      },
+      {
+        "category": "E. Memory",
+        "primitive": "Read",
+        "usage": "12"
+      },
+      {
+        "category": "E. Memory",
+        "primitive": "Write",
+        "usage": "10"
+      },
+      {
+        "category": "E. Memory",
+        "primitive": "Op",
+        "usage": "5"
+      },
+      {
+        "category": "E. Memory",
+        "primitive": "Loop",
+        "usage": "3"
+      },
+      {
+        "category": "F. Programmatic",
+        "primitive": "Call",
+        "usage": "15"
+      },
+      {
+        "category": "F. Programmatic",
+        "primitive": "Mutate",
+        "usage": "5"
+      },
+      {
+        "category": "F. Programmatic",
+        "primitive": "If",
+        "usage": "6"
+      },
+      {
+        "category": "F. Programmatic",
+        "primitive": "Loop",
+        "usage": "4"
+      },
+      {
+        "category": "F. Programmatic",
+        "primitive": "Fork",
+        "usage": "3"
+      },
+      {
+        "category": "G. Misc",
+        "primitive": "Fork",
+        "usage": "5"
+      },
+      {
+        "category": "G. Misc",
+        "primitive": "Join",
+        "usage": "5"
+      },
+      {
+        "category": "G. Misc",
+        "primitive": "Loop",
+        "usage": "4"
+      },
+      {
+        "category": "G. Misc",
+        "primitive": "If",
+        "usage": "3"
+      },
+      {
+        "category": "G. Misc",
+        "primitive": "Read",
+        "usage": "2"
+      },
+      {
+        "category": "G. Misc",
+        "primitive": "Write",
+        "usage": "2"
+      },
+      {
+        "category": "H. Distributed",
+        "primitive": "Comm",
+        "usage": "10"
+      },
+      {
+        "category": "H. Distributed",
+        "primitive": "Reduce",
+        "usage": "4"
+      },
+      {
+        "category": "H. Distributed",
+        "primitive": "Fork",
+        "usage": "3"
+      },
+      {
+        "category": "H. Distributed",
+        "primitive": "Sample",
+        "usage": "1"
+      },
+      {
+        "category": "E. Memory",
+        "primitive": "Extern",
+        "usage": "5"
+      },
+      {
+        "category": "G. Misc",
+        "primitive": "Cast",
+        "usage": "8"
+      }
+    ]
+  },
+  "width": 900,
+  "height": 420,
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "primitive",
+      "type": "nominal",
+      "title": "B* Primitive",
+      "axis": {
+        "labelAngle": -45
+      }
+    },
+    "y": {
+      "field": "category",
+      "type": "nominal",
+      "title": "Motif Category"
+    },
+    "color": {
+      "field": "usage",
+      "type": "quantitative",
+      "title": "Usage Count",
+      "scale": {
+        "scheme": "blues"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "title": "Category"
+      },
+      {
+        "field": "primitive",
+        "title": "Primitive"
+      },
+      {
+        "field": "usage",
+        "title": "Times Used"
+      }
+    ]
+  }
+}

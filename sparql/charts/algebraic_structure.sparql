@@ -1,0 +1,11 @@
+# Algebraic structure static table
+SELECT ?property ?sequential ?parallel ?structure ?note WHERE {
+  VALUES (?property ?sequential ?parallel ?structure ?note) {
+    ("Closure" "Yes*" "Yes" "Closed" "*when signatures compatible")
+    ("Associativity" "Yes" "Yes" "Associative" "")
+    ("Identity" "𝟙" "𝟘" "Monoid" "Identity motif / empty graph")
+    ("Commutativity" "No" "Yes" "Partial" "∥ commutative, ∘ not")
+    ("Distributivity" "No" "No" "Fails" "Fork–Join law only")
+    ("Inverses" "No" "No" "None" "Not a group")
+  }
+}

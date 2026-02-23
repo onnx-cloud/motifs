@@ -1,0 +1,18 @@
+# ONNX mapping for a specific motif (optimized for single-motif queries)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+
+SELECT DISTINCT ?operator ?opLabel ?mappingType ?requiresRuntime
+WHERE {
+  # Expect ?targetMotif to be bound (via VALUES or query binding)
+  ?targetMotif a motif:Motif .
+  { ?targetMotif skos:exactMatch ?operator . BIND("exact" AS ?mappingType) }
+  UNION
+  { ?targetMotif skos:closeMatch ?operator . BIND("close" AS ?mappingType) }
+  UNION
+  { ?targetMotif skos:broadMatch ?operator . BIND("broad" AS ?mappingType) }
+  OPTIONAL { ?operator skos:prefLabel ?opLabel . }
+  OPTIONAL { ?targetMotif onnx:requiresRuntime ?requiresRuntime . }
+}
+ORDER BY ?opLabel

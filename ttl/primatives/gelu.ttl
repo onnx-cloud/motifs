@@ -1,0 +1,11 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+
+# GELU activation
+
+motif:Gelu a motif:Motif ;
+  skos:prefLabel "GELU (Gaussian Error Linear Unit)"@en ;
+  skos:definition "Smooth activation function commonly used in transformer models."@en ;
+  motif:isComponentOf motif:TransformerBlock , motif:MLP .

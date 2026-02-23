@@ -1,0 +1,44 @@
+# Figure: Motif Signatures Distribution
+# Shows frequency of different I/O signature patterns
+title: Signature Patterns
+description: Distribution of input/output signature patterns across motifs
+
+query: ./sparql/charts/signature_patterns.sparql
+
+transform:
+  rename:
+    signature: pattern
+  keep:
+    - pattern
+    - count
+
+vega:
+  width: 700
+  height: 400
+  mark:
+    type: bar
+    cornerRadius: 2
+  encoding:
+    x:
+      field: pattern
+      type: nominal
+      axis:
+        labelAngle: -45
+        title: Signature (I→O)
+    y:
+      field: count
+      type: quantitative
+      axis:
+        title: Number of Motifs
+    color:
+      field: count
+      type: quantitative
+      scale:
+        scheme: blues
+    tooltip:
+      - field: pattern
+        type: nominal
+        title: Signature
+      - field: count
+        type: quantitative
+        title: Count

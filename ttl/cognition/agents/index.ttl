@@ -1,0 +1,60 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motifs#> .
+#################
+# Systems / Embodied AI Motifs
+# Purpose: Tool use, multi-party, planning, world models
+#################
+
+motif:Agents a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Systems / Embodied"@en ;
+  skos:definition "Patterns for embodied systems, tool use, multi-party interaction, and world models." .
+
+motif:ToolCall a motif:Motif ;
+  skos:prefLabel "Tool Call / API"@en ;
+  motif:hasCategory motif:Agents ;
+  motif:hasSemantics motif:Sem_ToolCall ;
+  motif:hasConstraint motif:Constraint_ToolCall .
+
+motif:Sem_ToolCall a motif:Semantics ;
+  skos:prefLabel "Invoke external tool or API as part of system action; handle responses."@en ;
+  rdfs:comment "Invoke external tool or API as part of system action; handle responses."@en .
+
+motif:Constraint_ToolCall a motif:Constraint ;
+  skos:prefLabel "Tool idempotency and failure modes must be modeled."@en ;
+  rdfs:comment "Tool idempotency and failure modes must be modeled."@en .
+
+motif:WorldModel a motif:Motif ;
+  skos:prefLabel "World Model"@en ;
+  motif:hasCategory motif:Agents ;
+  motif:hasSemantics motif:Sem_WorldModel ;
+  motif:hasConstraint motif:Constraint_WorldModel_Accuracy .
+
+motif:MultiAgentComm a motif:Motif ;
+  skos:prefLabel "Multi-Participant Communication"@en ;
+  motif:hasCategory motif:Agents ;
+  motif:hasSemantics motif:Sem_MultiAgentComm ;
+  motif:hasConstraint motif:Constraint_MultiAgentComm_Protocols .
+
+motif:PolicyIteration a motif:Motif ;
+  skos:prefLabel "Policy Iteration"@en ;
+  motif:hasCategory motif:Agents ;
+  motif:hasSemantics motif:Sem_PolicyIteration ;
+  motif:hasConstraint motif:Constraint_PolicyIteration_StateAction .
+
+motif:HierarchicalPlanner a motif:Motif ;
+  skos:prefLabel "Hierarchical Planning"@en ;
+  motif:hasCategory motif:Agents ;
+  motif:hasSemantics motif:Sem_HierarchicalPlanner ;
+  motif:hasConstraint motif:Constraint_HierarchicalPlanner_Subtasks .
+
+motif:ActivePerception a motif:Motif ;
+  skos:prefLabel "Active Perception"@en ;
+  motif:hasCategory motif:Agents ;
+  motif:hasSemantics motif:Sem_ActivePerception ;
+  motif:hasConstraint motif:Constraint_ActivePerception_Sensing .
+

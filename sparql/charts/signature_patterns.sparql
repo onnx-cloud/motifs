@@ -1,0 +1,11 @@
+# Identify N-to-1, 1-to-N, and other signature patterns
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?signature (COUNT(?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif ;
+    motif:hasSignature ?signature .
+}
+GROUP BY ?signature
+ORDER BY DESC(?count)

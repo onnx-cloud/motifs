@@ -1,0 +1,25 @@
+# Figure: Runtime requirements propagated to models and motifs
+# Shows which containers require special runtimes (onnx:requiresRuntime)
+
+title: Runtime Requirements
+
+description: Inferred propagation of `onnx:requiresRuntime` from motifs to models/motifs
+
+query: ./sparql/charts/runtime_requirements.sparql
+
+vega:
+  width: 900
+  height: 800
+  mark: bar
+  encoding:
+    y:
+      field: containerLabel
+      type: nominal
+      axis: {title: "Container (Model or Motif)"}
+    x:
+      field: runtimeLabel
+      type: nominal
+      axis: {title: "Required Runtime"}
+    color:
+      field: runtimeLabel
+      type: nominal

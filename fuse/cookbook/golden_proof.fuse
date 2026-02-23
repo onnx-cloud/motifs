@@ -1,0 +1,18 @@
+# Cookbook: Export-test example (exports model and runs numeric check)
+# Ops: identity (simple passthrough)
+
+@fuse 1.2
+@opset onnx 18
+@domain examples.cookbook
+
+# Demonstrates @golden which exports the model `examples.golden`
+
+node id(x: f32[3]) -> f32[3] {
+  x
+}
+
+@golden @proof golden() {
+  sample = [1.0, 2.0, 3.0]
+  out = id(sample)
+  assert out == [1.0, 2.0, 3.0]
+}

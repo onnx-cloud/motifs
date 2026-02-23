@@ -1,0 +1,71 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Routing / Attention motif instances
+
+
+motif:Attention a motif:Motif ;
+  skos:prefLabel "Attention / Soft"@en ;
+  motif:hasSignature motif:Sig_many_to_many ;
+  motif:hasCategory motif:Routing ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasSemantics motif:Sem_Attention ;
+  motif:example ex:attention_multi_head.fuse .
+
+motif:HardRouting a motif:Motif ;
+  skos:prefLabel "Hard Routing"@en ;
+  motif:hasSignature motif:Sig_many_to_1 ;
+  motif:hasCategory motif:Routing ;
+  motif:hasFingerprint motif:R_hard_eq_1 ;
+  motif:hasSemantics motif:Sem_HardRouting .
+
+motif:WeightedSum a motif:Motif ;
+  skos:prefLabel "Weighted Sum"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Routing ;
+  motif:hasSemantics motif:Sem_WeightedSum .
+
+motif:motif_QKV a motif:Motif ;
+  skos:prefLabel "Query-Key-Value"@en ;
+  motif:hasSignature motif:Sig_3_to_1 ;
+  motif:hasCategory motif:Routing ;
+  motif:hasSemantics motif:Sem_QKV .
+
+motif:motif_MultiHead a motif:Motif ;
+  skos:prefLabel "Multi-Head Attention"@en ;
+  motif:hasSignature motif:Sig_many_to_many ;
+  motif:hasCategory motif:Routing ;
+  motif:hasSemantics motif:Sem_MultiHead .
+
+motif:StochasticRouting a motif:Motif ;
+  skos:prefLabel "Stochastic Routing"@en ;
+  motif:hasSignature motif:Sig_many_to_N ;
+  motif:hasCategory motif:Routing ;
+  motif:hasSemantics motif:Sem_StochasticRouting .
+
+motif:SparseMoE a motif:Motif ;
+  skos:prefLabel "Sparse MoE Routing"@en ;
+  motif:hasSignature motif:Sig_many_to_N ;
+  motif:hasCategory motif:Routing ;
+  motif:hasSemantics motif:Sem_SparseMoE .
+
+motif:RouteMerge a motif:Motif ;
+  skos:prefLabel "Route & Merge"@en ;
+  motif:hasSignature motif:Sig_many_to_1 ;
+  motif:hasCategory motif:Routing ;
+  motif:hasSemantics motif:Sem_RouteMerge .
+
+motif:AttentionResidual a motif:Motif ;
+  skos:prefLabel "Attention Residual"@en ;
+  motif:hasSignature motif:Sig_many_to_many ;
+  motif:hasCategory motif:Routing ;
+  motif:hasSemantics motif:Sem_AttentionResidual .
+
+motif:SoftmaxEdge a motif:Motif ;
+  skos:prefLabel "Softmax Edge"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing ;
+  motif:hasSemantics motif:Sem_SoftmaxEdge .

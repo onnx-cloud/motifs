@@ -1,0 +1,36 @@
+# Figure: Minimal Basis B* (16 Primitives)
+# Shows the minimal generating set and their properties
+
+title: Minimal Basis B*
+description: The 16 irreducible primitives that span the motif algebra
+
+query: ./sparql/charts/basis_primitives.sparql
+
+vega:
+  width: 700
+  height: 420
+  mark: bar
+  encoding:
+    y:
+      field: primitive
+      type: nominal
+      sort: {field: id}
+      axis: {labelFontSize: 12}
+    x:
+      field: id
+      type: quantitative
+      title: Primitive Index
+      scale: {motif: [0, 15]}
+    color:
+      field: category
+      type: nominal
+      legend: {title: Category}
+    tooltip:
+      - field: primitive
+        title: Primitive
+      - field: signature
+        title: Signature
+      - field: fingerprint
+        title: Fingerprint
+      - field: role
+        title: Role

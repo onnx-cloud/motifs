@@ -1,0 +1,110 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+#################################################################
+# Purpose: lightweight RDFS declarations (classes & properties) for
+# ONNX operators and operator metadata used across the repository.
+# Conservative domains/ranges to avoid incorrect inferences.
+#################################################################
+
+onnx: a rdfs:Resource ;
+  rdfs:label "ONNX RDFS Schema (initial)"@en ;
+  rdfs:comment "Initial, conservative RDFS declarations for ONNX operator metadata used in the project."@en .
+################################################################################
+# Classes
+################################################################################
+
+onnx:Operator a rdfs:Class ;
+  rdfs:label "ONNX Operator"@en ;
+  rdfs:comment "An ONNX operator (op) definition or variant in a given opset/domain."@en .
+
+onnx:OperatorInput a rdfs:Class ;
+  rdfs:label "Operator Input"@en ;
+  rdfs:comment "Description of an operator input (name, required flag, type hints)."@en .
+
+onnx:OperatorOutput a rdfs:Class ;
+  rdfs:label "Operator Output"@en ;
+  rdfs:comment "Description of an operator output (name, type hints)."@en .
+
+onnx:OperatorAttribute a rdfs:Class ;
+  rdfs:label "Operator Attribute"@en ;
+  rdfs:comment "Description of an operator attribute (name, type, default)."@en .
+
+onnx:Domain a rdfs:Class ;
+  rdfs:label "Operator Domain"@en ;
+  rdfs:comment "Namespace / domain that groups operators (e.g., ai.onnx)."@en .
+
+onnx:Runtime a rdfs:Class ;
+  rdfs:label "Runtime Capability"@en ;
+  rdfs:comment "Runtime capability or extension required by an operator or motif (e.g., MutableStateRuntime)."@en .
+################################################################################
+# Properties (conservative ranges)
+################################################################################
+
+onnx:hasInput a rdf:Property ;
+  rdfs:label "has input"@en ;
+  rdfs:comment "Links an operator to an `onnx:OperatorInput` description."@en ;
+  rdfs:range onnx:OperatorInput .
+
+onnx:hasOutput a rdf:Property ;
+  rdfs:label "has output"@en ;
+  rdfs:comment "Links an operator to an `onnx:OperatorOutput` description."@en ;
+  rdfs:range onnx:OperatorOutput .
+
+onnx:hasAttribute a rdf:Property ;
+  rdfs:label "has attribute"@en ;
+  rdfs:comment "Links an operator to an `onnx:OperatorAttribute` description."@en ;
+  rdfs:range onnx:OperatorAttribute .
+
+onnx:domain a rdf:Property ;
+  rdfs:label "domain"@en ;
+  rdfs:comment "Points to an `onnx:Domain` resource indicating the operator's domain/namespace."@en ;
+  rdfs:range onnx:Domain .
+
+onnx:sinceVersion a rdf:Property ;
+  rdfs:label "since version"@en ;
+  rdfs:comment "Integer opset version where the operator was introduced or last changed."@en ;
+  rdfs:range xsd:integer .
+
+onnx:requiresRuntime a rdf:Property ;
+  rdfs:label "requires runtime"@en ;
+  rdfs:comment "Indicates a runtime capability required by an operator (propagated to motifs that require special runtimes)."@en ;
+  rdfs:range onnx:Runtime .
+
+onnx:attrType a rdf:Property ;
+  rdfs:label "attribute type"@en ;
+  rdfs:comment "Literal describing the type of an operator attribute (FLOAT, INT, STR, etc.)."@en ;
+  rdfs:range rdfs:Literal .
+
+onnx:required a rdf:Property ;
+  rdfs:label "required"@en ;
+  rdfs:comment "Boolean flag used on `onnx:OperatorInput` to indicate if the input is required."@en ;
+  rdfs:range xsd:boolean .
+
+onnx:name a rdf:Property ;
+  rdfs:label "name"@en ;
+  rdfs:comment "Name of an input/output/attribute as used in operator signatures."@en ;
+  rdfs:range rdfs:Literal .
+
+onnx:default a rdf:Property ;
+  rdfs:label "default"@en ;
+  rdfs:comment "Default value for an attribute (if any), serialized as a literal."@en ;
+  rdfs:range rdfs:Literal .
+################################################################################
+# Convenience / Documentation helpers
+################################################################################
+
+onnx:hasExample a rdf:Property ;
+  rdfs:label "has example"@en ;
+  rdfs:comment "Link to an example usage or snippet demonstrating the operator."@en ;
+  rdfs:range rdfs:Resource .
+
+onnx:notes a rdf:Property ;
+  rdfs:label "notes"@en ;
+  rdfs:comment "Curator notes or comments about an operator (literal)."@en ;
+  rdfs:range rdfs:Literal .
+#################################################################
+# End of initial ONNX RDFS sketch
+#################################################################

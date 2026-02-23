@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Motif Redundancy</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-blue-900 text-white py-4 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-xl font-semibold">Motif Redundancy</h1>
+      
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <nav class="w-80 border-r pr-4">
+      <h2 class="text-lg font-semibold mb-2">Charts</h2>
+      
+      <hr class="my-4">
+      
+      <footer class="text-center py-6 text-sm text-gray-500 border-t">
+         v · <a class="text-gray-500 hover:text-blue-700" href="">GitHub</a> · Generated 
+      </footer>    </nav>
+
+    <section id="viewer" class="flex-1 min-h-[500px]">
+      <div class="chart-page">
+  <h1 class="text-2xl font-bold mb-4">Motif Redundancy</h1>
+  <div id="vis" class="flex justify-center"></div>
+  <script type="text/javascript">
+    var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "Motif Redundancy", "description": "Derived motifs and derivation complexity (number of B* primitives)", "data": {"values": [{"derived": "Sub", "primitives": "Op + Op", "complexity": "2", "category": "Algebraic"}, {"derived": "Div", "primitives": "Op + Op", "complexity": "2", "category": "Algebraic"}, {"derived": "ReduceSum", "primitives": "Reduce", "complexity": "1", "category": "Algebraic"}, {"derived": "ReduceMax", "primitives": "Reduce", "complexity": "1", "category": "Algebraic"}, {"derived": "Squeeze", "primitives": "Reshape", "complexity": "1", "category": "Algebraic"}, {"derived": "ExpandDims", "primitives": "Reshape", "complexity": "1", "category": "Algebraic"}, {"derived": "Flatten", "primitives": "Reshape", "complexity": "1", "category": "Algebraic"}, {"derived": "Transpose", "primitives": "Reshape", "complexity": "1", "category": "Algebraic"}, {"derived": "Residual", "primitives": "Fork + Join", "complexity": "2", "category": "Topology"}, {"derived": "Fork-Join", "primitives": "Fork + Join", "complexity": "2", "category": "Topology"}, {"derived": "Concat", "primitives": "Join", "complexity": "1", "category": "Topology"}, {"derived": "Split", "primitives": "Fork", "complexity": "1", "category": "Topology"}, {"derived": "Map", "primitives": "Fork + Join", "complexity": "2", "category": "Topology"}, {"derived": "Fanout", "primitives": "Fork", "complexity": "1", "category": "Topology"}, {"derived": "Fan-in", "primitives": "Join", "complexity": "1", "category": "Topology"}, {"derived": "While", "primitives": "Loop + If", "complexity": "2", "category": "Control"}, {"derived": "For", "primitives": "Loop", "complexity": "1", "category": "Control"}, {"derived": "Scan", "primitives": "Loop + Read + Write", "complexity": "3", "category": "Control"}, {"derived": "Break", "primitives": "If + Call", "complexity": "2", "category": "Control"}, {"derived": "Continue", "primitives": "If", "complexity": "1", "category": "Control"}, {"derived": "Switch", "primitives": "If + If", "complexity": "2", "category": "Control"}, {"derived": "Attention", "primitives": "Fork + Op + Reduce + Join", "complexity": "4", "category": "Routing"}, {"derived": "Hard Routing", "primitives": "Op + If", "complexity": "2", "category": "Routing"}, {"derived": "Stochastic", "primitives": "Sample + If", "complexity": "2", "category": "Routing"}, {"derived": "MoE", "primitives": "Op + Fork + Join", "complexity": "3", "category": "Routing"}, {"derived": "Gather", "primitives": "Read + Op", "complexity": "2", "category": "Memory"}, {"derived": "Scatter", "primitives": "Write + Op", "complexity": "2", "category": "Memory"}, {"derived": "RMW", "primitives": "Read + Op + Write", "complexity": "3", "category": "Memory"}, {"derived": "KV Memory", "primitives": "Read + Op", "complexity": "2", "category": "Memory"}, {"derived": "Recursive", "primitives": "Call", "complexity": "1", "category": "Meta"}, {"derived": "Self-Modifying", "primitives": "Mutate", "complexity": "1", "category": "Meta"}, {"derived": "Graph-of-Graphs", "primitives": "Mutate + Call", "complexity": "2", "category": "Meta"}, {"derived": "AllReduce", "primitives": "Comm + Reduce", "complexity": "2", "category": "Distributed"}, {"derived": "AllGather", "primitives": "Comm + Fork", "complexity": "2", "category": "Distributed"}, {"derived": "Barrier", "primitives": "Comm", "complexity": "1", "category": "Distributed"}, {"derived": "VectorSearch", "primitives": "Extern", "complexity": "1", "category": "Memory"}, {"derived": "Quantize", "primitives": "Cast", "complexity": "1", "category": "Misc"}]}, "width": 700, "height": 900, "mark": "bar", "encoding": {"y": {"field": "derived", "type": "nominal", "sort": {"field": "complexity", "order": "descending"}}, "x": {"field": "complexity", "type": "quantitative", "title": "Derivation Complexity (# B* primitives)"}, "color": {"field": "category", "type": "nominal", "legend": {"title": "Category"}}, "tooltip": [{"field": "derived", "title": "Motif"}, {"field": "primitives", "title": "B* Expression"}, {"field": "complexity", "title": "Complexity"}]}};
+    (function() {
+      if (typeof vegaEmbed === 'undefined') return;
+      try {
+        vegaEmbed('#vis', spec);
+      } catch(e) {
+        console.warn('vegaEmbed failed:', e);
+      }
+    })();
+  </script>
+</div>
+
+    </section>
+  </main>
+</body>
+</html>

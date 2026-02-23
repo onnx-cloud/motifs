@@ -1,0 +1,25 @@
+# Figure: Model motif coverage
+# Histogram of motif coverage per model (used motifs / total motifs in catalog)
+
+title: Model Motif Coverage
+description: Fraction of motif catalog used by each model (used motifs / total motifs)
+
+query: ./sparql/charts/model_motif_coverage.sparql
+
+vega:
+  width: 900
+  height: 800
+  mark: bar
+  encoding:
+    y:
+      field: modelLabel
+      type: nominal
+      axis: {title: "Model"}
+    x:
+      field: coverage
+      type: quantitative
+      axis: {title: "Coverage (fraction of motifs used)"}
+    color:
+      field: coverage
+      type: quantitative
+      scale: {scheme: "blues"}

@@ -1,0 +1,212 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix xai: <https://ns.onnx.cloud/xai#> .
+#################
+# Explainable AI (XAI) Motifs
+# Purpose: Patterns for interpretability, attribution, probing, concept extraction
+#################
+
+motif:XAI a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Explainable AI"@en ;
+  skos:definition "Patterns for model interpretability: attribution, probing, concept bottlenecks." .
+#################
+# XAI Fingerprints
+#################
+
+xai:X_interpretable_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "X.interpretable=1"@en ;
+  skos:definition "Output is human-interpretable (concepts, text, visualization)." .
+
+xai:X_attribution_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "X.attribution=1"@en ;
+  skos:definition "Provides attribution scores for inputs or features." .
+
+xai:X_probing_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "X.probing=1"@en ;
+  skos:definition "Analyzes internal representations via auxiliary classifiers." .
+#################
+# Attribution Motifs
+#################
+
+xai:GradientAttribution a motif:Motif ;
+  skos:prefLabel "Gradient Attribution"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_attribution_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Vanilla gradients, Saliency maps." .
+
+xai:IntegratedGradients a motif:Motif ;
+  skos:prefLabel "Integrated Gradients"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_attribution_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/1703.01365> ;
+  skos:definition "Axiomatic attribution method (Sundararajan et al., 2017)." .
+
+xai:SHAP a motif:Motif ;
+  skos:prefLabel "SHAP Values"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_attribution_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/1705.07874> ;
+  skos:definition "SHAP (Lundberg & Lee, 2017)." .
+
+xai:LIME a motif:Motif ;
+  skos:prefLabel "LIME"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_attribution_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/1602.04938> ;
+  skos:definition "Local Interpretable Model-agnostic Explanations (Ribeiro et al., 2016)." .
+
+xai:AttentionRollout a motif:Motif ;
+  skos:prefLabel "Attention Rollout"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_attribution_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Visualize transformer attention as attribution." .
+
+xai:GradCAM a motif:Motif ;
+  skos:prefLabel "Grad-CAM"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_attribution_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/1610.02391> ;
+  skos:definition "Gradient-weighted Class Activation Mapping (Selvaraju et al., 2017)." .
+#################
+# Probing Motifs
+#################
+
+xai:LinearProbe a motif:Motif ;
+  skos:prefLabel "Linear Probe"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_probing_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Standard probing methodology." .
+
+xai:CausalProbe a motif:Motif ;
+  skos:prefLabel "Causal Probe"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_probing_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Causal tracing, activation patching." .
+
+xai:RepresentationSimilarity a motif:Motif ;
+  skos:prefLabel "Representation Similarity"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_probing_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "CKA, SVCCA for comparing representations." .
+#################
+# Concept-Based Motifs
+#################
+
+xai:ConceptBottleneck a motif:Motif ;
+  skos:prefLabel "Concept Bottleneck"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_interpretable_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2007.04612> ;
+  skos:definition "Concept Bottleneck Models (Koh et al., 2020)." .
+
+xai:TCAV a motif:Motif ;
+  skos:prefLabel "TCAV"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_interpretable_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/1711.11279> ;
+  skos:definition "Testing with Concept Activation Vectors (Kim et al., 2018)." .
+
+xai:ConceptWhitening a motif:Motif ;
+  skos:prefLabel "Concept Whitening"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_interpretable_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2002.01650> ;
+  skos:definition "Concept Whitening for Interpretable Image Recognition." .
+#################
+# Counterfactual Motifs
+#################
+
+xai:CounterfactualExplanation a motif:Motif ;
+  skos:prefLabel "Counterfactual Explanation"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_interpretable_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "What-if explanations via minimal perturbation." .
+
+xai:ContrastiveExplanation a motif:Motif ;
+  skos:prefLabel "Contrastive Explanation"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_interpretable_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Why X and not Y? explanations." .
+#################
+# Mechanistic Interpretability Motifs
+#################
+
+xai:CircuitAnalysis a motif:Motif ;
+  skos:prefLabel "Circuit Analysis"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_probing_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://transformer-circuits.pub/> ;
+  skos:definition "Mechanistic interpretability via circuit discovery." .
+
+xai:ActivationPatching a motif:Motif ;
+  skos:prefLabel "Activation Patching"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_probing_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Causal tracing via activation surgery." .
+
+xai:SuperpositionAnalysis a motif:Motif ;
+  skos:prefLabel "Superposition Analysis"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:XAI ;
+  motif:hasFingerprint xai:X_probing_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://transformer-circuits.pub/2022/toy_model/index.html> ;
+  skos:definition "Understanding polysemantic neurons." .
+

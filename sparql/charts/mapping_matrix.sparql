@@ -1,0 +1,10 @@
+# Motif -> ONNX operator mapping matrix
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?motifLabel (STRAFTER(STR(?op), "#") AS ?operator) WHERE {
+  ?motif a motif:Motif ;
+         skos:prefLabel ?motifLabel ;
+         skos:exactMatch ?op .
+}
+ORDER BY ?motifLabel

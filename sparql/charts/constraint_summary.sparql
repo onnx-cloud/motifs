@@ -1,0 +1,12 @@
+# Count motifs by non-functional constraint types
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?constraintType (COUNT(?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif ;
+         motif:hasConstraint ?c .
+  ?c rdfs:label ?constraintType .
+}
+GROUP BY ?constraintType
+ORDER BY DESC(?count)

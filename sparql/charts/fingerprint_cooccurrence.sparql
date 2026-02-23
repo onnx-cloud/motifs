@@ -1,0 +1,13 @@
+# Find motifs with multiple fingerprints (composition indicator)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?label (COUNT(?fingerprint) AS ?fingerprintCount) (GROUP_CONCAT(?fingerprint; separator="; ") AS ?fingerprints)
+WHERE {
+  ?motif a motif:Motif ;
+    skos:prefLabel ?label ;
+    motif:hasFingerprint ?fingerprint .
+}
+GROUP BY ?motif ?label
+HAVING (COUNT(?fingerprint) > 1)
+ORDER BY DESC(?fingerprintCount)

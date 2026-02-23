@@ -1,0 +1,12 @@
+# Display category definitions and structure
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?category ?prefLabel ?definition
+WHERE {
+  ?category a skos:Concept ;
+    skos:inScheme motif:CategoryScheme ;
+    skos:prefLabel ?prefLabel ;
+    skos:definition ?definition .
+}
+ORDER BY ?prefLabel

@@ -1,0 +1,15 @@
+# Group motifs by category with counts (prefer category labels from CategoryScheme)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?categoryLabel (COUNT(?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif ;
+    motif:hasCategory ?category .
+  # Prefer labels attached to the SKOS category concept within the CategoryScheme
+  ?category a skos:Concept ;
+            skos:inScheme motif:CategoryScheme ;
+            skos:prefLabel ?categoryLabel .
+}
+GROUP BY ?categoryLabel
+ORDER BY DESC(?count)

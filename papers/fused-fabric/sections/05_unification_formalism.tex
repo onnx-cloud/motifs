@@ -1,0 +1,16 @@
+\OnePageSectionStart
+\section{Formalism: Typed Morphs over Fused Graphs}
+
+The unification of the two fabrics is achieved through a type-system extension that supports semantic dispatch over fused compute graphs.
+
+\subsection{The Fusion Predicate}
+We define a predicate $\text{FUSE}(G, \sigma)$ that determines if a compute graph $G$ can be instantiated with a set of semantic groundings $\sigma \in \RealityFabric$.
+
+\paragraph{Proof sketch.} The grounding rule checks that the provided grounding \(\sigma\) supplies outputs compatible with the graph inputs; together with the subtype relation \(\tau_2 <: \tau_1\) this guarantees that \(\sigma(G)\) is well-typed. Detailed proof trees are omitted here.
+
+The type system ensures that the "flow of reason" follows the "flow of ground-truth." For example, a "Pose Estimation" morph requires inputs with "Geometric" semantics. If the fused graph attempts to supply "Acoustic" measurements, the $\text{FUSE}$ predicate returns false, and the program is rejected at static-link time.
+
+\subsection{Semantics-Preserving Transformations}
+Any transformation $T: \CognitiveFabric \to \CognitiveFabric$ (e.g., operator fusion, quantization, constant folding) must also be a transformation on $\RealityFabric$. This ensures that the \emph{meaning} of a tensor is invariant under silicon optimization.
+
+\OnePageSectionEnd

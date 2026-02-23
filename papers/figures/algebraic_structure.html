@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Algebraic Structure</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-blue-900 text-white py-4 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-xl font-semibold">Algebraic Structure</h1>
+      
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <nav class="w-80 border-r pr-4">
+      <h2 class="text-lg font-semibold mb-2">Charts</h2>
+      
+      <hr class="my-4">
+      
+      <footer class="text-center py-6 text-sm text-gray-500 border-t">
+         v · <a class="text-gray-500 hover:text-blue-700" href="">GitHub</a> · Generated 
+      </footer>    </nav>
+
+    <section id="viewer" class="flex-1 min-h-[500px]">
+      <div class="chart-page">
+  <h1 class="text-2xl font-bold mb-4">Algebraic Structure</h1>
+  <div id="vis" class="flex justify-center"></div>
+  <script type="text/javascript">
+    var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "Algebraic Structure", "description": "Closure, associativity, identity, commutativity, and distributivity properties", "data": {"values": [{"property": "Closure", "sequential": "Yes*", "parallel": "Yes", "structure": "Closed", "note": "*when signatures compatible"}, {"property": "Associativity", "sequential": "Yes", "parallel": "Yes", "structure": "Associative", "note": ""}, {"property": "Identity", "sequential": "\ud835\udfd9", "parallel": "\ud835\udfd8", "structure": "Monoid", "note": "Identity motif / empty graph"}, {"property": "Commutativity", "sequential": "No", "parallel": "Yes", "structure": "Partial", "note": "\u2225 commutative, \u2218 not"}, {"property": "Distributivity", "sequential": "No", "parallel": "No", "structure": "Fails", "note": "Fork\u2013Join law only"}, {"property": "Inverses", "sequential": "No", "parallel": "No", "structure": "None", "note": "Not a group"}]}, "width": 700, "height": 200, "mark": "text", "encoding": {"y": {"field": "property", "type": "nominal", "axis": {"title": null}}, "x": {"field": "sequential", "type": "nominal", "title": "Sequential (\u2218)"}, "text": {"field": "sequential", "type": "nominal"}, "color": {"field": "structure", "type": "nominal"}}, "config": {"text": {"fontSize": 14, "align": "left"}}};
+    (function() {
+      if (typeof vegaEmbed === 'undefined') return;
+      try {
+        vegaEmbed('#vis', spec);
+      } catch(e) {
+        console.warn('vegaEmbed failed:', e);
+      }
+    })();
+  </script>
+</div>
+
+    </section>
+  </main>
+</body>
+</html>

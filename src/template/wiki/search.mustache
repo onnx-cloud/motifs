@@ -1,0 +1,32 @@
+<div id="search-box" class="mt-4">
+  <input id="search-input" type="search" placeholder="Search motifs and pages..." class="w-full p-2 rounded border" />
+  <div id="search-results" class="mt-2 bg-white rounded shadow p-2 hidden"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script>
+(async function(){
+  // Try several relative paths so search works from subfolders and file:// views
+  const tryFetch = async () => {
+    const candidates = ['./search_index.json','../search_index.json','../../search_index.json','/search_index.json'];
+    for(const c of candidates){
+      try{
+        const r = await fetch(c);
+        if(r.ok) return await r.json();
+      }catch(e){/* ignore */}
+    }
+    return [];
+  };
+  const idx = await tryFetch();
+  if(!idx || !idx.length) return;
+  const fuse = new Fuse(idx, {keys:['title','text','category'], threshold:0.35});
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  input.addEventListener('input', (e)=>{
+    const q = e.target.value.trim();
+    if(!q){ results.classList.add('hidden'); results.innerHTML=''; return; }
+    const r = fuse.search(q).slice(0,10).map(x=>x.item);
+    results.innerHTML = r.map(it => `<div class="py-1 border-b"><a class="text-blue-700" href="${it.url}">${it.title}</a><div class="text-sm text-gray-600">${it.category} — ${it.text.slice(0,160)}</div></div>`).join('');
+    results.classList.remove('hidden');
+  });
+})();
+</script>

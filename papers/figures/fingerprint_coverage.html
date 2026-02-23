@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fingerprint Coverage</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-blue-900 text-white py-4 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-xl font-semibold">Fingerprint Coverage</h1>
+      
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <nav class="w-80 border-r pr-4">
+      <h2 class="text-lg font-semibold mb-2">Charts</h2>
+      
+      <hr class="my-4">
+      
+      <footer class="text-center py-6 text-sm text-gray-500 border-t">
+         v · <a class="text-gray-500 hover:text-blue-700" href="">GitHub</a> · Generated 
+      </footer>    </nav>
+
+    <section id="viewer" class="flex-1 min-h-[500px]">
+      <div class="chart-page">
+  <h1 class="text-2xl font-bold mb-4">Fingerprint Coverage</h1>
+  <div id="vis" class="flex justify-center"></div>
+  <script type="text/javascript">
+    var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "Fingerprint Coverage", "description": "Frequency of fingerprint dimensions across motifs", "data": {"values": [{"dimension": "M_Memory", "frequency": "14"}, {"dimension": "T_reuse_plus_1", "frequency": "14"}, {"dimension": "C_feedback_eq_1", "frequency": "12"}, {"dimension": "R_Routing", "frequency": "11"}, {"dimension": "M_sparse_eq_1", "frequency": "7"}, {"dimension": "S_State", "frequency": "7"}, {"dimension": "M_cache_eq_1", "frequency": "7"}, {"dimension": "S_aligned_eq_1", "frequency": "7"}, {"dimension": "T_cycles_eq_1_C_loop_eq_1", "frequency": "6"}, {"dimension": "X_attribution_eq_1", "frequency": "6"}, {"dimension": "X_probing_eq_1", "frequency": "6"}, {"dimension": "R_reasoning_eq_1", "frequency": "6"}, {"dimension": "C_speculative_eq_1", "frequency": "5"}, {"dimension": "X_interpretable_eq_1", "frequency": "5"}, {"dimension": "T_depth_plus_1", "frequency": "4"}, {"dimension": "T_width_plus_N", "frequency": "4"}, {"dimension": "T_Topology", "frequency": "4"}, {"dimension": "S_guarded_eq_1", "frequency": "4"}, {"dimension": "C_planning_eq_1", "frequency": "4"}, {"dimension": "D_Dynamics", "frequency": "3"}, {"dimension": "C_Control", "frequency": "3"}, {"dimension": "S_robust_eq_1", "frequency": "3"}, {"dimension": "C_adaptive_eq_1", "frequency": "3"}, {"dimension": "M_retrieval_eq_1", "frequency": "3"}, {"dimension": "S_checkpoint_eq_1", "frequency": "2"}, {"dimension": "T_Transform_Time", "frequency": "1"}, {"dimension": "C_Nondeterministic", "frequency": "1"}, {"dimension": "M_HigherOrder", "frequency": "1"}, {"dimension": "T_block_sparse", "frequency": "1"}, {"dimension": "T_cycles_eq_1_S_carried_eq_1", "frequency": "1"}, {"dimension": "S_incremental_eq_1", "frequency": "1"}, {"dimension": "M_mutable_eq_1", "frequency": "1"}, {"dimension": "M_addressable_eq_1_S_persistent_eq_1", "frequency": "1"}, {"dimension": "R_hard_eq_1", "frequency": "1"}, {"dimension": "T_width_plus_1", "frequency": "1"}, {"dimension": "C_stable_eq_1", "frequency": "1"}]}, "width": 800, "height": 400, "mark": "bar", "encoding": {"x": {"field": "dimension", "type": "nominal", "axis": {"labelAngle": -45, "title": "Fingerprint Dimension"}}, "y": {"field": "frequency", "type": "quantitative", "axis": {"title": "Number of Motifs"}}, "color": {"field": "frequency", "type": "quantitative", "scale": {"scheme": "viridis"}}, "tooltip": [{"field": "dimension", "type": "nominal"}, {"field": "frequency", "type": "quantitative"}]}};
+    (function() {
+      if (typeof vegaEmbed === 'undefined') return;
+      try {
+        vegaEmbed('#vis', spec);
+      } catch(e) {
+        console.warn('vegaEmbed failed:', e);
+      }
+    })();
+  </script>
+</div>
+
+    </section>
+  </main>
+</body>
+</html>

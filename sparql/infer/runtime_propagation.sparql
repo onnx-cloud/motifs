@@ -1,0 +1,14 @@
+# Propagate onnx:requiresRuntime from motifs to containers that use them (models, motifs)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+CONSTRUCT {
+  ?container a ?containerType .
+  ?container motif:requiresRuntime ?rt .
+}
+WHERE {
+  ?container motif:usesMotif ?m .
+  ?m onnx:requiresRuntime ?rt .
+  OPTIONAL { ?container rdf:type ?containerType }
+}

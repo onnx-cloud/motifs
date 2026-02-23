@@ -1,0 +1,63 @@
+# Motif Models — Project Configuration
+# Central configuration for paths, tools, and settings
+
+# Project directory structure
+paths:
+  root: .
+  ttl: ttl
+  sparql: sparql
+  charts_config: charts
+  figures: papers/figures
+  reports: papers
+
+# Chart generation settings
+charting:
+  # YAML chart config directory
+  config_dir: charts
+  # Output directory for generated figures
+  output_dir: papers/figures
+  # Default output formats
+  output_formats:
+    - json
+    - html
+    - png
+
+# Report generation settings
+reporting:
+  # Directory containing generated figures
+  figures_dir: papers/figures
+  # Output directory for reports
+  output_dir: papers
+  # Report output filename
+  report_filename: motif_analysis_report.html
+  
+  # Report structure sections
+  sections:
+    - title: "1. Ontology Overview"
+      description: "High-level metrics about the motif ontology."
+      figures:
+        - motifs_by_category
+        - signature_patterns
+    
+    - title: "2. Coverage Analysis"
+      description: "Fingerprint usage and semantic coverage."
+      figures:
+        - fingerprint_coverage
+        - motif_definition_completeness
+    
+    - title: "3. Completeness Assessment"
+      description: "Which motifs have complete property definitions."
+      figures:
+        - motif_definition_completeness
+    
+    - title: "4. Full Inventory"
+      description: "Complete listing of all motifs."
+      figures:
+        - motif_inventory
+
+# Ontology settings
+ontology:
+  # Title for reports and documentation
+  title: "Motif Ontology Analysis"
+  # Namespace prefix for motif concepts
+  namespace: "https://ns.onnx.cloud/motif#"

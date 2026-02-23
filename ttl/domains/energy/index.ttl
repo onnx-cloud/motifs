@@ -1,0 +1,123 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Energy & Utilities Domain Applications
+# Maps energy sector applications to motifs
+##################################
+
+motif:GridForecasting a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Power Grid Load Forecasting"@en ;
+  skos:definition "Predicting electricity demand for grid balancing and capacity planning."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Residual .
+
+motif:RenewableForecasting a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Renewable Energy Forecasting"@en ;
+  skos:definition "Predicting solar and wind power generation from weather data."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear .
+
+motif:GridOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Smart Grid Optimization"@en ;
+  skos:definition "Optimal power flow and grid management using reinforcement learning."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Attention ;
+  motif:relatedUseCase motif:MessagePassing .
+
+motif:EnergyTrading a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Energy Market Trading"@en ;
+  skos:definition "Algorithmic trading in electricity and carbon credit markets."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Loop ;
+  motif:relatedUseCase motif:PolicyGradient .
+
+motif:MeterAnalytics a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Smart Meter Analytics"@en ;
+  skos:definition "Analyzing consumption patterns and detecting anomalies in smart meter data."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear .
+
+motif:OutageDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Outage Detection & Prediction"@en ;
+  skos:definition "Predicting and detecting power outages from sensor and weather data."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EarlyExit .
+
+motif:BatteryManagement a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Battery State Estimation"@en ;
+  skos:definition "Estimating battery state-of-charge and remaining useful life."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:PersistentState .
+
+motif:BuildingEnergy a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Building Energy Management"@en ;
+  skos:definition "Optimizing HVAC and lighting for energy efficiency and comfort."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:ActorCritic .
+
+motif:OilGasExploration a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Seismic Data Interpretation"@en ;
+  skos:definition "Analyzing seismic surveys for oil and gas reservoir identification."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:SemanticSegmentation .
+
+motif:EVCharging a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "EV Charging Optimization"@en ;
+  skos:definition "Optimizing electric vehicle charging schedules and station placement."@en ;
+  motif:belongsTo motif:Energy ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If .
+

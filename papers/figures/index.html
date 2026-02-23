@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Figures</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Roboto, "Segoe UI", Arial; margin: 0; padding: 0; background: #f8f9fa; }
+    header { padding: 1.5rem 2rem; background: #0b3d91; color: white; }
+    header h1 { margin: 0; }
+    header p { margin: 0.25rem 0 0; opacity: 0.9; }
+    main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 0;
+      list-style: none;
+      margin: 0;
+    }
+    .chart-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .chart-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+    .chart-card a.thumb {
+      display: block;
+      background: #f5f5f5;
+    }
+    .chart-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background: #fafafa;
+    }
+    .chart-card .info {
+      padding: 1rem;
+    }
+    .chart-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+    }
+    .chart-card h3 a {
+      color: #0b3d91;
+      text-decoration: none;
+    }
+    .chart-card h3 a:hover {
+      text-decoration: underline;
+    }
+    .chart-card p {
+      margin: 0 0 0.75rem;
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.4;
+    }
+    .chart-card .links {
+      font-size: 0.8rem;
+    }
+    .chart-card .links a {
+      color: #0b3d91;
+      margin-right: 0.75rem;
+      text-decoration: none;
+    }
+    .chart-card .links a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Figures</h1>
+    <p>Chart gallery with thumbnails</p>
+  </header>
+  <main>
+    <ul class="chart-grid">
+      <li class="chart-card">
+        <a class="thumb" href="algebraic_structure.html"><img src="algebraic_structure.png" alt="Algebraic Structure thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="algebraic_structure.html">Algebraic Structure</a></h3>
+          <p>Closure, associativity, identity, commutativity, and distributivity properties</p>
+          <div class="links">
+            <a href="algebraic_structure.json">JSON</a>
+            <a href="algebraic_structure.html">HTML</a>
+            <a href="algebraic_structure.png">PNG</a>
+            <a href="../charts/algebraic_structure.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="minimal_basis_b*.html"><img src="minimal_basis_b*.png" alt="Minimal Basis B* thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="minimal_basis_b*.html">Minimal Basis B*</a></h3>
+          <p>The 16 irreducible primitives that span the motif algebra</p>
+          <div class="links">
+            <a href="minimal_basis_b*.json">JSON</a>
+            <a href="minimal_basis_b*.html">HTML</a>
+            <a href="minimal_basis_b*.png">PNG</a>
+            <a href="../charts/basis_primitives.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="motif_definition_completeness.html"><img src="motif_definition_completeness.png" alt="Motif Definition Completeness thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="motif_definition_completeness.html">Motif Definition Completeness</a></h3>
+          <p>Percentage of motifs with complete property definitions</p>
+          <div class="links">
+            <a href="motif_definition_completeness.json">JSON</a>
+            <a href="motif_definition_completeness.html">HTML</a>
+            <a href="motif_definition_completeness.png">PNG</a>
+            <a href="../charts/completeness.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="derivation_complexity_by_category.html"><img src="derivation_complexity_by_category.png" alt="Derivation Complexity by Category thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="derivation_complexity_by_category.html">Derivation Complexity by Category</a></h3>
+          <p>Heatmap of primitive usage frequency per category</p>
+          <div class="links">
+            <a href="derivation_complexity_by_category.json">JSON</a>
+            <a href="derivation_complexity_by_category.html">HTML</a>
+            <a href="derivation_complexity_by_category.png">PNG</a>
+            <a href="../charts/complexity_heatmap.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="constraint_distribution.html"><img src="constraint_distribution.png" alt="Constraint Distribution thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="constraint_distribution.html">Constraint Distribution</a></h3>
+          <p>Distribution of motif constraints (e.g., Boundary, Shape-Dynamic)</p>
+          <div class="links">
+            <a href="constraint_distribution.json">JSON</a>
+            <a href="constraint_distribution.html">HTML</a>
+            <a href="constraint_distribution.png">PNG</a>
+            <a href="../charts/constraint_summary.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="derivation_edges.html"><img src="derivation_edges.png" alt="Derivation Edges thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="derivation_edges.html">Derivation Edges</a></h3>
+          <p>Number of derived motifs per B* primitive</p>
+          <div class="links">
+            <a href="derivation_edges.json">JSON</a>
+            <a href="derivation_edges.html">HTML</a>
+            <a href="derivation_edges.png">PNG</a>
+            <a href="../charts/derivation_tree.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="domain_×_motif_usage_matrix.html"><img src="domain_×_motif_usage_matrix.png" alt="Domain × Motif Usage Matrix thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="domain_×_motif_usage_matrix.html">Domain × Motif Usage Matrix</a></h3>
+          <p>Heatmap showing counts of domain applications that use each motif</p>
+          <div class="links">
+            <a href="domain_×_motif_usage_matrix.json">JSON</a>
+            <a href="domain_×_motif_usage_matrix.html">HTML</a>
+            <a href="domain_×_motif_usage_matrix.png">PNG</a>
+            <a href="../charts/domain_motif_matrix.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="motifs_used_by_domain_applications.html"><img src="motifs_used_by_domain_applications.png" alt="Motifs used by Domain Applications thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="motifs_used_by_domain_applications.html">Motifs used by Domain Applications</a></h3>
+          <p>Number of industrial/academic applications (domain apps) that reference each motif</p>
+          <div class="links">
+            <a href="motifs_used_by_domain_applications.json">JSON</a>
+            <a href="motifs_used_by_domain_applications.html">HTML</a>
+            <a href="motifs_used_by_domain_applications.png">PNG</a>
+            <a href="../charts/domains_by_motif.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="fingerprint_co-occurrence.html"><img src="fingerprint_co-occurrence.png" alt="Fingerprint Co-occurrence thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="fingerprint_co-occurrence.html">Fingerprint Co-occurrence</a></h3>
+          <p>Clusters of semantic tags (e.g., T.width often co-occurs with T.reuse)</p>
+          <div class="links">
+            <a href="fingerprint_co-occurrence.json">JSON</a>
+            <a href="fingerprint_co-occurrence.html">HTML</a>
+            <a href="fingerprint_co-occurrence.png">PNG</a>
+            <a href="../charts/fingerprint_clusters.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="fingerprint_coverage.html"><img src="fingerprint_coverage.png" alt="Fingerprint Coverage thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="fingerprint_coverage.html">Fingerprint Coverage</a></h3>
+          <p>Frequency of fingerprint dimensions across motifs</p>
+          <div class="links">
+            <a href="fingerprint_coverage.json">JSON</a>
+            <a href="fingerprint_coverage.html">HTML</a>
+            <a href="fingerprint_coverage.png">PNG</a>
+            <a href="../charts/fingerprint_coverage.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="extended_basis_b+.html"><img src="extended_basis_b+.png" alt="Extended Basis B+ thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="extended_basis_b+.html">Extended Basis B+</a></h3>
+          <p>Experimental primitives for Temporal, Async, and Functional domains.</p>
+          <div class="links">
+            <a href="extended_basis_b+.json">JSON</a>
+            <a href="extended_basis_b+.html">HTML</a>
+            <a href="extended_basis_b+.png">PNG</a>
+            <a href="../charts/future_extensions.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="implementation_readiness.html"><img src="implementation_readiness.png" alt="Implementation Readiness thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="implementation_readiness.html">Implementation Readiness</a></h3>
+          <p>Ratio of motifs with concrete code examples vs. theoretical specifications</p>
+          <div class="links">
+            <a href="implementation_readiness.json">JSON</a>
+            <a href="implementation_readiness.html">HTML</a>
+            <a href="implementation_readiness.png">PNG</a>
+            <a href="../charts/implementation_readiness.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="mapping_coverage_by_category.html"><img src="mapping_coverage_by_category.png" alt="Mapping Coverage by Category thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="mapping_coverage_by_category.html">Mapping Coverage by Category</a></h3>
+          <p>Mapped vs unmapped motif counts per category</p>
+          <div class="links">
+            <a href="mapping_coverage_by_category.json">JSON</a>
+            <a href="mapping_coverage_by_category.html">HTML</a>
+            <a href="mapping_coverage_by_category.png">PNG</a>
+            <a href="../charts/mapping_by_category.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="motif-to-onnx_operator_mapping.html"><img src="motif-to-onnx_operator_mapping.png" alt="Motif-to-ONNX Operator Mapping thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="motif-to-onnx_operator_mapping.html">Motif-to-ONNX Operator Mapping</a></h3>
+          <p>Canonical mapping from motifs to ONNX operators (skos:exactMatch)</p>
+          <div class="links">
+            <a href="motif-to-onnx_operator_mapping.json">JSON</a>
+            <a href="motif-to-onnx_operator_mapping.html">HTML</a>
+            <a href="motif-to-onnx_operator_mapping.png">PNG</a>
+            <a href="../charts/mapping_matrix.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="motif_inventory.html"><img src="motif_inventory.png" alt="Motif Inventory thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="motif_inventory.html">Motif Inventory</a></h3>
+          <p>Complete listing of all motifs with signatures and categories</p>
+          <div class="links">
+            <a href="motif_inventory.json">JSON</a>
+            <a href="motif_inventory.html">HTML</a>
+            <a href="motif_inventory.png">PNG</a>
+            <a href="../charts/motif_inventory.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="motifs_by_category.html"><img src="motifs_by_category.png" alt="Motifs by Category thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="motifs_by_category.html">Motifs by Category</a></h3>
+          <p>Distribution of motifs across functional categories</p>
+          <div class="links">
+            <a href="motifs_by_category.json">JSON</a>
+            <a href="motifs_by_category.html">HTML</a>
+            <a href="motifs_by_category.png">PNG</a>
+            <a href="../charts/motifs_by_category.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="onnx_mapping_coverage.html"><img src="onnx_mapping_coverage.png" alt="ONNX Mapping Coverage thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="onnx_mapping_coverage.html">ONNX Mapping Coverage</a></h3>
+          <p>Fraction of motifs with canonical ONNX mapping</p>
+          <div class="links">
+            <a href="onnx_mapping_coverage.json">JSON</a>
+            <a href="onnx_mapping_coverage.html">HTML</a>
+            <a href="onnx_mapping_coverage.png">PNG</a>
+            <a href="../charts/onnx_mapping_summary.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="ontology_metrics.html"><img src="ontology_metrics.png" alt="Ontology Metrics thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="ontology_metrics.html">Ontology Metrics</a></h3>
+          <p>High-level statistics about the motif ontology</p>
+          <div class="links">
+            <a href="ontology_metrics.json">JSON</a>
+            <a href="ontology_metrics.html">HTML</a>
+            <a href="ontology_metrics.png">PNG</a>
+            <a href="../charts/ontology_stats.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="motif_redundancy.html"><img src="motif_redundancy.png" alt="Motif Redundancy thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="motif_redundancy.html">Motif Redundancy</a></h3>
+          <p>Derived motifs and derivation complexity (number of B* primitives)</p>
+          <div class="links">
+            <a href="motif_redundancy.json">JSON</a>
+            <a href="motif_redundancy.html">HTML</a>
+            <a href="motif_redundancy.png">PNG</a>
+            <a href="../charts/redundancy_graph.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="runtime_capability_usage.html"><img src="runtime_capability_usage.png" alt="Runtime Capability Usage thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="runtime_capability_usage.html">Runtime Capability Usage</a></h3>
+          <p>Count of motifs requiring each runtime capability</p>
+          <div class="links">
+            <a href="runtime_capability_usage.json">JSON</a>
+            <a href="runtime_capability_usage.html">HTML</a>
+            <a href="runtime_capability_usage.png">PNG</a>
+            <a href="../charts/runtime_usage.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="signature_patterns.html"><img src="signature_patterns.png" alt="Signature Patterns thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="signature_patterns.html">Signature Patterns</a></h3>
+          <p>Distribution of input/output signature patterns across motifs</p>
+          <div class="links">
+            <a href="signature_patterns.json">JSON</a>
+            <a href="signature_patterns.html">HTML</a>
+            <a href="signature_patterns.png">PNG</a>
+            <a href="../charts/signature_patterns.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="unmapped_motifs.html"><img src="unmapped_motifs.png" alt="Unmapped Motifs thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="unmapped_motifs.html">Unmapped Motifs</a></h3>
+          <p>Motifs that lack `skos:exactMatch` mapping to ONNX</p>
+          <div class="links">
+            <a href="unmapped_motifs.json">JSON</a>
+            <a href="unmapped_motifs.html">HTML</a>
+            <a href="unmapped_motifs.png">PNG</a>
+            <a href="../charts/unmapped_motifs.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+      <li class="chart-card">
+        <a class="thumb" href="use_cases_per_domain.html"><img src="use_cases_per_domain.png" alt="Use Cases per Domain thumbnail" loading="lazy"></a>
+        <div class="info">
+          <h3><a href="use_cases_per_domain.html">Use Cases per Domain</a></h3>
+          <p>Number of technical use cases in each application domain (from use-cases TTL)</p>
+          <div class="links">
+            <a href="use_cases_per_domain.json">JSON</a>
+            <a href="use_cases_per_domain.html">HTML</a>
+            <a href="use_cases_per_domain.png">PNG</a>
+            <a href="../charts/usecases_by_domain.yaml">YAML</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </main>
+  <footer>Auto-generated chart gallery</footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+\OnePageSectionStart
+\section{Training Pragmas: Formalizing the Backward Pass}
+
+To enable closure, we extend the Fuse-IR with three foundational pragmas that control the optimization of the Fused Fabric.
+
+\paragraph{\texttt{@training}}
+This pragma declares the objective function and initialization states. It binds the compute graph to a differentiable context, signalling to the compiler to generate the adjoint (gradient) nodes for the targeted silicon runtime.
+
+\paragraph{\texttt{@frozen}}
+The Fused Fabric contains many nodes that are "closed to change" (e.g., physical laws, fundamental ontological definitions, or pre-verified reasoning motifs). The \texttt{@frozen} pragma prevents the backward pass from modifying these subgraphs, ensuring that core grounding is never corrupted by stochastic updates.
+
+\paragraph{\texttt{@train}}
+This pragma marks specific parameter tensors within the graph as mutable targets for optimization. Unlike untyped systems where all "weights" are mutable, \texttt{@train} allows for precision learning: updating only the specific components of a reasoning chain that require refinement.
+
+\OnePageSectionEnd

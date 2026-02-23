@@ -1,0 +1,12 @@
+# Find motifs that have examples defined
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?motif ?label ?example ?category
+WHERE {
+  ?motif a motif:Motif ;
+    skos:prefLabel ?label ;
+    motif:example ?example ;
+    motif:hasCategory ?category .
+}
+ORDER BY ?label

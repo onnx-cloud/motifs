@@ -1,0 +1,24 @@
+
+# ONNX operator schema — per-operator file
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:RotaryEmbedding a onnx:Operator ;
+  skos:prefLabel "RotaryEmbedding" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "23"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "cos_cache" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "sin_cache" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "position_ids" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "num_heads" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "rotary_embedding_dim" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "interleaved" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .

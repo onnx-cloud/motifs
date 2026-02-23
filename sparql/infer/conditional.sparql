@@ -1,0 +1,21 @@
+# Infer Conditional constructs (If / Switch / ConditionalMerge present)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?container a ?containerType .
+  ?container motif:hasConditional ?cond .
+  ?cond a motif:Conditional .
+  ?cond skos:prefLabel ?condLabel .
+}
+WHERE {
+  # Bind concrete motif instances directly (motif:If etc. are instances, not rdf:classes)
+  VALUES ?cond { motif:If motif:Switch motif:ConditionalMerge motif:GuardedOps }
+
+  { ?container motif:composedOf ?cond . }
+  UNION
+  { ?container motif:usesMotif ?cond . }
+  OPTIONAL { ?cond skos:prefLabel ?condLabel }
+  OPTIONAL { ?container rdf:type ?containerType }
+}

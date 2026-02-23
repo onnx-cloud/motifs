@@ -1,0 +1,46 @@
+# Figure: Domain × Motif Usage Matrix (Heatmap)
+# Matrix of domain (rows) and motif (columns) showing counts of applications that use each motif
+
+title: Domain × Motif Usage Matrix
+description: Heatmap showing counts of domain applications that use each motif
+
+query: ./sparql/charts/motif_usage_by_domain.sparql
+
+transform:
+  rename:
+    domainLabel: domain
+    motifLabel: motif
+    count: count
+  keep:
+    - domain
+    - motif
+    - count
+
+vega:
+  width: 900
+  height: 600
+  mark: rect
+  encoding:
+    x:
+      field: motif
+      type: nominal
+      axis:
+        labelAngle: -45
+        title: Motif
+    y:
+      field: domain
+      type: nominal
+      axis:
+        title: Domain
+    color:
+      field: count
+      type: quantitative
+      scale:
+        scheme: blues
+    tooltip:
+      - field: domain
+        type: nominal
+      - field: motif
+        type: nominal
+      - field: count
+        type: quantitative

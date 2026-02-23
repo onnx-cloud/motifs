@@ -1,0 +1,101 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Memory / State motif instances
+
+
+motif:Read a motif:Motif ;
+  skos:prefLabel "Read"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasSemantics motif:Sem_Read .
+
+motif:Write a motif:Motif ;
+  skos:prefLabel "Write"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasFingerprint motif:M_mutable_eq_1 ;
+  motif:hasSemantics motif:Sem_Write .
+
+motif:Gather a motif:Motif ;
+  skos:prefLabel "Gather"@en ;
+  motif:hasSignature motif:Sig_many_to_many ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_Gather .
+
+motif:Scatter a motif:Motif ;
+  skos:prefLabel "Scatter"@en ;
+  motif:hasSignature motif:Sig_many_to_many ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_Scatter .
+
+motif:KVMemory a motif:Motif ;
+  skos:prefLabel "Key-Value Memory"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasFingerprint motif:M_addressable_eq_1_S_persistent_eq_1 ;
+  motif:hasSemantics motif:Sem_KVMemory .
+
+motif:PersistentState a motif:Motif ;
+  skos:prefLabel "Persistent State"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_PersistentState .
+
+motif:EphemeralState a motif:Motif ;
+  skos:prefLabel "Ephemeral State"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_EphemeralState .
+
+motif:CircularBuffer a motif:Motif ;
+  skos:prefLabel "Circular Buffer"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_CircularBuffer .
+
+motif:DifferentiableQueue a motif:Motif ;
+  skos:prefLabel "Differentiable Queue"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_DifferentiableQueue .
+
+motif:ReadModifyWrite a motif:Motif ;
+  skos:prefLabel "Read-Modify-Write"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_ReadModifyWrite .
+
+motif:MemoryAccumulate a motif:Motif ;
+  skos:prefLabel "Memory Accumulate"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_MemoryAccumulate .
+
+motif:MemoryBranch a motif:Motif ;
+  skos:prefLabel "Memory Branch"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_MemoryBranch .
+
+motif:AttentionMemory a motif:Motif ;
+  skos:prefLabel "Attention Memory"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_AttentionMemory .
+
+motif:MemoryMerge a motif:Motif ;
+  skos:prefLabel "Memory Merge"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_MemoryMerge .
+
+motif:MemoryLoop a motif:Motif ;
+  skos:prefLabel "Memory Loop"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Memory ;
+  motif:hasSemantics motif:Sem_MemoryLoop .

@@ -1,0 +1,20 @@
+{% include 'wiki/header.mustache' %}
+
+<div class="container">
+  <h1>{{ page.title | default('cards') }}</h1>
+  <p class="meta">{{ page.description | default('Browse motif cards and related information.') }}</p>
+
+  <div class="grid">
+    {# Expecting context variable `cards` to be a list of {title, description, id, type} #}
+    {% for c in cards|default([]) %}
+    <article class="card">
+      <h3><a href="{{ c.slug }}/index.html">{{ c.label }}</a></h3>
+      <div class="meta">{{ c.description }}</div>
+    </article>
+    {% else %}
+    <div class="card">No cards</div>
+    {% endfor %}
+  </div>
+</div>
+
+{% include 'wiki/footer.mustache' %}

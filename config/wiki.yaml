@@ -1,0 +1,90 @@
+# Data-driven Wiki configuration
+# Documentation Generator Configuration
+# Drives the generation of HTML docs from TTL ontology via SPARQL queries and Mustache templates.
+#
+# Each page entry defines:
+#   - id: unique identifier
+#   - title: page title
+#   - template: mustache template (relative to src/template/docs/)
+#   - query: SPARQL query file (relative to sparql/docs/) or inline
+#   - output: output HTML path (relative to docs/)
+#   - description: optional page description
+#   - context: additional static context variables for template
+
+paths:
+  output: ./tmp/wiki
+  template: ./src/template/wiki
+  sparql: ./sparql/wiki
+  ttl: ./ttl/
+
+# Global available to all templates
+site:
+  site_title: "Motif Models"
+  site_subtitle: "Computation Graph Catalog for ML/AI"
+  github_url: "https://github.com/onnx-cloud/motif"
+  version: "0.1.0"
+
+policy:
+  query_timeout_seconds: 10
+  max_foreach_rows: 100
+
+pages:
+  index:
+    left:
+      predicate: motif:hasFingerprint
+      template: menu/fingerprint.mustache
+    body:
+      predicate: motif:hasCategory
+      template: cards/categories.mustache
+    right:
+  motifs:
+    left:
+      predicate: motif:hasCategory
+      template: cards/categories.mustache
+    body:
+      query: ./sparql/docs/list_motifs.sparql
+      template: lists/motifs_by_category.mustache
+    right:
+  motifs:
+    left:
+      predicate: motif:isComponentOf
+      template: cards/isComponentOf.mustache   
+    body:
+      query: ./sparql/wiki/models_by_category.sparql
+      template: lists/models_by_category.mustache
+    right:
+      predicate: motif:usesMotif
+      template: cards/links.mustache   
+  models:
+    left:
+      predicate: motif:hasCategory
+      template: cards/categories.mustache   
+    body:
+      query: ./sparql/wiki/models_by_category.sparql
+      template: lists/models_by_category.mustache
+    right:
+  fingerprints:
+    left:
+      predicate: motif:hasFingerprint
+      template: menu/fingerprint.mustache
+    body:
+      query: ./sparql/wiki/fingerprints.sparql
+      template: lists/fingerprints.mustache
+    right:
+  runtimes:
+    left:
+      predicate: motif:hasFingerprint
+      template: menu/fingerprint.mustache
+    body:
+      query: ./sparql/wiki/runtimes.sparql
+      template: lists/runtimes.mustache
+    right:  
+  categories: 
+    left:
+      predicate: motif:hasFingerprint
+      template: menu/fingerprint.mustache
+    body:
+      query: ./sparql/wiki/categories.sparql
+      template: lists/categories.mustache
+    right:
+    

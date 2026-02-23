@@ -1,0 +1,160 @@
+# Inferred triples from query: parallel.sparql
+# generated: 2026-01-29T07:08:24.513390Z
+# source ttl: ttl
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://ns.onnx.cloud/motif#AlexNet> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#BART> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#BERT> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#BLOOM> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#CLIP> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#CLIPDualEncoder> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#ConvNeXt> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#DETR> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#DINOv2> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#DeepSpeech> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#DenseBlock> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#DenseNet> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#Detectron2> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#DistilBERT> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#EfficientNet> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#FCOS> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#Fairseq> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#Falcon> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#FasterRCNN> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#FeedForwardPattern> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#Flamingo> a <https://ns.onnx.cloud/motif#ModelFamily>,
+        <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#GAT> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#GATLayer> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#GCN> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#GPT2> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#GPTJ> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#GPTNeo> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#GPTNeoX> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#GRUCell> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#Inception> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#InceptionModule> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#InternLM> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#LLaMA> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#LLaVA> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#LSTMCell> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#LSTM_LanguageModel> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#Mamba> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#MaskRCNN> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#MessagePassingLayer> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#Mistral> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#MixtureOfExperts> a <https://ns.onnx.cloud/motif#ModelFamily>,
+        <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#MobileNetV2> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#MultiHeadAttentionPattern> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#OPT> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#OpenNMT> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#Perceiver> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#PerceiverIO> a <https://ns.onnx.cloud/motif#ModelArchitecture>,
+        <https://ns.onnx.cloud/motif#Motif>,
+        <https://ns.onnx.cloud/motif#UnmappedMotif> .
+
+<https://ns.onnx.cloud/motif#PostNormBlock> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#PreNormBlock> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#Qwen> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#RL_PPO> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#RWKV> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#ResNet> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#ResNetBottleneck> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#RetinaNet> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#RoBERTa> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#SSD> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#SqueezeNet> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#StableDiffusion> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#StyleGAN2> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#SwinTransformer> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#SwitchTransformer> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#T5> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#TimeSformer> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#TransformerBlock> a <https://ns.onnx.cloud/motif#Pattern> .
+
+<https://ns.onnx.cloud/motif#TransformerXL> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#UNet> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#VGG> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#ViT> a <https://ns.onnx.cloud/motif#ModelFamily> .
+
+<https://ns.onnx.cloud/motif#VisionLanguageModel> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Pattern>,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#Whisper> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#XLNet> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#YOLOv5> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+
+<https://ns.onnx.cloud/motif#llama_cpp> a <https://ns.onnx.cloud/motif#ModelArchitecture> .
+

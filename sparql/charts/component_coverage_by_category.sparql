@@ -1,0 +1,12 @@
+# Component coverage by parent category: number of distinct operator motifs referenced by parents in each category
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?catLabel (COUNT(DISTINCT ?op) AS ?componentCount) (COUNT(DISTINCT ?parent) AS ?parentCount)
+WHERE {
+  ?op motif:isComponentOf ?parent .
+  ?parent motif:hasCategory ?cat .
+  ?cat skos:prefLabel ?catLabel .
+}
+GROUP BY ?catLabel
+ORDER BY DESC(?componentCount)

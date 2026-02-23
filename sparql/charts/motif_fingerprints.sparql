@@ -1,0 +1,12 @@
+# Find all fingerprints and which motifs use them
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?fingerprint (COUNT(?motif) AS ?count) (GROUP_CONCAT(?label; separator=", ") AS ?motifLabels)
+WHERE {
+  ?motif a motif:Motif ;
+    skos:prefLabel ?label ;
+    motif:hasFingerprint ?fingerprint .
+}
+GROUP BY ?fingerprint
+ORDER BY DESC(?count)

@@ -1,0 +1,126 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Agriculture & Food Domain Applications
+# Maps agricultural and food industry applications to motifs
+##################################
+
+motif:CropMonitoring a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Crop Health Monitoring"@en ;
+  skos:definition "Detecting crop diseases, pests, and nutrient deficiencies from aerial and satellite imagery."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:SemanticSegmentation .
+
+motif:YieldPrediction a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Crop Yield Prediction"@en ;
+  skos:definition "Forecasting harvest yields from weather, soil, and satellite data."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear .
+
+motif:PrecisionIrrigation a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Precision Irrigation"@en ;
+  skos:definition "Optimizing water usage based on soil moisture, weather, and crop needs."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:ActorCritic .
+
+motif:LivestockMonitoring a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Livestock Health Monitoring"@en ;
+  skos:definition "Tracking animal behavior, health, and welfare using sensors and vision."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:PersistentState ;
+  motif:relatedUseCase motif:PoseEstimation .
+
+motif:WeedDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Weed Detection & Control"@en ;
+  skos:definition "Identifying and targeting weeds for precision herbicide application."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Gather ;
+  motif:relatedUseCase motif:InstanceSegmentation .
+
+motif:HarvestRobotics a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Automated Harvesting"@en ;
+  skos:definition "Robotic systems for selective harvesting of fruits and vegetables."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Gather ;
+  motif:relatedUseCase motif:ObjectDetection .
+
+motif:FoodQuality a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Food Quality Inspection"@en ;
+  skos:definition "Automated grading and quality assessment of food products."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:ImageClassification .
+
+motif:FoodSupplyChain a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Food Supply Chain Tracking"@en ;
+  skos:definition "End-to-end traceability and freshness prediction in food logistics."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Attention ;
+  motif:relatedUseCase motif:MessagePassing .
+
+motif:SoilAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Soil Analysis & Mapping"@en ;
+  skos:definition "Analyzing soil composition and creating fertility maps for precision farming."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Attention .
+
+motif:AquacultureMonitoring a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Aquaculture Monitoring"@en ;
+  skos:definition "Monitoring fish health, feeding behavior, and water quality in fish farms."@en ;
+  motif:belongsTo motif:Agriculture ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Loop .
+

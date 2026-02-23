@@ -1,0 +1,81 @@
+# Cookbook: DType showcase — small functions demonstrating supported scalar dtypes
+# Ops: const declarations, typed tensors, simple returns
+
+@fuse 1.2
+@opset onnx 18
+@domain examples.cookbook
+
+# Minimal functions returning a single-element tensor for each scalar dtype.
+node f32_one() -> f32[1] {
+  x: f32[1] = [1.0]
+  x
+}
+
+node f64_one() -> f64[1] {
+  x: f64[1] = [2.0]
+  x
+}
+
+node i64_one() -> i64[1] {
+  x: i64[1] = [3]
+  x
+}
+
+node i32_one() -> i32[1] {
+  x: i32[1] = [4]
+  x
+}
+
+node i16_one() -> i16[1] {
+  x: i16[1] = [5]
+  x
+}
+
+node i8_one() -> i8[1] {
+  x: i8[1] = [6]
+  x
+}
+
+node u64_one() -> u64[1] {
+  x: u64[1] = [7]
+  x
+}
+
+node u32_one() -> u32[1] {
+  x: u32[1] = [8]
+  x
+}
+
+node u16_one() -> u16[1] {
+  x: u16[1] = [9]
+  x
+}
+
+node u8_one() -> u8[1] {
+  x: u8[1] = [10]
+  x
+}
+
+node bool_one() -> bool[1] {
+  x: bool[1] = [true]
+  x
+}
+
+node bf16_one() -> bf16[1] {
+  x: bf16[1] = [1.0]
+  x
+}
+
+node f16_one() -> f16[1] {
+  x: f16[1] = [1.0]
+  x
+}
+
+@proof node test_dtypes_core() {
+  out_f32 = f32_one()
+  out_i32 = i32_one()
+  out_bool = bool_one()
+  assert out_f32 == [1.0]
+  assert out_i32 == [4]
+  assert out_bool == [1]
+}

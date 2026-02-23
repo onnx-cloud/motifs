@@ -1,0 +1,218 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Control Theory Motifs
+# Purpose: Feedback loops, PID, stability, adaptive control patterns
+#################
+
+motif:ControlTheory a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Control Theory"@en ;
+  skos:definition "Feedback loops, stability, adaptive control patterns from classical and modern control theory." .
+#################
+# Control Theory Fingerprints
+#################
+
+motif:C_feedback_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "C.feedback=1"@en ;
+  skos:definition "Closed-loop feedback present." .
+
+motif:C_stable_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "C.stable=1"@en ;
+  skos:definition "System is provably stable (BIBO, Lyapunov, etc.)." .
+
+motif:C_adaptive_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "C.adaptive=1"@en ;
+  skos:definition "Parameters adapt online based on error." .
+
+motif:T_continuous a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.continuous"@en ;
+  skos:definition "Continuous-time dynamics (differential equations)." .
+
+motif:T_discrete a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.discrete"@en ;
+  skos:definition "Discrete-time dynamics (difference equations)." .
+#################
+# Feedback Loop Motifs
+#################
+
+motif:FeedbackLoop a motif:Motif ;
+  skos:prefLabel "Feedback Loop"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasFingerprint motif:T_cycles_eq_1_C_loop_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Fundamental closed-loop control pattern." .
+
+motif:NegativeFeedback a motif:Motif ;
+  skos:prefLabel "Negative Feedback"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Standard error-correcting feedback." .
+
+motif:PositiveFeedback a motif:Motif ;
+  skos:prefLabel "Positive Feedback"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Self-reinforcing loops; use with caution." .
+#################
+# Classical Control Motifs
+#################
+
+motif:ProportionalControl a motif:Motif ;
+  skos:prefLabel "Proportional Control (P)"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "P controller." .
+
+motif:IntegralControl a motif:Motif ;
+  skos:prefLabel "Integral Control (I)"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "I controller with accumulated state." .
+
+motif:DerivativeControl a motif:Motif ;
+  skos:prefLabel "Derivative Control (D)"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "D controller for damping." .
+
+motif:PIDControl a motif:Motif ;
+  skos:prefLabel "PID Control"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Workhorse of industrial control." .
+#################
+# Control Motifs
+#################
+
+motif:StateObserver a motif:Motif ;
+  skos:prefLabel "State Observer"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Luenberger observer, Kalman filter." .
+
+motif:KalmanFilter a motif:Motif ;
+  skos:prefLabel "Kalman Filter"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Recursive Bayesian estimation." .
+
+motif:LQR a motif:Motif ;
+  skos:prefLabel "Linear-Quadratic Regulator"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasFingerprint motif:C_stable_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Optimal control for linear systems." .
+
+motif:ModelPredictiveControl a motif:Motif ;
+  skos:prefLabel "Model Predictive Control"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasFingerprint motif:T_cycles_eq_1_C_loop_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Receding horizon optimal control." .
+#################
+# Adaptive Control Motifs
+#################
+
+motif:AdaptiveGain a motif:Motif ;
+  skos:prefLabel "Adaptive Gain"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_adaptive_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Gain scheduling, self-tuning control." .
+
+motif:MRAC a motif:Motif ;
+  skos:prefLabel "Model Reference Adaptive Control"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_adaptive_eq_1 ;
+  motif:hasFingerprint motif:C_feedback_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Adaptive control with explicit reference." .
+
+motif:ExtremumSeeking a motif:Motif ;
+  skos:prefLabel "Extremum Seeking"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:C_adaptive_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Real-time optimization without explicit model." .
+#################
+# Stability Motifs
+#################
+
+motif:Saturation a motif:Motif ;
+  skos:prefLabel "Saturation"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Actuator limits, anti-windup." .
+
+motif:RateLimiter a motif:Motif ;
+  skos:prefLabel "Rate Limiter"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Prevent sudden changes in control signal." .
+
+motif:DeadZone a motif:Motif ;
+  skos:prefLabel "Dead Zone"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:ControlTheory ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Ignore small errors, prevent chatter." .
+

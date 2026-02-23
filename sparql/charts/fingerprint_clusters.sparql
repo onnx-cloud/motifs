@@ -1,0 +1,14 @@
+# Find co-occurrence of fingerprint tags
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?tagA ?tagB (COUNT(?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif ;
+         motif:hasFingerprint ?fA, ?fB .
+  ?fA skos:prefLabel ?tagA .
+  ?fB skos:prefLabel ?tagB .
+  FILTER(STR(?tagA) < STR(?tagB)) # Avoid double counting and self-pairs
+}
+GROUP BY ?tagA ?tagB
+ORDER BY DESC(?count)

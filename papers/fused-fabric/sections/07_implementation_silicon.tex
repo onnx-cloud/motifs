@@ -1,0 +1,15 @@
+\OnePageSectionStart
+\section{Implementation: From RDF to Silicon}
+
+The final stage of the Fused Fabric is the lowering to silicon-native code. We use ONNX (Open Neural Network Exchange) as our target machine-native representation.
+
+\paragraph{Semantic-Aware Compilation}
+The compiler translates RDF-encoded fused graphs into ONNX ModelProto structures. Semantic metadata is preserved in ONNX \texttt{doc\_string} and \texttt{metadata\_props}, ensuring that even at execution time, the silicon remains grounded.
+
+\paragraph{Verification Generation}
+During lowering, the compiler generates both the main inference graph and a set of \emph{assertion graphs}. These assertions implement the semantic constraints defined in the Reality Fabric (e.g., ensuring a "Probability" output remains within [0,1]).
+
+\paragraph{Performance Results}
+By fusing reasoning graphs and eliding ungrounded branches, we achieve performance gains of up to 40\% compared to manual DAG implementations, while improving auditability and formal correctness.
+
+\OnePageSectionEnd

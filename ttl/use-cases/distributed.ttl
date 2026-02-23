@@ -1,0 +1,108 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Distributed Training & Inference Use Cases
+# Links distributed computing patterns to computation graph motifs
+##################################
+
+motif:DataParallelism a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Data Parallelism"@en ;
+  skos:definition "Replicating model across devices with synchronized gradient averaging via AllReduce."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:AllReduce ;
+  motif:usesMotif motif:AllReduce ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join ;
+  motif:usesMotif motif:Broadcast .
+
+motif:TensorParallelism a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Tensor Parallelism"@en ;
+  skos:definition "Partitioning individual tensor operations across devices with AllReduce synchronization."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:Split ;
+  motif:usesMotif motif:Split ;
+  motif:usesMotif motif:AllReduce ;
+  motif:usesMotif motif:AllGather ;
+  motif:usesMotif motif:Linear .
+
+motif:PipelineParallelism a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Pipeline Parallelism"@en ;
+  skos:definition "Partitioning model layers across devices with micro-batch pipelining for throughput."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:PipelineSendRecv ;
+  motif:usesMotif motif:PipelineSendRecv ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:CircularBuffer .
+
+motif:ZeROOptimization a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "ZeRO Optimizer State Sharding"@en ;
+  skos:definition "Partitioning optimizer states, gradients, and parameters across data-parallel ranks."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:motif_ReduceScatter ;
+  motif:usesMotif motif:motif_ReduceScatter ;
+  motif:usesMotif motif:AllGather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Gather .
+
+motif:GradientCheckpointing a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Gradient Checkpointing"@en ;
+  skos:definition "Trading compute for memory by recomputing activations during backward pass."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:Call ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:PersistentState ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Read .
+
+motif:AsynchronousSGD a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Asynchronous SGD"@en ;
+  skos:definition "Distributed training without synchronization barriers, allowing stale gradients."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:ReadModifyWrite ;
+  motif:usesMotif motif:ReadModifyWrite ;
+  motif:usesMotif motif:Write ;
+  motif:usesMotif motif:Read ;
+  motif:usesMotif motif:PersistentState .
+
+motif:ModelSharding a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Model Sharding"@en ;
+  skos:definition "Distributing model parameters across devices with dynamic gathering for computation."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:AllGather ;
+  motif:usesMotif motif:Split .
+
+motif:DistributedBatchNorm a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Synchronized Batch Normalization"@en ;
+  skos:definition "Computing batch statistics across distributed workers for consistent normalization."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:AllReduce ;
+  motif:usesMotif motif:AllReduce ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Div ;
+  motif:usesMotif motif:Broadcast .
+
+motif:RingAllReduce a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Ring AllReduce"@en ;
+  skos:definition "Bandwidth-optimal reduction algorithm using ring topology for gradient synchronization."@en ;
+  motif:hasDomain motif:Scientific ;
+  motif:primaryMotif motif:AllReduce ;
+  motif:usesMotif motif:AllReduce ;
+  motif:usesMotif motif:PipelineSendRecv ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Add .
+

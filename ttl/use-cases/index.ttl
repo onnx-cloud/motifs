@@ -1,0 +1,112 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Use Cases Ontology — Index
+# Purpose: Define UseCase class, properties, and SKOS scheme for
+#          linking real-world applications to computation motifs.
+##################################
+
+motif: a owl:Ontology ;
+  skos:prefLabel "Motif Models Use Cases Ontology" ;
+  skos:definition "Motif Models authors" ;
+  skos:definition "2026-01-29"^^xsd:date ;
+  skos:definition "SKOS concepts linking real-world ML/AI use cases to computation graph motifs." .
+#################
+# Core classes and properties
+#################
+
+motif:UseCase a rdfs:Class ;
+  skos:prefLabel "Use Case" ;
+  skos:definition "A real-world application or pattern that employs one or more computation graph motifs." .
+
+motif:usesMotif a rdf:Property ;
+  skos:prefLabel "uses motif" ;
+  rdfs:domain motif:UseCase ;
+  rdfs:range motif:Motif ;
+  skos:definition "Links a use case to a motif it employs." .
+
+motif:primaryMotif a rdf:Property ;
+  rdfs:subPropertyOf motif:usesMotif ;
+  skos:prefLabel "primary motif" ;
+  rdfs:domain motif:UseCase ;
+  rdfs:range motif:Motif ;
+  skos:definition "The dominant or characteristic motif for this use case." .
+
+motif:hasDomain a rdf:Property ;
+  skos:prefLabel "has domain" ;
+  rdfs:domain motif:UseCase ;
+  rdfs:range motif:Domain ;
+  skos:definition "Links a use case to its application domain." .
+#################
+# SKOS Concept Schemes
+#################
+
+motif:UseCaseScheme a skos:ConceptScheme ;
+  skos:prefLabel "Use Case Catalog"@en ;
+  skos:definition "Catalog of ML/AI use cases mapped to computation graph motifs." .
+
+motif:DomainScheme a skos:ConceptScheme ;
+  skos:prefLabel "Application Domains"@en ;
+  skos:definition "Top-level domains for categorizing use cases (NLP, Vision, RL, etc.)." .
+#################
+# Application Domains (SKOS concepts)
+#################
+
+motif:Domain a rdfs:Class ;
+  skos:prefLabel "Domain" ;
+  skos:definition "An application domain for ML/AI use cases." .
+
+motif:NLP a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Natural Language Processing"@en ;
+  skos:definition "Use cases involving text understanding, generation, and translation."@en .
+
+motif:Vision a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Computer Vision"@en ;
+  skos:definition "Use cases involving image and video analysis, generation, and understanding."@en .
+
+motif:Audio a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Audio & Speech"@en ;
+  skos:definition "Use cases involving speech recognition, synthesis, and audio processing."@en .
+
+motif:RL a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Reinforcement Learning"@en ;
+  skos:definition "Use cases involving agents learning from environment interaction."@en .
+
+motif:Multimodal a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Multimodal"@en ;
+  skos:definition "Use cases combining multiple modalities (text, image, audio)."@en .
+
+motif:GraphML a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Graph Machine Learning"@en ;
+  skos:definition "Use cases involving graph-structured data and neural networks."@en .
+
+motif:TimeSeries a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Time Series"@en ;
+  skos:definition "Use cases involving sequential and temporal data analysis."@en .
+
+motif:Generative a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Generative Models"@en ;
+  skos:definition "Use cases involving content generation (images, text, audio)."@en .
+
+motif:Recommender a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Recommendation Systems"@en ;
+  skos:definition "Use cases involving personalized content and item recommendation."@en .
+
+motif:Scientific a skos:Concept, motif:Domain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Scientific Computing"@en ;
+  skos:definition "Use cases in physics simulation, drug discovery, and scientific modeling."@en .
+

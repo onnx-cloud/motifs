@@ -1,0 +1,10 @@
+# Models/Motifs with inferred runtime requirements
+PREFIX motif: <https://ns.onnx.cloud/infer#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+
+SELECT ?container ?containerLabel (STRAFTER(STR(?rt), "#") AS ?runtimeLabel) WHERE {
+  ?container motif:requiresRuntime ?rt .
+  OPTIONAL { ?container skos:prefLabel ?containerLabel }
+}
+ORDER BY ?runtimeLabel ?containerLabel

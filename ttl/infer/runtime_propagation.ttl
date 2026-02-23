@@ -1,0 +1,61 @@
+# Inferred triples from query: runtime_propagation.sparql
+# generated: 2026-01-29T07:08:24.533365Z
+# source ttl: ttl
+
+@prefix ns1: <https://ns.onnx.cloud/motif#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ns1:AsynchronousSGD a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#MutableStateRuntime> .
+
+ns1:ControlNet a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime> .
+
+ns1:ExperienceReplay a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#MutableStateRuntime> .
+
+ns1:GAN a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime> .
+
+ns1:GradientCheckpointing a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime>,
+        <https://ns.onnx.cloud/onnx#MutableStateRuntime> .
+
+ns1:HierarchicalMoE a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime> .
+
+ns1:KVCache a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#MutableStateRuntime> .
+
+ns1:LatentDiffusion a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime> .
+
+ns1:MachineTranslation a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime> .
+
+ns1:PipelineParallelism a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime> .
+
+ns1:SpeculativeDecoding a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime> .
+
+ns1:TargetNetworkUpdate a skos:Concept,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#MutableStateRuntime> .
+
+ns1:VisionLanguageModel a skos:Concept,
+        ns1:Pattern,
+        ns1:UseCase ;
+    ns1:requiresRuntime <https://ns.onnx.cloud/onnx#HigherOrderRuntime> .
+

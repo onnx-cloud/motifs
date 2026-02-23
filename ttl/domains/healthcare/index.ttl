@@ -1,0 +1,130 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Healthcare & Life Sciences Domain Applications
+# Maps medical/pharmaceutical/biotech applications to motifs
+##################################
+
+motif:MedicalImaging a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Medical Image Diagnosis"@en ;
+  skos:definition "Automated analysis of X-rays, CT scans, MRIs, and pathology slides for disease detection and diagnosis."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:SoftmaxEdge ;
+  motif:relatedUseCase motif:ImageClassification .
+
+motif:DrugDiscovery a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "AI-Driven Drug Discovery"@en ;
+  skos:definition "Molecular property prediction, virtual screening, and de novo drug design using deep learning."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Loop ;
+  motif:relatedUseCase motif:MessagePassing .
+
+motif:GenomicsAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Genomics & Variant Analysis"@en ;
+  skos:definition "DNA/RNA sequence analysis, variant calling, and gene expression profiling."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear .
+
+motif:ProteinFolding a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Protein Structure Prediction"@en ;
+  skos:definition "Predicting 3D protein structures from amino acid sequences (AlphaFold-style)."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:motif_MultiHead ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter .
+
+motif:ClinicalNLP a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Clinical Text Mining"@en ;
+  skos:definition "Extracting medical entities, relations, and insights from electronic health records and clinical notes."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:NamedEntityRecognition .
+
+motif:RadiologyReport a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Radiology Report Generation"@en ;
+  skos:definition "Automatically generating textual reports from medical images."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:KVMemory ;
+  motif:relatedUseCase motif:ImageCaptioning .
+
+motif:SurvivalAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Patient Survival Prediction"@en ;
+  skos:definition "Predicting patient outcomes and survival probabilities from clinical data."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:ReduceSum .
+
+motif:PathologySegmentation a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Digital Pathology Segmentation"@en ;
+  skos:definition "Cell and tissue segmentation in whole-slide pathology images."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Concat ;
+  motif:relatedUseCase motif:SemanticSegmentation .
+
+motif:ClinicalTrialMatching a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Clinical Trial Patient Matching"@en ;
+  skos:definition "Matching patients to suitable clinical trials based on eligibility criteria."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:relatedUseCase motif:CrossEncoder .
+
+motif:BiomarkerDiscovery a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Biomarker Discovery"@en ;
+  skos:definition "Identifying biological markers for disease diagnosis and treatment response prediction."@en ;
+  motif:belongsTo motif:Healthcare ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Linear .
+

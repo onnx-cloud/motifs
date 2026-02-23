@@ -1,0 +1,44 @@
+% Preamble for modular research report
+\documentclass[11pt]{article}
+
+% Page layout
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[protrusion=false,expansion=false]{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm} % provide theorem/proof environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{caption,subcaption}
+\usepackage{xcolor}
+
+% Bibliography: biblatex + biber (recommended)
+\usepackage[backend=biber,style=authoryear,sorting=nyt]{biblatex}
+\addbibresource{bib/references.bib}
+
+% Section / one-page helpers
+% Each section file should be one page long. Add content and use \vfill to pad to a single page.
+\newcommand{\OnePageSectionStart}{\clearpage}
+\newcommand{\OnePageSectionEnd}{\vfill\clearpage}
+
+% Simple header/footer
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Motif Models}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Metadata placeholders
+\newcommand{\ReportTitle}{Motif Models -- Modular Report}
+\newcommand{\ReportAuthors}{Author A \and Author B}
+\newcommand{\ReportDate}{\today}
+
+% Shortcuts and useful macros
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+% End of preamble file

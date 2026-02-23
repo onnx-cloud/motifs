@@ -1,0 +1,13 @@
+# Count of motifs requiring each runtime capability
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?rcLabel (COUNT(DISTINCT ?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif ;
+         onnx:requiresRuntime ?rc .
+  ?rc rdfs:label ?rcLabel .
+}
+GROUP BY ?rcLabel
+ORDER BY DESC(?count)

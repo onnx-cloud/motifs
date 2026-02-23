@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Derivation Complexity by Category</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-blue-900 text-white py-4 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-xl font-semibold">Derivation Complexity by Category</h1>
+      
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <nav class="w-80 border-r pr-4">
+      <h2 class="text-lg font-semibold mb-2">Charts</h2>
+      
+      <hr class="my-4">
+      
+      <footer class="text-center py-6 text-sm text-gray-500 border-t">
+         v · <a class="text-gray-500 hover:text-blue-700" href="">GitHub</a> · Generated 
+      </footer>    </nav>
+
+    <section id="viewer" class="flex-1 min-h-[500px]">
+      <div class="chart-page">
+  <h1 class="text-2xl font-bold mb-4">Derivation Complexity by Category</h1>
+  <div id="vis" class="flex justify-center"></div>
+  <script type="text/javascript">
+    var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "Derivation Complexity by Category", "description": "Heatmap of primitive usage frequency per category", "data": {"values": [{"category": "A. Linear", "primitive": "Identity", "usage": "1"}, {"category": "A. Linear", "primitive": "Op", "usage": "15"}, {"category": "A. Linear", "primitive": "Reduce", "usage": "2"}, {"category": "A. Linear", "primitive": "Reshape", "usage": "8"}, {"category": "A. Linear", "primitive": "Fork", "usage": "1"}, {"category": "B. Topology", "primitive": "Fork", "usage": "12"}, {"category": "B. Topology", "primitive": "Join", "usage": "10"}, {"category": "B. Topology", "primitive": "Identity", "usage": "3"}, {"category": "B. Topology", "primitive": "Reshape", "usage": "2"}, {"category": "C. Control", "primitive": "If", "usage": "10"}, {"category": "C. Control", "primitive": "Loop", "usage": "8"}, {"category": "C. Control", "primitive": "Call", "usage": "3"}, {"category": "C. Control", "primitive": "Read", "usage": "2"}, {"category": "C. Control", "primitive": "Write", "usage": "2"}, {"category": "D. Routing", "primitive": "Fork", "usage": "8"}, {"category": "D. Routing", "primitive": "Join", "usage": "6"}, {"category": "D. Routing", "primitive": "Op", "usage": "10"}, {"category": "D. Routing", "primitive": "Reduce", "usage": "5"}, {"category": "D. Routing", "primitive": "If", "usage": "3"}, {"category": "D. Routing", "primitive": "Sample", "usage": "2"}, {"category": "E. Memory", "primitive": "Read", "usage": "12"}, {"category": "E. Memory", "primitive": "Write", "usage": "10"}, {"category": "E. Memory", "primitive": "Op", "usage": "5"}, {"category": "E. Memory", "primitive": "Loop", "usage": "3"}, {"category": "F. Programmatic", "primitive": "Call", "usage": "15"}, {"category": "F. Programmatic", "primitive": "Mutate", "usage": "5"}, {"category": "F. Programmatic", "primitive": "If", "usage": "6"}, {"category": "F. Programmatic", "primitive": "Loop", "usage": "4"}, {"category": "F. Programmatic", "primitive": "Fork", "usage": "3"}, {"category": "G. Misc", "primitive": "Fork", "usage": "5"}, {"category": "G. Misc", "primitive": "Join", "usage": "5"}, {"category": "G. Misc", "primitive": "Loop", "usage": "4"}, {"category": "G. Misc", "primitive": "If", "usage": "3"}, {"category": "G. Misc", "primitive": "Read", "usage": "2"}, {"category": "G. Misc", "primitive": "Write", "usage": "2"}, {"category": "H. Distributed", "primitive": "Comm", "usage": "10"}, {"category": "H. Distributed", "primitive": "Reduce", "usage": "4"}, {"category": "H. Distributed", "primitive": "Fork", "usage": "3"}, {"category": "H. Distributed", "primitive": "Sample", "usage": "1"}, {"category": "E. Memory", "primitive": "Extern", "usage": "5"}, {"category": "G. Misc", "primitive": "Cast", "usage": "8"}]}, "width": 900, "height": 420, "mark": "rect", "encoding": {"x": {"field": "primitive", "type": "nominal", "title": "B* Primitive", "axis": {"labelAngle": -45}}, "y": {"field": "category", "type": "nominal", "title": "Motif Category"}, "color": {"field": "usage", "type": "quantitative", "title": "Usage Count", "scale": {"scheme": "blues"}}, "tooltip": [{"field": "category", "title": "Category"}, {"field": "primitive", "title": "Primitive"}, {"field": "usage", "title": "Times Used"}]}};
+    (function() {
+      if (typeof vegaEmbed === 'undefined') return;
+      try {
+        vegaEmbed('#vis', spec);
+      } catch(e) {
+        console.warn('vegaEmbed failed:', e);
+      }
+    })();
+  </script>
+</div>
+
+    </section>
+  </main>
+</body>
+</html>

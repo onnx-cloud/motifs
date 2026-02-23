@@ -1,0 +1,20 @@
+# Motif detail (core) - expects ?targetMotif to be bound to a single motif IRI
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?label ?signature ?definition ?categoryLabel ?semantics ?isPrimitive
+WHERE {
+  # bound variable: ?targetMotif
+  ?targetMotif a motif:Motif .
+  OPTIONAL { ?targetMotif skos:prefLabel ?label . }
+  OPTIONAL { ?targetMotif skos:definition ?definition . }
+  OPTIONAL { ?targetMotif motif:hasSignature ?signature . }
+  OPTIONAL { ?targetMotif motif:hasSemantics ?semantics . }
+  OPTIONAL { ?targetMotif motif:isPrimitive ?isPrimitive . }
+  OPTIONAL { 
+    ?targetMotif motif:hasCategory ?category .
+    ?category skos:prefLabel ?categoryLabel .
+  }
+}
+ORDER BY ?label

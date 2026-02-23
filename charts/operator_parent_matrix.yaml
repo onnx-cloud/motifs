@@ -1,0 +1,28 @@
+# Figure: Operator vs Parent Motif Matrix (Heatmap)
+
+title: Operator × Parent Motif Matrix
+description: Heatmap showing counts of how often operator motifs are listed as components of parent motifs (via `motif:isComponentOf`).
+
+query: ./sparql/charts/operator_parent_matrix.sparql
+
+vega:
+  width: 1000
+  height: 600
+  mark: rect
+  encoding:
+    x:
+      field: opLabel
+      type: nominal
+      axis: {title: "Operator"}
+    y:
+      field: parentLabel
+      type: nominal
+      axis: {title: "Parent Motif"}
+    color:
+      field: count
+      type: quantitative
+      scale: {scheme: "magma"}
+    tooltip:
+      - field: opLabel
+      - field: parentLabel
+      - field: count

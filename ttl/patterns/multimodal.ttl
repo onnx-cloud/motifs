@@ -1,0 +1,93 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Multi-Modal Fusion Patterns
+# Purpose: Patterns for combining multiple modalities (vision, language, audio)
+#################
+
+motif:MultiModal a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Multi-Modal / Fusion"@en ;
+  skos:definition "Patterns for combining multiple modalities (vision, language, audio, etc.)." .
+
+motif:CrossModalAttention a motif:Motif ;
+  skos:prefLabel "Cross-Modal Attention"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:MultiModal ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Core pattern in VLMs: image attends to text or vice versa." .
+
+motif:LateFusion a motif:Motif ;
+  skos:prefLabel "Late Fusion"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:MultiModal ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Simple fusion strategy: encode separately, combine at end." .
+
+motif:EarlyFusion a motif:Motif ;
+  skos:prefLabel "Early Fusion"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:MultiModal ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Joint encoding from the start." .
+
+motif:ModalityAdapter a motif:Motif ;
+  skos:prefLabel "Modality Adapter"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:MultiModal ;
+  motif:hasFingerprint motif:T_depth_plus_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Bridge between modality-specific encoders (e.g., CLIP projector)." .
+
+motif:ModalityGating a motif:Motif ;
+  skos:prefLabel "Modality Gating"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:MultiModal ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Dynamic weighting of modalities based on input." .
+
+motif:PerceiverIO a motif:Motif ;
+  skos:prefLabel "Perceiver IO"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:MultiModal ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasFingerprint motif:T_depth_plus_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2107.14795> ;
+  skos:definition "DeepMind Perceiver architecture for general-purpose perception." .
+#################
+# Multi-Modal Patterns
+#################
+
+motif:VisionLanguageModel a motif:Pattern ;
+  skos:prefLabel "Vision-Language Model"@en ;
+  motif:composedOf motif:ModalityAdapter, motif:CrossModalAttention, 
+                     motif:TransformerBlock ;
+  skos:definition "Standard VLM: vision encoder -> adapter -> LLM with cross-attention." ;
+  rdfs:seeAlso <https://arxiv.org/abs/2304.08485> .
+
+motif:CLIPDualEncoder a motif:Pattern ;
+  skos:prefLabel "CLIP Dual Encoder"@en ;
+  motif:composedOf motif:Fork, motif:TransformerBlock, motif:TransformerBlock, 
+                     motif:ModalityAdapter, motif:ModalityAdapter ;
+  skos:definition "Separate encoders for image and text, contrastive learning." ;
+  rdfs:seeAlso <https://arxiv.org/abs/2103.00020> .
+
+motif:Flamingo a motif:Pattern ;
+  skos:prefLabel "Flamingo Pattern"@en ;
+  motif:composedOf motif:PerceiverIO, motif:CrossModalAttention, motif:TransformerBlock ;
+  skos:definition "Perceiver resampler + gated cross-attention for few-shot learning." ;
+  rdfs:seeAlso <https://arxiv.org/abs/2204.14198> .
+

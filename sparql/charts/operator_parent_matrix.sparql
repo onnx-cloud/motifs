@@ -1,0 +1,12 @@
+# Matrix of operator vs parent motif usage counts (heatmap)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?opLabel ?parentLabel (COUNT(?parent) AS ?count)
+WHERE {
+  ?op motif:isComponentOf ?parent .
+  ?op skos:prefLabel ?opLabel .
+  ?parent skos:prefLabel ?parentLabel .
+}
+GROUP BY ?opLabel ?parentLabel
+ORDER BY DESC(?count)

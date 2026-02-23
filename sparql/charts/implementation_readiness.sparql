@@ -1,0 +1,12 @@
+# Count motifs with vs without implementations/examples
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?status (COUNT(?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif .
+  OPTIONAL { ?motif motif:example ?ex . }
+  BIND(IF(BOUND(?ex), "Implemented", "Theoretical (Spec-only)") AS ?status)
+}
+GROUP BY ?status
+ORDER BY DESC(?count)

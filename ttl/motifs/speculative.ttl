@@ -1,0 +1,100 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+#################
+# Speculative / Predictive Execution Motifs
+# Purpose: Patterns for speculative decoding, draft-verify, rollback
+#################
+
+motif:Speculative a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Speculative / Predictive"@en ;
+  skos:definition "Speculative execution, draft-verify, rollback patterns for predictive computation." .
+
+# New fingerprint for speculative execution
+motif:C_speculative_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "C.speculative=1"@en ;
+  skos:definition "Speculative execution flmotif: computation may be discarded if prediction incorrect." .
+
+motif:S_checkpoint_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "S.checkpoint=1"@en ;
+  skos:definition "State checkpoint flmotif: state can be saved and restored." .
+#################
+# Speculative Motif Instances
+#################
+
+motif:SpeculativeFork a motif:Motif ;
+  skos:prefLabel "Speculative Fork"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Speculative ;
+  motif:hasFingerprint motif:T_width_plus_N ;
+  motif:hasFingerprint motif:C_speculative_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2302.01318> ;
+  skos:definition "Core pattern in speculative decoding for LLMs (Leviathan et al., 2023)." .
+
+motif:Rollback a motif:Motif ;
+  skos:prefLabel "Rollback"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Speculative ;
+  motif:hasFingerprint motif:S_checkpoint_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Used when speculative execution fails verification." .
+
+motif:DraftVerify a motif:Motif ;
+  skos:prefLabel "Draft-Verify"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Speculative ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasFingerprint motif:C_speculative_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2302.01318> ;
+  skos:definition "Speculative decoding motif: small model drafts, large model verifies." .
+
+motif:Checkpoint a motif:Motif ;
+  skos:prefLabel "Checkpoint"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Speculative ;
+  motif:hasFingerprint motif:S_checkpoint_eq_1 ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Paired with Rollback for speculative execution." .
+
+motif:SpeculativeMerge a motif:Motif ;
+  skos:prefLabel "Speculative Merge"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Speculative ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasFingerprint motif:C_speculative_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Counterpart to SpeculativeFork." .
+
+motif:EagerEval a motif:Motif ;
+  skos:prefLabel "Eager Evaluation"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Speculative ;
+  motif:hasFingerprint motif:C_speculative_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Predictive execution for latency hiding." .
+
+motif:LookaheadDecode a motif:Motif ;
+  skos:prefLabel "Lookahead Decode"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Speculative ;
+  motif:hasFingerprint motif:T_width_plus_N ;
+  motif:hasFingerprint motif:C_speculative_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2312.12728> ;
+  skos:definition "Lookahead decoding pattern (Fu et al., 2023)." .
+

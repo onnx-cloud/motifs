@@ -1,0 +1,121 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Computer Vision Use Cases
+# Links vision applications to computation graph motifs
+##################################
+
+motif:ImageClassification a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Image Classification"@en ;
+  skos:definition "Categorizing images into predefined classes using convolutional or transformer architectures."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:Linear ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:SoftmaxEdge .
+
+motif:ObjectDetection a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Object Detection"@en ;
+  skos:definition "Localizing and classifying objects within images using bounding box regression and classification."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Gather .
+
+motif:SemanticSegmentation a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Semantic Segmentation"@en ;
+  skos:definition "Pixel-wise classification assigning semantic labels to every pixel in an image."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Broadcast .
+
+motif:InstanceSegmentation a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Instance Segmentation"@en ;
+  skos:definition "Detecting and delineating each distinct object instance with pixel-level masks."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Scatter .
+
+motif:FeaturePyramid a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Feature Pyramid Network"@en ;
+  skos:definition "Multi-scale feature extraction combining bottom-up and top-down pathways with lateral connections."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:MultiResidual ;
+  motif:usesMotif motif:MultiResidual ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join ;
+  motif:usesMotif motif:Concat .
+
+motif:VisionTransformer a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Vision Transformer (ViT)"@en ;
+  skos:definition "Applying transformer architecture to image patches for visual recognition tasks."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:motif_MultiHead ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Reshape ;
+  motif:usesMotif motif:Linear .
+
+motif:DepthEstimation a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Monocular Depth Estimation"@en ;
+  skos:definition "Predicting pixel-wise depth maps from single RGB images."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Broadcast .
+
+motif:OpticalFlow a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Optical Flow Estimation"@en ;
+  skos:definition "Computing per-pixel motion vectors between consecutive video frames."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Residual .
+
+motif:PoseEstimation a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Human Pose Estimation"@en ;
+  skos:definition "Detecting and localizing human body keypoints and skeletal structure."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:Fork ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Linear .
+
+motif:ImagePatching a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Image Patching"@en ;
+  skos:definition "Dividing images into fixed-size patches for transformer-based processing."@en ;
+  motif:hasDomain motif:Vision ;
+  motif:primaryMotif motif:Split ;
+  motif:usesMotif motif:Split ;
+  motif:usesMotif motif:Reshape ;
+  motif:usesMotif motif:Transpose ;
+  motif:usesMotif motif:Flatten .
+

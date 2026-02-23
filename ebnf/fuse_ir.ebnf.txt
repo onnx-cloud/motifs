@@ -1,0 +1,24 @@
+# Source: papers/compiled-cognition/sections/07_grammar.tex
+# EBNF grammar for the Fuse-IR (cleaned from LaTeX verbatim section)
+
+File ::= { Pragma } { Decl }
+
+Pragma ::= "@" Ident [ Value ]
+Decl   ::= ConstDecl | GraphDef | ProofGraph
+
+ConstDecl ::= "const" Ident ":" Type "=" Value
+
+GraphDef ::= "graph" Name "(" [ Params ] ")" "->" Type "{" 
+               { Statement } 
+             "}"
+
+Statement ::= Binding | OpCall
+Binding   ::= Ident ":" Type "=" Value
+OpCall    ::= Ident "=" Operator "(" [ Args ] ")"
+
+Operator ::= "Sub" | "Abs" | "ReduceSum" | "Div" | "Reshape" | ...
+
+ProofGraph ::= "@proof graph" Name "(" ")" "{" 
+                 { Statement } 
+                 "assert" Expression 
+               "}"

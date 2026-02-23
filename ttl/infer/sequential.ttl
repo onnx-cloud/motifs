@@ -1,0 +1,15 @@
+# Inferred triples from query: sequential.sparql
+# generated: 2026-01-29T07:08:24.569553Z
+# source ttl: ttl
+
+@prefix ns1: <https://ns.onnx.cloud/motif#> .
+
+ns1:Flamingo a ns1:ModelFamily,
+        ns1:Pattern ;
+    ns1:hasSequential [ a ns1:Sequential ;
+            ns1:first ns1:PerceiverIO ;
+            ns1:second ns1:Attention ],
+        [ a ns1:Sequential ;
+            ns1:first ns1:PerceiverIO ;
+            ns1:second ns1:Attention ] .
+

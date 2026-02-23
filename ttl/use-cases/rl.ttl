@@ -1,0 +1,121 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Reinforcement Learning Use Cases
+# Links RL algorithms and patterns to computation graph motifs
+##################################
+
+motif:PolicyGradient a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Policy Gradient"@en ;
+  skos:definition "Learning policy parameters by gradient ascent on expected cumulative reward."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Sampler ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:ReduceSum .
+
+motif:ActorCritic a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Actor-Critic"@en ;
+  skos:definition "Combining policy (actor) and value function (critic) networks for stable policy learning."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join ;
+  motif:usesMotif motif:Linear .
+
+motif:ExperienceReplay a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Experience Replay Buffer"@en ;
+  skos:definition "Storing and sampling past transitions for stable off-policy learning."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:CircularBuffer ;
+  motif:usesMotif motif:CircularBuffer ;
+  motif:usesMotif motif:Write ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Sampler .
+
+motif:TargetNetworkUpdate a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Target Network Update"@en ;
+  skos:definition "Periodically copying or soft-updating target network parameters for stable Q-learning."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:PersistentState ;
+  motif:usesMotif motif:PersistentState ;
+  motif:usesMotif motif:Read ;
+  motif:usesMotif motif:Write ;
+  motif:usesMotif motif:Add ;
+  motif:usesMotif motif:Mul .
+
+motif:TemporalDifference a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Temporal Difference Learning"@en ;
+  skos:definition "Bootstrapping value estimates from successive state predictions."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:Sub ;
+  motif:usesMotif motif:Sub ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:EphemeralState .
+
+motif:MonteCarloTreeSearch a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Monte Carlo Tree Search"@en ;
+  skos:definition "Planning by building search tree through simulation and backpropagation of values."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:RecursiveCall ;
+  motif:usesMotif motif:RecursiveCall ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:Sampler .
+
+motif:PPOClipping a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "PPO Clipped Objective"@en ;
+  skos:definition "Proximal policy optimization with clipped probability ratio for stable updates."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:If ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Div ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:ReduceMax .
+
+motif:GAE a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Generalized Advantage Estimation"@en ;
+  skos:definition "Computing advantage estimates as exponentially-weighted sum of TD residuals."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Sub ;
+  motif:usesMotif motif:Add ;
+  motif:usesMotif motif:Mul .
+
+motif:EnvVectorization a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Environment Vectorization"@en ;
+  skos:definition "Running multiple environment instances in parallel for efficient sample collection."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join ;
+  motif:usesMotif motif:Concat .
+
+motif:RLHFReward a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "RLHF Reward Modeling"@en ;
+  skos:definition "Training reward models from human preference comparisons for language model alignment."@en ;
+  motif:hasDomain motif:RL ;
+  motif:primaryMotif motif:Sub ;
+  motif:usesMotif motif:Sub ;
+  motif:usesMotif motif:SoftmaxEdge ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Concat .
+

@@ -1,0 +1,34 @@
+
+# ONNX operator schema — per-operator file
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:Attention a onnx:Operator ;
+  skos:prefLabel "Attention" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "24"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Q" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "K" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "V" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "attn_mask" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "past_key" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "past_value" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "nonpad_kv_seqlen" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "present_key" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "present_value" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "qk_matmul_output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "qk_matmul_output_mode" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "softcap" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "softmax_precision" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kv_num_heads" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "q_num_heads" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scale" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "is_causal" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .

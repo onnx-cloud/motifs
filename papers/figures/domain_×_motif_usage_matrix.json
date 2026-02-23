@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Domain \u00d7 Motif Usage Matrix",
+  "description": "Heatmap showing counts of domain applications that use each motif",
+  "data": {
+    "values": []
+  },
+  "width": 900,
+  "height": 600,
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "motif",
+      "type": "nominal",
+      "axis": {
+        "labelAngle": -45,
+        "title": "Motif"
+      }
+    },
+    "y": {
+      "field": "domain",
+      "type": "nominal",
+      "axis": {
+        "title": "Domain"
+      }
+    },
+    "color": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "domain",
+        "type": "nominal"
+      },
+      {
+        "field": "motif",
+        "type": "nominal"
+      },
+      {
+        "field": "count",
+        "type": "quantitative"
+      }
+    ]
+  }
+}

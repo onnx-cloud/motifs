@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Runtime Requirements",
+  "description": "Inferred propagation of `onnx:requiresRuntime` from motifs to models/motifs",
+  "data": {
+    "values": []
+  },
+  "width": 900,
+  "height": 800,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "containerLabel",
+      "type": "nominal",
+      "axis": {
+        "title": "Container (Model or Motif)"
+      }
+    },
+    "x": {
+      "field": "runtimeLabel",
+      "type": "nominal",
+      "axis": {
+        "title": "Required Runtime"
+      }
+    },
+    "color": {
+      "field": "runtimeLabel",
+      "type": "nominal"
+    }
+  }
+}

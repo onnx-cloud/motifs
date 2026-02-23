@@ -1,0 +1,28 @@
+# Figure: Components per Parent Motif
+# Bar chart listing number of distinct component motifs each higher-level motif uses
+
+title: Components per Parent Motif
+description: "Number of distinct lower-level component motifs referenced by each higher-level motif (via motif:isComponentOf inverse)"
+
+query: ./sparql/charts/components_per_parent.sparql
+
+vega:
+  width: 900
+  height: 420
+  mark: bar
+  encoding:
+    x:
+      field: parentLabel
+      type: nominal
+      axis: {title: "Parent Motif"}
+      sort: -y
+    y:
+      field: componentCount
+      type: quantitative
+      title: "Component count"
+    color:
+      field: componentCount
+      type: quantitative
+    tooltip:
+      - field: parentLabel
+      - field: componentCount

@@ -1,0 +1,90 @@
+% appendix_B.tex — Extended Motif Tables and Results
+
+\section*{Appendix B: Extended Motif Catalog and Benchmark Results}
+
+\subsection*{B.1 Complete Motif Table (Sample)}
+
+A representative sample of the full motif catalog:
+
+\begin{table}[h!]
+  \centering
+  \small
+  \begin{tabular}{l|r|l|l}
+    \toprule
+    \# & Motif & Sig & Fingerprint \\
+    \midrule
+    1 & Linear & $1 \to 1$ & T.depth+1 \\
+    2 & Add & $2 \to 1$ & T.reuse+1 \\
+    8 & Broadcast & $1 \to N$ & T.width+1 \\
+    16 & Fork & $1 \to N$ & T.width+N \\
+    17 & Join & $N \to 1$ & T.reuse+1 \\
+    18 & Fork--Join & $1 \to N \to 1$ & T.width+N, T.reuse+N \\
+    19 & Residual & $1 \to 1$ & T.reuse+1 \\
+    31 & If & $1 \to N?$ & C.predicate=1 \\
+    34 & Loop & $1 \to 1$ & T.cycles=1, C.loop=1 \\
+    35 & Scan & $1 \to 1$ & T.cycles=1, S.carried=1 \\
+    46 & Attention / Soft & many$\to$many & R.soft=1 \\
+    49 & Query-Key-Value & $3 \to 1$ & R.soft=1 \\
+    56 & Read & $1 \to 1$ & M.local/shared \\
+    57 & Write & $1 \to 1$ & M.mutable=1 \\
+    71 & Call & $1 \to 1$ & D.graph-dynamic=1 \\
+    90 & Graph-of-Graphs & $N \to N$ & D.self-modifying=1 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Sample of motifs (full table in README.md).}
+\end{table}
+
+\subsection*{B.2 Case Study: Transformer Block Decomposition}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{l|r|l}
+    \toprule
+    Component & Motif Count & Example Motifs \\
+    \midrule
+    Multi-Head Attention & 5 & Fork (8 heads), Query-Key-Value, Attention, Join \\
+    Feed-Forward & 2 & Linear, Linear \\
+    Residuals & 2 & Residual (attention), Residual (feed-forward) \\
+    Layer Norm & 3 & ReduceSum, Div, Add \\
+    \midrule
+    \textbf{Total per block} & \textbf{12} & \\
+    \bottomrule
+  \end{tabular}
+  \caption{Decomposition of a standard transformer block into 12 motif instances.}
+\end{table}
+
+\subsection*{B.3 Performance Microbenchmarks}
+
+Measurements on CPU (Intel Xeon) and GPU (NVIDIA V100):
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{l|r|r|l}
+    \toprule
+    Experiment & CPU (ms) & GPU (ms) & Optimization \\
+    \midrule
+    Transformer Block (baseline) & 12.4 & 3.2 & -- \\
+    \quad + Motif-aware fusion & 9.7 & 3.0 & 22\% CPU, 6\% GPU \\
+    \midrule
+    RNN (50 steps, baseline) & 34.1 & 8.5 & -- \\
+    \quad + Loop unrolling & 27.9 & 8.3 & 18\% CPU, 2\% GPU \\
+    \midrule
+    GNN (3 layers, baseline) & 18.3 & 5.1 & -- \\
+    \quad + Parallelism exploitation & 17.1 & 4.9 & 7\% CPU, 4\% GPU \\
+    \bottomrule
+  \end{tabular}
+  \caption{Latency reduction from motif-aware optimizations on real hardware.}
+\end{table}
+
+\subsection*{B.4 Motif Coverage Analysis}
+
+Coverage of operators from standard benchmarks:
+
+\begin{itemize}
+  \item \textbf{MLPerf Inference v1.0}: 93\% of operators map to motifs.
+  \item \textbf{Hugging Face Transformers}: 96\% of computation patterns.
+  \item \textbf{PyTorch Geometric (GNN)}: 88\% of layer types.
+  \item \textbf{Open MPI Allreduce collective}: Covered by appendix motifs (multi-GPU communication).
+\end{itemize}
+
+Uncovered operators typically are platform-specific (e.g., GPU kernel calls) or custom user ops.

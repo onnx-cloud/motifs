@@ -1,0 +1,13 @@
+<li class="bg-white border rounded-lg overflow-hidden hover:shadow-lg transition-transform transform hover:-translate-y-1">
+  {{#png}}<a class="block bg-gray-50" href="{{html}}"><img class="w-full h-48 object-contain" src="{{png}}" alt="{{title}} thumbnail" loading="lazy"></a>{{/png}}
+  <div class="p-4">
+    <h3 class="text-lg font-medium"><a class="text-blue-800 hover:underline" href="{{html}}">{{title}}</a></h3>
+    <p class="mt-2 text-sm text-gray-600">{{desc}}</p>
+    <div class="mt-2 text-sm text-gray-600">
+      {{#json}}<a class="mr-3 text-blue-600" href="{{json}}">JSON</a>{{/json}}
+      {{#html}}<a class="mr-3 text-blue-600" href="{{html}}">HTML</a>{{/html}}
+      {{#png}}<a class="text-blue-600" href="{{png}}">PNG</a>{{/png}}
+      {{#yaml}}<a class="ml-3 text-blue-600" href="{{yaml}}">YAML</a>{{/yaml}}
+    </div>
+  </div>
+</li>

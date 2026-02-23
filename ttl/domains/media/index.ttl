@@ -1,0 +1,127 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Media & Entertainment Domain Applications
+# Maps media and content applications to motifs
+##################################
+
+motif:ContentRecommendation a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Video/Music Recommendation"@en ;
+  skos:definition "Personalized content recommendations for streaming platforms."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:relatedUseCase motif:SequentialRecommendation .
+
+motif:VideoTranscoding a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "AI-Enhanced Video Encoding"@en ;
+  skos:definition "Neural network-based video compression and quality enhancement."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear .
+
+motif:ContentModeration a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Content Moderation"@en ;
+  skos:definition "Automated detection of harmful, inappropriate, or policy-violating content."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:ImageClassification .
+
+motif:MusicGeneration a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "AI Music Generation"@en ;
+  skos:definition "Generating music compositions and audio using generative models."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Sampler ;
+  motif:usesMotif motif:KVMemory ;
+  motif:relatedUseCase motif:AutoregressiveDecoding .
+
+motif:VideoGeneration a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "AI Video Generation"@en ;
+  skos:definition "Generating video content from text prompts or images."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:relatedUseCase motif:DiffusionDenoising .
+
+motif:VoiceCloning a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Voice Cloning & TTS"@en ;
+  skos:definition "Generating synthetic speech matching specific voice characteristics."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear .
+
+motif:SubtitleGeneration a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Automatic Subtitling"@en ;
+  skos:definition "Speech-to-text transcription and translation for video subtitles."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Sampler ;
+  motif:relatedUseCase motif:MachineTranslation .
+
+motif:DeepfakeDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Deepfake Detection"@en ;
+  skos:definition "Detecting AI-generated or manipulated media content."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:ImageClassification .
+
+motif:GameAI a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Game AI & NPCs"@en ;
+  skos:definition "Intelligent non-player characters and adaptive game difficulty."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Sampler ;
+  motif:relatedUseCase motif:MonteCarloTreeSearch .
+
+motif:StreamOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Adaptive Bitrate Streaming"@en ;
+  skos:definition "Optimizing video quality and buffering based on network conditions."@en ;
+  motif:belongsTo motif:Media ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:PersistentState ;
+  motif:relatedUseCase motif:ActorCritic .
+

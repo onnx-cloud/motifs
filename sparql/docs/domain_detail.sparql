@@ -1,0 +1,21 @@
+# Domain detail (expects ?targetDomain bound)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?domainLabel ?domainDefinition ?app ?appLabel ?motif ?motifLabel ?isPrimary
+WHERE {
+  ?targetDomain a motif:IndustryDomain .
+  OPTIONAL { ?targetDomain skos:prefLabel ?domainLabel . }
+  OPTIONAL { ?targetDomain skos:definition ?domainDefinition . }
+
+  OPTIONAL {
+    ?app motif:belongsTo ?targetDomain ; skos:prefLabel ?appLabel .
+    OPTIONAL {
+      { ?app motif:primaryMotif ?motif . BIND(true AS ?isPrimary) }
+      UNION
+      { ?app motif:usesMotif ?motif . BIND(false AS ?isPrimary) }
+      ?motif skos:prefLabel ?motifLabel .
+    }
+  }
+}
+ORDER BY ?appLabel DESC(?isPrimary)

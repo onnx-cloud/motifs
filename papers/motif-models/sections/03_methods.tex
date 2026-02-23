@@ -1,0 +1,50 @@
+% Section 3: Methods
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Taxonomy Design}
+
+We construct our taxonomy by identifying recurring patterns across:
+\begin{enumerate}
+  \item Linear algebraic models (MatMul, tensor ops).
+  \item Deep neural networks (residuals, normalization).
+  \item Transformers (multi-head attention, feed-forward).
+  \item Graph neural networks (message passing, aggregation).
+  \item Recurrent models (loops, state accumulation).
+  \item Specialized workloads (dynamic control, MoE, sparse ops).
+\end{enumerate}
+
+From this analysis, we identify a \emph{representative set} of motifs,
+organized into seven primary categories.
+
+\subsection{Formal Representation}
+
+Each motif is defined by:
+\begin{itemize}
+  \item \textbf{Signature}: Input/output tuple counts (e.g., $2 \to 1$).
+  \item \textbf{Fingerprints}: Metadata tags (T, C, S, R, M, D) quantifying structure.
+  \item \textbf{Semantics}: Formal behavior (Python function or pseudocode).
+  \item \textbf{Canonical ONNX}: Minimal operator sequence.
+  \item \textbf{Constraints}: Legal composition and rewrite conditions.
+\end{itemize}
+
+\subsection{RDF Ontology}
+
+We encode definitions in RDF/TTL, enabling:
+\begin{itemize}
+  \item \textbf{Machine-readable queries}: SPARQL to find motifs by property.
+  \item \textbf{Semantic linking}: Relationships between motifs.
+  \item \textbf{Interoperability}: Integration with external ontologies.
+\end{itemize}
+
+\subsection{Reference Implementations}
+
+For each motif:
+\begin{itemize}
+  \item \textbf{Python function}: Simple, self-contained semantics.
+  \item \textbf{ONNX protobuf}: Concrete graph definition.
+  \item \textbf{Unit tests}: Deterministic verification.
+\end{itemize}
+
+Artifacts live in \texttt{src/<motif>/} and \texttt{examples/<motif>.fuse}.

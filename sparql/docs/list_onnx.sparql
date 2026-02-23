@@ -1,0 +1,14 @@
+# List ONNX operators referenced by motif mappings
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+
+SELECT ?operator ?opLabel (COUNT(DISTINCT ?motif) AS ?motifCount)
+WHERE {
+  { ?motif skos:exactMatch ?operator }
+  UNION { ?motif skos:closeMatch ?operator }
+  UNION { ?motif skos:broadMatch ?operator }
+  OPTIONAL { ?operator skos:prefLabel ?opLabel }
+}
+GROUP BY ?operator ?opLabel
+ORDER BY ?opLabel

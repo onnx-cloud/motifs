@@ -1,0 +1,114 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Linear / Algebraic motif instances
+
+
+motif:Linear a motif:Motif ;
+  skos:prefLabel "Linear"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_Topology ;
+  motif:hasFingerprint motif:T_depth_plus_1 ;
+  motif:hasSemantics motif:Sem_LinearMatMulAdd ;
+  motif:example ex:linear_chain.fuse .
+
+motif:Add a motif:Motif ;
+  skos:prefLabel "Add"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_Topology ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_Add ;
+  motif:example ex:add_example.fuse .
+
+motif:Sub a motif:Motif ;
+  skos:prefLabel "Sub"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_Sub .
+
+motif:Mul a motif:Motif ;
+  skos:prefLabel "Mul"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_Mul .
+
+motif:Div a motif:Motif ;
+  skos:prefLabel "Div"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_Div .
+
+motif:ReduceSum a motif:Motif ;
+  skos:prefLabel "ReduceSum"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_ReduceSum .
+
+motif:ReduceMax a motif:Motif ;
+  skos:prefLabel "ReduceMax"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_ReduceMax .
+
+motif:Broadcast a motif:Motif ;
+  skos:prefLabel "Broadcast"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_width_plus_1 ;
+  motif:hasSemantics motif:Sem_Broadcast .
+
+motif:Reshape a motif:Motif ;
+  skos:prefLabel "Reshape"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:D_Dynamics ;
+  motif:hasSemantics motif:Sem_Reshape .
+
+motif:Transpose a motif:Motif ;
+  skos:prefLabel "Transpose"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_Transpose .
+
+motif:Slice a motif:Motif ;
+  skos:prefLabel "Slice"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:D_Dynamics ;
+  motif:hasSemantics motif:Sem_Slice .
+
+motif:ExpandDims a motif:Motif ;
+  skos:prefLabel "ExpandDims"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasSemantics motif:Sem_ExpandDims .
+
+motif:Squeeze a motif:Motif ;
+  skos:prefLabel "Squeeze"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasSemantics motif:Sem_Squeeze .
+
+motif:Identity a motif:Motif ;
+  skos:prefLabel "Identity"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasFingerprint motif:T_reuse_plus_1 ;
+  motif:hasSemantics motif:Sem_Identity .
+
+motif:ScalarOp a motif:Motif ;
+  skos:prefLabel "ScalarOp"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Linear ;
+  motif:hasSemantics motif:Sem_ScalarOp .

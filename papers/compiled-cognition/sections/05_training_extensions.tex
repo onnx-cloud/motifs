@@ -1,0 +1,58 @@
+\OnePageSectionStart
+\section{Training Extensions to the Cognitive Compiler}
+
+The Cognitive Compiler is extended to support training contexts via structured pragmas and generation of adjoint graphs.
+
+\subsection{Pragma Semantics}
+We formalize three pragmas that influence the compiler's behavior when building training graphs:
+\begin{itemize}
+  \item \texttt{@training\{loss: expr, opt: alg\}}: declares a training context, desired loss and optimization algorithm (e.g., SGD, Adam). Compilers instantiate gradient nodes and optimizer subgraphs.
+  \item \texttt{@frozen}: marks subgraphs and constants that the adjoint graph must not update; enforced both at compile and runtime.
+  \item \texttt{@train param}: annotates parameter tensors as optimization targets. The compiler emits update nodes guarded by type-safe projection steps.
+\end{itemize}
+
+\subsection{Adjoint Generation and Semantic Projection}
+The compiler performs automatic differentiation on the fused graph to generate an adjoint (backward) graph. Crucially, each gradient is accompanied by a \emph{semantic projection} that ensures the update respects the parameter's semantic constraints (normalization, range, vocabulary bounds). Practically, this generates an extra operator chain following the gradient: \texttt{Grad -> Project\_Semantics -> Update}.
+
+\subsection{Verification, Assertion Graphs, and Artifacts}
+Training graphs are accompanied by assertion graphs that validate semantic invariants post-update (e.g., probability normalization, physical range adherence). These assertion graphs can be run as checks during training iterations or compiled into continuation checks for on-device updates.
+
+We provide accompanying artifacts for reproducing and verifying these behaviors:
+\begin{itemize}
+  \item A Jupyter notebook (\texttt{notebooks/lof_training.ipynb}) demonstrating forward, adjoint, and typed projected SGD on the LOF example.
+  \item A minimal Python runtime (\texttt{src/compiled_cognition/lof.py}) implementing the LOF forward, gradient, and projection operators used in experiments.
+  \item Formal proof skeletons (Coq) in \texttt{proofs/typed_projection.v} for projection properties (bounds, non-expansiveness) and convergence sketches for projected updates.
+\end{itemize}
+
+\subsection{LOF Example (Training Variant)}
+We extend the LOF example to show a training scenario where the reference vector is refined from observed benign samples while keeping sensor-grounding frozen.
+\begin{verbatim}
+@fuse 0.7
+@opset onnx 18
+@version 0.7.0
+@domain jupyter.cookbook
+
+const axes0: i64[1] = [0]
+@train weight  reference: f32[3] [0.1, -0.1, 0.0]  # learnable reference
+
+@type "urn:jupyter.cookbook.lof_score"
+
+graph lof_score(x: f32[3]) -> f32[1] {
+  center: f32[3] = [0.0, 0.0, 0.0]
+  shape_one: i64[1] = [1]
+  dist = ReduceSum(Abs(Sub(x, center)), axes0, keepdims@=0)
+  ref_dist = ReduceSum(Abs(Sub(reference, center)), axes0, keepdims@=0)
+  ratio = Div(dist, Add(ref_dist, 1.0))
+  Reshape(ratio, shape_one)
+}
+
+@training { loss: out, optimizer: Adam, lr: 1e-3 }
+@proof graph train_lof() {
+  sample = [0.9, 0.0, 0.0]
+  label = [0.0]  # training to reduce false-positive on benign sample
+  out = lof_score(sample)
+  assert out <= 0.5
+} 
+\end{verbatim}
+
+\OnePageSectionEnd

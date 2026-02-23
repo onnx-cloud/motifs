@@ -1,0 +1,23 @@
+
+# ONNX operator schema — per-operator file
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:TopK a onnx:Operator ;
+  skos:prefLabel "TopK" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "24"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "K" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Values" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Indices" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "sorted" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "largest" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .

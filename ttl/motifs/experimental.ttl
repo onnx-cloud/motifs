@@ -1,0 +1,37 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Experimental / Future motif instances (Basis B+)
+
+
+motif:Delay a motif:Motif ;
+  skos:prefLabel "Delay (Z⁻¹)"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Experimental ;
+  motif:hasFingerprint motif:T_Transform_Time ;
+  motif:hasSemantics motif:Sem_Delay ;
+  skos:definition "Explicit temporal delay for streaming/recurrent graphs." .
+
+motif:Race a motif:Motif ;
+  skos:prefLabel "Race (Any)"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Experimental ;
+  motif:hasFingerprint motif:C_Nondeterministic ;
+  motif:hasSemantics motif:Sem_Race ;
+  skos:definition "Asynchronous merge (first-to-finish arbiter)." .
+
+motif:Ref a motif:Motif ;
+  skos:prefLabel "Ref (Quote)"@en ;
+  motif:hasSignature motif:Sig_0_to_1 ;
+  motif:hasCategory motif:Experimental ;
+  motif:hasFingerprint motif:M_HigherOrder ;
+  motif:hasSemantics motif:Sem_Ref ;
+  skos:definition "Produces a first-class handle to a subgraph." .
+
+motif:Experimental a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Experimental / Future"@en ;
+  skos:definition "Proposed primitives for streaming, async, and functional extensions." .

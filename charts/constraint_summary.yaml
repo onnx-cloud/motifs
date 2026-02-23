@@ -1,0 +1,16 @@
+# Figure: Operational Constraints Summary
+# Distribution of non-functional constraints (determinism, shape-dynamic, etc.)
+
+title: Constraint Distribution
+description: Distribution of motif constraints (e.g., Boundary, Shape-Dynamic)
+
+query: ./sparql/charts/constraint_summary.sparql
+
+vega:
+  width: 600
+  height: 300
+  mark: bar
+  encoding:
+    y: {field: "constraintType", type: "nominal", axis: {title: "Constraint"}}
+    x: {field: "count", type: "quantitative", title: "Motif Count"}
+    color: {field: "constraintType", type: "nominal"}

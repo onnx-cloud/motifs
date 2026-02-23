@@ -1,0 +1,32 @@
+# IRI: {{this}}
+# Motif: {{label}}
+# Definition: {{definition}}
+# Category: {{categories}}
+# Signature: {{signatures}}
+
+
+{{#this}}// URI: {{this}}
+{{/this}}{{#definition}}
+// Definition:
+{{#definition_lines}}{{.}}
+{{/definition_lines}}
+{{/definition}}
+{{#operator_spec}}
+// Operator spec (onnx):
+{{#operator_spec.label}}//   label: {{operator_spec.label}}
+{{/operator_spec.label}}{{#operator_spec.domain}}//   domain: {{operator_spec.domain}}
+{{/operator_spec.domain}}{{#operator_spec.sinceVersion}}//   since: {{operator_spec.sinceVersion}}
+{{/operator_spec.sinceVersion}}{{#operator_spec.inputs}}
+//   inputs:
+{{#operator_spec.inputs}}{{#name}}//     - {{name}}{{#desc}} ({{desc}}){{/desc}}
+{{/operator_spec.inputs}}
+{{/operator_spec.inputs}}{{#operator_spec.outputs}}
+//   outputs:
+{{#operator_spec.outputs}}{{#name}}//     - {{name}}{{/name}}
+{{/operator_spec.outputs}}
+{{/operator_spec}}
+// Description:
+// This .fuse snippet demonstrates the '{{label_title}}' motif pattern.
+// It illustrates the computation graph structure and data flow.
+
+// see .ENBF.md for syntax

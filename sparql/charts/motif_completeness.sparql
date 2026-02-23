@@ -1,0 +1,20 @@
+# Check completeness of motif definitions (which properties are present)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?label 
+  (BOUND(?signature) AS ?hasSignature)
+  (BOUND(?category) AS ?hasCategory)
+  (BOUND(?fingerprint) AS ?hasFingerprint)
+  (BOUND(?semantic) AS ?hasSemantics)
+  (BOUND(?example) AS ?hasExample)
+WHERE {
+  ?motif a motif:Motif ;
+    skos:prefLabel ?label .
+  OPTIONAL { ?motif motif:hasSignature ?signature . }
+  OPTIONAL { ?motif motif:hasCategory ?category . }
+  OPTIONAL { ?motif motif:hasFingerprint ?fingerprint . }
+  OPTIONAL { ?motif motif:hasSemantics ?semantic . }
+  OPTIONAL { ?motif motif:example ?example . }
+}
+ORDER BY ?label

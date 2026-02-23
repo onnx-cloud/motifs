@@ -1,0 +1,11 @@
+# Count of higher-level motifs that reference each operator via motif:isComponentOf
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?opLabel (COUNT(DISTINCT ?parent) AS ?count)
+WHERE {
+  ?op motif:isComponentOf ?parent .
+  ?op skos:prefLabel ?opLabel .
+}
+GROUP BY ?opLabel
+ORDER BY DESC(?count)

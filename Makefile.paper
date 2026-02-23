@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Makefile for Motif Models paper compilation
+
+PAPER_DIR = papers/motif-models
+PDF_OUTPUT = $(PAPER_DIR)/index.pdf
+
+.PHONY: paper clean help
+
+help:
+	@echo "Motif Models — Makefile targets:"
+	@echo "  make paper       Compile LaTeX paper (index.pdf)"
+	@echo "  make clean       Remove build artifacts (.aux, .bbl, .log, etc.)"
+	@echo "  make help        Show this help message"
+
+paper:
+	cd $(PAPER_DIR) && \
+	pdflatex -interaction=nonstopmode index.tex > /dev/null && \
+	biber index && \
+	pdflatex -interaction=nonstopmode index.tex > /dev/null && \
+	pdflatex -interaction=nonstopmode index.tex > /dev/null && \
+	echo "✓ PDF compiled: $(PDF_OUTPUT)"
+
+clean:
+	cd $(PAPER_DIR) && \
+	rm -f *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.log *.out *.run.xml *.toc && \
+	echo "✓ Cleaned build artifacts in $(PAPER_DIR)"
+
+.DEFAULT_GOAL := help

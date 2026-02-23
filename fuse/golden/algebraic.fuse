@@ -1,0 +1,64 @@
+# Cookbook: Algebraic smoke tests (simple Add/Mul chains)
+# Ops: Add, Mul
+
+@fuse 1.2
+@opset onnx 18
+@domain examples.golden
+@meta author = "onnx.cloud"
+
+const ZERO1: f32[1] = [0]
+const ONE1:  f32[1] = [1]
+
+const ADD4: f32[4] = [1, 2, 3, 4]
+const MUL4: f32[4] = [2, 3, 4, 5]
+
+node add_identity(x: f32[1]) -> f32[1] {
+  Add(x, ZERO1)
+}
+
+node mul_identity(x: f32[1]) -> f32[1] {
+  Mul(x, ONE1)
+}
+
+node add_nontrivial(x: f32[4]) -> f32[4] {
+  Add(x, ADD4)
+}
+
+node mul_nontrivial(x: f32[4]) -> f32[4] {
+  Mul(x, MUL4)
+}
+
+node mixed_chain(x: f32[4]) -> f32[4] {
+  y = Add(x, ADD4)
+  Mul(y, MUL4)
+}
+
+@proof node test_add_identity_pass_through() {
+  input  = [3.5]
+  output = add_identity(input)
+  assert output == [3.5]
+}
+
+@proof node test_mul_identity_pass_through() {
+  input  = [-2.0]
+  output = mul_identity(input)
+  assert output == [-2.0]
+}
+
+@proof node test_add_nontrivial() {
+  input  = [1, 1, 1, 1]
+  output = add_nontrivial(input)
+  assert output == [2, 3, 4, 5]
+}
+
+@proof node test_mul_nontrivial() {
+  input  = [1, 1, 1, 1]
+  output = mul_nontrivial(input)
+  assert output == [2, 3, 4, 5]
+}
+
+@proof node test_mixed_chain() {
+  input  = [1, 1, 1, 1]
+  output = mixed_chain(input)
+  assert output == [4, 9, 16, 25]
+}

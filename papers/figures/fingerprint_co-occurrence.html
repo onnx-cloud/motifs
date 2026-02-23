@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fingerprint Co-occurrence</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-blue-900 text-white py-4 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-xl font-semibold">Fingerprint Co-occurrence</h1>
+      
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <nav class="w-80 border-r pr-4">
+      <h2 class="text-lg font-semibold mb-2">Charts</h2>
+      
+      <hr class="my-4">
+      
+      <footer class="text-center py-6 text-sm text-gray-500 border-t">
+         v · <a class="text-gray-500 hover:text-blue-700" href="">GitHub</a> · Generated 
+      </footer>    </nav>
+
+    <section id="viewer" class="flex-1 min-h-[500px]">
+      <div class="chart-page">
+  <h1 class="text-2xl font-bold mb-4">Fingerprint Co-occurrence</h1>
+  <div id="vis" class="flex justify-center"></div>
+  <script type="text/javascript">
+    var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "Fingerprint Co-occurrence", "description": "Clusters of semantic tags (e.g., T.width often co-occurs with T.reuse)", "data": {"values": [{"tagA": "M.cache=1", "tagB": "M: Memory", "count": "7"}, {"tagA": "C.feedback=1", "tagB": "S: State", "count": "4"}, {"tagA": "M.sparse=1", "tagB": "R: Routing", "count": "3"}, {"tagA": "M: Memory", "tagB": "R: Routing", "count": "2"}, {"tagA": "C.speculative=1", "tagB": "T.width+N", "count": "2"}, {"tagA": "M.sparse=1", "tagB": "M: Memory", "count": "2"}, {"tagA": "C.feedback=1", "tagB": "T.cycles=1, C.loop=1", "count": "2"}, {"tagA": "R: Routing", "tagB": "T.depth+1", "count": "1"}, {"tagA": "C.speculative=1", "tagB": "R: Routing", "count": "1"}, {"tagA": "M: Memory", "tagB": "S.checkpoint=1", "count": "1"}, {"tagA": "C.speculative=1", "tagB": "T.reuse+1", "count": "1"}, {"tagA": "M.sparse=1", "tagB": "T.reuse+1", "count": "1"}, {"tagA": "M.sparse=1", "tagB": "T.block-sparse", "count": "1"}, {"tagA": "T.block-sparse", "tagB": "T.reuse+1", "count": "1"}, {"tagA": "D: Dynamics", "tagB": "M.sparse=1", "count": "1"}, {"tagA": "C: Control", "tagB": "R: Routing", "count": "1"}, {"tagA": "M: Memory", "tagB": "S: State", "count": "1"}, {"tagA": "M.cache=1", "tagB": "S: State", "count": "1"}, {"tagA": "M.cache=1", "tagB": "R: Routing", "count": "1"}, {"tagA": "S.incremental=1", "tagB": "S: State", "count": "1"}, {"tagA": "T.depth+1", "tagB": "T: Topology", "count": "1"}, {"tagA": "T.reuse+1", "tagB": "T: Topology", "count": "1"}, {"tagA": "C.feedback=1", "tagB": "C.stable=1", "count": "1"}, {"tagA": "C.adaptive=1", "tagB": "C.feedback=1", "count": "1"}, {"tagA": "R.reasoning=1", "tagB": "T.width+N", "count": "1"}, {"tagA": "C.planning=1", "tagB": "R.reasoning=1", "count": "1"}, {"tagA": "C: Control", "tagB": "R.reasoning=1", "count": "1"}, {"tagA": "R.reasoning=1", "tagB": "T.cycles=1, C.loop=1", "count": "1"}, {"tagA": "M: Memory", "tagB": "R.reasoning=1", "count": "1"}, {"tagA": "M.retrieval=1", "tagB": "M: Memory", "count": "1"}, {"tagA": "M.retrieval=1", "tagB": "T.cycles=1, C.loop=1", "count": "1"}, {"tagA": "C.planning=1", "tagB": "T.cycles=1, C.loop=1", "count": "1"}]}, "width": 500, "height": 500, "mark": "rect", "encoding": {"x": {"field": "tagA", "type": "nominal", "title": "Tag A"}, "y": {"field": "tagB", "type": "nominal", "title": "Tag B"}, "color": {"field": "count", "type": "quantitative", "scale": {"scheme": "blues"}}, "tooltip": [{"field": "tagA"}, {"field": "tagB"}, {"field": "count"}]}};
+    (function() {
+      if (typeof vegaEmbed === 'undefined') return;
+      try {
+        vegaEmbed('#vis', spec);
+      } catch(e) {
+        console.warn('vegaEmbed failed:', e);
+      }
+    })();
+  </script>
+</div>
+
+    </section>
+  </main>
+</body>
+</html>

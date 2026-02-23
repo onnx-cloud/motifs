@@ -1,0 +1,12 @@
+# Count technical use cases per application domain
+PREFIX usecase: <https://ns.onnx.cloud/motifs/use-cases#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?domainLabel (COUNT(DISTINCT ?uc) AS ?count)
+WHERE {
+  ?uc a usecase:UseCase ;
+      usecase:hasDomain ?domain .
+  ?domain skos:prefLabel ?domainLabel .
+}
+GROUP BY ?domainLabel
+ORDER BY DESC(?count)

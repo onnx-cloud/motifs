@@ -1,0 +1,13 @@
+# List all industry domains
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?domain ?label ?definition (COUNT(DISTINCT ?app) AS ?applicationCount)
+WHERE {
+  ?domain a motif:IndustryDomain ;
+    skos:prefLabel ?label .
+  OPTIONAL { ?domain skos:definition ?definition . }
+  OPTIONAL { ?app motif:belongsTo ?domain . }
+}
+GROUP BY ?domain ?label ?definition
+ORDER BY ?label

@@ -1,0 +1,27 @@
+# Figure: Motif → ONNX Operator Matrix
+# Shows which ONNX operator each motif maps to (if any)
+
+title: Motif-to-ONNX Operator Mapping
+description: Canonical mapping from motifs to ONNX operators (skos:exactMatch)
+
+query: ./sparql/charts/mapping_matrix.sparql
+
+vega:
+  width: 800
+  height: 800
+  mark: text
+  encoding:
+    y:
+      field: motifLabel
+      type: nominal
+      axis: {title: "Motif"}
+    x:
+      field: operator
+      type: nominal
+      axis: {title: "ONNX Operator"}
+    text:
+      field: operator
+      type: nominal
+    color:
+      field: operator
+      type: nominal

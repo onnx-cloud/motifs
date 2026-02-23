@@ -1,0 +1,776 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix cog: <https://ns.onnx.cloud/cognition#> .
+##################################
+# Proposed model-to-motif mappings (50+ public architectures)
+# Each model is a `motif:ModelArchitecture` or `motif:ModelFamily` with a `motif:githubRepo` and motif mappings
+##################################
+
+motif:GPT2 a motif:ModelArchitecture ;
+  skos:prefLabel "GPT-2"@en ;
+  skos:definition "OpenAI GPT-2: autoregressive transformer language model."@en ;
+  motif:githubRepo <https://github.com/openai/gpt-2> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:motif_MultiHead, motif:motif_QKV, motif:Residual, motif:KVCacheLookup, motif:KVCacheAppend ;
+  motif:composedOf motif:motif_MultiHead, motif:motif_QKV, motif:Residual, motif:KVCacheLookup, motif:KVCacheAppend ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:GPTNeo a motif:ModelArchitecture ;
+  skos:prefLabel "GPT-Neo"@en ;
+  skos:definition "EleutherAI GPT-Neo: open autoregressive transformer."@en ;
+  motif:githubRepo <https://github.com/EleutherAI/gpt-neo> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:motif_MultiHead, motif:motif_QKV, motif:Residual, motif:KVCacheLookup ;
+  motif:composedOf motif:motif_MultiHead, motif:motif_QKV, motif:Residual, motif:KVCacheLookup ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:GPTNeoX a motif:ModelArchitecture ;
+  skos:prefLabel "GPT-NeoX"@en ;
+  skos:definition "GPT-NeoX: large-scale autoregressive transformer (EleutherAI)."@en ;
+  motif:githubRepo <https://github.com/EleutherAI/gpt-neox> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:motif_MultiHead, motif:motif_QKV, motif:Residual, motif:PagedKVCache ;
+  motif:composedOf motif:motif_MultiHead, motif:motif_QKV, motif:Residual, motif:PagedKVCache ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:GPTJ a motif:ModelArchitecture ;
+  skos:prefLabel "GPT-J / mesh-transformer-jax"@en ;
+  skos:definition "GPT-J and mesh-transformer-jax implementations."@en ;
+  motif:githubRepo <https://github.com/kingoflolz/mesh-transformer-jax> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:motif_MultiHead, motif:Residual, motif:motif_QKV ;
+  motif:composedOf motif:motif_MultiHead, motif:Residual, motif:motif_QKV ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:LLaMA a motif:ModelFamily ;
+  skos:prefLabel "LLaMA"@en ;
+  skos:definition "Meta LLaMA family (transformer LLM)."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/llama> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:motif_MultiHead, motif:Residual, motif:KVCacheLookup ;
+  motif:composedOf motif:motif_MultiHead, motif:Residual, motif:KVCacheLookup ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:llama_cpp a motif:ModelArchitecture ;
+  skos:prefLabel "llama.cpp"@en ;
+  skos:definition "gg-ml / llama.cpp minimal C inference implementation."@en ;
+  motif:githubRepo <https://github.com/ggerganov/llama.cpp> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:KVCacheLookup ;
+  motif:composedOf motif:Residual, motif:KVCacheLookup ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:BLOOM a motif:ModelFamily ;
+  skos:prefLabel "BLOOM"@en ;
+  skos:definition "BigScience BLOOM large-scale multilingual transformer."@en ;
+  motif:githubRepo <https://github.com/bigscience-workshop/bloom> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:motif_MultiHead, motif:Residual, motif:KVCacheLookup ;
+  motif:composedOf motif:motif_MultiHead, motif:Residual, motif:KVCacheLookup ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:OPT a motif:ModelFamily ;
+  skos:prefLabel "OPT"@en ;
+  skos:definition "OPT family (Meta) transformer models."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/metaseq> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:motif_MultiHead, motif:Residual ;
+  motif:composedOf motif:motif_MultiHead, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:BERT a motif:ModelFamily ;
+  skos:prefLabel "BERT"@en ;
+  skos:definition "BERT: bidirectional encoder transformer for masked LM and classification tasks."@en ;
+  motif:githubRepo <https://github.com/google-research/bert> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:EmbeddingLookup, motif:Residual, motif:motif_MultiHead ;
+  motif:composedOf motif:EmbeddingLookup, motif:Residual, motif:motif_MultiHead ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:RoBERTa a motif:ModelArchitecture ;
+  skos:prefLabel "RoBERTa"@en ;
+  skos:definition "RoBERTa: robustly-optimized BERT pretraining approach."@en ;
+  motif:githubRepo <https://github.com/pytorch/fairseq/tree/main/examples/roberta> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:EmbeddingLookup, motif:Residual ;
+  motif:composedOf motif:EmbeddingLookup, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:DistilBERT a motif:ModelArchitecture ;
+  skos:prefLabel "DistilBERT"@en ;
+  skos:definition "DistilBERT: distilled, smaller BERT variant."@en ;
+  motif:githubRepo <https://github.com/huggingface/transformers> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:EmbeddingLookup ;
+  motif:composedOf motif:Residual, motif:EmbeddingLookup ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:T5 a motif:ModelArchitecture ;
+  skos:prefLabel "T5"@en ;
+  skos:definition "T5: Text-to-Text Transfer Transformer (encoder-decoder)."@en ;
+  motif:githubRepo <https://github.com/google-research/text-to-text-transfer-transformer> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:motif_MultiHead, motif:Residual, motif:motif_QKV ;
+  motif:composedOf motif:motif_MultiHead, motif:Residual, motif:motif_QKV ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:BART a motif:ModelArchitecture ;
+  skos:prefLabel "BART"@en ;
+  skos:definition "BART: denoising seq2seq transformer (encoder-decoder)."@en ;
+  motif:githubRepo <https://github.com/pytorch/fairseq/tree/main/examples/bart> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:motif_MultiHead ;
+  motif:composedOf motif:Residual, motif:motif_MultiHead ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:TransformerXL a motif:ModelArchitecture ;
+  skos:prefLabel "Transformer-XL"@en ;
+  skos:definition "Transformer-XL: transformer with segment-level recurrence and relative attention."@en ;
+  motif:githubRepo <https://github.com/kimiyoung/transformer-xl> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:PersistentState, motif:Residual ;
+  motif:composedOf motif:PersistentState, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:XLNet a motif:ModelArchitecture ;
+  skos:prefLabel "XLNet"@en ;
+  skos:definition "XLNet: autoregressive permutation language model."@en ;
+  motif:githubRepo <https://github.com/zihangdai/xlnet> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:motif_QKV ;
+  motif:composedOf motif:Residual, motif:motif_QKV ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:ELECTRA a motif:ModelArchitecture ;
+  skos:prefLabel "ELECTRA"@en ;
+  skos:definition "ELECTRA: pretraining discriminator-generator scheme."@en ;
+  motif:githubRepo <https://github.com/google-research/electra> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:DeBERTa a motif:ModelArchitecture ;
+  skos:prefLabel "DeBERTa"@en ;
+  skos:definition "DeBERTa: disentangled attention BERT variant (Microsoft)."@en ;
+  motif:githubRepo <https://github.com/microsoft/DeBERTa> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:ViT a motif:ModelFamily ;
+  skos:prefLabel "Vision Transformer (ViT)"@en ;
+  skos:definition "ViT: transformer for image patches."@en ;
+  motif:githubRepo <https://github.com/google-research/vision_transformer> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:EmbeddingLookup, motif:Residual, motif:Concat ;
+  motif:composedOf motif:EmbeddingLookup, motif:Residual, motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:SwinTransformer a motif:ModelArchitecture ;
+  skos:prefLabel "Swin Transformer"@en ;
+  skos:definition "Swin Transformer: hierarchical vision transformer using shifted windows."@en ;
+  motif:githubRepo <https://github.com/microsoft/Swin-Transformer> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:SlidingWindowAttention, motif:Residual ;
+  motif:composedOf motif:SlidingWindowAttention, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:ResNet a motif:ModelFamily ;
+  skos:prefLabel "ResNet"@en ;
+  skos:definition "Residual network (ResNet) family, convolutional residual blocks."@en ;
+  motif:githubRepo <https://github.com/pytorch/vision> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Concat ;
+  motif:composedOf motif:Residual, motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:EfficientNet a motif:ModelFamily ;
+  skos:prefLabel "EfficientNet"@en ;
+  skos:definition "EfficientNet image classification family (compound scaling)."@en ;
+  motif:githubRepo <https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Concat ;
+  motif:composedOf motif:Residual, motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:MobileNetV2 a motif:ModelArchitecture ;
+  skos:prefLabel "MobileNetV2"@en ;
+  skos:definition "MobileNetV2: efficient mobile convolutional model."@en ;
+  motif:githubRepo <https://github.com/tensorflow/models/tree/master/research/slim> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Concat ;
+  motif:composedOf motif:Residual, motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:YOLOv5 a motif:ModelArchitecture ;
+  skos:prefLabel "YOLOv5"@en ;
+  skos:definition "YOLOv5 object detection pipeline."@en ;
+  motif:githubRepo <https://github.com/ultralytics/yolov5> ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin, motif:Concat, motif:Residual ;
+  motif:composedOf motif:Concat, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:Detectron2 a motif:ModelArchitecture ;
+  skos:prefLabel "Detectron2"@en ;
+  skos:definition "Facebook Detectron2 object detection and segmentation library."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/detectron2> ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin, motif:Concat, motif:Residual, motif:SoftmaxEdge ;
+  motif:composedOf motif:Concat, motif:Residual, motif:SoftmaxEdge ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:MaskRCNN a motif:ModelArchitecture ;
+  skos:prefLabel "Mask R-CNN"@en ;
+  skos:definition "Mask R-CNN for instance segmentation (Detectron2 implementations)."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/detectron2> ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin, motif:RoIAlign, motif:Residual ;
+  motif:composedOf motif:RoIAlign, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:UNet a motif:ModelFamily ;
+  skos:prefLabel "U-Net"@en ;
+  skos:definition "U-Net for image segmentation (encoder-decoder with skip connections)."@en ;
+  motif:githubRepo <https://github.com/milesial/Pytorch-UNet> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Concat, motif:ForkJoin ;
+  motif:composedOf motif:Residual, motif:Concat, motif:ForkJoin ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:StableDiffusion a motif:ModelArchitecture ;
+  skos:prefLabel "Stable Diffusion"@en ;
+  skos:definition "Latent diffusion model (CompVis Stable Diffusion) combining U-Net + attention conditioning."@en ;
+  motif:githubRepo <https://github.com/CompVis/stable-diffusion> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:Concat, motif:motif_AttentionMemory ;
+  motif:composedOf motif:Residual, motif:Concat, motif:motif_AttentionMemory ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:DALLEmini a motif:ModelArchitecture ;
+  skos:prefLabel "DALL·E Mini / Craiyon"@en ;
+  skos:definition "Compact text-to-image transformer variants."@en ;
+  motif:githubRepo <https://github.com/borisdayma/dalle-mini> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:CLIP a motif:ModelArchitecture ;
+  skos:prefLabel "CLIP"@en ;
+  skos:definition "Contrastive Language-Image Pretraining (OpenAI CLIP)."@en ;
+  motif:githubRepo <https://github.com/openai/CLIP> ;
+  motif:primaryMotif motif:MultiModal ;
+  motif:usesMotif motif:MultiModal, motif:Attention, motif:EmbeddingLookup, motif:Concat ;
+  motif:composedOf motif:Attention, motif:EmbeddingLookup, motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:Whisper a motif:ModelArchitecture ;
+  skos:prefLabel "Whisper"@en ;
+  skos:definition "OpenAI Whisper: transformer-based speech recognition and translation."@en ;
+  motif:githubRepo <https://github.com/openai/whisper> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:EmbeddingLookup ;
+  motif:composedOf motif:Residual, motif:EmbeddingLookup ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:Wav2Vec2 a motif:ModelArchitecture ;
+  skos:prefLabel "Wav2Vec 2.0"@en ;
+  skos:definition "Self-supervised audio representation learning (wav2vec 2.0)."@en ;
+  motif:githubRepo <https://github.com/pytorch/fairseq/tree/main/examples/wav2vec> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:DeepSpeech a motif:ModelArchitecture ;
+  skos:prefLabel "DeepSpeech"@en ;
+  skos:definition "Mozilla DeepSpeech RNN/CTC speech-to-text models."@en ;
+  motif:githubRepo <https://github.com/mozilla/DeepSpeech> ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan, motif:Loop, motif:ReduceSum ;
+  motif:composedOf motif:Loop, motif:ReduceSum ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control .
+
+motif:StyleGAN2 a motif:ModelArchitecture ;
+  skos:prefLabel "StyleGAN2-ADA"@en ;
+  skos:definition "StyleGAN2-ADA generative adversarial network."@en ;
+  motif:githubRepo <https://github.com/NVlabs/stylegan2-ada-pytorch> ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin, motif:Residual, motif:Concat ;
+  motif:composedOf motif:Residual, motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:CycleGAN a motif:ModelFamily ;
+  skos:prefLabel "CycleGAN"@en ;
+  skos:definition "Unpaired image-to-image translation with cycle-consistency GANs."@en ;
+  motif:githubRepo <https://github.com/junyanz/CycleGAN> ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin, motif:Residual ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:BigGAN a motif:ModelFamily ;
+  skos:prefLabel "BigGAN"@en ;
+  skos:definition "BigGAN: class-conditional GAN for high-quality images."@en ;
+  motif:githubRepo <https://github.com/ajbrock/BigGAN-PyTorch> ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin, motif:Residual ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:Perceiver a motif:ModelFamily ;
+  skos:prefLabel "Perceiver"@en ;
+  skos:definition "Perceiver: general perception transformer for multimodal inputs."@en ;
+  motif:githubRepo <https://github.com/deepmind/deepmind-research/tree/master/perceiver> ;
+  motif:primaryMotif motif:MultiModal ;
+  motif:usesMotif motif:MultiModal, motif:Attention, motif:motif_MultiHead ;
+  motif:composedOf motif:Attention, motif:motif_MultiHead ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:PerceiverIO a motif:ModelArchitecture ;
+  skos:prefLabel "Perceiver IO"@en ;
+  skos:definition "Perceiver IO: IO extension of Perceiver for flexible outputs."@en ;
+  motif:githubRepo <https://github.com/deepmind/deepmind-research/tree/master/perceiverio> ;
+  motif:primaryMotif motif:MultiModal ;
+  motif:usesMotif motif:MultiModal, motif:Attention, motif:motif_MultiHead ;
+  motif:composedOf motif:Attention, motif:motif_MultiHead ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:GCN a motif:ModelFamily ;
+  skos:prefLabel "Graph Convolutional Network (GCN)"@en ;
+  skos:definition "Semi-supervised graph convolutional networks (Kipf & Welling)."@en ;
+  motif:githubRepo <https://github.com/tkipf/pygcn> ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather, motif:ReduceSum, motif:Attention ;
+  motif:composedOf motif:ReduceSum, motif:Attention ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:GAT a motif:ModelFamily ;
+  skos:prefLabel "Graph Attention Network (GAT)"@en ;
+  skos:definition "GAT: graph neural network using attention for message passing."@en ;
+  motif:githubRepo <https://github.com/PetarV-/GAT> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Gather, motif:ReduceSum ;
+  motif:composedOf motif:Gather, motif:ReduceSum ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:GraphSAGE a motif:ModelFamily ;
+  skos:prefLabel "GraphSAGE"@en ;
+  skos:definition "Inductive representation learning on graphs (GraphSAGE)."@en ;
+  motif:githubRepo <https://github.com/williamleif/GraphSAGE> ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather, motif:ReduceSum ;
+  motif:composedOf motif:ReduceSum ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:OpenNMT a motif:ModelArchitecture ;
+  skos:prefLabel "OpenNMT"@en ;
+  skos:definition "OpenNMT: neural machine translation framework and transformer NMT examples."@en ;
+  motif:githubRepo <https://github.com/OpenNMT/OpenNMT-py> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:motif_QKV ;
+  motif:composedOf motif:Residual, motif:motif_QKV ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:MarianNMT a motif:ModelArchitecture ;
+  skos:prefLabel "MarianNMT"@en ;
+  skos:definition "Marian: efficient transformer NMT toolkit."@en ;
+  motif:githubRepo <https://github.com/marian-nmt/marian> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:Fairseq a motif:ModelArchitecture ;
+  skos:prefLabel "Fairseq"@en ;
+  skos:definition "Fairseq: sequence modeling toolkit (many transformer variants)."@en ;
+  motif:githubRepo <https://github.com/pytorch/fairseq> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:motif_MultiHead ;
+  motif:composedOf motif:Residual, motif:motif_MultiHead ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:R_reasoning_eq_1 .
+
+motif:EfficientDet a motif:ModelFamily ;
+  skos:prefLabel "EfficientDet"@en ;
+  skos:definition "EfficientDet: efficient object detection family."@en ;
+  motif:githubRepo <https://github.com/google/automl/tree/master/efficientdet> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Concat ;
+  motif:composedOf motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:DeepLab a motif:ModelFamily ;
+  skos:prefLabel "DeepLab"@en ;
+  skos:definition "DeepLab semantic segmentation family."@en ;
+  motif:githubRepo <https://github.com/tensorflow/models/tree/master/research/deeplab> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Concat ;
+  motif:composedOf motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:MixtureOfExperts a motif:ModelFamily ;
+  skos:prefLabel "Mixture of Experts (MoE) / DeepSpeed"@en ;
+  skos:definition "Large-scale MoE implementations (DeepSpeed, GShard) demonstrating SparseMoE and hard routing patterns."@en ;
+  motif:githubRepo <https://github.com/microsoft/DeepSpeed> ;
+  motif:primaryMotif motif:SparseMoE ;
+  motif:usesMotif motif:SparseMoE, motif:HardRouting, motif:motif_MultiHead ;
+  motif:composedOf motif:HardRouting, motif:motif_MultiHead ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:RL_PPO a motif:ModelArchitecture ;
+  skos:prefLabel "PPO (RL)"@en ;
+  skos:definition "Proximal Policy Optimization implementations (stable-baselines3 / OpenAI baselines)."@en ;
+  motif:githubRepo <https://github.com/DLR-RM/stable-baselines3> ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop, motif:If, motif:RewardModel ;
+  motif:composedOf motif:If, motif:RewardModel ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control .
+
+motif:LSTM_LanguageModel a motif:ModelFamily ;
+  skos:prefLabel "LSTM language model"@en ;
+  skos:definition "Classic RNN/LSTM language models used for temporal sequence modeling."@en ;
+  motif:githubRepo <https://github.com/pytorch/examples/tree/main/word_language_model> ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan, motif:Loop, motif:EphemeralState ;
+  motif:composedOf motif:Loop, motif:EphemeralState ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Control .
+
+motif:ESPNet a motif:ModelArchitecture ;
+  skos:prefLabel "ESPnet"@en ;
+  skos:definition "End-to-end speech processing toolkit with transformer and other architectures."@en ;
+  motif:githubRepo <https://github.com/espnet/espnet> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+# ============ Additional Language Models (Cognition) ============
+
+motif:Falcon a motif:ModelFamily ;
+  skos:prefLabel "Falcon"@en ;
+  skos:definition "Falcon language model family by Technology Innovation Institute, efficient transformers with sparse attention."@en ;
+  motif:githubRepo <https://github.com/jnhwkim/falcon-pytorch> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:LayerNorm ;
+  motif:composedOf motif:Attention, motif:Residual, motif:LayerNorm ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 .
+
+motif:Mistral a motif:ModelFamily ;
+  skos:prefLabel "Mistral"@en ;
+  skos:definition "Mistral language model family focusing on efficient inference and sparse transformers."@en ;
+  motif:githubRepo <https://github.com/mistralai/mistral-src> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:Concat ;
+  motif:composedOf motif:Attention, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 .
+
+motif:Qwen a motif:ModelFamily ;
+  skos:prefLabel "Qwen"@en ;
+  skos:definition "Qwen language model family by Alibaba DAMO Academy with multilingual and multimodal capabilities."@en ;
+  motif:githubRepo <https://github.com/QwenLM/Qwen> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:LayerNorm ;
+  motif:composedOf motif:Attention, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 .
+
+motif:InternLM a motif:ModelFamily ;
+  skos:prefLabel "InternLM"@en ;
+  skos:definition "InternLM language model family by Shanghai AI Lab, optimized for reasoning and code generation."@en ;
+  motif:githubRepo <https://github.com/InternLM/InternLM> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:LayerNorm ;
+  motif:composedOf motif:Attention, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 .
+
+motif:Mamba a motif:ModelFamily ;
+  skos:prefLabel "Mamba"@en ;
+  skos:definition "Mamba state-space model alternative to transformers with linear-time complexity."@en ;
+  motif:githubRepo <https://github.com/state-spaces/mamba> ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan, motif:EphemeralState ;
+  motif:composedOf motif:Scan, motif:EphemeralState ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 .
+
+motif:RWKV a motif:ModelFamily ;
+  skos:prefLabel "RWKV"@en ;
+  skos:definition "RWKV recurrent transformer combining RNN efficiency with transformer expressivity for reasoning."@en ;
+  motif:githubRepo <https://github.com/BlinkDL/RWKV-LM> ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan, motif:Attention, motif:EphemeralState ;
+  motif:composedOf motif:Scan, motif:Attention ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 .
+
+# ============ Additional Vision Models (Topology) ============
+
+motif:AlexNet a motif:ModelArchitecture ;
+  skos:prefLabel "AlexNet"@en ;
+  skos:definition "Pioneering deep convolutional neural network for image classification."@en ;
+  motif:githubRepo <https://github.com/pytorch/vision> ;
+  motif:primaryMotif motif:Convolution ;
+  motif:usesMotif motif:Convolution, motif:Pool ;
+  motif:composedOf motif:Convolution, motif:Pool ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:VGG a motif:ModelFamily ;
+  skos:prefLabel "VGG"@en ;
+  skos:definition "Visual Geometry Group family of deep convolutional networks for image classification."@en ;
+  motif:githubRepo <https://github.com/pytorch/vision> ;
+  motif:primaryMotif motif:Convolution ;
+  motif:usesMotif motif:Convolution, motif:Pool ;
+  motif:composedOf motif:Convolution, motif:Pool ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:Inception a motif:ModelFamily ;
+  skos:prefLabel "Inception"@en ;
+  skos:definition "Inception family of deep convolutional architectures using multi-scale feature extraction."@en ;
+  motif:githubRepo <https://github.com/pytorch/vision> ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat, motif:Convolution, motif:Pool ;
+  motif:composedOf motif:Concat, motif:Convolution ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:ConvNeXt a motif:ModelFamily ;
+  skos:prefLabel "ConvNeXt"@en ;
+  skos:definition "ConvNeXt family modernizing convolutional networks with transformer-inspired designs."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/ConvNeXt> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Convolution ;
+  motif:composedOf motif:Residual, motif:Convolution ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:DenseNet a motif:ModelFamily ;
+  skos:prefLabel "DenseNet"@en ;
+  skos:definition "Densely Connected Convolutional Networks with dense skip connections."@en ;
+  motif:githubRepo <https://github.com/pytorch/vision> ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat, motif:Convolution, motif:Residual ;
+  motif:composedOf motif:Concat, motif:Convolution ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:SqueezeNet a motif:ModelArchitecture ;
+  skos:prefLabel "SqueezeNet"@en ;
+  skos:definition "Lightweight convolutional architecture with fire modules for efficient inference."@en ;
+  motif:githubRepo <https://github.com/pytorch/vision> ;
+  motif:primaryMotif motif:Convolution ;
+  motif:usesMotif motif:Convolution, motif:Concat ;
+  motif:composedOf motif:Convolution, motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:ShuffleNet a motif:ModelFamily ;
+  skos:prefLabel "ShuffleNet"@en ;
+  skos:definition "ShuffleNet family of efficient mobile networks using channel shuffling."@en ;
+  motif:githubRepo <https://github.com/pytorch/vision> ;
+  motif:primaryMotif motif:Convolution ;
+  motif:usesMotif motif:Convolution, motif:Concat ;
+  motif:composedOf motif:Convolution ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:DINOv2 a motif:ModelArchitecture ;
+  skos:prefLabel "DINOv2"@en ;
+  skos:definition "Self-supervised vision transformer with improved transfer learning capabilities."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/dinov2> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:LayerNorm ;
+  motif:composedOf motif:Attention, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+# ============ Additional Detection Models (Topology) ============
+
+motif:DETR a motif:ModelArchitecture ;
+  skos:prefLabel "DETR"@en ;
+  skos:definition "Detection Transformer using transformer decoder for end-to-end object detection."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/detr> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual, motif:Concat ;
+  motif:composedOf motif:Attention, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:FasterRCNN a motif:ModelArchitecture ;
+  skos:prefLabel "Faster R-CNN"@en ;
+  skos:definition "Region-based CNN with region proposal networks for object detection."@en ;
+  motif:githubRepo <https://github.com/pytorch/vision> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Convolution, motif:Concat ;
+  motif:composedOf motif:Residual, motif:Convolution ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:RetinaNet a motif:ModelArchitecture ;
+  skos:prefLabel "RetinaNet"@en ;
+  skos:definition "Single-stage detector with focal loss addressing class imbalance in object detection."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/detectron2> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Convolution ;
+  motif:composedOf motif:Residual, motif:Convolution ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:SSD a motif:ModelArchitecture ;
+  skos:prefLabel "SSD"@en ;
+  skos:definition "Single Shot Detector using multi-scale feature maps for efficient object detection."@en ;
+  motif:githubRepo <https://github.com/weiliu89/ssd.pytorch> ;
+  motif:primaryMotif motif:Convolution ;
+  motif:usesMotif motif:Convolution, motif:Concat ;
+  motif:composedOf motif:Convolution, motif:Concat ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:CenterNet a motif:ModelArchitecture ;
+  skos:prefLabel "CenterNet"@en ;
+  skos:definition "Center-based object detection using keypoint estimation."@en ;
+  motif:githubRepo <https://github.com/xingyizhou/CenterNet> ;
+  motif:primaryMotif motif:Residual ;
+  motif:usesMotif motif:Residual, motif:Convolution ;
+  motif:composedOf motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+motif:FCOS a motif:ModelArchitecture ;
+  skos:prefLabel "FCOS"@en ;
+  skos:definition "Fully Convolutional One-Stage object detection without region proposals."@en ;
+  motif:githubRepo <https://github.com/tianzhi0549/FCOS> ;
+  motif:primaryMotif motif:Convolution ;
+  motif:usesMotif motif:Convolution, motif:Residual ;
+  motif:composedOf motif:Convolution, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Topology .
+
+# ============ Video/Temporal Models (Routing) ============
+
+motif:TimeSformer a motif:ModelArchitecture ;
+  skos:prefLabel "TimeSformer"@en ;
+  skos:definition "Transformer architecture for video understanding with divided space-time attention."@en ;
+  motif:githubRepo <https://github.com/facebookresearch/TimeSformer> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:Residual ;
+  motif:composedOf motif:Attention, motif:Residual ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:ViViT a motif:ModelArchitecture ;
+  skos:prefLabel "ViViT"@en ;
+  skos:definition "Vision Transformer for Video, applying transformer architecture to video tokens."@en ;
+  motif:githubRepo <https://github.com/google-research/scenic> ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention, motif:LayerNorm ;
+  motif:composedOf motif:Attention ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+# ============ Multimodal Models (Routing) ============
+
+motif:LLaVA a motif:ModelArchitecture ;
+  skos:prefLabel "LLaVA"@en ;
+  skos:definition "Large Language and Vision Assistant combining vision encoder with language model."@en ;
+  motif:githubRepo <https://github.com/haotian-liu/LLaVA> ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat, motif:Attention ;
+  motif:composedOf motif:Concat, motif:Attention ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+
+motif:Flamingo a motif:ModelFamily ;
+  skos:prefLabel "Flamingo"@en ;
+  skos:definition "Flamingo multimodal model family for vision and language understanding."@en ;
+  motif:githubRepo <https://github.com/openflamingo/open_flamingo> ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat, motif:Attention, motif:Residual ;
+  motif:composedOf motif:Concat, motif:Attention ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Routing .
+

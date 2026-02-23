@@ -1,0 +1,47 @@
+\OnePageSectionStart
+\section{Related Work}
+
+\subsection{Type Systems and Dependent Types}
+Type systems in programming languages (Hindley-Milner \citep{hindley1969}, System F \citep{girard1972}) provide shape and kind discipline. Recent work on dependent types (Coq \citep{coq2023}, Agda \citep{agda2023}) enables richer specifications where types encode propositions. Our semantic types extend this paradigm: instead of properties of computation, they encode properties of \emph{meaning}. A Measurement type is not a computability statement but a grounding statement: ``this tensor represents physical reality.''
+
+Array languages (Futhark \citep{futhark2016}, Dex \citep{dex2022}) provide shape polymorphism and compile-time shape inference, but treat arrays as untyped numeric substrates. They lack semantic distinction for physical quantities, distributions, or symbolic data. Julia's type system \citep{bezanson2017} is flexible but permissive; no constraint on semantic meaning flows through composition.
+
+\subsection{Tensor Type Systems and Neural Language Design}
+TensorFlow's shape inference \citep{tensorflow2016} and PyTorch's type hints \citep{pytorch2019} provide partial static guarantees but remain permissive: dynamic shapes, implicit semantic assumptions, no end-to-end verification. Glow \citep{glow2020}, a compiler for neural networks, performs shape inference and code generation but lacks semantic types.
+
+More recent work on certified neural networks (VNN Abstr. \citep{neurips2020}, DeepTest \citep{deeptest2018}) focuses on robustness properties (adversarial bounds) rather than semantic grounding. Our semantic types are orthogonal to robustness but enable semantic verification at a higher level than floating-point bounds.
+
+\subsection{RDF, Ontologies, and Semantic Web}
+RDF \citep{rdf2014}, OWL \citep{owl2012}, and SKOS \citep{skos2009} provide formal frameworks for describing meaning via IRIs. QUDT \citep{qudt2023} (Quantities, Units, Dimensions, Types) defines ontologies for physical units and dimensions. SOSA/SSN \citep{sosa2017} (Sensor, Observation, Sample, and Actuator) is a W3C standard for sensor data and observations.
+
+Our contribution is to embed this semantic infrastructure \emph{into the tensor type system}. Rather than treating semantics as external metadata, we make them first-class type properties that drive compilation and verification. This bridges formal ontology languages with neural computation.
+
+\subsection{Domain-Specific Languages for Neural Computation}
+Halide \citep{halide2013} provides scheduling and optimization for image pipelines, but lacks neural primitives. Darkroom \citep{darkroom2013} uses dependent types for image processing but is not neural-focused. TVM \citep{tvm2018} is a compiler for diverse backends (CPU, GPU, TPU) but operates on untyped tensor IRs.
+
+MLIR \citep{mlir2021} provides a framework for intermediate representations and lowering. Our work can be viewed as a domain-specific dialect of MLIR, where the semantic type system is a core abstraction.
+
+\subsection{Knowledge Graphs and Neurosymbolic Reasoning}
+Knowledge graphs (Freebase \citep{freebase2008}, DBpedia \citep{dbpedia2014}, Wikidata \citep{wikidata2014}) enable structured reasoning over symbolic knowledge. Neurosymbolic AI (Mao et al. \citep{neurosymbolic2019}, Garnelo and Shanahan \citep{neurosymbolic2019b}) attempts to integrate neural and symbolic reasoning.
+
+Our semantic fabric (Section 9) connects neural tensors directly to KG IRIs, enabling compositional verification that fuses neural and symbolic reasoning without ad-hoc glue code. When an Enum tensor references a SKOS vocabulary, the type system can verify that operations respect vocabulary constraints.
+
+\subsection{Formal Semantics of Machine Learning Systems}
+Recent work on formal specification of ML systems (Uchitel et al. \citep{ml_formalism2021}, Heil et al. \citep{ml_semantics2022}) proposes formal models of training dynamics and generalization. Our approach is complementary: we focus on \emph{graph-level} semantics (what computation means) rather than \emph{statistical} semantics (what generalization guarantees hold).
+
+\subsection{Verified Compilers and Certified Code Generation}
+CompCert \citep{compcert2023}, a fully verified C compiler, proves correctness of code generation. CakeML \citep{cakeml2023} extends this to functional languages. Our work borrows the philosophy---semantics preservation through lowering is verified or at least auditable---but applies it to neural computation and semantic (not just syntactic) correctness.
+
+\subsection{Robotics and Autonomous Systems}
+ROS (Robot Operating System) \citep{ros2013} provides typed message definitions and sensor abstractions. Gazebo \citep{gazebo2020} simulates physical systems. Our work complements these by providing compile-time verification that perception, reasoning, and action are semantically aligned. A typical ROS node might operate on untyped sensor messages; our ABI/AST would provide static guarantees that sensor frames, units, and action ranges are respected throughout.
+
+\subsection{Our Distinguishing Contributions}
+\begin{enumerate}
+  \item \textbf{Semantic Types as First-Class}: unlike prior work, semantics (Measurement, Distribution, Enum) are not annotations but type-system objects that drive verification and lowering.
+  \item \textbf{RDF/IRI Grounding}: we explicitly tie tensor semantics to global RDF IRIs, enabling interoperability and ontology-driven reasoning.
+  \item \textbf{Three-Graph Model}: we formalize the interplay of computation, type, and semantic graphs, showing how all three must align for a well-formed system.
+  \item \textbf{Knowledge Realm Fusion}: we provide explicit type-safe bridges for crossing between perception (Measurement), knowledge (Enum/Distribution), and reasoning (Atomic), preventing silent semantic drift.
+  \item \textbf{Runtime Agnostic}: unlike ONNX-specific approaches, our ABI/AST lowers to any target while preserving semantics.
+\end{enumerate}
+
+\OnePageSectionEnd

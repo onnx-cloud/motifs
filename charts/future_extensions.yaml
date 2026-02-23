@@ -1,0 +1,30 @@
+# Figure: Extended Basis B+ (Future Primitives)
+# Shows the proposed extensions for streaming and async
+
+title: Extended Basis B+
+description: Experimental primitives for Temporal, Async, and Functional domains.
+
+query: ./sparql/charts/future_extensions.sparql
+
+vega:
+  width: 500
+  height: 200
+  mark: bar
+  encoding:
+    y:
+      field: primitive
+      type: nominal
+      sort: {field: id}
+      axis: {labelFontSize: 12, title: "Primitive"}
+    x:
+      field: id
+      type: ordinal
+      axis: {title: "ID"}
+    color:
+      field: category
+      type: nominal
+      scale: {scheme: "category20b"}
+    tooltip:
+      - field: primitive
+      - field: signature
+      - field: domain

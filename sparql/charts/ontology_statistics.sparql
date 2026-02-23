@@ -1,0 +1,17 @@
+# High-level statistics about the motif ontology
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT 
+  (COUNT(DISTINCT ?motif) AS ?totalMotifs)
+  (COUNT(DISTINCT ?category) AS ?totalCategories)
+  (COUNT(DISTINCT ?fingerprint) AS ?totalFingerprints)
+  (COUNT(DISTINCT ?semantic) AS ?totalSemantics)
+WHERE {
+  ?motif a motif:Motif .
+  OPTIONAL { ?motif motif:hasCategory ?category . }
+  OPTIONAL { ?motif motif:hasFingerprint ?fingerprint . }
+  OPTIONAL { ?motif motif:hasSemantics ?semantic . }
+}

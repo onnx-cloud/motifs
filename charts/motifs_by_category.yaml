@@ -1,0 +1,41 @@
+# Figure: Motifs by Category (Bar Chart)
+# Shows count of motifs in each category
+title: Motifs by Category
+description: Distribution of motifs across functional categories
+
+query: ./sparql/charts/motifs_by_category.sparql
+
+transform:
+  rename:
+    categoryLabel: category
+  keep:
+    - category
+    - count
+
+vega:
+  width: 600
+  height: 350
+  mark: bar
+  encoding:
+    x:
+      field: category
+      type: nominal
+      axis:
+        labelAngle: -45
+        title: Category
+    y:
+      field: count
+      type: quantitative
+      axis:
+        title: Number of Motifs
+    color:
+      field: category
+      type: nominal
+      scale:
+        scheme: category10
+      legend: false
+    tooltip:
+      - field: category
+        type: nominal
+      - field: count
+        type: quantitative

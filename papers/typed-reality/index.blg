@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: index.aux
+The style file: plainnat.bst
+Database file #1: bib/references.bib
+Warning--empty journal in freebase2008
+Warning--empty journal in neurosymbolic2019b
+Warning--empty journal in girard1972
+Warning--empty journal in darkroom2013
+Warning--empty journal in ml_semantics2022
+Warning--empty journal in qudt2023
+Warning--empty journal in gazebo2020
+Warning--empty journal in mlir2021
+Warning--empty journal in compcert2023
+Warning--empty journal in neurosymbolic2019
+Warning--empty journal in dex2022
+Warning--empty journal in glow2020
+Warning--empty journal in deeptest2018
+Warning--empty journal in ml_formalism2021
+You've used 32 entries,
+            2773 wiz_defined-function locations,
+            728 strings with 8971 characters,
+and the built_in function-call counts, 13121 in all, are:
+= -- 1084
+> -- 897
+< -- 13
++ -- 309
+- -- 276
+* -- 1008
+:= -- 2118
+add.period$ -- 97
+call.type$ -- 32
+change.case$ -- 173
+chr.to.int$ -- 31
+cite$ -- 78
+duplicate$ -- 611
+empty$ -- 1027
+format.name$ -- 321
+if$ -- 2673
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 27
+newline$ -- 169
+num.names$ -- 128
+pop$ -- 389
+preamble$ -- 1
+purify$ -- 141
+quote$ -- 0
+skip$ -- 489
+stack$ -- 0
+substring$ -- 152
+swap$ -- 20
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 352
+warning$ -- 14
+while$ -- 104
+width$ -- 0
+write$ -- 384
+(There were 14 warnings)

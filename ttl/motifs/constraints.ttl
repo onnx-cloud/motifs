@@ -1,0 +1,6 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+
+# Auto-generated constraint resources (migrated from literal hasConstraint)
+motif:Constraint_hasConstraint a motif:Constraint ;
+  skos:definition "Beam width K must be specified; scoring function required."@en .

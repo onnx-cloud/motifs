@@ -1,0 +1,285 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Motif Frequency Across Models",
+  "description": "Count of models that reference each motif via `motif:usesMotif`.",
+  "data": {
+    "values": [
+      {
+        "motifLabel": "Attention / Soft",
+        "count": "174"
+      },
+      {
+        "motifLabel": "Linear",
+        "count": "90"
+      },
+      {
+        "motifLabel": "Linear / Algebraic",
+        "count": "90"
+      },
+      {
+        "motifLabel": "Residual",
+        "count": "87"
+      },
+      {
+        "motifLabel": "Concat",
+        "count": "79"
+      },
+      {
+        "motifLabel": "Scan",
+        "count": "65"
+      },
+      {
+        "motifLabel": "Loop",
+        "count": "59"
+      },
+      {
+        "motifLabel": "If",
+        "count": "55"
+      },
+      {
+        "motifLabel": "Gather",
+        "count": "51"
+      },
+      {
+        "motifLabel": "ReduceSum",
+        "count": "44"
+      },
+      {
+        "motifLabel": "Fork-Join",
+        "count": "30"
+      },
+      {
+        "motifLabel": "Embedding Lookup",
+        "count": "28"
+      },
+      {
+        "motifLabel": "Scatter",
+        "count": "27"
+      },
+      {
+        "motifLabel": "Fork",
+        "count": "20"
+      },
+      {
+        "motifLabel": "Sampler / Multinomial",
+        "count": "18"
+      },
+      {
+        "motifLabel": "Multi-Head Attention",
+        "count": "17"
+      },
+      {
+        "motifLabel": "Hard Routing",
+        "count": "16"
+      },
+      {
+        "motifLabel": "ReduceMax",
+        "count": "15"
+      },
+      {
+        "motifLabel": "Map",
+        "count": "15"
+      },
+      {
+        "motifLabel": "Mul",
+        "count": "14"
+      },
+      {
+        "motifLabel": "Softmax Edge",
+        "count": "13"
+      },
+      {
+        "motifLabel": "Persistent State",
+        "count": "11"
+      },
+      {
+        "motifLabel": "Add",
+        "count": "11"
+      },
+      {
+        "motifLabel": "Query-Key-Value",
+        "count": "10"
+      },
+      {
+        "motifLabel": "Key-Value Memory",
+        "count": "10"
+      },
+      {
+        "motifLabel": "Early Exit",
+        "count": "10"
+      },
+      {
+        "motifLabel": "Vector Search",
+        "count": "10"
+      },
+      {
+        "motifLabel": "Call",
+        "count": "9"
+      },
+      {
+        "motifLabel": "Join",
+        "count": "9"
+      },
+      {
+        "motifLabel": "AllReduce",
+        "count": "6"
+      },
+      {
+        "motifLabel": "Predicate Mask",
+        "count": "6"
+      },
+      {
+        "motifLabel": "Broadcast",
+        "count": "6"
+      },
+      {
+        "motifLabel": "KV-Cache Lookup",
+        "count": "5"
+      },
+      {
+        "motifLabel": "Ephemeral State",
+        "count": "5"
+      },
+      {
+        "motifLabel": "Weighted Sum",
+        "count": "5"
+      },
+      {
+        "motifLabel": "AllGather",
+        "count": "5"
+      },
+      {
+        "motifLabel": "Sub",
+        "count": "5"
+      },
+      {
+        "motifLabel": "Read",
+        "count": "4"
+      },
+      {
+        "motifLabel": "Write",
+        "count": "4"
+      },
+      {
+        "motifLabel": "Split",
+        "count": "4"
+      },
+      {
+        "motifLabel": "Multi-Modal / Fusion",
+        "count": "3"
+      },
+      {
+        "motifLabel": "Recursive Call",
+        "count": "3"
+      },
+      {
+        "motifLabel": "Slice",
+        "count": "3"
+      },
+      {
+        "motifLabel": "Circular Buffer",
+        "count": "3"
+      },
+      {
+        "motifLabel": "Reshape",
+        "count": "3"
+      },
+      {
+        "motifLabel": "Sparse Mixture of Experts",
+        "count": "2"
+      },
+      {
+        "motifLabel": "Sparse MoE Routing",
+        "count": "2"
+      },
+      {
+        "motifLabel": "Pipeline Send/Recv",
+        "count": "2"
+      },
+      {
+        "motifLabel": "Div",
+        "count": "2"
+      },
+      {
+        "motifLabel": "Flatten",
+        "count": "2"
+      },
+      {
+        "motifLabel": "KV-Cache Append",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Paged KV-Cache",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Sliding Window Attention",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Reward Model",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Differentiable Queue",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Quantize-Dequantize",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Weight Packing",
+        "count": "1"
+      },
+      {
+        "motifLabel": "ReduceScatter",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Read-Modify-Write",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Generate / Dispatch",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Stochastic Routing",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Multi-Residual",
+        "count": "1"
+      },
+      {
+        "motifLabel": "Transpose",
+        "count": "1"
+      }
+    ]
+  },
+  "width": 900,
+  "height": 800,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "motifLabel",
+      "type": "nominal",
+      "sort": "-x",
+      "axis": {
+        "title": "Motif"
+      }
+    },
+    "x": {
+      "field": "count",
+      "type": "quantitative",
+      "axis": {
+        "title": "Number of models referencing motif"
+      }
+    },
+    "color": {
+      "field": "count",
+      "type": "quantitative"
+    }
+  }
+}

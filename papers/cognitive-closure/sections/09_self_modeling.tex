@@ -1,0 +1,26 @@
+%% Self-Modeling & Reconfigurable Systems
+\section{Self-Modeling and Reconfigurable Systems}
+\label{sec:self_modeling}
+
+\paragraph{Motivation} Modern systems can not only predict and act, but also explore and modify the very sensors, actions and computations that define their interface to the world. We argue that cognitive closure must be extended to account for this meta-adaptivity: a system's closure now includes the dynamics of its own sensing, actuation and computational substrate.
+
+\paragraph{Formalism} We model a system as a tuple (M, S, A, C) where M is the system's internal model, S parameterizes sensors, A parameterizes action primitives, and C parameterizes computation (architecture and hyperparameters). A "self-modifying" step is one that updates any of S, A, or C as part of the system's policy. Closure under self-modification can be expressed as a fixed point:
+
+\[ (M^*, S^*, A^*, C^*) = \mathcal{F}(M^*, S^*, A^*, C^*) \]
+
+where \(\mathcal{F}\) maps a system configuration to the resulting learned/configured system after a period of adaptation and evaluation. Metrics include prediction error under self-modification, reconfiguration cost (e.g., resource/time penalty), and consistency (how well M predicts the consequences of changes to S/A/C).
+
+\paragraph{Methods} We propose three practical mechanisms for studying self-modifying systems: (1) differentiable sensor parameterization (tunable gains/biases), (2) meta-gradient updates for sensor and computation parameters (backprop-through-adaptation), and (3) intrinsic objectives that reward improving the system's ability to predict or control the outcomes of its own modifications.
+
+\paragraph{Experiments} To demonstrate feasibility, we include a small reproducible experiment where a system learns a sensor gain parameter online to minimize prediction error on a simple stochastic environment (see \texttt{papers/cognitive-closure/experiments/self_modeling_sensor/} and the interactive notebook \texttt{notebooks/self_modeling_sensor.ipynb}). Results show the sensor parameter converges, prediction error drops, and the learned sensor exhibits robustness to added noise.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{figures/self_modeling_sensor.png}
+\caption{Sensor gain and prediction error over time in the self-modeling experiment.}
+\label{fig:self_modeling_sensor}
+\end{figure}
+
+\paragraph{Ethics and Safety} Granting systems the ability to modify their own sensors, actuators or compute introduces risk. We recommend constraints (invariants), explicit verification steps after changes, and conservative adaptation schedules as practical mitigations. A short discussion is included in Appendix ~\ref{sec:safety_self_mod}.
+
+\paragraph{Reproducibility} The experiment scripts, notebooks and plotting utilities are committed; a simple unit test asserts that the example reduces prediction error and produces a figure.

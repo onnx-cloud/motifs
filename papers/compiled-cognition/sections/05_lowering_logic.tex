@@ -1,0 +1,21 @@
+\OnePageSectionStart
+\section{Lowering Logic: From Graph to Node}
+
+The lowering process is a recursive transformation that maintains the identity of cognitive units.
+
+\paragraph{Graph Fusion and Inlining}
+Each graph reference is fused into the caller's graph. If a reasoning step refers to another graph, the compiler performs inlining or subgraph generation based on the target runtime's capabilities, optimizing away redundant intermediate tensors.
+
+\paragraph{Operator Mapping}
+Standard operators (`Sub`, `Abs`, `Div`) are mapped directly from the fused high-level representation to their ONNX equivalents. The compiler ensures that attributes (such as `keepdims` or `axis`) are correctly formatted according to the targeted `@opset`.
+
+\paragraph{Training Lowering}
+When a training context is declared, the lowering pass generates an adjoint graph. This graph explicitly models gradient propagation, optimizer state (e.g., momentum, Adam moments), and semantic projection steps. The compiler emits specialized primitives such as `Project_Sigma` to ensure that updates remain semantically valid post-update.
+
+\paragraph{Formal Guarantees}
+We formally assert that the lowering preserves semantic invariants: if the fused graph satisfies the `FUSE` predicate with grounding $\sigma$, then both the primal and adjoint graphs preserve $\sigma$ under optimization steps that include `Project_Sigma`.
+
+\paragraph{Verification Generation}
+The `@proof` blocks are lowered into a side-car validation graph. This graph executes alongside the model during testing to ensure the compiled silicon accurately reflects the intended high-level logic.
+
+\OnePageSectionEnd

@@ -1,0 +1,22 @@
+# All motif to ONNX operator mappings
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX onnx: <https://ns.onnx.cloud/onnx#>
+
+SELECT ?motif ?motifLabel ?categoryLabel ?operator ?opName ?mappingType ?requiresRuntime
+WHERE {
+  ?motif a motif:Motif ;
+    skos:prefLabel ?motifLabel .
+  OPTIONAL {
+    ?motif motif:hasCategory ?category .
+    ?category skos:prefLabel ?categoryLabel .
+  }
+  { ?motif skos:exactMatch ?operator . BIND("exact" AS ?mappingType) }
+  UNION
+  { ?motif skos:closeMatch ?operator . BIND("close" AS ?mappingType) }
+  UNION
+  { ?motif skos:broadMatch ?operator . BIND("broad" AS ?mappingType) }
+  OPTIONAL { ?operator skos:prefLabel ?opName . }
+  OPTIONAL { ?motif onnx:requiresRuntime ?requiresRuntime . }
+}
+ORDER BY ?categoryLabel ?motifLabel

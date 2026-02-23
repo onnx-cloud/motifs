@@ -1,0 +1,2593 @@
+
+# ONNX operator schemas — generated from runtime
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:Abs a onnx:Operator ;
+  skos:prefLabel "Abs" ;
+  skos:prefLabel "Abs" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Acos a onnx:Operator ;
+  skos:prefLabel "Acos" ;
+  skos:prefLabel "Acos" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Acosh a onnx:Operator ;
+  skos:prefLabel "Acosh" ;
+  skos:prefLabel "Acosh" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Add a onnx:Operator ;
+  skos:prefLabel "Add" ;
+  skos:prefLabel "Add" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "14"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:AffineGrid a onnx:Operator ;
+  skos:prefLabel "AffineGrid" ;
+  skos:prefLabel "AffineGrid" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "theta" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "size" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "grid" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "align_corners" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:And a onnx:Operator ;
+  skos:prefLabel "And" ;
+  skos:prefLabel "And" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "7"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:ArgMax a onnx:Operator ;
+  skos:prefLabel "ArgMax" ;
+  skos:prefLabel "ArgMax" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "select_last_index" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:ArgMin a onnx:Operator ;
+  skos:prefLabel "ArgMin" ;
+  skos:prefLabel "ArgMin" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "select_last_index" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Asin a onnx:Operator ;
+  skos:prefLabel "Asin" ;
+  skos:prefLabel "Asin" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Asinh a onnx:Operator ;
+  skos:prefLabel "Asinh" ;
+  skos:prefLabel "Asinh" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Atan a onnx:Operator ;
+  skos:prefLabel "Atan" ;
+  skos:prefLabel "Atan" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Atanh a onnx:Operator ;
+  skos:prefLabel "Atanh" ;
+  skos:prefLabel "Atanh" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Attention a onnx:Operator ;
+  skos:prefLabel "Attention" ;
+  skos:prefLabel "Attention" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "24"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Q" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "K" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "V" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "attn_mask" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "past_key" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "past_value" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "nonpad_kv_seqlen" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "present_key" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "present_value" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "qk_matmul_output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "qk_matmul_output_mode" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "softcap" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "softmax_precision" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kv_num_heads" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "q_num_heads" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scale" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "is_causal" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:AveragePool a onnx:Operator ;
+  skos:prefLabel "AveragePool" ;
+  skos:prefLabel "AveragePool" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "count_include_pad" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "ceil_mode" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:BatchNormalization a onnx:Operator ;
+  skos:prefLabel "BatchNormalization" ;
+  skos:prefLabel "BatchNormalization" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "15"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_mean" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_var" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "running_mean" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "running_var" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "training_mode" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "momentum" ; onnx:attrType "FLOAT" ; onnx:default "0.9"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "epsilon" ; onnx:attrType "FLOAT" ; onnx:default "1e-05"^^xsd:double ; ] ;
+  .
+
+onnx:Bernoulli a onnx:Operator ;
+  skos:prefLabel "Bernoulli" ;
+  skos:prefLabel "Bernoulli" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dtype" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "seed" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  .
+
+onnx:BitShift a onnx:Operator ;
+  skos:prefLabel "BitShift" ;
+  skos:prefLabel "BitShift" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Y" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  .
+
+onnx:BitwiseAnd a onnx:Operator ;
+  skos:prefLabel "BitwiseAnd" ;
+  skos:prefLabel "BitwiseAnd" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:BitwiseNot a onnx:Operator ;
+  skos:prefLabel "BitwiseNot" ;
+  skos:prefLabel "BitwiseNot" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:BitwiseOr a onnx:Operator ;
+  skos:prefLabel "BitwiseOr" ;
+  skos:prefLabel "BitwiseOr" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:BitwiseXor a onnx:Operator ;
+  skos:prefLabel "BitwiseXor" ;
+  skos:prefLabel "BitwiseXor" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:BlackmanWindow a onnx:Operator ;
+  skos:prefLabel "BlackmanWindow" ;
+  skos:prefLabel "BlackmanWindow" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "17"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "size" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "periodic" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_datatype" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Cast a onnx:Operator ;
+  skos:prefLabel "Cast" ;
+  skos:prefLabel "Cast" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "saturate" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "to" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:CastLike a onnx:Operator ;
+  skos:prefLabel "CastLike" ;
+  skos:prefLabel "CastLike" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "target_type" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "saturate" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Ceil a onnx:Operator ;
+  skos:prefLabel "Ceil" ;
+  skos:prefLabel "Ceil" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Celu a onnx:Operator ;
+  skos:prefLabel "Celu" ;
+  skos:prefLabel "Celu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "12"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  .
+
+onnx:CenterCropPad a onnx:Operator ;
+  skos:prefLabel "CenterCropPad" ;
+  skos:prefLabel "CenterCropPad" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "shape" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output_data" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axes" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Clip a onnx:Operator ;
+  skos:prefLabel "Clip" ;
+  skos:prefLabel "Clip" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "min" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "max" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Col2Im a onnx:Operator ;
+  skos:prefLabel "Col2Im" ;
+  skos:prefLabel "Col2Im" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "image_shape" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "block_shape" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Compress a onnx:Operator ;
+  skos:prefLabel "Compress" ;
+  skos:prefLabel "Compress" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "condition" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:Concat a onnx:Operator ;
+  skos:prefLabel "Concat" ;
+  skos:prefLabel "Concat" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "concat_result" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:ConcatFromSequence a onnx:Operator ;
+  skos:prefLabel "ConcatFromSequence" ;
+  skos:prefLabel "ConcatFromSequence" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_sequence" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "concat_result" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "new_axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:Constant a onnx:Operator ;
+  skos:prefLabel "Constant" ;
+  skos:prefLabel "Constant" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "value_floats" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "value_float" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "value_ints" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "value_int" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "sparse_value" ; onnx:attrType "SPARSE_TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "value" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  .
+
+onnx:ConstantOfShape a onnx:Operator ;
+  skos:prefLabel "ConstantOfShape" ;
+  skos:prefLabel "ConstantOfShape" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "value" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  .
+
+onnx:Conv a onnx:Operator ;
+  skos:prefLabel "Conv" ;
+  skos:prefLabel "Conv" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "W" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "group" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:ConvInteger a onnx:Operator ;
+  skos:prefLabel "ConvInteger" ;
+  skos:prefLabel "ConvInteger" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "10"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "w" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x_zero_point" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "w_zero_point" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "group" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:ConvTranspose a onnx:Operator ;
+  skos:prefLabel "ConvTranspose" ;
+  skos:prefLabel "ConvTranspose" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "W" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "group" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_padding" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Cos a onnx:Operator ;
+  skos:prefLabel "Cos" ;
+  skos:prefLabel "Cos" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Cosh a onnx:Operator ;
+  skos:prefLabel "Cosh" ;
+  skos:prefLabel "Cosh" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:CumSum a onnx:Operator ;
+  skos:prefLabel "CumSum" ;
+  skos:prefLabel "CumSum" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "14"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axis" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "reverse" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "exclusive" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:DFT a onnx:Operator ;
+  skos:prefLabel "DFT" ;
+  skos:prefLabel "DFT" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "dft_length" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axis" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "inverse" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "onesided" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:DeformConv a onnx:Operator ;
+  skos:prefLabel "DeformConv" ;
+  skos:prefLabel "DeformConv" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "W" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "offset" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "mask" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "offset_group" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "group" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:DepthToSpace a onnx:Operator ;
+  skos:prefLabel "DepthToSpace" ;
+  skos:prefLabel "DepthToSpace" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "blocksize" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:DequantizeLinear a onnx:Operator ;
+  skos:prefLabel "DequantizeLinear" ;
+  skos:prefLabel "DequantizeLinear" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x_scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x_zero_point" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_dtype" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "block_size" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Det a onnx:Operator ;
+  skos:prefLabel "Det" ;
+  skos:prefLabel "Det" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Div a onnx:Operator ;
+  skos:prefLabel "Div" ;
+  skos:prefLabel "Div" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "14"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:Dropout a onnx:Operator ;
+  skos:prefLabel "Dropout" ;
+  skos:prefLabel "Dropout" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "ratio" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "training_mode" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "mask" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "seed" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:DynamicQuantizeLinear a onnx:Operator ;
+  skos:prefLabel "DynamicQuantizeLinear" ;
+  skos:prefLabel "DynamicQuantizeLinear" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y_scale" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y_zero_point" ; ] ;
+  .
+
+onnx:Einsum a onnx:Operator ;
+  skos:prefLabel "Einsum" ;
+  skos:prefLabel "Einsum" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "12"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Output" ; ] ;
+  .
+
+onnx:Elu a onnx:Operator ;
+  skos:prefLabel "Elu" ;
+  skos:prefLabel "Elu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  .
+
+onnx:Equal a onnx:Operator ;
+  skos:prefLabel "Equal" ;
+  skos:prefLabel "Equal" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "19"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:Erf a onnx:Operator ;
+  skos:prefLabel "Erf" ;
+  skos:prefLabel "Erf" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Exp a onnx:Operator ;
+  skos:prefLabel "Exp" ;
+  skos:prefLabel "Exp" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Expand a onnx:Operator ;
+  skos:prefLabel "Expand" ;
+  skos:prefLabel "Expand" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "shape" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:EyeLike a onnx:Operator ;
+  skos:prefLabel "EyeLike" ;
+  skos:prefLabel "EyeLike" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dtype" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "k" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Flatten a onnx:Operator ;
+  skos:prefLabel "Flatten" ;
+  skos:prefLabel "Flatten" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Floor a onnx:Operator ;
+  skos:prefLabel "Floor" ;
+  skos:prefLabel "Floor" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:GRU a onnx:Operator ;
+  skos:prefLabel "GRU" ;
+  skos:prefLabel "GRU" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "W" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "R" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "sequence_lens" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "initial_h" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y_h" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "clip" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "activation_beta" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "activation_alpha" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "hidden_size" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "layout" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "linear_before_reset" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Gather a onnx:Operator ;
+  skos:prefLabel "Gather" ;
+  skos:prefLabel "Gather" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "indices" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:GatherElements a onnx:Operator ;
+  skos:prefLabel "GatherElements" ;
+  skos:prefLabel "GatherElements" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "indices" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:GatherND a onnx:Operator ;
+  skos:prefLabel "GatherND" ;
+  skos:prefLabel "GatherND" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "indices" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "batch_dims" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Gelu a onnx:Operator ;
+  skos:prefLabel "Gelu" ;
+  skos:prefLabel "Gelu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Gemm a onnx:Operator ;
+  skos:prefLabel "Gemm" ;
+  skos:prefLabel "Gemm" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "C" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "beta" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "transB" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "transA" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:GlobalAveragePool a onnx:Operator ;
+  skos:prefLabel "GlobalAveragePool" ;
+  skos:prefLabel "GlobalAveragePool" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:GlobalLpPool a onnx:Operator ;
+  skos:prefLabel "GlobalLpPool" ;
+  skos:prefLabel "GlobalLpPool" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "p" ; onnx:attrType "INT" ; onnx:default "2"^^xsd:integer ; ] ;
+  .
+
+onnx:GlobalMaxPool a onnx:Operator ;
+  skos:prefLabel "GlobalMaxPool" ;
+  skos:prefLabel "GlobalMaxPool" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Greater a onnx:Operator ;
+  skos:prefLabel "Greater" ;
+  skos:prefLabel "Greater" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:GreaterOrEqual a onnx:Operator ;
+  skos:prefLabel "GreaterOrEqual" ;
+  skos:prefLabel "GreaterOrEqual" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "16"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:GridSample a onnx:Operator ;
+  skos:prefLabel "GridSample" ;
+  skos:prefLabel "GridSample" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "grid" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "align_corners" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:GroupNormalization a onnx:Operator ;
+  skos:prefLabel "GroupNormalization" ;
+  skos:prefLabel "GroupNormalization" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "21"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "bias" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "stash_type" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "num_groups" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "epsilon" ; onnx:attrType "FLOAT" ; onnx:default "1e-05"^^xsd:double ; ] ;
+  .
+
+onnx:HammingWindow a onnx:Operator ;
+  skos:prefLabel "HammingWindow" ;
+  skos:prefLabel "HammingWindow" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "17"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "size" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "periodic" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_datatype" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:HannWindow a onnx:Operator ;
+  skos:prefLabel "HannWindow" ;
+  skos:prefLabel "HannWindow" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "17"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "size" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "periodic" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_datatype" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:HardSigmoid a onnx:Operator ;
+  skos:prefLabel "HardSigmoid" ;
+  skos:prefLabel "HardSigmoid" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "beta" ; onnx:attrType "FLOAT" ; onnx:default "0.5"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "0.2"^^xsd:double ; ] ;
+  .
+
+onnx:HardSwish a onnx:Operator ;
+  skos:prefLabel "HardSwish" ;
+  skos:prefLabel "HardSwish" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Hardmax a onnx:Operator ;
+  skos:prefLabel "Hardmax" ;
+  skos:prefLabel "Hardmax" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .
+
+onnx:Identity a onnx:Operator ;
+  skos:prefLabel "Identity" ;
+  skos:prefLabel "Identity" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:If a onnx:Operator ;
+  skos:prefLabel "If" ;
+  skos:prefLabel "If" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "cond" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "outputs" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "else_branch" ; onnx:attrType "GRAPH" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "then_branch" ; onnx:attrType "GRAPH" ; onnx:default "" ; ] ;
+  .
+
+onnx:ImageDecoder a onnx:Operator ;
+  skos:prefLabel "ImageDecoder" ;
+  skos:prefLabel "ImageDecoder" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "encoded_stream" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "image" ; ] ;
+  .
+
+onnx:InstanceNormalization a onnx:Operator ;
+  skos:prefLabel "InstanceNormalization" ;
+  skos:prefLabel "InstanceNormalization" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "epsilon" ; onnx:attrType "FLOAT" ; onnx:default "1e-05"^^xsd:double ; ] ;
+  .
+
+onnx:IsInf a onnx:Operator ;
+  skos:prefLabel "IsInf" ;
+  skos:prefLabel "IsInf" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "detect_negative" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "detect_positive" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:IsNaN a onnx:Operator ;
+  skos:prefLabel "IsNaN" ;
+  skos:prefLabel "IsNaN" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:LRN a onnx:Operator ;
+  skos:prefLabel "LRN" ;
+  skos:prefLabel "LRN" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "bias" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "beta" ; onnx:attrType "FLOAT" ; onnx:default "0.75"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "0.0001"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "size" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:LSTM a onnx:Operator ;
+  skos:prefLabel "LSTM" ;
+  skos:prefLabel "LSTM" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "W" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "R" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "sequence_lens" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "initial_h" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "initial_c" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "P" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y_h" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y_c" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "clip" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "activation_beta" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "activation_alpha" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "hidden_size" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "input_forget" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "layout" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:LayerNormalization a onnx:Operator ;
+  skos:prefLabel "LayerNormalization" ;
+  skos:prefLabel "LayerNormalization" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "17"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Mean" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "InvStdDev" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "stash_type" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "epsilon" ; onnx:attrType "FLOAT" ; onnx:default "1e-05"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .
+
+onnx:LeakyRelu a onnx:Operator ;
+  skos:prefLabel "LeakyRelu" ;
+  skos:prefLabel "LeakyRelu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "16"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "0.01"^^xsd:double ; ] ;
+  .
+
+onnx:Less a onnx:Operator ;
+  skos:prefLabel "Less" ;
+  skos:prefLabel "Less" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:LessOrEqual a onnx:Operator ;
+  skos:prefLabel "LessOrEqual" ;
+  skos:prefLabel "LessOrEqual" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "16"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:Log a onnx:Operator ;
+  skos:prefLabel "Log" ;
+  skos:prefLabel "Log" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:LogSoftmax a onnx:Operator ;
+  skos:prefLabel "LogSoftmax" ;
+  skos:prefLabel "LogSoftmax" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .
+
+onnx:Loop a onnx:Operator ;
+  skos:prefLabel "Loop" ;
+  skos:prefLabel "Loop" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "M" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "cond" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "v_initial" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "v_final_and_scan_outputs" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "body" ; onnx:attrType "GRAPH" ; onnx:default "" ; ] ;
+  .
+
+onnx:LpNormalization a onnx:Operator ;
+  skos:prefLabel "LpNormalization" ;
+  skos:prefLabel "LpNormalization" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "p" ; onnx:attrType "INT" ; onnx:default "2"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .
+
+onnx:LpPool a onnx:Operator ;
+  skos:prefLabel "LpPool" ;
+  skos:prefLabel "LpPool" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "p" ; onnx:attrType "INT" ; onnx:default "2"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "ceil_mode" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:MatMul a onnx:Operator ;
+  skos:prefLabel "MatMul" ;
+  skos:prefLabel "MatMul" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:MatMulInteger a onnx:Operator ;
+  skos:prefLabel "MatMulInteger" ;
+  skos:prefLabel "MatMulInteger" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "10"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "a_zero_point" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "b_zero_point" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Max a onnx:Operator ;
+  skos:prefLabel "Max" ;
+  skos:prefLabel "Max" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data_0" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "max" ; ] ;
+  .
+
+onnx:MaxPool a onnx:Operator ;
+  skos:prefLabel "MaxPool" ;
+  skos:prefLabel "MaxPool" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Indices" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "storage_order" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "ceil_mode" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:MaxRoiPool a onnx:Operator ;
+  skos:prefLabel "MaxRoiPool" ;
+  skos:prefLabel "MaxRoiPool" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "rois" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "spatial_scale" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pooled_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:MaxUnpool a onnx:Operator ;
+  skos:prefLabel "MaxUnpool" ;
+  skos:prefLabel "MaxUnpool" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "I" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "output_shape" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Mean a onnx:Operator ;
+  skos:prefLabel "Mean" ;
+  skos:prefLabel "Mean" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data_0" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "mean" ; ] ;
+  .
+
+onnx:MeanVarianceNormalization a onnx:Operator ;
+  skos:prefLabel "MeanVarianceNormalization" ;
+  skos:prefLabel "MeanVarianceNormalization" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axes" ; onnx:attrType "INTS" ; onnx:default """name: "axes"
+ints: 0
+ints: 2
+ints: 3
+type: INTS
+""" ; ] ;
+  .
+
+onnx:MelWeightMatrix a onnx:Operator ;
+  skos:prefLabel "MelWeightMatrix" ;
+  skos:prefLabel "MelWeightMatrix" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "17"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "num_mel_bins" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "dft_length" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "sample_rate" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "lower_edge_hertz" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "upper_edge_hertz" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_datatype" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Min a onnx:Operator ;
+  skos:prefLabel "Min" ;
+  skos:prefLabel "Min" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data_0" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "min" ; ] ;
+  .
+
+onnx:Mish a onnx:Operator ;
+  skos:prefLabel "Mish" ;
+  skos:prefLabel "Mish" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Mod a onnx:Operator ;
+  skos:prefLabel "Mod" ;
+  skos:prefLabel "Mod" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "fmod" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Mul a onnx:Operator ;
+  skos:prefLabel "Mul" ;
+  skos:prefLabel "Mul" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "14"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:Multinomial a onnx:Operator ;
+  skos:prefLabel "Multinomial" ;
+  skos:prefLabel "Multinomial" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dtype" ; onnx:attrType "INT" ; onnx:default "6"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "seed" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "sample_size" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Neg a onnx:Operator ;
+  skos:prefLabel "Neg" ;
+  skos:prefLabel "Neg" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:NegativeLogLikelihoodLoss a onnx:Operator ;
+  skos:prefLabel "NegativeLogLikelihoodLoss" ;
+  skos:prefLabel "NegativeLogLikelihoodLoss" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "target" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "weight" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "loss" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "ignore_index" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:NonMaxSuppression a onnx:Operator ;
+  skos:prefLabel "NonMaxSuppression" ;
+  skos:prefLabel "NonMaxSuppression" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "boxes" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scores" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "max_output_boxes_per_class" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "iou_threshold" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "score_threshold" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "selected_indices" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "center_point_box" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:NonZero a onnx:Operator ;
+  skos:prefLabel "NonZero" ;
+  skos:prefLabel "NonZero" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Not a onnx:Operator ;
+  skos:prefLabel "Not" ;
+  skos:prefLabel "Not" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:OneHot a onnx:Operator ;
+  skos:prefLabel "OneHot" ;
+  skos:prefLabel "OneHot" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "indices" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "depth" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "values" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .
+
+onnx:Optional a onnx:Operator ;
+  skos:prefLabel "Optional" ;
+  skos:prefLabel "Optional" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "15"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "type" ; onnx:attrType "TYPE_PROTO" ; onnx:default "" ; ] ;
+  .
+
+onnx:OptionalGetElement a onnx:Operator ;
+  skos:prefLabel "OptionalGetElement" ;
+  skos:prefLabel "OptionalGetElement" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:OptionalHasElement a onnx:Operator ;
+  skos:prefLabel "OptionalHasElement" ;
+  skos:prefLabel "OptionalHasElement" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Or a onnx:Operator ;
+  skos:prefLabel "Or" ;
+  skos:prefLabel "Or" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "7"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:PRelu a onnx:Operator ;
+  skos:prefLabel "PRelu" ;
+  skos:prefLabel "PRelu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "16"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "slope" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Pad a onnx:Operator ;
+  skos:prefLabel "Pad" ;
+  skos:prefLabel "Pad" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "pads" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "constant_value" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Pow a onnx:Operator ;
+  skos:prefLabel "Pow" ;
+  skos:prefLabel "Pow" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "15"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Y" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  .
+
+onnx:QLinearConv a onnx:Operator ;
+  skos:prefLabel "QLinearConv" ;
+  skos:prefLabel "QLinearConv" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "10"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x_scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x_zero_point" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "w" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "w_scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "w_zero_point" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "y_scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "y_zero_point" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "group" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pads" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "strides" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dilations" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:QLinearMatMul a onnx:Operator ;
+  skos:prefLabel "QLinearMatMul" ;
+  skos:prefLabel "QLinearMatMul" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "21"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "a" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "a_scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "a_zero_point" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "b" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "b_scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "b_zero_point" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "y_scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "y_zero_point" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y" ; ] ;
+  .
+
+onnx:QuantizeLinear a onnx:Operator ;
+  skos:prefLabel "QuantizeLinear" ;
+  skos:prefLabel "QuantizeLinear" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "x" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "y_scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "y_zero_point" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "precision" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_dtype" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "block_size" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "saturate" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:RMSNormalization a onnx:Operator ;
+  skos:prefLabel "RMSNormalization" ;
+  skos:prefLabel "RMSNormalization" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "23"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scale" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "stash_type" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "epsilon" ; onnx:attrType "FLOAT" ; onnx:default "1e-05"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .
+
+onnx:RNN a onnx:Operator ;
+  skos:prefLabel "RNN" ;
+  skos:prefLabel "RNN" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "W" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "R" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "sequence_lens" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "initial_h" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y_h" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "clip" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "activation_beta" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "activation_alpha" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "hidden_size" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "layout" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:RandomNormal a onnx:Operator ;
+  skos:prefLabel "RandomNormal" ;
+  skos:prefLabel "RandomNormal" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dtype" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "seed" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scale" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "mean" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  .
+
+onnx:RandomNormalLike a onnx:Operator ;
+  skos:prefLabel "RandomNormalLike" ;
+  skos:prefLabel "RandomNormalLike" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dtype" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "seed" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scale" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "mean" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  .
+
+onnx:RandomUniform a onnx:Operator ;
+  skos:prefLabel "RandomUniform" ;
+  skos:prefLabel "RandomUniform" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "shape" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dtype" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "seed" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "high" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "low" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  .
+
+onnx:RandomUniformLike a onnx:Operator ;
+  skos:prefLabel "RandomUniformLike" ;
+  skos:prefLabel "RandomUniformLike" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dtype" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "seed" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "high" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "low" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  .
+
+onnx:Range a onnx:Operator ;
+  skos:prefLabel "Range" ;
+  skos:prefLabel "Range" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "start" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "limit" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "delta" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Reciprocal a onnx:Operator ;
+  skos:prefLabel "Reciprocal" ;
+  skos:prefLabel "Reciprocal" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:ReduceL1 a onnx:Operator ;
+  skos:prefLabel "ReduceL1" ;
+  skos:prefLabel "ReduceL1" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceL2 a onnx:Operator ;
+  skos:prefLabel "ReduceL2" ;
+  skos:prefLabel "ReduceL2" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceLogSum a onnx:Operator ;
+  skos:prefLabel "ReduceLogSum" ;
+  skos:prefLabel "ReduceLogSum" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceLogSumExp a onnx:Operator ;
+  skos:prefLabel "ReduceLogSumExp" ;
+  skos:prefLabel "ReduceLogSumExp" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceMax a onnx:Operator ;
+  skos:prefLabel "ReduceMax" ;
+  skos:prefLabel "ReduceMax" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceMean a onnx:Operator ;
+  skos:prefLabel "ReduceMean" ;
+  skos:prefLabel "ReduceMean" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceMin a onnx:Operator ;
+  skos:prefLabel "ReduceMin" ;
+  skos:prefLabel "ReduceMin" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceProd a onnx:Operator ;
+  skos:prefLabel "ReduceProd" ;
+  skos:prefLabel "ReduceProd" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceSum a onnx:Operator ;
+  skos:prefLabel "ReduceSum" ;
+  skos:prefLabel "ReduceSum" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:ReduceSumSquare a onnx:Operator ;
+  skos:prefLabel "ReduceSumSquare" ;
+  skos:prefLabel "ReduceSumSquare" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reduced" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "noop_with_empty_axes" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:RegexFullMatch a onnx:Operator ;
+  skos:prefLabel "RegexFullMatch" ;
+  skos:prefLabel "RegexFullMatch" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Relu a onnx:Operator ;
+  skos:prefLabel "Relu" ;
+  skos:prefLabel "Relu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "14"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Reshape a onnx:Operator ;
+  skos:prefLabel "Reshape" ;
+  skos:prefLabel "Reshape" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "shape" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "reshaped" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "allowzero" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Resize a onnx:Operator ;
+  skos:prefLabel "Resize" ;
+  skos:prefLabel "Resize" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "19"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "roi" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scales" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "sizes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axes" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "antialias" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "extrapolation_value" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "exclude_outside" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "cubic_coeff_a" ; onnx:attrType "FLOAT" ; onnx:default "-0.75"^^xsd:double ; ] ;
+  .
+
+onnx:ReverseSequence a onnx:Operator ;
+  skos:prefLabel "ReverseSequence" ;
+  skos:prefLabel "ReverseSequence" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "10"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "sequence_lens" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "batch_axis" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "time_axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:RoiAlign a onnx:Operator ;
+  skos:prefLabel "RoiAlign" ;
+  skos:prefLabel "RoiAlign" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "rois" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "batch_indices" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_height" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "sampling_ratio" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "output_width" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "spatial_scale" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  .
+
+onnx:RotaryEmbedding a onnx:Operator ;
+  skos:prefLabel "RotaryEmbedding" ;
+  skos:prefLabel "RotaryEmbedding" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "23"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "cos_cache" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "sin_cache" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "position_ids" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "num_heads" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "rotary_embedding_dim" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "interleaved" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Round a onnx:Operator ;
+  skos:prefLabel "Round" ;
+  skos:prefLabel "Round" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:STFT a onnx:Operator ;
+  skos:prefLabel "STFT" ;
+  skos:prefLabel "STFT" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "17"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "signal" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "frame_step" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "window" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "frame_length" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "onesided" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Scan a onnx:Operator ;
+  skos:prefLabel "Scan" ;
+  skos:prefLabel "Scan" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "initial_state_and_scan_inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "final_state_and_scan_outputs" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scan_input_axes" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scan_output_axes" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scan_output_directions" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scan_input_directions" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "num_scan_inputs" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "body" ; onnx:attrType "GRAPH" ; onnx:default "" ; ] ;
+  .
+
+onnx:Scatter a onnx:Operator ;
+  skos:prefLabel "Scatter" ;
+  skos:prefLabel "Scatter" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "indices" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "updates" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:ScatterElements a onnx:Operator ;
+  skos:prefLabel "ScatterElements" ;
+  skos:prefLabel "ScatterElements" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "indices" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "updates" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:ScatterND a onnx:Operator ;
+  skos:prefLabel "ScatterND" ;
+  skos:prefLabel "ScatterND" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "indices" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "updates" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Selu a onnx:Operator ;
+  skos:prefLabel "Selu" ;
+  skos:prefLabel "Selu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "gamma" ; onnx:attrType "FLOAT" ; onnx:default "1.05070102"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "1.67326319"^^xsd:double ; ] ;
+  .
+
+onnx:SequenceAt a onnx:Operator ;
+  skos:prefLabel "SequenceAt" ;
+  skos:prefLabel "SequenceAt" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_sequence" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "position" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "tensor" ; ] ;
+  .
+
+onnx:SequenceConstruct a onnx:Operator ;
+  skos:prefLabel "SequenceConstruct" ;
+  skos:prefLabel "SequenceConstruct" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output_sequence" ; ] ;
+  .
+
+onnx:SequenceEmpty a onnx:Operator ;
+  skos:prefLabel "SequenceEmpty" ;
+  skos:prefLabel "SequenceEmpty" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "dtype" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:SequenceErase a onnx:Operator ;
+  skos:prefLabel "SequenceErase" ;
+  skos:prefLabel "SequenceErase" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_sequence" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "position" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output_sequence" ; ] ;
+  .
+
+onnx:SequenceInsert a onnx:Operator ;
+  skos:prefLabel "SequenceInsert" ;
+  skos:prefLabel "SequenceInsert" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_sequence" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "tensor" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "position" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output_sequence" ; ] ;
+  .
+
+onnx:SequenceLength a onnx:Operator ;
+  skos:prefLabel "SequenceLength" ;
+  skos:prefLabel "SequenceLength" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_sequence" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "length" ; ] ;
+  .
+
+onnx:SequenceMap a onnx:Operator ;
+  skos:prefLabel "SequenceMap" ;
+  skos:prefLabel "SequenceMap" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "17"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input_sequence" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "additional_inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "out_sequence" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "body" ; onnx:attrType "GRAPH" ; onnx:default "" ; ] ;
+  .
+
+onnx:Shape a onnx:Operator ;
+  skos:prefLabel "Shape" ;
+  skos:prefLabel "Shape" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "shape" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "end" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "start" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Shrink a onnx:Operator ;
+  skos:prefLabel "Shrink" ;
+  skos:prefLabel "Shrink" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "9"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "bias" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "lambd" ; onnx:attrType "FLOAT" ; onnx:default "0.5"^^xsd:double ; ] ;
+  .
+
+onnx:Sigmoid a onnx:Operator ;
+  skos:prefLabel "Sigmoid" ;
+  skos:prefLabel "Sigmoid" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Sign a onnx:Operator ;
+  skos:prefLabel "Sign" ;
+  skos:prefLabel "Sign" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Sin a onnx:Operator ;
+  skos:prefLabel "Sin" ;
+  skos:prefLabel "Sin" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Sinh a onnx:Operator ;
+  skos:prefLabel "Sinh" ;
+  skos:prefLabel "Sinh" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Size a onnx:Operator ;
+  skos:prefLabel "Size" ;
+  skos:prefLabel "Size" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "size" ; ] ;
+  .
+
+onnx:Slice a onnx:Operator ;
+  skos:prefLabel "Slice" ;
+  skos:prefLabel "Slice" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "starts" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "ends" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "steps" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Softmax a onnx:Operator ;
+  skos:prefLabel "Softmax" ;
+  skos:prefLabel "Softmax" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .
+
+onnx:SoftmaxCrossEntropyLoss a onnx:Operator ;
+  skos:prefLabel "SoftmaxCrossEntropyLoss" ;
+  skos:prefLabel "SoftmaxCrossEntropyLoss" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scores" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "labels" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "weights" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "log_prob" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "ignore_index" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:Softplus a onnx:Operator ;
+  skos:prefLabel "Softplus" ;
+  skos:prefLabel "Softplus" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Softsign a onnx:Operator ;
+  skos:prefLabel "Softsign" ;
+  skos:prefLabel "Softsign" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:SpaceToDepth a onnx:Operator ;
+  skos:prefLabel "SpaceToDepth" ;
+  skos:prefLabel "SpaceToDepth" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "blocksize" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:Split a onnx:Operator ;
+  skos:prefLabel "Split" ;
+  skos:prefLabel "Split" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "18"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "split" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "outputs" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "num_outputs" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:SplitToSequence a onnx:Operator ;
+  skos:prefLabel "SplitToSequence" ;
+  skos:prefLabel "SplitToSequence" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "24"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "split" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output_sequence" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keepdims" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:Sqrt a onnx:Operator ;
+  skos:prefLabel "Sqrt" ;
+  skos:prefLabel "Sqrt" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Squeeze a onnx:Operator ;
+  skos:prefLabel "Squeeze" ;
+  skos:prefLabel "Squeeze" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "squeezed" ; ] ;
+  .
+
+onnx:StringConcat a onnx:Operator ;
+  skos:prefLabel "StringConcat" ;
+  skos:prefLabel "StringConcat" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Y" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  .
+
+onnx:StringNormalizer a onnx:Operator ;
+  skos:prefLabel "StringNormalizer" ;
+  skos:prefLabel "StringNormalizer" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "10"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "is_case_sensitive" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  .
+
+onnx:StringSplit a onnx:Operator ;
+  skos:prefLabel "StringSplit" ;
+  skos:prefLabel "StringSplit" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "20"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "maxsplit" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:Sub a onnx:Operator ;
+  skos:prefLabel "Sub" ;
+  skos:prefLabel "Sub" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "14"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:Sum a onnx:Operator ;
+  skos:prefLabel "Sum" ;
+  skos:prefLabel "Sum" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data_0" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "sum" ; ] ;
+  .
+
+onnx:Swish a onnx:Operator ;
+  skos:prefLabel "Swish" ;
+  skos:prefLabel "Swish" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "24"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  .
+
+onnx:Tan a onnx:Operator ;
+  skos:prefLabel "Tan" ;
+  skos:prefLabel "Tan" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Tanh a onnx:Operator ;
+  skos:prefLabel "Tanh" ;
+  skos:prefLabel "Tanh" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:TensorScatter a onnx:Operator ;
+  skos:prefLabel "TensorScatter" ;
+  skos:prefLabel "TensorScatter" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "24"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "past_cache" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "update" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "write_indices" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "present_cache" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-2"^^xsd:integer ; ] ;
+  .
+
+onnx:TfIdfVectorizer a onnx:Operator ;
+  skos:prefLabel "TfIdfVectorizer" ;
+  skos:prefLabel "TfIdfVectorizer" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "9"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "ngram_indexes" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "weights" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "ngram_counts" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "pool_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "max_skip_count" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "min_gram_length" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "max_gram_length" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  .
+
+onnx:ThresholdedRelu a onnx:Operator ;
+  skos:prefLabel "ThresholdedRelu" ;
+  skos:prefLabel "ThresholdedRelu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "22"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "1.0"^^xsd:double ; ] ;
+  .
+
+onnx:Tile a onnx:Operator ;
+  skos:prefLabel "Tile" ;
+  skos:prefLabel "Tile" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "13"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "repeats" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:TopK a onnx:Operator ;
+  skos:prefLabel "TopK" ;
+  skos:prefLabel "TopK" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "24"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "K" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Values" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Indices" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "sorted" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "largest" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  .
+
+onnx:Transpose a onnx:Operator ;
+  skos:prefLabel "Transpose" ;
+  skos:prefLabel "Transpose" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "transposed" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "perm" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Trilu a onnx:Operator ;
+  skos:prefLabel "Trilu" ;
+  skos:prefLabel "Trilu" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "14"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "input" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "k" ; onnx:required "false"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "upper" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Unique a onnx:Operator ;
+  skos:prefLabel "Unique" ;
+  skos:prefLabel "Unique" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "11"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "indices" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "inverse_indices" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "counts" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "axis" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "sorted" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:Unsqueeze a onnx:Operator ;
+  skos:prefLabel "Unsqueeze" ;
+  skos:prefLabel "Unsqueeze" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "25"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "data" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "axes" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "expanded" ; ] ;
+  .
+
+onnx:Upsample a onnx:Operator ;
+  skos:prefLabel "Upsample" ;
+  skos:prefLabel "Upsample" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "10"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "scales" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:Where a onnx:Operator ;
+  skos:prefLabel "Where" ;
+  skos:prefLabel "Where" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "16"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "condition" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Y" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "output" ; ] ;
+  .
+
+onnx:Xor a onnx:Operator ;
+  skos:prefLabel "Xor" ;
+  skos:prefLabel "Xor" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx> ;
+  onnx:sinceVersion "7"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "A" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "B" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "C" ; ] ;
+  .
+
+onnx:ArrayFeatureExtractor a onnx:Operator ;
+  skos:prefLabel "ArrayFeatureExtractor" ;
+  skos:prefLabel "ArrayFeatureExtractor" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Y" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  .
+
+onnx:Binarizer a onnx:Operator ;
+  skos:prefLabel "Binarizer" ;
+  skos:prefLabel "Binarizer" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "threshold" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  .
+
+onnx:CastMap a onnx:Operator ;
+  skos:prefLabel "CastMap" ;
+  skos:prefLabel "CastMap" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "max_map" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  .
+
+onnx:CategoryMapper a onnx:Operator ;
+  skos:prefLabel "CategoryMapper" ;
+  skos:prefLabel "CategoryMapper" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "default_int64" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "cats_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:DictVectorizer a onnx:Operator ;
+  skos:prefLabel "DictVectorizer" ;
+  skos:prefLabel "DictVectorizer" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "int64_vocabulary" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:FeatureVectorizer a onnx:Operator ;
+  skos:prefLabel "FeatureVectorizer" ;
+  skos:prefLabel "FeatureVectorizer" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "inputdimensions" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Imputer a onnx:Operator ;
+  skos:prefLabel "Imputer" ;
+  skos:prefLabel "Imputer" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "replaced_value_int64" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "imputed_value_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "replaced_value_float" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "imputed_value_floats" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  .
+
+onnx:LabelEncoder a onnx:Operator ;
+  skos:prefLabel "LabelEncoder" ;
+  skos:prefLabel "LabelEncoder" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "4"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "default_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "default_int64" ; onnx:attrType "INT" ; onnx:default "-1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "default_float" ; onnx:attrType "FLOAT" ; onnx:default "-0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "values_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "values_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keys_floats" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "values_floats" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keys_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "keys_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  .
+
+onnx:LinearClassifier a onnx:Operator ;
+  skos:prefLabel "LinearClassifier" ;
+  skos:prefLabel "LinearClassifier" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "classlabels_ints" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "multi_class" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "intercepts" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "coefficients" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  .
+
+onnx:LinearRegressor a onnx:Operator ;
+  skos:prefLabel "LinearRegressor" ;
+  skos:prefLabel "LinearRegressor" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "targets" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "intercepts" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "coefficients" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Normalizer a onnx:Operator ;
+  skos:prefLabel "Normalizer" ;
+  skos:prefLabel "Normalizer" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  .
+
+onnx:OneHotEncoder a onnx:Operator ;
+  skos:prefLabel "OneHotEncoder" ;
+  skos:prefLabel "OneHotEncoder" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "zeros" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "cats_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:SVMClassifier a onnx:Operator ;
+  skos:prefLabel "SVMClassifier" ;
+  skos:prefLabel "SVMClassifier" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "classlabels_ints" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "rho" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "prob_b" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "coefficients" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "prob_a" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "support_vectors" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "vectors_per_class" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_params" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  .
+
+onnx:SVMRegressor a onnx:Operator ;
+  skos:prefLabel "SVMRegressor" ;
+  skos:prefLabel "SVMRegressor" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "rho" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "coefficients" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "n_supports" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "one_class" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "support_vectors" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "kernel_params" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Scaler a onnx:Operator ;
+  skos:prefLabel "Scaler" ;
+  skos:prefLabel "Scaler" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "scale" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "offset" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  .
+
+onnx:TreeEnsemble a onnx:Operator ;
+  skos:prefLabel "TreeEnsemble" ;
+  skos:prefLabel "TreeEnsemble" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "5"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "aggregate_function" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "post_transform" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "tree_roots" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_hitrates" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_missing_value_tracks_true" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_modes" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "leaf_weights" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "leaf_targetids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_falsenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "n_targets" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_trueleafs" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_featureids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_splits" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_falseleafs" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_truenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "membership_values" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  .
+
+onnx:TreeEnsembleClassifier a onnx:Operator ;
+  skos:prefLabel "TreeEnsembleClassifier" ;
+  skos:prefLabel "TreeEnsembleClassifier" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "5"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "base_values_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "classlabels_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_weights_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_weights" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_ids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_nodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_treeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_featureids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_values_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_falsenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_hitrates" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "base_values" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_missing_value_tracks_true" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_values" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_hitrates_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_truenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_treeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "class_nodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:TreeEnsembleRegressor a onnx:Operator ;
+  skos:prefLabel "TreeEnsembleRegressor" ;
+  skos:prefLabel "TreeEnsembleRegressor" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "5"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "base_values_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "n_targets" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "target_weights_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "target_ids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_nodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_treeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_featureids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "target_nodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_values_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "target_weights" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_falsenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_hitrates" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "base_values" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_missing_value_tracks_true" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_values" ; onnx:attrType "FLOATS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_hitrates_as_tensor" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_truenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "target_treeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:ZipMap a onnx:Operator ;
+  skos:prefLabel "ZipMap" ;
+  skos:prefLabel "ZipMap" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Z" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "classlabels_int64s" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  .
+
+onnx:Adagrad a onnx:Operator ;
+  skos:prefLabel "Adagrad" ;
+  skos:prefLabel "Adagrad" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.preview.training> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "R" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "T" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "outputs" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "norm_coefficient" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "decay_factor" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "epsilon" ; onnx:attrType "FLOAT" ; onnx:default "1e-06"^^xsd:double ; ] ;
+  .
+
+onnx:Adam a onnx:Operator ;
+  skos:prefLabel "Adam" ;
+  skos:prefLabel "Adam" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.preview.training> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "R" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "T" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "outputs" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "epsilon" ; onnx:attrType "FLOAT" ; onnx:default "1e-06"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "norm_coefficient_post" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "norm_coefficient" ; onnx:attrType "FLOAT" ; onnx:default "0.0"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "beta" ; onnx:attrType "FLOAT" ; onnx:default "0.999"^^xsd:double ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "0.9"^^xsd:double ; ] ;
+  .
+
+onnx:Gradient a onnx:Operator ;
+  skos:prefLabel "Gradient" ;
+  skos:prefLabel "Gradient" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.preview.training> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "Inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Outputs" ; ] ;
+  .
+
+onnx:Momentum a onnx:Operator ;
+  skos:prefLabel "Momentum" ;
+  skos:prefLabel "Momentum" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.preview.training> ;
+  onnx:sinceVersion "1"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "R" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "T" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "inputs" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "outputs" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "norm_coefficient" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "beta" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "alpha" ; onnx:attrType "FLOAT" ; onnx:default "" ; ] ;
+  .
+

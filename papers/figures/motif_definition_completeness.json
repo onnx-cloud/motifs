@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Motif Definition Completeness",
+  "description": "Percentage of motifs with complete property definitions",
+  "data": {
+    "values": [
+      {
+        "status": "Complete",
+        "count": "253"
+      }
+    ]
+  },
+  "width": 400,
+  "height": 300,
+  "mark": {
+    "type": "arc",
+    "innerRadius": 60
+  },
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "status",
+      "type": "nominal",
+      "scale": {
+        "motif": [
+          "Complete",
+          "Incomplete"
+        ],
+        "range": [
+          "#2ecc71",
+          "#e74c3c"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "status",
+        "type": "nominal"
+      },
+      {
+        "field": "count",
+        "type": "quantitative"
+      }
+    ]
+  }
+}

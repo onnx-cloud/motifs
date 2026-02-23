@@ -1,0 +1,75 @@
+\OnePageSectionStart
+\section{Formal Semantics and Graph Theory}
+
+\subsection{Denotational Semantics of Typed Tensors}
+A typed tensor is interpreted as a pair: value and semantic grounding.
+
+\[ \llbracket \text{Tensor}\langle D, S, \Sigma \rangle \rrbracket = (v, \sigma) \]
+
+where $v \in \mathbb{R}^{D}$ (the value) and $\sigma \in \text{SemanticSpace}$ (the meaning).
+
+\textbf{Semantic spaces}:
+\begin{itemize}
+  \item $\text{Atomic}: \emptyset$ (no semantic constraint)
+  \item $\text{Measurement}: (\text{PhysicalQuantity}, \text{Unit}, \text{Frame}) \times [a, b]$ (grounded in physical reality with bounds)
+  \item $\text{Distribution}: (\text{Entity}, \text{StochasticProcess}, \text{Support})$ (probabilistic model of an entity)
+  \item $\text{Enum}: \text{ConceptScheme} \times \mathbb{N}$ (symbolic vocabulary with cardinality)
+  \item $\text{Structured}: \prod_i \text{SemanticSpace}_i$ (product of semantic spaces)
+\end{itemize}
+
+A morph $M$ is a morphism that preserves semantic structure:
+\[ P: (v_1, \sigma_1) \times \cdots \times (v_n, \sigma_n) \to (v'_1, \sigma'_1) \times \cdots \times (v'_m, \sigma'_m) \]
+
+\textbf{Semantic preservation constraint}: $P$ must satisfy $\sigma'_j \sqsubseteq \sigma_j$ (semantic subsumption) or involve an explicit type bridge.
+
+\subsection{Graph-Theoretic Model of Computation}
+A computation graph $G = (N, E, \tau)$ where:
+\begin{itemize}
+  \item $N$ is a set of morph nodes
+  \item $E \subseteq N \times N$ are directed edges (data flow)
+  \item $\tau: E \to \text{Type}$ assigns a type to each edge
+\end{itemize}
+
+The graph must satisfy:
+\begin{enumerate}
+  \item \textbf{Well-typedness}: for each edge $(u, v) \in E$, output type of $u$ is compatible with input type of $v$
+  \item \textbf{Acyclicity}: no cycles (data flow is a DAG)
+  \item \textbf{Semantic closure}: semantic types form a lattice under subsumption; each edge type is a lattice element
+\end{enumerate}
+
+\subsection{Three Orthogonal Graph Layers}
+
+A statically typed system actually operates over three intertwined graphs:
+
+\paragraph{1. Computation Graph}
+The data flow DAG: $G_{\text{comp}} = (N_{\text{prim}}, E_{\text{data}})$ where edges carry tensor types. This is what executes at runtime.
+
+\paragraph{2. Type Graph}
+The constraint system over types: $G_{\text{type}} = (N_{\text{type}}, E_{\text{subtype}})$ where nodes are types and edges are subsumption relations. The system checks that every data edge respects type constraints.
+
+\paragraph{3. Semantic Graph}
+The RDF/ontology layer: $G_{\text{sem}} = (N_{\text{iri}}, E_{\text{predicate}})$ where nodes are IRIs (physical quantities, knowledge concepts, stochastic processes) and edges are RDF predicates. This ground-truth graph describes what meanings the computation is over.
+
+\textbf{Invariant}: For every edge $e \in E_{\text{data}}$ with type $\tau(e)$, the semantics of $\tau(e)$ must resolve via $G_{\text{sem}}$. If $\tau(e) = \text{Measurement}\{\text{velocity}, \text{unit:m/s}\}$, then $\text{velocity}$ and $\text{m/s}$ must be IRIs resolvable in $G_{\text{sem}}$.
+
+\subsection{The Fabric of Reality, Knowledge, and Computation}
+
+These three graphs form a unified fabric:
+\begin{itemize}
+  \item **Reality Fabric** ($G_{\text{sem}}$ layer): the ontology of physical quantities, measured by sensors
+  \item **Knowledge Fabric** ($G_{\text{sem}}$ layer): the vocabulary of symbols and concepts (tokens, entities, relations)
+  \item **Computation Fabric** ($G_{\text{comp}}$ layer): the neural network DAG that transforms observations
+  \item **Type Fabric** ($G_{\text{type}}$ layer): the constraints ensuring safe composition
+\end{itemize}
+
+These fabrics are not separate---they are woven together. A Measurement tensor carries both:
+- A value (computation fabric): the pixel values from a camera
+- A semantic IRI (reality fabric): the physics quantity ``radiance'' with unit ``sRGB''
+
+A Distribution tensor carries:
+- A value (computation fabric): probabilities summing to 1
+- A semantic IRI (knowledge fabric): the decision space it models
+
+When morphs compose, all three fabrics must align. This is why semantic typing is powerful: it enforces alignment across all three simultaneously.
+
+\OnePageSectionEnd

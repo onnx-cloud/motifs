@@ -1,0 +1,24 @@
+# Figure: ONNX Mapping Coverage
+# Distribution of motifs that have a canonical ONNX mapping (skos:exactMatch)
+
+title: ONNX Mapping Coverage
+description: Fraction of motifs with canonical ONNX mapping
+
+query: ./sparql/charts/mapping_summary.sparql
+
+vega:
+  width: 400
+  height: 300
+  mark:
+    type: arc
+    innerRadius: 50
+  encoding:
+    theta:
+      field: count
+      type: quantitative
+    color:
+      field: status
+      type: nominal
+    tooltip:
+      - field: status
+      - field: count

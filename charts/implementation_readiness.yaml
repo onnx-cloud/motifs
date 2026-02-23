@@ -1,0 +1,16 @@
+# Figure: Implementation Readiness
+# Percentage of motifs that have actual .fuse or .py examples
+
+title: Implementation Readiness
+description: Ratio of motifs with concrete code examples vs. theoretical specifications
+
+query: ./sparql/charts/implementation_readiness.sparql
+
+vega:
+  width: 400
+  height: 300
+  mark: {type: "arc", innerRadius: 70}
+  encoding:
+    theta: {field: "count", type: "quantitative"}
+    color: {field: "status", type: "nominal", scale: {range: ["#4682b4", "#ced4da"]}}
+    tooltip: [{field: "status"}, {field: "count"}]

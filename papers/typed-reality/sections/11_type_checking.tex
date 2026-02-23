@@ -1,0 +1,20 @@
+\OnePageSectionStart
+\section{Type Checking and Guarantees}
+
+\subsection{Compile-Time Checks}
+The type checker validates:
+\begin{enumerate}
+  \item \textbf{Shape Unification}: symbols refined, ranges narrowed; no shape conflict reaches runtime.
+  \item \textbf{DType Compatibility}: no implicit numeric casts; morphs declare exact DType.
+  \item \textbf{Semantic Coherence}: Measurement units match; Distribution-aware ops are applied only to Distribution types; Enum vocabularies align.
+\end{enumerate}
+Rejects ill-typed programs statically. Where checks cannot be discharged (e.g., dynamic sequence length), emits explicit runtime Assert.
+
+\subsection{Formal Properties}
+\begin{itemize}
+  \item \textbf{Progress}: \emph{Well-typed graphs execute without shape or DType errors.} (Proof: by induction over type check, every morph's output matches successor's input.)
+  \item \textbf{Semantic Preservation}: \emph{Tensor semantics flow through morphs.} Measurement frame is preserved; Distribution normalization is enforced; Enum bounds are maintained. No implicit unit conversion or categorical collapse.
+  \item \textbf{Scope}: Types ensure internal compositional correctness, not physical ground truth. A sensor may malfunction, but the type system ensures the erroneous data is processed consistently and fails explicitly if constraints are violated.
+\end{itemize}
+
+\OnePageSectionEnd

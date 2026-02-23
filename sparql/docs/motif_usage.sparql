@@ -1,0 +1,26 @@
+# Use cases that employ a specific motif (optimized)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?useCase ?useCaseLabel ?domain ?domainLabel ?isPrimary
+WHERE {
+  # Expect ?targetMotif to be bound
+  {
+    ?useCase a motif:UseCase ;
+      skos:prefLabel ?useCaseLabel ;
+      motif:primaryMotif ?targetMotif .
+    BIND(true AS ?isPrimary)
+  }
+  UNION
+  {
+    ?useCase a motif:UseCase ;
+      skos:prefLabel ?useCaseLabel ;
+      motif:usesMotif ?targetMotif .
+    BIND(false AS ?isPrimary)
+  }
+  OPTIONAL {
+    ?useCase motif:hasDomain ?domain .
+    ?domain skos:prefLabel ?domainLabel .
+  }
+}
+ORDER BY DESC(?isPrimary) ?useCaseLabel

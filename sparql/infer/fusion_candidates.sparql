@@ -1,0 +1,20 @@
+# Infer fusion candidates when containers (models or motifs) use Attention and Linear motifs (optionally LayerNorm)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+CONSTRUCT {
+  ?container a ?containerType .
+  ?container motif:hasFusionCandidate ?cand .
+  ?cand a motif:FusionCandidate ;
+        motif:pattern "Attention+Linear" ;
+        motif:motifA motif:Attention ;
+        motif:motifB motif:Linear ;
+        skos:prefLabel ?containerLabel .
+}
+WHERE {
+  # conservative detection: container uses Attention and at least one Linear
+  ?container motif:usesMotif motif:Attention , motif:Linear .
+  OPTIONAL { ?container rdf:type ?containerType }
+  OPTIONAL { ?container skos:prefLabel ?containerLabel }
+}

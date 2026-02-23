@@ -1,0 +1,57 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-schema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Neuro-Symbolic Motifs
+# Purpose: Integration of neural and symbolic methods (KGs, differentiable logic)
+#################
+
+motif: a owl:Ontology ;
+  skos:prefLabel "Neuro-Symbolic Motifs Ontology" ;
+  skos:definition "Motif Models authors" ;
+  skos:definition "2026-01-29"^^xsd:date ;
+  skos:definition "Motifs for combining learned representations with symbolic reasoning." .
+
+motif:NeuroSymbolic a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Neuro-Symbolic"@en ;
+  skos:definition "Patterns combining neural models and symbolic knowledge or logic." .
+
+motif:KnowledgeGraphLookup a motif:Motif ;
+  skos:prefLabel "Knowledge Graph Lookup"@en ;
+  motif:hasCategory motif:NeuroSymbolic ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:DifferentiableLogic a motif:Motif ;
+  skos:prefLabel "Differentiable Logic"@en ;
+  motif:hasCategory motif:NeuroSymbolic ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:SymbolicPlanner a motif:Motif ;
+  skos:prefLabel "Symbolic Planner"@en ;
+  motif:hasCategory motif:NeuroSymbolic ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:NeuralCompiler a motif:Motif ;
+  skos:prefLabel "Neural Program Synthesis"@en ;
+  motif:hasCategory motif:NeuroSymbolic ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:ConstraintSolver a motif:Motif ;
+  skos:prefLabel "Constraint Solver"@en ;
+  motif:hasCategory motif:NeuroSymbolic ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:NeuralRuleInduction a motif:Motif ;
+  skos:prefLabel "Neural Rule Induction"@en ;
+  motif:hasCategory motif:NeuroSymbolic ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .

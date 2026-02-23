@@ -1,0 +1,20 @@
+{% include 'wiki/header.mustache' %}
+
+<div class="container">
+  <h1>{{ page.title | default('Categories') }}</h1>
+  <p class="meta">{{ page.description | default('Browse motif categories and related information.') }}</p>
+
+  <div class="grid">
+    {# Expecting context variable `categories` to be a list of {label, count, slug} #}
+    {% for c in categories|default([]) %}
+    <article class="card">
+      <h3><a href="{{ c.slug }}/index.html">{{ c.label }}</a></h3>
+      <div class="meta">{{ c.count | default(0) }} motifs</div>
+    </article>
+    {% else %}
+    <div class="card">No categories available (data not provided)</div>
+    {% endfor %}
+  </div>
+</div>
+
+{% include 'wiki/footer.mustache' %}

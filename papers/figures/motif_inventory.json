@@ -1,0 +1,2754 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Motif Inventory",
+  "description": "Complete listing of all motifs with signatures and categories",
+  "data": {
+    "values": [
+      {
+        "motif": "ActivationPatching",
+        "motif_uri": "https://ns.onnx.cloud/xai#ActivationPatching",
+        "Name": "Activation Patching",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "ActivationSparsify",
+        "motif_uri": "https://ns.onnx.cloud/motif#ActivationSparsify",
+        "Name": "Activation Sparsification",
+        "Signature": null,
+        "category": "Compression",
+        "category_uri": "https://ns.onnx.cloud/motif#Compression",
+        "Category": "Compression / Efficiency"
+      },
+      {
+        "motif": "AdaptiveGain",
+        "motif_uri": "https://ns.onnx.cloud/motif#AdaptiveGain",
+        "Name": "Adaptive Gain",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "Add",
+        "motif_uri": "https://ns.onnx.cloud/motif#Add",
+        "Name": "Add",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Add",
+        "motif_uri": "https://ns.onnx.cloud/motif#Add",
+        "Name": "Add",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "AdversarialTraining",
+        "motif_uri": "https://ns.onnx.cloud/motif#AdversarialTraining",
+        "Name": "Adversarial Training",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "AllGather",
+        "motif_uri": "https://ns.onnx.cloud/motif#AllGather",
+        "Name": "AllGather",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "AllReduce",
+        "motif_uri": "https://ns.onnx.cloud/motif#AllReduce",
+        "Name": "AllReduce",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "AsynchronousDMA",
+        "motif_uri": "https://ns.onnx.cloud/motif#AsynchronousDMA",
+        "Name": "Asynchronous DMA",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Hardware / Execution"
+      },
+      {
+        "motif": "AsynchronousDMA",
+        "motif_uri": "https://ns.onnx.cloud/motif#AsynchronousDMA",
+        "Name": "Asynchronous DMA",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Runtime / Execution"
+      },
+      {
+        "motif": "AttentionResidualMemory",
+        "motif_uri": "https://ns.onnx.cloud/motif#AttentionResidualMemory",
+        "Name": "Attention + Residual + Memory",
+        "Signature": "Sig_many_to_many",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_many",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "Attention",
+        "motif_uri": "https://ns.onnx.cloud/motif#Attention",
+        "Name": "Attention / Soft",
+        "Signature": "Sig_many_to_many",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_many",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "AttentionMemory",
+        "motif_uri": "https://ns.onnx.cloud/motif#AttentionMemory",
+        "Name": "Attention Memory",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "AttentionResidual",
+        "motif_uri": "https://ns.onnx.cloud/motif#AttentionResidual",
+        "Name": "Attention Residual",
+        "Signature": "Sig_many_to_many",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_many",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "AttentionRollout",
+        "motif_uri": "https://ns.onnx.cloud/xai#AttentionRollout",
+        "Name": "Attention Rollout",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "motif_Barrier",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_Barrier",
+        "Name": "Barrier",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "BeamSearch",
+        "motif_uri": "https://ns.onnx.cloud/cognition#BeamSearch",
+        "Name": "Beam Search",
+        "Signature": "Sig_1_to_K",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_K",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "BenchmarkSuite",
+        "motif_uri": "https://ns.onnx.cloud/motif#BenchmarkSuite",
+        "Name": "Benchmark Suite",
+        "Signature": null,
+        "category": "Evaluation",
+        "category_uri": "https://ns.onnx.cloud/motif#Evaluation",
+        "Category": "Evaluation / Metrics"
+      },
+      {
+        "motif": "BlockSparseMatMul",
+        "motif_uri": "https://ns.onnx.cloud/motif#BlockSparseMatMul",
+        "Name": "Block-Sparse MatMul",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "Break",
+        "motif_uri": "https://ns.onnx.cloud/motif#Break",
+        "Name": "Break",
+        "Signature": "Sig_1_to_0_or_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_0_or_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "Broadcast",
+        "motif_uri": "https://ns.onnx.cloud/motif#Broadcast",
+        "Name": "Broadcast",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Broadcast",
+        "motif_uri": "https://ns.onnx.cloud/motif#Broadcast",
+        "Name": "Broadcast",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "BroadcastMap",
+        "motif_uri": "https://ns.onnx.cloud/motif#BroadcastMap",
+        "Name": "Broadcast Map",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "BroadcastedResidual",
+        "motif_uri": "https://ns.onnx.cloud/motif#BroadcastedResidual",
+        "Name": "Broadcasted Residual",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "CacheEvict",
+        "motif_uri": "https://ns.onnx.cloud/motif#CacheEvict",
+        "Name": "Cache Evict",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Caching",
+        "category_uri": "https://ns.onnx.cloud/motif#Caching",
+        "Category": "Caching / Incremental"
+      },
+      {
+        "motif": "Calibration",
+        "motif_uri": "https://ns.onnx.cloud/motif#Calibration",
+        "Name": "Calibration",
+        "Signature": null,
+        "category": "Evaluation",
+        "category_uri": "https://ns.onnx.cloud/motif#Evaluation",
+        "Category": "Evaluation / Metrics"
+      },
+      {
+        "motif": "Call",
+        "motif_uri": "https://ns.onnx.cloud/motif#Call",
+        "Name": "Call",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "CausalProbe",
+        "motif_uri": "https://ns.onnx.cloud/xai#CausalProbe",
+        "Name": "Causal Probe",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "CertifiedDefense",
+        "motif_uri": "https://ns.onnx.cloud/motif#CertifiedDefense",
+        "Name": "Certified Defense",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "ChainOfThought",
+        "motif_uri": "https://ns.onnx.cloud/cognition#ChainOfThought",
+        "Name": "Chain-of-Thought",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "Checkpoint",
+        "motif_uri": "https://ns.onnx.cloud/motif#Checkpoint",
+        "Name": "Checkpoint",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Speculative",
+        "category_uri": "https://ns.onnx.cloud/motif#Speculative",
+        "Category": "Speculative / Predictive"
+      },
+      {
+        "motif": "CircuitAnalysis",
+        "motif_uri": "https://ns.onnx.cloud/xai#CircuitAnalysis",
+        "Name": "Circuit Analysis",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "CircularBuffer",
+        "motif_uri": "https://ns.onnx.cloud/motif#CircularBuffer",
+        "Name": "Circular Buffer",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "Concat",
+        "motif_uri": "https://ns.onnx.cloud/motif#Concat",
+        "Name": "Concat",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "ConceptBottleneck",
+        "motif_uri": "https://ns.onnx.cloud/xai#ConceptBottleneck",
+        "Name": "Concept Bottleneck",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "ConceptWhitening",
+        "motif_uri": "https://ns.onnx.cloud/xai#ConceptWhitening",
+        "Name": "Concept Whitening",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "ConditionalMerge",
+        "motif_uri": "https://ns.onnx.cloud/motif#ConditionalMerge",
+        "Name": "Conditional Merge",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "ConditionalScan",
+        "motif_uri": "https://ns.onnx.cloud/motif#ConditionalScan",
+        "Name": "Conditional Scan",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "ConditionalSubgraph",
+        "motif_uri": "https://ns.onnx.cloud/motif#ConditionalSubgraph",
+        "Name": "Conditional Subgraph",
+        "Signature": "Sig_1_to_N_optional",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N_optional",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "ConstitutionalCritique",
+        "motif_uri": "https://ns.onnx.cloud/motif#ConstitutionalCritique",
+        "Name": "Constitutional Critique",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "ConstitutionalRevision",
+        "motif_uri": "https://ns.onnx.cloud/motif#ConstitutionalRevision",
+        "Name": "Constitutional Revision",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "ConstraintSolver",
+        "motif_uri": "https://ns.onnx.cloud/motif#ConstraintSolver",
+        "Name": "Constraint Solver",
+        "Signature": null,
+        "category": "NeuroSymbolic",
+        "category_uri": "https://ns.onnx.cloud/motif#NeuroSymbolic",
+        "Category": "Neuro-Symbolic"
+      },
+      {
+        "motif": "Continue",
+        "motif_uri": "https://ns.onnx.cloud/motif#Continue",
+        "Name": "Continue",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "ContrastiveExplanation",
+        "motif_uri": "https://ns.onnx.cloud/xai#ContrastiveExplanation",
+        "Name": "Contrastive Explanation",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "CounterfactualExplanation",
+        "motif_uri": "https://ns.onnx.cloud/xai#CounterfactualExplanation",
+        "Name": "Counterfactual Explanation",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "CrossModalAttention",
+        "motif_uri": "https://ns.onnx.cloud/motif#CrossModalAttention",
+        "Name": "Cross-Modal Attention",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "MultiModal",
+        "category_uri": "https://ns.onnx.cloud/motif#MultiModal",
+        "Category": "Multi-Modal / Fusion"
+      },
+      {
+        "motif": "Augment",
+        "motif_uri": "https://ns.onnx.cloud/motif#Augment",
+        "Name": "Data Augmentation",
+        "Signature": null,
+        "category": "Data",
+        "category_uri": "https://ns.onnx.cloud/motif#Data",
+        "Category": "Data / Preprocessing"
+      },
+      {
+        "motif": "DeadZone",
+        "motif_uri": "https://ns.onnx.cloud/motif#DeadZone",
+        "Name": "Dead Zone",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "Delay",
+        "motif_uri": "https://ns.onnx.cloud/motif#Delay",
+        "Name": "Delay (Z\u207b\u00b9)",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Experimental",
+        "category_uri": "https://ns.onnx.cloud/motif#Experimental",
+        "Category": "Experimental / Future"
+      },
+      {
+        "motif": "DerivativeControl",
+        "motif_uri": "https://ns.onnx.cloud/motif#DerivativeControl",
+        "Name": "Derivative Control (D)",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "DifferentiableLogic",
+        "motif_uri": "https://ns.onnx.cloud/motif#DifferentiableLogic",
+        "Name": "Differentiable Logic",
+        "Signature": null,
+        "category": "NeuroSymbolic",
+        "category_uri": "https://ns.onnx.cloud/motif#NeuroSymbolic",
+        "Category": "Neuro-Symbolic"
+      },
+      {
+        "motif": "DifferentiableQueue",
+        "motif_uri": "https://ns.onnx.cloud/motif#DifferentiableQueue",
+        "Name": "Differentiable Queue",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "DigitalTwin",
+        "motif_uri": "https://ns.onnx.cloud/motif#DigitalTwin",
+        "Name": "Digital Twin",
+        "Signature": null,
+        "category": "Simulation",
+        "category_uri": "https://ns.onnx.cloud/motif#Simulation",
+        "Category": "Simulation / Scientific"
+      },
+      {
+        "motif": "DigitalTwin",
+        "motif_uri": "https://ns.onnx.cloud/motif#DigitalTwin",
+        "Name": "Digital Twin Simulation",
+        "Signature": null,
+        "category": "Simulation",
+        "category_uri": "https://ns.onnx.cloud/motif#Simulation",
+        "Category": "Simulation / Scientific"
+      },
+      {
+        "motif": "DPO",
+        "motif_uri": "https://ns.onnx.cloud/motif#DPO",
+        "Name": "Direct Preference Optimization",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "Div",
+        "motif_uri": "https://ns.onnx.cloud/motif#Div",
+        "Name": "Div",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Div",
+        "motif_uri": "https://ns.onnx.cloud/motif#Div",
+        "Name": "Div",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "DraftVerify",
+        "motif_uri": "https://ns.onnx.cloud/motif#DraftVerify",
+        "Name": "Draft-Verify",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Speculative",
+        "category_uri": "https://ns.onnx.cloud/motif#Speculative",
+        "Category": "Speculative / Predictive"
+      },
+      {
+        "motif": "DynamicBatching",
+        "motif_uri": "https://ns.onnx.cloud/motif#DynamicBatching",
+        "Name": "Dynamic Batching",
+        "Signature": null,
+        "category": "Data",
+        "category_uri": "https://ns.onnx.cloud/motif#Data",
+        "Category": "Data / Preprocessing"
+      },
+      {
+        "motif": "DynamicForkJoin",
+        "motif_uri": "https://ns.onnx.cloud/motif#DynamicForkJoin",
+        "Name": "Dynamic Fork-Join",
+        "Signature": "Sig_1_to_N_opt_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N_opt_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "DynamicLoopUnroll",
+        "motif_uri": "https://ns.onnx.cloud/motif#DynamicLoopUnroll",
+        "Name": "Dynamic Loop Unroll",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "EagerEval",
+        "motif_uri": "https://ns.onnx.cloud/motif#EagerEval",
+        "Name": "Eager Evaluation",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Speculative",
+        "category_uri": "https://ns.onnx.cloud/motif#Speculative",
+        "Category": "Speculative / Predictive"
+      },
+      {
+        "motif": "EarlyExit",
+        "motif_uri": "https://ns.onnx.cloud/motif#EarlyExit",
+        "Name": "Early Exit",
+        "Signature": "Sig_1_to_0_or_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_0_or_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "EarlyFusion",
+        "motif_uri": "https://ns.onnx.cloud/motif#EarlyFusion",
+        "Name": "Early Fusion",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "MultiModal",
+        "category_uri": "https://ns.onnx.cloud/motif#MultiModal",
+        "Category": "Multi-Modal / Fusion"
+      },
+      {
+        "motif": "EmbeddingLookup",
+        "motif_uri": "https://ns.onnx.cloud/motif#EmbeddingLookup",
+        "Name": "Embedding Lookup",
+        "Signature": "Sig_idx_to_vec",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_idx_to_vec",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "EphemeralState",
+        "motif_uri": "https://ns.onnx.cloud/motif#EphemeralState",
+        "Name": "Ephemeral State",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "EventTrigger",
+        "motif_uri": "https://ns.onnx.cloud/motif#EventTrigger",
+        "Name": "Event Trigger",
+        "Signature": null,
+        "category": "Temporal",
+        "category_uri": "https://ns.onnx.cloud/motif#Temporal",
+        "Category": "Temporal / Streaming"
+      },
+      {
+        "motif": "ExpandDims",
+        "motif_uri": "https://ns.onnx.cloud/motif#ExpandDims",
+        "Name": "ExpandDims",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "ExpandDims",
+        "motif_uri": "https://ns.onnx.cloud/motif#ExpandDims",
+        "Name": "ExpandDims",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "ExtremumSeeking",
+        "motif_uri": "https://ns.onnx.cloud/motif#ExtremumSeeking",
+        "Name": "Extremum Seeking",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "Fanin",
+        "motif_uri": "https://ns.onnx.cloud/motif#Fanin",
+        "Name": "Fan-in",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "Fanout",
+        "motif_uri": "https://ns.onnx.cloud/motif#Fanout",
+        "Name": "Fanout",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "FeedbackLoop",
+        "motif_uri": "https://ns.onnx.cloud/motif#FeedbackLoop",
+        "Name": "Feedback Loop",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "FlashAttention",
+        "motif_uri": "https://ns.onnx.cloud/motif#FlashAttention",
+        "Name": "Flash Attention",
+        "Signature": "Sig_3_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_3_to_1",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "Flatten",
+        "motif_uri": "https://ns.onnx.cloud/motif#Flatten",
+        "Name": "Flatten",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "FlattenResidual",
+        "motif_uri": "https://ns.onnx.cloud/motif#FlattenResidual",
+        "Name": "Flatten Residual",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "For",
+        "motif_uri": "https://ns.onnx.cloud/motif#For",
+        "Name": "For",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "Fork",
+        "motif_uri": "https://ns.onnx.cloud/motif#Fork",
+        "Name": "Fork",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "Fork",
+        "motif_uri": "https://ns.onnx.cloud/examples##Fork",
+        "Name": "Fork",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "ForkJoin",
+        "motif_uri": "https://ns.onnx.cloud/motif#ForkJoin",
+        "Name": "Fork-Join",
+        "Signature": "Sig_1_to_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N_to_1",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "FunctionTemplate",
+        "motif_uri": "https://ns.onnx.cloud/motif#FunctionTemplate",
+        "Name": "Function Template",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "Gather",
+        "motif_uri": "https://ns.onnx.cloud/motif#Gather",
+        "Name": "Gather",
+        "Signature": "Sig_many_to_many",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_many",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "motif_GenerateDispatch",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_GenerateDispatch",
+        "Name": "Generate / Dispatch",
+        "Signature": "Sig_0_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_0_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "GradCAM",
+        "motif_uri": "https://ns.onnx.cloud/xai#GradCAM",
+        "Name": "Grad-CAM",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "GradientAttribution",
+        "motif_uri": "https://ns.onnx.cloud/xai#GradientAttribution",
+        "Name": "Gradient Attribution",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "GraphOfGraphs",
+        "motif_uri": "https://ns.onnx.cloud/motif#GraphOfGraphs",
+        "Name": "Graph-of-Graphs",
+        "Signature": "Sig_N_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_N",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "GroundedGeneration",
+        "motif_uri": "https://ns.onnx.cloud/motif#GroundedGeneration",
+        "Name": "Grounded Generation",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "GuardedOps",
+        "motif_uri": "https://ns.onnx.cloud/motif#GuardedOps",
+        "Name": "Guarded Ops",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "HBMStreaming",
+        "motif_uri": "https://ns.onnx.cloud/motif#HBMStreaming",
+        "Name": "HBM Streaming",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Hardware / Execution"
+      },
+      {
+        "motif": "HBMStreaming",
+        "motif_uri": "https://ns.onnx.cloud/motif#HBMStreaming",
+        "Name": "HBM Streaming",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Runtime / Execution"
+      },
+      {
+        "motif": "HardRouting",
+        "motif_uri": "https://ns.onnx.cloud/motif#HardRouting",
+        "Name": "Hard Routing",
+        "Signature": "Sig_many_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_1",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "Emulator",
+        "motif_uri": "https://ns.onnx.cloud/motif#Emulator",
+        "Name": "Hardware-in-the-Loop Emulator",
+        "Signature": null,
+        "category": "Simulation",
+        "category_uri": "https://ns.onnx.cloud/motif#Simulation",
+        "Category": "Simulation / Scientific"
+      },
+      {
+        "motif": "HoldoutTest",
+        "motif_uri": "https://ns.onnx.cloud/motif#HoldoutTest",
+        "Name": "Holdout Test",
+        "Signature": null,
+        "category": "Evaluation",
+        "category_uri": "https://ns.onnx.cloud/motif#Evaluation",
+        "Category": "Evaluation / Metrics"
+      },
+      {
+        "motif": "HyDE",
+        "motif_uri": "https://ns.onnx.cloud/cognition#HyDE",
+        "Name": "Hypothetical Document Embedding",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "Identity",
+        "motif_uri": "https://ns.onnx.cloud/motif#Identity",
+        "Name": "Identity",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Identity",
+        "motif_uri": "https://ns.onnx.cloud/motif#Identity",
+        "Name": "Identity",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "IdentityResidual",
+        "motif_uri": "https://ns.onnx.cloud/motif#IdentityResidual",
+        "Name": "Identity Residual",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "If",
+        "motif_uri": "https://ns.onnx.cloud/motif#If",
+        "Name": "If",
+        "Signature": "Sig_1_to_N_optional",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N_optional",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "ImportanceSample",
+        "motif_uri": "https://ns.onnx.cloud/motif#ImportanceSample",
+        "Name": "Importance Sampling",
+        "Signature": null,
+        "category": "Probabilistic",
+        "category_uri": "https://ns.onnx.cloud/motif#Probabilistic",
+        "Category": "Probabilistic / Bayesian"
+      },
+      {
+        "motif": "IncrementalUpdate",
+        "motif_uri": "https://ns.onnx.cloud/motif#IncrementalUpdate",
+        "Name": "Incremental Update",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Caching",
+        "category_uri": "https://ns.onnx.cloud/motif#Caching",
+        "Category": "Caching / Incremental"
+      },
+      {
+        "motif": "InputFilter",
+        "motif_uri": "https://ns.onnx.cloud/motif#InputFilter",
+        "Name": "Input Filter",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "InputSanitization",
+        "motif_uri": "https://ns.onnx.cloud/motif#InputSanitization",
+        "Name": "Input Sanitization",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "IntegralControl",
+        "motif_uri": "https://ns.onnx.cloud/motif#IntegralControl",
+        "Name": "Integral Control (I)",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "IntegratedGradients",
+        "motif_uri": "https://ns.onnx.cloud/xai#IntegratedGradients",
+        "Name": "Integrated Gradients",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "IterativeRetrieval",
+        "motif_uri": "https://ns.onnx.cloud/cognition#IterativeRetrieval",
+        "Name": "Iterative Retrieval",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "Join",
+        "motif_uri": "https://ns.onnx.cloud/motif#Join",
+        "Name": "Join",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "KLPenalty",
+        "motif_uri": "https://ns.onnx.cloud/motif#KLPenalty",
+        "Name": "KL Penalty",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "KVCacheAppend",
+        "motif_uri": "https://ns.onnx.cloud/motif#KVCacheAppend",
+        "Name": "KV-Cache Append",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Caching",
+        "category_uri": "https://ns.onnx.cloud/motif#Caching",
+        "Category": "Caching / Incremental"
+      },
+      {
+        "motif": "KVCacheLookup",
+        "motif_uri": "https://ns.onnx.cloud/motif#KVCacheLookup",
+        "Name": "KV-Cache Lookup",
+        "Signature": "Sig_2_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_N",
+        "category": "Caching",
+        "category_uri": "https://ns.onnx.cloud/motif#Caching",
+        "Category": "Caching / Incremental"
+      },
+      {
+        "motif": "KalmanFilter",
+        "motif_uri": "https://ns.onnx.cloud/motif#KalmanFilter",
+        "Name": "Kalman Filter",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "KVMemory",
+        "motif_uri": "https://ns.onnx.cloud/motif#KVMemory",
+        "Name": "Key-Value Memory",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "Distill",
+        "motif_uri": "https://ns.onnx.cloud/motif#Distill",
+        "Name": "Knowledge Distillation",
+        "Signature": null,
+        "category": "Compression",
+        "category_uri": "https://ns.onnx.cloud/motif#Compression",
+        "Category": "Compression / Efficiency"
+      },
+      {
+        "motif": "KnowledgeGraphLookup",
+        "motif_uri": "https://ns.onnx.cloud/motif#KnowledgeGraphLookup",
+        "Name": "Knowledge Graph Lookup",
+        "Signature": null,
+        "category": "NeuroSymbolic",
+        "category_uri": "https://ns.onnx.cloud/motif#NeuroSymbolic",
+        "Category": "Neuro-Symbolic"
+      },
+      {
+        "motif": "LIME",
+        "motif_uri": "https://ns.onnx.cloud/xai#LIME",
+        "Name": "LIME",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "LateFusion",
+        "motif_uri": "https://ns.onnx.cloud/motif#LateFusion",
+        "Name": "Late Fusion",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "MultiModal",
+        "category_uri": "https://ns.onnx.cloud/motif#MultiModal",
+        "Category": "Multi-Modal / Fusion"
+      },
+      {
+        "motif": "LatencyP95",
+        "motif_uri": "https://ns.onnx.cloud/motif#LatencyP95",
+        "Name": "Latency P95/P99",
+        "Signature": null,
+        "category": "Evaluation",
+        "category_uri": "https://ns.onnx.cloud/motif#Evaluation",
+        "Category": "Evaluation / Metrics"
+      },
+      {
+        "motif": "Linear",
+        "motif_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Name": "Linear",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Linear",
+        "motif_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Name": "Linear",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "Linear",
+        "motif_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Name": "Linear / Algebraic",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Linear",
+        "motif_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Name": "Linear / Algebraic",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "LinearProbe",
+        "motif_uri": "https://ns.onnx.cloud/xai#LinearProbe",
+        "Name": "Linear Probe",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "LQR",
+        "motif_uri": "https://ns.onnx.cloud/motif#LQR",
+        "Name": "Linear-Quadratic Regulator",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "LookaheadDecode",
+        "motif_uri": "https://ns.onnx.cloud/motif#LookaheadDecode",
+        "Name": "Lookahead Decode",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Speculative",
+        "category_uri": "https://ns.onnx.cloud/motif#Speculative",
+        "Category": "Speculative / Predictive"
+      },
+      {
+        "motif": "Loop",
+        "motif_uri": "https://ns.onnx.cloud/motif#Loop",
+        "Name": "Loop",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "LoopConditionalMemory",
+        "motif_uri": "https://ns.onnx.cloud/motif#LoopConditionalMemory",
+        "Name": "Loop + Conditional + Memory",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "LoopSubgraph",
+        "motif_uri": "https://ns.onnx.cloud/motif#LoopSubgraph",
+        "Name": "Loop Subgraph",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "MCMC",
+        "motif_uri": "https://ns.onnx.cloud/motif#MCMC",
+        "Name": "MCMC Loop",
+        "Signature": null,
+        "category": "Probabilistic",
+        "category_uri": "https://ns.onnx.cloud/motif#Probabilistic",
+        "Category": "Probabilistic / Bayesian"
+      },
+      {
+        "motif": "Map",
+        "motif_uri": "https://ns.onnx.cloud/motif#Map",
+        "Name": "Map",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "Memoize",
+        "motif_uri": "https://ns.onnx.cloud/motif#Memoize",
+        "Name": "Memoize",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Caching",
+        "category_uri": "https://ns.onnx.cloud/motif#Caching",
+        "Category": "Caching / Incremental"
+      },
+      {
+        "motif": "MemoryAccumulate",
+        "motif_uri": "https://ns.onnx.cloud/motif#MemoryAccumulate",
+        "Name": "Memory Accumulate",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "MemoryBranch",
+        "motif_uri": "https://ns.onnx.cloud/motif#MemoryBranch",
+        "Name": "Memory Branch",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "MemoryLoop",
+        "motif_uri": "https://ns.onnx.cloud/motif#MemoryLoop",
+        "Name": "Memory Loop",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "MemoryMerge",
+        "motif_uri": "https://ns.onnx.cloud/motif#MemoryMerge",
+        "Name": "Memory Merge",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "motif_MetaAttention",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_MetaAttention",
+        "Name": "Meta Attention",
+        "Signature": "Sig_many_to_many",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_many",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "ModalityAdapter",
+        "motif_uri": "https://ns.onnx.cloud/motif#ModalityAdapter",
+        "Name": "Modality Adapter",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "MultiModal",
+        "category_uri": "https://ns.onnx.cloud/motif#MultiModal",
+        "Category": "Multi-Modal / Fusion"
+      },
+      {
+        "motif": "ModalityGating",
+        "motif_uri": "https://ns.onnx.cloud/motif#ModalityGating",
+        "Name": "Modality Gating",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "MultiModal",
+        "category_uri": "https://ns.onnx.cloud/motif#MultiModal",
+        "Category": "Multi-Modal / Fusion"
+      },
+      {
+        "motif": "ModelPredictiveControl",
+        "motif_uri": "https://ns.onnx.cloud/motif#ModelPredictiveControl",
+        "Name": "Model Predictive Control",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "MRAC",
+        "motif_uri": "https://ns.onnx.cloud/motif#MRAC",
+        "Name": "Model Reference Adaptive Control",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "MonteCarloTreeSearch",
+        "motif_uri": "https://ns.onnx.cloud/cognition#MonteCarloTreeSearch",
+        "Name": "Monte Carlo Tree Search",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "Mul",
+        "motif_uri": "https://ns.onnx.cloud/motif#Mul",
+        "Name": "Mul",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Mul",
+        "motif_uri": "https://ns.onnx.cloud/motif#Mul",
+        "Name": "Mul",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "MultiBranchLoop",
+        "motif_uri": "https://ns.onnx.cloud/motif#MultiBranchLoop",
+        "Name": "Multi-Branch Loop",
+        "Signature": "Sig_1_to_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "motif_MultiHead",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_MultiHead",
+        "Name": "Multi-Head Attention",
+        "Signature": "Sig_many_to_many",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_many",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "MultiLevelFork",
+        "motif_uri": "https://ns.onnx.cloud/motif#MultiLevelFork",
+        "Name": "Multi-Level Fork",
+        "Signature": "Sig_1_to_N_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N_to_N",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "MultiLevelJoin",
+        "motif_uri": "https://ns.onnx.cloud/motif#MultiLevelJoin",
+        "Name": "Multi-Level Join",
+        "Signature": "Sig_N_to_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_N_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "MultiResidual",
+        "motif_uri": "https://ns.onnx.cloud/motif#MultiResidual",
+        "Name": "Multi-Residual",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "NegativeFeedback",
+        "motif_uri": "https://ns.onnx.cloud/motif#NegativeFeedback",
+        "Name": "Negative Feedback",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "NestedConditional",
+        "motif_uri": "https://ns.onnx.cloud/motif#NestedConditional",
+        "Name": "Nested Conditional",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "NestedLoop",
+        "motif_uri": "https://ns.onnx.cloud/motif#NestedLoop",
+        "Name": "Nested Loop",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "NAS",
+        "motif_uri": "https://ns.onnx.cloud/motif#NAS",
+        "Name": "Neural Architecture Search (NAS)",
+        "Signature": null,
+        "category": "Compression",
+        "category_uri": "https://ns.onnx.cloud/motif#Compression",
+        "Category": "Compression / Efficiency"
+      },
+      {
+        "motif": "NeuralCompiler",
+        "motif_uri": "https://ns.onnx.cloud/motif#NeuralCompiler",
+        "Name": "Neural Program Synthesis",
+        "Signature": null,
+        "category": "NeuroSymbolic",
+        "category_uri": "https://ns.onnx.cloud/motif#NeuroSymbolic",
+        "Category": "Neuro-Symbolic"
+      },
+      {
+        "motif": "NeuralRuleInduction",
+        "motif_uri": "https://ns.onnx.cloud/motif#NeuralRuleInduction",
+        "Name": "Neural Rule Induction",
+        "Signature": null,
+        "category": "NeuroSymbolic",
+        "category_uri": "https://ns.onnx.cloud/motif#NeuroSymbolic",
+        "Category": "Neuro-Symbolic"
+      },
+      {
+        "motif": "Normalize",
+        "motif_uri": "https://ns.onnx.cloud/motif#Normalize",
+        "Name": "Normalization",
+        "Signature": null,
+        "category": "Data",
+        "category_uri": "https://ns.onnx.cloud/motif#Data",
+        "Category": "Data / Preprocessing"
+      },
+      {
+        "motif": "OnlineUpdate",
+        "motif_uri": "https://ns.onnx.cloud/motif#OnlineUpdate",
+        "Name": "Online Update",
+        "Signature": null,
+        "category": "Temporal",
+        "category_uri": "https://ns.onnx.cloud/motif#Temporal",
+        "Category": "Temporal / Streaming"
+      },
+      {
+        "motif": "OutputFilter",
+        "motif_uri": "https://ns.onnx.cloud/motif#OutputFilter",
+        "Name": "Output Filter",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "PDEIter",
+        "motif_uri": "https://ns.onnx.cloud/motif#PDEIter",
+        "Name": "PDE Iterative Solver",
+        "Signature": null,
+        "category": "Simulation",
+        "category_uri": "https://ns.onnx.cloud/motif#Simulation",
+        "Category": "Simulation / Scientific"
+      },
+      {
+        "motif": "PIDControl",
+        "motif_uri": "https://ns.onnx.cloud/motif#PIDControl",
+        "Name": "PID Control",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "PPO",
+        "motif_uri": "https://ns.onnx.cloud/motif#PPO",
+        "Name": "PPO Update",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "PagedKVCache",
+        "motif_uri": "https://ns.onnx.cloud/motif#PagedKVCache",
+        "Name": "Paged KV-Cache",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Caching",
+        "category_uri": "https://ns.onnx.cloud/motif#Caching",
+        "Category": "Caching / Incremental"
+      },
+      {
+        "motif": "PerceiverIO",
+        "motif_uri": "https://ns.onnx.cloud/motif#PerceiverIO",
+        "Name": "Perceiver IO",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "MultiModal",
+        "category_uri": "https://ns.onnx.cloud/motif#MultiModal",
+        "Category": "Multi-Modal / Fusion"
+      },
+      {
+        "motif": "PerceiverIO",
+        "motif_uri": "https://ns.onnx.cloud/motif#PerceiverIO",
+        "Name": "Perceiver IO",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "PerceiverIO",
+        "motif_uri": "https://ns.onnx.cloud/motif#PerceiverIO",
+        "Name": "Perceiver IO",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "MultiModal",
+        "category_uri": "https://ns.onnx.cloud/motif#MultiModal",
+        "Category": "Multi-Modal / Fusion"
+      },
+      {
+        "motif": "PerceiverIO",
+        "motif_uri": "https://ns.onnx.cloud/motif#PerceiverIO",
+        "Name": "Perceiver IO",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "PermutePaths",
+        "motif_uri": "https://ns.onnx.cloud/motif#PermutePaths",
+        "Name": "Permute Paths",
+        "Signature": "Sig_N_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_N",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "PersistentState",
+        "motif_uri": "https://ns.onnx.cloud/motif#PersistentState",
+        "Name": "Persistent State",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "PINN",
+        "motif_uri": "https://ns.onnx.cloud/motif#PINN",
+        "Name": "Physics-Informed Neural Network (PINN)",
+        "Signature": null,
+        "category": "Simulation",
+        "category_uri": "https://ns.onnx.cloud/motif#Simulation",
+        "Category": "Simulation / Scientific"
+      },
+      {
+        "motif": "PipelineSendRecv",
+        "motif_uri": "https://ns.onnx.cloud/motif#PipelineSendRecv",
+        "Name": "Pipeline Send/Recv",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "PositiveFeedback",
+        "motif_uri": "https://ns.onnx.cloud/motif#PositiveFeedback",
+        "Name": "Positive Feedback",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "QuantizeStatic",
+        "motif_uri": "https://ns.onnx.cloud/motif#QuantizeStatic",
+        "Name": "Post-Training Quantization",
+        "Signature": null,
+        "category": "Compression",
+        "category_uri": "https://ns.onnx.cloud/motif#Compression",
+        "Category": "Compression / Efficiency"
+      },
+      {
+        "motif": "PredicateMask",
+        "motif_uri": "https://ns.onnx.cloud/motif#PredicateMask",
+        "Name": "Predicate Mask",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "PrefixCache",
+        "motif_uri": "https://ns.onnx.cloud/motif#PrefixCache",
+        "Name": "Prefix Cache",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Caching",
+        "category_uri": "https://ns.onnx.cloud/motif#Caching",
+        "Category": "Caching / Incremental"
+      },
+      {
+        "motif": "motif_ProgrammaticLoop",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_ProgrammaticLoop",
+        "Name": "Programmatic Loop",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "ProportionalControl",
+        "motif_uri": "https://ns.onnx.cloud/motif#ProportionalControl",
+        "Name": "Proportional Control (P)",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "ProvenanceTracking",
+        "motif_uri": "https://ns.onnx.cloud/motif#ProvenanceTracking",
+        "Name": "Provenance Tracking",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "QuantizeAware",
+        "motif_uri": "https://ns.onnx.cloud/motif#QuantizeAware",
+        "Name": "Quantization-Aware Training",
+        "Signature": null,
+        "category": "Compression",
+        "category_uri": "https://ns.onnx.cloud/motif#Compression",
+        "Category": "Compression / Efficiency"
+      },
+      {
+        "motif": "motif_QuantizeDequant",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_QuantizeDequant",
+        "Name": "Quantize-Dequantize",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "QuantizedCompute",
+        "motif_uri": "https://ns.onnx.cloud/motif#QuantizedCompute",
+        "Name": "Quantized Compute",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Hardware / Execution"
+      },
+      {
+        "motif": "QuantizedCompute",
+        "motif_uri": "https://ns.onnx.cloud/motif#QuantizedCompute",
+        "Name": "Quantized Compute",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Runtime / Execution"
+      },
+      {
+        "motif": "motif_QKV",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_QKV",
+        "Name": "Query-Key-Value",
+        "Signature": "Sig_3_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_3_to_1",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "RLAIF",
+        "motif_uri": "https://ns.onnx.cloud/motif#RLAIF",
+        "Name": "RLAIF",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "Race",
+        "motif_uri": "https://ns.onnx.cloud/motif#Race",
+        "Name": "Race (Any)",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Experimental",
+        "category_uri": "https://ns.onnx.cloud/motif#Experimental",
+        "Category": "Experimental / Future"
+      },
+      {
+        "motif": "RateLimiter",
+        "motif_uri": "https://ns.onnx.cloud/motif#RateLimiter",
+        "Name": "Rate Limiter",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "ReAct",
+        "motif_uri": "https://ns.onnx.cloud/cognition#ReAct",
+        "Name": "ReAct",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "Read",
+        "motif_uri": "https://ns.onnx.cloud/motif#Read",
+        "Name": "Read",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "ReadModifyWrite",
+        "motif_uri": "https://ns.onnx.cloud/motif#ReadModifyWrite",
+        "Name": "Read-Modify-Write",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "RealTimeDeadline",
+        "motif_uri": "https://ns.onnx.cloud/motif#RealTimeDeadline",
+        "Name": "Real-Time Deadline",
+        "Signature": null,
+        "category": "Temporal",
+        "category_uri": "https://ns.onnx.cloud/motif#Temporal",
+        "Category": "Temporal / Streaming"
+      },
+      {
+        "motif": "RecursiveAttention",
+        "motif_uri": "https://ns.onnx.cloud/motif#RecursiveAttention",
+        "Name": "Recursive Attention",
+        "Signature": "Sig_many_to_many",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_many",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "RecursiveCall",
+        "motif_uri": "https://ns.onnx.cloud/motif#RecursiveCall",
+        "Name": "Recursive Call",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "ReduceMax",
+        "motif_uri": "https://ns.onnx.cloud/motif#ReduceMax",
+        "Name": "ReduceMax",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "ReduceMax",
+        "motif_uri": "https://ns.onnx.cloud/motif#ReduceMax",
+        "Name": "ReduceMax",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "motif_ReduceScatter",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_ReduceScatter",
+        "Name": "ReduceScatter",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "ReduceSum",
+        "motif_uri": "https://ns.onnx.cloud/motif#ReduceSum",
+        "Name": "ReduceSum",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "ReduceSum",
+        "motif_uri": "https://ns.onnx.cloud/motif#ReduceSum",
+        "Name": "ReduceSum",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "Ref",
+        "motif_uri": "https://ns.onnx.cloud/motif#Ref",
+        "Name": "Ref (Quote)",
+        "Signature": "Sig_0_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_0_to_1",
+        "category": "Experimental",
+        "category_uri": "https://ns.onnx.cloud/motif#Experimental",
+        "Category": "Experimental / Future"
+      },
+      {
+        "motif": "Reflection",
+        "motif_uri": "https://ns.onnx.cloud/cognition#Reflection",
+        "Name": "Reflection",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "RefusalPattern",
+        "motif_uri": "https://ns.onnx.cloud/motif#RefusalPattern",
+        "Name": "Refusal Pattern",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "RepresentationSimilarity",
+        "motif_uri": "https://ns.onnx.cloud/xai#RepresentationSimilarity",
+        "Name": "Representation Similarity",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "Reshape",
+        "motif_uri": "https://ns.onnx.cloud/motif#Reshape",
+        "Name": "Reshape",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Reshape",
+        "motif_uri": "https://ns.onnx.cloud/motif#Reshape",
+        "Name": "Reshape",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "Residual",
+        "motif_uri": "https://ns.onnx.cloud/motif#Residual",
+        "Name": "Residual",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "RetrievalAugmented",
+        "motif_uri": "https://ns.onnx.cloud/cognition#RetrievalAugmented",
+        "Name": "Retrieval-Augmented Generation",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "motif_Return",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_Return",
+        "Name": "Return",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "RewardModel",
+        "motif_uri": "https://ns.onnx.cloud/motif#RewardModel",
+        "Name": "Reward Model",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "RingAttention",
+        "motif_uri": "https://ns.onnx.cloud/motif#RingAttention",
+        "Name": "Ring Attention",
+        "Signature": "Sig_3_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_3_to_1",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "RobustnessBench",
+        "motif_uri": "https://ns.onnx.cloud/motif#RobustnessBench",
+        "Name": "Robustness Benchmark",
+        "Signature": null,
+        "category": "Evaluation",
+        "category_uri": "https://ns.onnx.cloud/motif#Evaluation",
+        "Category": "Evaluation / Metrics"
+      },
+      {
+        "motif": "Rollback",
+        "motif_uri": "https://ns.onnx.cloud/motif#Rollback",
+        "Name": "Rollback",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Speculative",
+        "category_uri": "https://ns.onnx.cloud/motif#Speculative",
+        "Category": "Speculative / Predictive"
+      },
+      {
+        "motif": "RouteMerge",
+        "motif_uri": "https://ns.onnx.cloud/motif#RouteMerge",
+        "Name": "Route & Merge",
+        "Signature": "Sig_many_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_1",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "SHAP",
+        "motif_uri": "https://ns.onnx.cloud/xai#SHAP",
+        "Name": "SHAP Values",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "SIMD",
+        "motif_uri": "https://ns.onnx.cloud/motif#SIMD",
+        "Name": "SIMD/Vector",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Hardware / Execution"
+      },
+      {
+        "motif": "SIMD",
+        "motif_uri": "https://ns.onnx.cloud/motif#SIMD",
+        "Name": "SIMD/Vector",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Runtime / Execution"
+      },
+      {
+        "motif": "Sample",
+        "motif_uri": "https://ns.onnx.cloud/motif#Sample",
+        "Name": "Sample",
+        "Signature": null,
+        "category": "Probabilistic",
+        "category_uri": "https://ns.onnx.cloud/motif#Probabilistic",
+        "Category": "Probabilistic / Bayesian"
+      },
+      {
+        "motif": "Sampler",
+        "motif_uri": "https://ns.onnx.cloud/motif#Sampler",
+        "Name": "Sampler / Multinomial",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "Saturation",
+        "motif_uri": "https://ns.onnx.cloud/motif#Saturation",
+        "Name": "Saturation",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "ScalarOp",
+        "motif_uri": "https://ns.onnx.cloud/motif#ScalarOp",
+        "Name": "ScalarOp",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "ScalarOp",
+        "motif_uri": "https://ns.onnx.cloud/motif#ScalarOp",
+        "Name": "ScalarOp",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "Scan",
+        "motif_uri": "https://ns.onnx.cloud/motif#Scan",
+        "Name": "Scan",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "Scatter",
+        "motif_uri": "https://ns.onnx.cloud/motif#Scatter",
+        "Name": "Scatter",
+        "Signature": "Sig_many_to_many",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_many",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      },
+      {
+        "motif": "ScratchPad",
+        "motif_uri": "https://ns.onnx.cloud/cognition#ScratchPad",
+        "Name": "Scratchpad",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "SelfConsistency",
+        "motif_uri": "https://ns.onnx.cloud/cognition#SelfConsistency",
+        "Name": "Self-Consistency",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "SelfModifying",
+        "motif_uri": "https://ns.onnx.cloud/motif#SelfModifying",
+        "Name": "Self-Modifying Subgraph",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "motif_ShapeDispatch",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_ShapeDispatch",
+        "Name": "Shape-Based Dispatch",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "Sharding",
+        "motif_uri": "https://ns.onnx.cloud/motif#Sharding",
+        "Name": "Sharding / Partition",
+        "Signature": null,
+        "category": "Data",
+        "category_uri": "https://ns.onnx.cloud/motif#Data",
+        "Category": "Data / Preprocessing"
+      },
+      {
+        "motif": "Slice",
+        "motif_uri": "https://ns.onnx.cloud/motif#Slice",
+        "Name": "Slice",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Slice",
+        "motif_uri": "https://ns.onnx.cloud/motif#Slice",
+        "Name": "Slice",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "SlidingWindowAttention",
+        "motif_uri": "https://ns.onnx.cloud/motif#SlidingWindowAttention",
+        "Name": "Sliding Window Attention",
+        "Signature": "Sig_3_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_3_to_1",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "SlidingWindowCache",
+        "motif_uri": "https://ns.onnx.cloud/motif#SlidingWindowCache",
+        "Name": "Sliding Window Cache",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Caching",
+        "category_uri": "https://ns.onnx.cloud/motif#Caching",
+        "Category": "Caching / Incremental"
+      },
+      {
+        "motif": "SoftmaxEdge",
+        "motif_uri": "https://ns.onnx.cloud/motif#SoftmaxEdge",
+        "Name": "Softmax Edge",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "SparseAttentionMask",
+        "motif_uri": "https://ns.onnx.cloud/motif#SparseAttentionMask",
+        "Name": "Sparse Attention Mask",
+        "Signature": "Sig_N_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_N",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "SparseGather",
+        "motif_uri": "https://ns.onnx.cloud/motif#SparseGather",
+        "Name": "Sparse Gather",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "SparseMoE",
+        "motif_uri": "https://ns.onnx.cloud/motif#SparseMoE",
+        "Name": "Sparse Mixture of Experts",
+        "Signature": "Sig_many_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_N",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "SparseMoE",
+        "motif_uri": "https://ns.onnx.cloud/motif#SparseMoE",
+        "Name": "Sparse MoE Routing",
+        "Signature": "Sig_many_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_N",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "SparseScatter",
+        "motif_uri": "https://ns.onnx.cloud/motif#SparseScatter",
+        "Name": "Sparse Scatter",
+        "Signature": "Sig_3_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_3_to_1",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "SpeculativeFork",
+        "motif_uri": "https://ns.onnx.cloud/motif#SpeculativeFork",
+        "Name": "Speculative Fork",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Speculative",
+        "category_uri": "https://ns.onnx.cloud/motif#Speculative",
+        "Category": "Speculative / Predictive"
+      },
+      {
+        "motif": "SpeculativeMerge",
+        "motif_uri": "https://ns.onnx.cloud/motif#SpeculativeMerge",
+        "Name": "Speculative Merge",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Speculative",
+        "category_uri": "https://ns.onnx.cloud/motif#Speculative",
+        "Category": "Speculative / Predictive"
+      },
+      {
+        "motif": "Split",
+        "motif_uri": "https://ns.onnx.cloud/motif#Split",
+        "Name": "Split",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "Squeeze",
+        "motif_uri": "https://ns.onnx.cloud/motif#Squeeze",
+        "Name": "Squeeze",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Squeeze",
+        "motif_uri": "https://ns.onnx.cloud/motif#Squeeze",
+        "Name": "Squeeze",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "StateObserver",
+        "motif_uri": "https://ns.onnx.cloud/motif#StateObserver",
+        "Name": "State Observer",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "ControlTheory",
+        "category_uri": "https://ns.onnx.cloud/motif#ControlTheory",
+        "Category": "Control Theory"
+      },
+      {
+        "motif": "StochasticRouting",
+        "motif_uri": "https://ns.onnx.cloud/motif#StochasticRouting",
+        "Name": "Stochastic Routing",
+        "Signature": "Sig_many_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_many_to_N",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "StreamFusion",
+        "motif_uri": "https://ns.onnx.cloud/motif#StreamFusion",
+        "Name": "Stream Fusion",
+        "Signature": null,
+        "category": "Temporal",
+        "category_uri": "https://ns.onnx.cloud/motif#Temporal",
+        "Category": "Temporal / Streaming"
+      },
+      {
+        "motif": "StreamingWindow",
+        "motif_uri": "https://ns.onnx.cloud/motif#StreamingWindow",
+        "Name": "Streaming Window",
+        "Signature": null,
+        "category": "Temporal",
+        "category_uri": "https://ns.onnx.cloud/motif#Temporal",
+        "Category": "Temporal / Streaming"
+      },
+      {
+        "motif": "StructuredPrune",
+        "motif_uri": "https://ns.onnx.cloud/motif#StructuredPrune",
+        "Name": "Structured Prune",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "PruneStructured",
+        "motif_uri": "https://ns.onnx.cloud/motif#PruneStructured",
+        "Name": "Structured Pruning",
+        "Signature": null,
+        "category": "Compression",
+        "category_uri": "https://ns.onnx.cloud/motif#Compression",
+        "Category": "Compression / Efficiency"
+      },
+      {
+        "motif": "Sub",
+        "motif_uri": "https://ns.onnx.cloud/motif#Sub",
+        "Name": "Sub",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Sub",
+        "motif_uri": "https://ns.onnx.cloud/motif#Sub",
+        "Name": "Sub",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "SubgraphFork",
+        "motif_uri": "https://ns.onnx.cloud/motif#SubgraphFork",
+        "Name": "Subgraph Fork",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "motif_SubgraphJoin",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_SubgraphJoin",
+        "Name": "Subgraph Join",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "SubgraphMerge",
+        "motif_uri": "https://ns.onnx.cloud/motif#SubgraphMerge",
+        "Name": "Subgraph Merge",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Programmatic",
+        "category_uri": "https://ns.onnx.cloud/motif#Programmatic",
+        "Category": "Programmatic / Meta"
+      },
+      {
+        "motif": "SuperpositionAnalysis",
+        "motif_uri": "https://ns.onnx.cloud/xai#SuperpositionAnalysis",
+        "Name": "Superposition Analysis",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "SurrogateModel",
+        "motif_uri": "https://ns.onnx.cloud/motif#SurrogateModel",
+        "Name": "Surrogate Model",
+        "Signature": null,
+        "category": "Simulation",
+        "category_uri": "https://ns.onnx.cloud/motif#Simulation",
+        "Category": "Simulation / Scientific"
+      },
+      {
+        "motif": "Switch",
+        "motif_uri": "https://ns.onnx.cloud/motif#Switch",
+        "Name": "Switch",
+        "Signature": "Sig_1_to_N_optional",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N_optional",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "SymbolicPlanner",
+        "motif_uri": "https://ns.onnx.cloud/motif#SymbolicPlanner",
+        "Name": "Symbolic Planner",
+        "Signature": null,
+        "category": "NeuroSymbolic",
+        "category_uri": "https://ns.onnx.cloud/motif#NeuroSymbolic",
+        "Category": "Neuro-Symbolic"
+      },
+      {
+        "motif": "SystolicArray",
+        "motif_uri": "https://ns.onnx.cloud/motif#SystolicArray",
+        "Name": "Systolic Array",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Hardware / Execution"
+      },
+      {
+        "motif": "SystolicArray",
+        "motif_uri": "https://ns.onnx.cloud/motif#SystolicArray",
+        "Name": "Systolic Array",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Runtime / Execution"
+      },
+      {
+        "motif": "TCAV",
+        "motif_uri": "https://ns.onnx.cloud/xai#TCAV",
+        "Name": "TCAV",
+        "Signature": "Sig_2_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_2_to_1",
+        "category": "XAI",
+        "category_uri": "https://ns.onnx.cloud/motif#XAI",
+        "Category": "Explainable AI"
+      },
+      {
+        "motif": "TaskDecomposition",
+        "motif_uri": "https://ns.onnx.cloud/cognition#TaskDecomposition",
+        "Name": "Task Decomposition",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "TensorCoreFused",
+        "motif_uri": "https://ns.onnx.cloud/motif#TensorCoreFused",
+        "Name": "Tensor Core Fused",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Hardware / Execution"
+      },
+      {
+        "motif": "TensorCoreFused",
+        "motif_uri": "https://ns.onnx.cloud/motif#TensorCoreFused",
+        "Name": "Tensor Core Fused",
+        "Signature": null,
+        "category": "Hardware",
+        "category_uri": "https://ns.onnx.cloud/motif#Hardware",
+        "Category": "Runtime / Execution"
+      },
+      {
+        "motif": "Tokenize",
+        "motif_uri": "https://ns.onnx.cloud/motif#Tokenize",
+        "Name": "Tokenization",
+        "Signature": null,
+        "category": "Data",
+        "category_uri": "https://ns.onnx.cloud/motif#Data",
+        "Category": "Data / Preprocessing"
+      },
+      {
+        "motif": "TopKSparsify",
+        "motif_uri": "https://ns.onnx.cloud/motif#TopKSparsify",
+        "Name": "Top-K Sparsify",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Sparse",
+        "category_uri": "https://ns.onnx.cloud/motif#Sparse",
+        "Category": "Sparse / Structured"
+      },
+      {
+        "motif": "Transpose",
+        "motif_uri": "https://ns.onnx.cloud/motif#Transpose",
+        "Name": "Transpose",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear"
+      },
+      {
+        "motif": "Transpose",
+        "motif_uri": "https://ns.onnx.cloud/motif#Transpose",
+        "Name": "Transpose",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Linear",
+        "category_uri": "https://ns.onnx.cloud/motif#Linear",
+        "Category": "Linear / Algebraic"
+      },
+      {
+        "motif": "TreeOfThoughts",
+        "motif_uri": "https://ns.onnx.cloud/cognition#TreeOfThoughts",
+        "Name": "Tree-of-Thoughts",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Cognition",
+        "category_uri": "https://ns.onnx.cloud/motif#Cognition",
+        "Category": "Cognition / Reasoning"
+      },
+      {
+        "motif": "Tuple",
+        "motif_uri": "https://ns.onnx.cloud/motif#Tuple",
+        "Name": "Tuple",
+        "Signature": "Sig_1_to_N",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_N",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "UnTuple",
+        "motif_uri": "https://ns.onnx.cloud/motif#UnTuple",
+        "Name": "UnTuple",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Topology",
+        "category_uri": "https://ns.onnx.cloud/motif#Topology",
+        "Category": "Topology / Composition"
+      },
+      {
+        "motif": "UncertaintyCalibration",
+        "motif_uri": "https://ns.onnx.cloud/motif#UncertaintyCalibration",
+        "Name": "Uncertainty Calibration",
+        "Signature": null,
+        "category": "Probabilistic",
+        "category_uri": "https://ns.onnx.cloud/motif#Probabilistic",
+        "Category": "Probabilistic / Bayesian"
+      },
+      {
+        "motif": "PruneUnstructured",
+        "motif_uri": "https://ns.onnx.cloud/motif#PruneUnstructured",
+        "Name": "Unstructured Pruning",
+        "Signature": null,
+        "category": "Compression",
+        "category_uri": "https://ns.onnx.cloud/motif#Compression",
+        "Category": "Compression / Efficiency"
+      },
+      {
+        "motif": "VariationalInfer",
+        "motif_uri": "https://ns.onnx.cloud/motif#VariationalInfer",
+        "Name": "Variational Inference",
+        "Signature": null,
+        "category": "Probabilistic",
+        "category_uri": "https://ns.onnx.cloud/motif#Probabilistic",
+        "Category": "Probabilistic / Bayesian"
+      },
+      {
+        "motif": "motif_VectorSearch",
+        "motif_uri": "https://ns.onnx.cloud/motif#motif_VectorSearch",
+        "Name": "Vector Search",
+        "Signature": "Sig_1_to_k",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_k",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "Watermark",
+        "motif_uri": "https://ns.onnx.cloud/motif#Watermark",
+        "Name": "Watermark",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "WatermarkDetect",
+        "motif_uri": "https://ns.onnx.cloud/motif#WatermarkDetect",
+        "Name": "Watermark Detection",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Safety",
+        "category_uri": "https://ns.onnx.cloud/motif#Safety",
+        "Category": "Safety / Alignment"
+      },
+      {
+        "motif": "WeightPacking",
+        "motif_uri": "https://ns.onnx.cloud/motif#WeightPacking",
+        "Name": "Weight Packing",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Misc",
+        "category_uri": "https://ns.onnx.cloud/motif#Misc",
+        "Category": "Miscellaneous / Utility"
+      },
+      {
+        "motif": "WeightPacking",
+        "motif_uri": "https://ns.onnx.cloud/motif#WeightPacking",
+        "Name": "Weight Packing",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Compression",
+        "category_uri": "https://ns.onnx.cloud/motif#Compression",
+        "Category": "Compression / Efficiency"
+      },
+      {
+        "motif": "WeightedSum",
+        "motif_uri": "https://ns.onnx.cloud/motif#WeightedSum",
+        "Name": "Weighted Sum",
+        "Signature": "Sig_N_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_N_to_1",
+        "category": "Routing",
+        "category_uri": "https://ns.onnx.cloud/motif#Routing",
+        "Category": "Routing / Attention"
+      },
+      {
+        "motif": "While",
+        "motif_uri": "https://ns.onnx.cloud/motif#While",
+        "Name": "While",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Control",
+        "category_uri": "https://ns.onnx.cloud/motif#Control",
+        "Category": "Control / Conditional"
+      },
+      {
+        "motif": "Write",
+        "motif_uri": "https://ns.onnx.cloud/motif#Write",
+        "Name": "Write",
+        "Signature": "Sig_1_to_1",
+        "signature_uri": "https://ns.onnx.cloud/motif#Sig_1_to_1",
+        "category": "Memory",
+        "category_uri": "https://ns.onnx.cloud/motif#Memory",
+        "Category": "Memory / State"
+      }
+    ]
+  },
+  "width": 1024,
+  "height": 2048,
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Category",
+      "type": "nominal",
+      "title": "Category"
+    },
+    "y": {
+      "field": "Name",
+      "type": "nominal",
+      "title": "Motif"
+    },
+    "tooltip": [
+      {
+        "field": "Name",
+        "type": "nominal"
+      },
+      {
+        "field": "Signature",
+        "type": "nominal"
+      },
+      {
+        "field": "Category",
+        "type": "nominal"
+      }
+    ],
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "scale": {
+        "scheme": "category10"
+      }
+    }
+  }
+}

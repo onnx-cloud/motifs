@@ -1,0 +1,25 @@
+# Figure: Motif frequency across models
+# Shows how many models reference each motif
+
+title: Motif Frequency Across Models
+description: Count of models that reference each motif via `motif:usesMotif`.
+
+query: ./sparql/charts/motif_frequency.sparql
+
+vega:
+  width: 900
+  height: 800
+  mark: bar
+  encoding:
+    y:
+      field: motifLabel
+      type: nominal
+      sort: -x
+      axis: {title: "Motif"}
+    x:
+      field: count
+      type: quantitative
+      axis: {title: "Number of models referencing motif"}
+    color:
+      field: count
+      type: quantitative

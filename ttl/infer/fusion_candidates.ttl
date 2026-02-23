@@ -1,0 +1,165 @@
+# Inferred triples from query: fusion_candidates.sparql
+# generated: 2026-01-29T07:08:24.200839Z
+# source ttl: ttl
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://ns.onnx.cloud/motif#AssemblyVerification> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#BeamForming> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#BioSequenceAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#BiomarkerDiscovery> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#CallCenterAnalytics> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#ChurnPrediction> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#ClinicalNLP> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#ClinicalTrialMatching> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#ComplianceMonitoring> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#ContractAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#CreditScoring> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#CrossAttention> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#CrossEncoder> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#DemandForecasting> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#DocumentProcessing> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#EDiscovery> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#FraudDetection> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#GenomicsAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#GridForecasting> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#InsuranceClaims> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#LatentDiffusion> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#LegalResearch> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#MarketForecasting> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#MaskedLanguageModeling> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#MaterialsDiscovery> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#MeterAnalytics> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#NamedEntityRecognition> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#OilGasExploration> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#PatentAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#PersonalizationEngine> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#PhishingDetection> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#PricingOptimization> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#QoSPrediction> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#QuantumChemistry> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#RenewableForecasting> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#ReviewAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#RiskAssessment> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#SeismicAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#SentimentAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#SequenceClassification> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#SequentialRecommendation> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#SignalIntelligence> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#SignalProcessing> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#SoftMoE> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#SoilAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#SpectrumManagement> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#SurvivalAnalysis> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#Transformer> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#VideoTranscoding> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#VisionTransformer> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#VisualQuestionAnswering> a skos:Concept,
+        <https://ns.onnx.cloud/motif#UseCase> .
+
+<https://ns.onnx.cloud/motif#VoiceCloning> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+
+<https://ns.onnx.cloud/motif#YieldPrediction> a skos:Concept,
+        <https://ns.onnx.cloud/motif#Application> .
+

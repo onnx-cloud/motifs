@@ -1,0 +1,23 @@
+# Control flow examples demonstrating static and dynamic branching
+# Ops/constructs: If, Where, static if
+
+@fuse 1.2
+@opset onnx 18
+@domain examples.golden
+@meta author = "onnx.cloud"
+
+node maybe_static(x: f32[1]) -> f32[1] {
+  static if true {
+    x
+  } else {
+    x
+  }
+}
+
+node dynamic_if(x: f32[1], cond: bool) -> f32[1] {
+  if cond {
+    x
+  } else {
+    x
+  }
+}

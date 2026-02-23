@@ -1,0 +1,29 @@
+\OnePageSectionStart
+\section{Typed Morphs}
+
+Morphs are type-preserving transformations. Each morph declares its input and output types; the type checker ensures compatibility at every edge.
+
+\paragraph{Linear Transformation}
+\begin{verbatim}
+morph Linear(x: f32[B,T,D] ⊥) -> f32[B,T,D_out] {
+  wt: W: f32[D, D_out] ⊥
+}
+\end{verbatim}
+
+\paragraph{Multi-Head Attention}
+\begin{verbatim}
+morph Attention(q,k,v: f32[B,H,T,D] ⊥) -> f32[B,H,T,D] {
+  chk: shape(q,k), shape(k,v)
+}
+\end{verbatim}
+
+\paragraph{Distribution-Aware Softmax}
+\begin{verbatim}
+morph Softmax(logits: f32[B,C] ⊥) -> f32[B,C] D{categorical, [0,1]} {
+  chk: norm(logits) // enforce probabilistic support
+}
+\end{verbatim}
+
+Key insight: semantics are explicit. Softmax output is \emph{not} merely normalized values---it is \emph{typed} as a Distribution, enabling downstream morphs (Sample, KL divergence, cross-entropy loss) to enforce semantic correctness. This makes stochastic and supervised pipelines verifiable.
+
+\OnePageSectionEnd

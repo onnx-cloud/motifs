@@ -1,0 +1,167 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix cog: <https://ns.onnx.cloud/cognition#> .
+#################
+# Cognition / Reasoning Motifs
+# Purpose: Patterns for reasoning, planning, memory retrieval, chain-of-thought
+#################
+
+motif:Cognition a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Cognition / Reasoning"@en ;
+  skos:definition "Higher-level reasoning pattern: chain-of-thought, planning, retrieval-augmented generation." .
+#################
+# Cognition Fingerprints
+#################
+
+cog:R_reasoning_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "R.reasoning=1"@en ;
+  skos:definition "Explicit reasoning step in computation." .
+
+cog:M_retrieval_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "M.retrieval=1"@en ;
+  skos:definition "Retrieval from external knowledge base." .
+
+cog:C_planning_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "C.planning=1"@en ;
+  skos:definition "Multi-step planning or search." .
+#################
+# Reasoning Motifs
+#################
+
+cog:ChainOfThought a motif:Motif ;
+  skos:prefLabel "Chain-of-Thought"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2201.11903> ;
+  skos:definition "Chain-of-Thought prompting (Wei et al., 2022)." .
+
+cog:SelfConsistency a motif:Motif ;
+  skos:prefLabel "Self-Consistency"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 ;
+  motif:hasFingerprint motif:T_width_plus_N ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2203.11171> ;
+  skos:definition "Self-Consistency decoding (Wang et al., 2022)." .
+
+cog:TreeOfThoughts a motif:Motif ;
+  skos:prefLabel "Tree-of-Thoughts"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 ;
+  motif:hasFingerprint cog:C_planning_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2305.10601> ;
+  skos:definition "Tree-of-Thoughts reasoning (Yao et al., 2023)." .
+
+cog:ReAct a motif:Motif ;
+  skos:prefLabel "ReAct"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 ;
+  motif:hasFingerprint motif:C_Control ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2210.03629> ;
+  skos:definition "Reasoning + Acting pattern (Yao et al., 2022)." .
+
+cog:Reflection a motif:Motif ;
+  skos:prefLabel "Reflection"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 ;
+  motif:hasFingerprint motif:T_cycles_eq_1_C_loop_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2303.11366> ;
+  skos:definition "Reflexion pattern (Shinn et al., 2023)." .
+
+cog:ScratchPad a motif:Motif ;
+  skos:prefLabel "Scratchpad"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint cog:R_reasoning_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Explicit working memory for complex reasoning." .
+#################
+# Retrieval Motifs
+#################
+
+cog:RetrievalAugmented a motif:Motif ;
+  skos:prefLabel "Retrieval-Augmented Generation"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:M_retrieval_eq_1 ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2005.11401> ;
+  skos:definition "RAG pattern (Lewis et al., 2020)." .
+
+cog:HyDE a motif:Motif ;
+  skos:prefLabel "Hypothetical Document Embedding"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:M_retrieval_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2212.10496> ;
+  skos:definition "HyDE retrieval pattern (Gao et al., 2022)." .
+
+cog:IterativeRetrieval a motif:Motif ;
+  skos:prefLabel "Iterative Retrieval"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:M_retrieval_eq_1 ;
+  motif:hasFingerprint motif:T_cycles_eq_1_C_loop_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Multi-hop retrieval for complex questions." .
+#################
+# Planning Motifs
+#################
+
+cog:TaskDecomposition a motif:Motif ;
+  skos:prefLabel "Task Decomposition"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:C_planning_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Hierarchical task planning." .
+
+cog:MonteCarloTreeSearch a motif:Motif ;
+  skos:prefLabel "Monte Carlo Tree Search"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:C_planning_eq_1 ;
+  motif:hasFingerprint motif:T_cycles_eq_1_C_loop_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "MCTS for reasoning and game playing." .
+
+cog:BeamSearch a motif:Motif ;
+  skos:prefLabel "Beam Search"@en ;
+  motif:hasSignature motif:Sig_1_to_K ;
+  motif:hasCategory motif:Cognition ;
+  motif:hasFingerprint cog:C_planning_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Approximate best-first search for sequence generation." .
+

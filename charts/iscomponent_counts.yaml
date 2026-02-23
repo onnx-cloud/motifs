@@ -1,0 +1,28 @@
+# Figure: Operator component counts
+# Bar chart showing how many higher-level motifs reference each operator via motif:isComponentOf
+
+title: Operator Component Counts
+description: "Number of higher-level motifs that list each operator motif via motif:isComponentOf"
+
+query: ./sparql/charts/iscomponent_counts.sparql
+
+vega:
+  width: 900
+  height: 400
+  mark: bar
+  encoding:
+    x:
+      field: opLabel
+      type: nominal
+      axis: {title: "Operator"}
+      sort: -y
+    y:
+      field: count
+      type: quantitative
+      title: "Higher-level motifs count"
+    color:
+      field: count
+      type: quantitative
+    tooltip:
+      - field: opLabel
+      - field: count

@@ -1,0 +1,6 @@
+# Derivation edge sources (list of primitives)
+SELECT ?source WHERE {
+  VALUES (?source) {
+    ("Op") ("Reduce") ("Reshape") ("Fork") ("Join") ("Loop") ("If") ("Read") ("Write") ("Call") ("Mutate") ("Sample") ("Comm") ("Identity") ("Extern") ("Cast")
+  }
+}

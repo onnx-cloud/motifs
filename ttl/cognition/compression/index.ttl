@@ -1,0 +1,64 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Compression / Efficiency Motifs
+# Purpose: Model compression, distillation, pruning, quantization, NAS
+#################
+
+motif:Compression a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Compression / Efficiency"@en ;
+  skos:definition "Patterns for pruning, quantization, distillation, and architecture search." .
+
+motif:PruneStructured a motif:Motif ;
+  skos:prefLabel "Structured Pruning"@en ;
+  motif:hasCategory motif:Compression ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:PruneUnstructured a motif:Motif ;
+  skos:prefLabel "Unstructured Pruning"@en ;
+  motif:hasCategory motif:Compression ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:QuantizeStatic a motif:Motif ;
+  skos:prefLabel "Post-Training Quantization"@en ;
+  motif:hasCategory motif:Compression ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:QuantizeAware a motif:Motif ;
+  skos:prefLabel "Quantization-Aware Training"@en ;
+  motif:hasCategory motif:Compression ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:Distill a motif:Motif ;
+  skos:prefLabel "Knowledge Distillation"@en ;
+  motif:hasCategory motif:Compression ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:NAS a motif:Motif ;
+  skos:prefLabel "Neural Architecture Search (NAS)"@en ;
+  motif:hasCategory motif:Compression ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:WeightPacking a motif:Motif ;
+  skos:prefLabel "Weight Packing"@en ;
+  motif:hasCategory motif:Compression ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:ActivationSparsify a motif:Motif ;
+  skos:prefLabel "Activation Sparsification"@en ;
+  motif:hasCategory motif:Compression ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+

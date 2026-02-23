@@ -1,0 +1,11 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+
+# Softmax
+
+motif:Softmax a motif:Motif ;
+  skos:prefLabel "Softmax"@en ;
+  skos:definition "Normalization operator converting logits to a probability distribution; used in attention and classification."@en ;
+  motif:isComponentOf motif:Attention , motif:SequenceClassification .

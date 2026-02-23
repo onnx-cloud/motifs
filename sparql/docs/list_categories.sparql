@@ -1,0 +1,19 @@
+# List all categories with their definitions
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?category ?label ?definition ?motifCount
+WHERE {
+  ?category a skos:Concept ;
+    skos:inScheme motif:CategoryScheme ;
+    skos:prefLabel ?label .
+  OPTIONAL { ?category skos:definition ?definition . }
+  OPTIONAL {
+    SELECT ?category (COUNT(DISTINCT ?motif) AS ?motifCount)
+    WHERE {
+      ?motif a motif:Motif ; motif:hasCategory ?category .
+    }
+    GROUP BY ?category
+  }
+}
+ORDER BY ?label

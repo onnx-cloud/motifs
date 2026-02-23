@@ -1,0 +1,186 @@
+\begin{thebibliography}{32}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abadi et~al.(2016)Abadi, Agarwal, et~al.]{tensorflow2016}
+M~Abadi, A~Agarwal, et~al.
+\newblock Tensorflow: A system for large-scale machine learning, 2016.
+\newblock tensorflow.org.
+
+\bibitem[Bezanson et~al.(2017)Bezanson, Edelman, Karpinski, and
+  Shah]{bezanson2017}
+Jeff Bezanson, Alan Edelman, Stefan Karpinski, and Viral~B Shah.
+\newblock Julia: A fresh approach to numerical computing.
+\newblock \emph{SIAM review}, 59\penalty0 (1):\penalty0 65--98, 2017.
+
+\bibitem[Bollacker et~al.(2008)Bollacker, Evans, Paritosh,
+  et~al.]{freebase2008}
+Kurt Bollacker, Colin Evans, Praveen Paritosh, et~al.
+\newblock Freebase: A collaboratively created graph database for structuring
+  human knowledge.
+\newblock 2008.
+
+\bibitem[Chen et~al.(2018)Chen, Moreau, Jiang, et~al.]{tvm2018}
+Tianqi Chen, Thierry Moreau, Ziheng Jiang, et~al.
+\newblock Tvm: An automated end-to-end optimizing compiler for deep learning.
+\newblock \emph{13th USENIX Symposium on Operating Systems Design and
+  Implementation}, 2018.
+
+\bibitem[Cohen and Welling(2020)]{neurips2020}
+Karsten Cohen and Max Welling.
+\newblock Verification of neural networks, 2020.
+\newblock NeurIPS 2020 Workshop.
+
+\bibitem[Cyganiak et~al.(2014)Cyganiak, Wood, and Lanthaler]{rdf2014}
+Richard Cyganiak, David Wood, and Markus Lanthaler.
+\newblock Rdf 1.1 concepts and abstract syntax.
+\newblock \emph{W3C Recommendation}, 2014.
+
+\bibitem[Garnelo and Shanahan(2019)]{neurosymbolic2019b}
+Marta Garnelo and Murray Shanahan.
+\newblock Towards deep learning models resistant to large perturbations.
+\newblock 2019.
+
+\bibitem[Girard(1972)]{girard1972}
+Jean-Yves Girard.
+\newblock Interpr\'etation fonctionnelle et \'elimination des coupures de
+  l'arithm\'etique d'ordre sup\'erieur.
+\newblock 1972.
+
+\bibitem[Group(2012)]{owl2012}
+W3C OWL~Working Group.
+\newblock Owl 2 web ontology language.
+\newblock \emph{W3C Recommendation}, 2012.
+
+\bibitem[Haller et~al.(2017)Haller, Janowicz, Cox, et~al.]{sosa2017}
+Armin Haller, Krzysztof Janowicz, Simon~John Cox, et~al.
+\newblock Semantic sensor network ontology.
+\newblock \emph{W3C Recommendation}, 2017.
+
+\bibitem[Hegarty et~al.(2013)Hegarty, Brunhaver, DeVito, et~al.]{darkroom2013}
+James Hegarty, John Brunhaver, Zachary DeVito, et~al.
+\newblock Darkroom: Compiling high-level image processing code into hardware
+  pipelines.
+\newblock 2013.
+
+\bibitem[Heil et~al.(2022)Heil, Anjomshoae, and Calvaresi]{ml_semantics2022}
+Paul Heil, Shahab Anjomshoae, and Davide Calvaresi.
+\newblock Towards formal semantics of machine learning.
+\newblock 2022.
+
+\bibitem[Henriksen et~al.(2016)Henriksen, Serup, Elsman, Oancea, and
+  Thorup]{futhark2016}
+Troels Henriksen, Niels~GW Serup, Martin Elsman, Cosmin~E Oancea, and Mikkel
+  Thorup.
+\newblock Futhark: Practical functional high-performance computing.
+\newblock \emph{arXiv preprint arXiv:1604.04335}, 2016.
+
+\bibitem[Hindley(1969)]{hindley1969}
+Roger Hindley.
+\newblock The principal type-scheme of an object in combinatory logic.
+\newblock \emph{Transactions of the American Mathematical Society}, 1969.
+
+\bibitem[Hodgson et~al.(2023)]{qudt2023}
+Ralph Hodgson et~al.
+\newblock Qudt: Quantities, units, dimensions, and data types.
+\newblock 2023.
+\newblock https://qudt.org/.
+
+\bibitem[Koenig and Howard(2020)]{gazebo2020}
+Nathan Koenig and Andrew Howard.
+\newblock Gazebo: A dynamic engine for simulation and robotics.
+\newblock 2020.
+
+\bibitem[Kumar et~al.(2014)Kumar, Myreen, Norrish, et~al.]{cakeml2023}
+Ramana Kumar, Magnus~O Myreen, Michael Norrish, et~al.
+\newblock Cakeml: A verified implementation of ml.
+\newblock \emph{ACM SIGPLAN Notices}, 49\penalty0 (1):\penalty0 179--191, 2014.
+
+\bibitem[Lattner et~al.(2021)Lattner, Amini, Bonachea, et~al.]{mlir2021}
+Chris Lattner, Mehdi Amini, Dan Bonachea, et~al.
+\newblock Mlir: A compiler infrastructure for the end of moore's law.
+\newblock 2021.
+
+\bibitem[Lehmann et~al.(2015)Lehmann, Isele, Jakob, et~al.]{dbpedia2014}
+Jens Lehmann, Robert Isele, Max Jakob, et~al.
+\newblock Dbpedia: A large-scale, multilingual knowledge base extracted from
+  wikipedia.
+\newblock \emph{Semantic Web}, 6\penalty0 (2):\penalty0 167--195, 2015.
+
+\bibitem[Leroy(2023)]{compcert2023}
+Xavier Leroy.
+\newblock The compcert c compiler: Formally verified for real-world
+  reliability.
+\newblock 2023.
+\newblock https://compcert.inria.fr/.
+
+\bibitem[Mao et~al.(2019)Mao, Gan, Kohli, et~al.]{neurosymbolic2019}
+Jiayuan Mao, Chuang Gan, Pushmeet Kohli, et~al.
+\newblock Neural-symbolic vqa: Disentangling reasoning from vision and language
+  understanding.
+\newblock 2019.
+
+\bibitem[Miles and Bechhofer(2009)]{skos2009}
+Alistair Miles and Sean Bechhofer.
+\newblock Skos: Simple knowledge organization system.
+\newblock \emph{W3C Recommendation}, 2009.
+
+\bibitem[Paszke et~al.(2019)Paszke, Gross, et~al.]{pytorch2019}
+Adam Paszke, Sam Gross, et~al.
+\newblock Pytorch: An imperative style, high-performance deep learning library,
+  2019.
+
+\bibitem[Paszke et~al.(2022)Paszke, Johnson, and Duvenaud]{dex2022}
+Adam Paszke, MJ~Johnson, and David Duvenaud.
+\newblock Dex: A typed language for modular computational physics.
+\newblock 2022.
+
+\bibitem[Quigley et~al.(2009)Quigley, Conley, Gerkey, et~al.]{ros2013}
+Morgan Quigley, Ken Conley, Brian Gerkey, et~al.
+\newblock Ros: an open-source robot operating system.
+\newblock \emph{ICRA workshop on open source software}, 3\penalty0 (3.2), 2009.
+
+\bibitem[Ragan-Kelley et~al.(2013)Ragan-Kelley, Adams, Paris,
+  et~al.]{halide2013}
+Jonathan Ragan-Kelley, Andrew Adams, Sylvain Paris, et~al.
+\newblock Halide: A language and compiler for optimizing parallelism, locality,
+  and recomputation.
+\newblock \emph{ACM SIGPLAN Notices}, 2013.
+
+\bibitem[Rotem et~al.(2020)Rotem, Fix, Abdulrasool, et~al.]{glow2020}
+Nadav Rotem, Jordan Fix, Saleem Abdulrasool, et~al.
+\newblock Glow: Graph lowering compiler techniques for neural networks.
+\newblock 2020.
+
+\bibitem[Team(2023{\natexlab{a}})]{agda2023}
+Agda~Development Team.
+\newblock Agda: A dependently typed programming language, 2023{\natexlab{a}}.
+\newblock https://agda.readthedocs.io/.
+
+\bibitem[Team(2023{\natexlab{b}})]{coq2023}
+Coq~Development Team.
+\newblock The coq proof assistant, 2023{\natexlab{b}}.
+\newblock https://coq.inria.fr/.
+
+\bibitem[Tian et~al.(2018)Tian, Pei, Seth, et~al.]{deeptest2018}
+Yuchi Tian, Kexin Pei, Suman Seth, et~al.
+\newblock Deeptest: Automated testing of deep-neural-network-driven autonomous
+  cars.
+\newblock 2018.
+
+\bibitem[Uchitel and Zussman(2021)]{ml_formalism2021}
+Sebastian Uchitel and Dor Zussman.
+\newblock A formal semantics for machine learning systems.
+\newblock 2021.
+
+\bibitem[Vrandečić and Krötzsch(2014)]{wikidata2014}
+Denny Vrandečić and Markus Krötzsch.
+\newblock Wikidata: A free and open knowledge base that can be read and edited
+  by both humans and machines.
+\newblock \emph{Communications of the ACM}, 57\penalty0 (10):\penalty0 78--85,
+  2014.
+
+\end{thebibliography}

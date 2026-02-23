@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Signature Patterns</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-blue-900 text-white py-4 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-xl font-semibold">Signature Patterns</h1>
+      
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-6 flex gap-6">
+    <nav class="w-80 border-r pr-4">
+      <h2 class="text-lg font-semibold mb-2">Charts</h2>
+      
+      <hr class="my-4">
+      
+      <footer class="text-center py-6 text-sm text-gray-500 border-t">
+         v · <a class="text-gray-500 hover:text-blue-700" href="">GitHub</a> · Generated 
+      </footer>    </nav>
+
+    <section id="viewer" class="flex-1 min-h-[500px]">
+      <div class="chart-page">
+  <h1 class="text-2xl font-bold mb-4">Signature Patterns</h1>
+  <div id="vis" class="flex justify-center"></div>
+  <script type="text/javascript">
+    var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "Signature Patterns", "description": "Distribution of input/output signature patterns across motifs", "data": {"values": [{"pattern": "Sig_1_to_1", "count": "103"}, {"pattern": "Sig_2_to_1", "count": "29"}, {"pattern": "Sig_1_to_N", "count": "19"}, {"pattern": "Sig_N_to_1", "count": "17"}, {"pattern": "Sig_many_to_many", "count": "8"}, {"pattern": "Sig_3_to_1", "count": "5"}, {"pattern": "Sig_N_to_N", "count": "3"}, {"pattern": "Sig_1_to_N_optional", "count": "3"}, {"pattern": "Sig_0_to_1", "count": "2"}, {"pattern": "Sig_1_to_N_to_1", "count": "2"}, {"pattern": "Sig_1_to_0_or_1", "count": "2"}, {"pattern": "Sig_many_to_1", "count": "2"}, {"pattern": "Sig_many_to_N", "count": "2"}, {"pattern": "Sig_2_to_N", "count": "1"}, {"pattern": "Sig_1_to_k", "count": "1"}, {"pattern": "Sig_idx_to_vec", "count": "1"}, {"pattern": "Sig_1_to_N_to_N", "count": "1"}, {"pattern": "Sig_N_to_N_to_1", "count": "1"}, {"pattern": "Sig_1_to_N_opt_to_1", "count": "1"}, {"pattern": "Sig_1_to_K", "count": "1"}]}, "width": 700, "height": 400, "mark": {"type": "bar", "cornerRadius": 2}, "encoding": {"x": {"field": "pattern", "type": "nominal", "axis": {"labelAngle": -45, "title": "Signature (I\u2192O)"}}, "y": {"field": "count", "type": "quantitative", "axis": {"title": "Number of Motifs"}}, "color": {"field": "count", "type": "quantitative", "scale": {"scheme": "blues"}}, "tooltip": [{"field": "pattern", "type": "nominal", "title": "Signature"}, {"field": "count", "type": "quantitative", "title": "Count"}]}};
+    (function() {
+      if (typeof vegaEmbed === 'undefined') return;
+      try {
+        vegaEmbed('#vis', spec);
+      } catch(e) {
+        console.warn('vegaEmbed failed:', e);
+      }
+    })();
+  </script>
+</div>
+
+    </section>
+  </main>
+</body>
+</html>

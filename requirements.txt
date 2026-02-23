@@ -1,0 +1,10 @@
+# Dependencies for charting and experiment tools
+
+rdflib>=6.0.0
+pyyaml>=6.0
+onnx>=1.13.0
+jinja2>=3.0
+
+# Numerical and plotting deps used by experiments
+numpy>=1.24
+matplotlib>=3.7

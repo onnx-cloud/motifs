@@ -1,0 +1,21 @@
+# Figure: Operators without parents
+
+title: Operators without parents (orphans)
+description: List of operator motifs that are not currently referenced as components by any parent motif (potentially unused or missing mappings)
+
+query: ./sparql/charts/orphan_ops.sparql
+
+vega:
+  width: 800
+  height: 400
+  mark: text
+  encoding:
+    y:
+      field: opLabel
+      type: ordinal
+      axis: {title: "Operator"}
+    text:
+      field: opLabel
+      type: nominal
+    tooltip:
+      - field: opLabel

@@ -1,0 +1,8 @@
+# Future extensions static table
+SELECT ?id ?primitive ?signature ?category ?domain WHERE {
+  VALUES (?id ?primitive ?signature ?category ?domain) {
+    (17 "Delay" "1→1" "Experimental" "Temporal / Streaming")
+    (18 "Race" "N→1" "Experimental" "Asynchronous")
+    (19 "Ref" "0→1" "Experimental" "Functional / Meta")
+  }
+}

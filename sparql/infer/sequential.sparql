@@ -1,0 +1,15 @@
+# Infer Sequential relations: when one motif uses another or when an explicit composition indicates ordering
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+CONSTRUCT {
+  ?container a ?containerType .
+  ?container motif:hasSequential [ a motif:Sequential ; motif:first ?a ; motif:second ?b ] .
+}
+WHERE {
+  # If motif A uses motif B, and both are composed under container, infer a sequential relation
+  ?container motif:composedOf ?a, ?b .
+  ?a motif:usesMotif ?b .
+  FILTER(?a != ?b)
+  OPTIONAL { ?container rdf:type ?containerType }
+}

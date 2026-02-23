@@ -1,0 +1,123 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Telecommunications Domain Applications
+# Maps telecom and networking applications to motifs
+##################################
+
+motif:NetworkOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Network Optimization"@en ;
+  skos:definition "Optimizing network topology, routing, and resource allocation."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:relatedUseCase motif:MessagePassing .
+
+motif:SignalProcessing a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Wireless Signal Processing"@en ;
+  skos:definition "Channel estimation, equalization, and interference mitigation."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Linear ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Attention .
+
+motif:CallCenterAnalytics a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Call Center Analytics"@en ;
+  skos:definition "Speech analytics, sentiment analysis, and automated assistant integration for customer service."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:SequenceClassification .
+
+motif:ChurnPrediction a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Customer Churn Prediction"@en ;
+  skos:definition "Predicting customer churn from usage patterns and engagement data."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Linear .
+
+motif:NetworkAnomaly a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Network Anomaly Detection"@en ;
+  skos:definition "Detecting network intrusions, DDoS attacks, and equipment failures."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EarlyExit .
+
+motif:SpectrumManagement a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Spectrum Management"@en ;
+  skos:definition "Dynamic spectrum allocation and interference management."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear ;
+  motif:relatedUseCase motif:ActorCritic .
+
+motif:BeamForming a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Beamforming Optimization"@en ;
+  skos:definition "Optimizing antenna beam patterns for 5G massive MIMO systems."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Linear ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Attention .
+
+motif:QoSPrediction a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "QoS Prediction & Management"@en ;
+  skos:definition "Predicting and managing quality of service metrics for network services."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:If .
+
+motif:CellularHandover a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Intelligent Handover"@en ;
+  skos:definition "Predicting optimal handover timing and target cells in mobile networks."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:HardRouting .
+
+motif:VoiceAssistant a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Voice Assistant Integration"@en ;
+  skos:definition "Natural language understanding and task completion for telecom services."@en ;
+  motif:belongsTo motif:Telecommunications ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:KVMemory ;
+  motif:usesMotif motif:Sampler ;
+  motif:relatedUseCase motif:AutoregressiveDecoding .
+

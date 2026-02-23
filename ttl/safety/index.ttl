@@ -1,0 +1,205 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# AI Safety / Alignment Motifs
+# Purpose: RLHF, constitutional AI, guardrails, watermarking patterns
+#################
+
+motif:Safety a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Safety / Alignment"@en ;
+  skos:definition "Patterns for AI safety: RLHF, guardrails, robustness, watermarking." .
+#################
+# Safety Fingerprints
+#################
+
+motif:S_aligned_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "S.aligned=1"@en ;
+  skos:definition "Output aligned with human preferences or values." .
+
+motif:S_guarded_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "S.guarded=1"@en ;
+  skos:definition "Output filtered or constrained by safety guardrails." .
+
+motif:S_robust_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "S.robust=1"@en ;
+  skos:definition "Robust to adversarial inputs or distribution shift." .
+#################
+# RLHF Motifs
+#################
+
+motif:RewardModel a motif:Motif ;
+  skos:prefLabel "Reward Model"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_aligned_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2203.02155> ;
+  skos:definition "Learned reward model from human feedback." .
+
+motif:PPO a motif:Motif ;
+  skos:prefLabel "PPO Update"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_aligned_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/1707.06347> ;
+  skos:definition "PPO for RLHF (Schulman et al., 2017)." .
+
+motif:DPO a motif:Motif ;
+  skos:prefLabel "Direct Preference Optimization"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_aligned_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2305.18290> ;
+  skos:definition "DPO: simpler alternative to RLHF (Rafailov et al., 2023)." .
+
+motif:KLPenalty a motif:Motif ;
+  skos:prefLabel "KL Penalty"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_aligned_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Prevent reward hacking by staying close to pretrained policy." .
+#################
+# Constitutional AI Motifs
+#################
+
+motif:ConstitutionalCritique a motif:Motif ;
+  skos:prefLabel "Constitutional Critique"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_aligned_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2212.08073> ;
+  skos:definition "Constitutional AI self-critique (Anthropic, 2022)." .
+
+motif:ConstitutionalRevision a motif:Motif ;
+  skos:prefLabel "Constitutional Revision"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_aligned_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Iterative self-improvement via constitutional principles." .
+
+motif:RLAIF a motif:Motif ;
+  skos:prefLabel "RLAIF"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_aligned_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2212.08073> ;
+  skos:definition "Reinforcement Learning from AI Feedback." .
+#################
+# Guardrail Motifs
+#################
+
+motif:InputFilter a motif:Motif ;
+  skos:prefLabel "Input Filter"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_guarded_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Prompt injection defense, toxicity filter." .
+
+motif:OutputFilter a motif:Motif ;
+  skos:prefLabel "Output Filter"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_guarded_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Post-generation safety check." .
+
+motif:RefusalPattern a motif:Motif ;
+  skos:prefLabel "Refusal Pattern"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_guarded_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Trained refusal behavior for unsafe requests." .
+
+motif:GroundedGeneration a motif:Motif ;
+  skos:prefLabel "Grounded Generation"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_guarded_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Reduce hallucination by grounding in sources." .
+#################
+# Robustness Motifs
+#################
+
+motif:AdversarialTraining a motif:Motif ;
+  skos:prefLabel "Adversarial Training"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_robust_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Improve robustness via adversarial augmentation." .
+
+motif:CertifiedDefense a motif:Motif ;
+  skos:prefLabel "Certified Defense"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_robust_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Randomized smoothing, interval bound propagation." .
+
+motif:InputSanitization a motif:Motif ;
+  skos:prefLabel "Input Sanitization"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasFingerprint motif:S_robust_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "JPEG compression, bit-depth reduction, etc." .
+#################
+# Watermarking / Provenance Motifs
+#################
+
+motif:Watermark a motif:Motif ;
+  skos:prefLabel "Watermark"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2301.10226> ;
+  skos:definition "Text watermarking for LLM output (Kirchenbauer et al., 2023)." .
+
+motif:WatermarkDetect a motif:Motif ;
+  skos:prefLabel "Watermark Detection"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Verify AI-generated content." .
+
+motif:ProvenanceTracking a motif:Motif ;
+  skos:prefLabel "Provenance Tracking"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Safety ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Audit trail for model outputs." .
+

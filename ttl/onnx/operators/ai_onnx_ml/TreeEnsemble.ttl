@@ -1,0 +1,34 @@
+
+# ONNX operator schema — per-operator file
+# generated: 2026-01-29
+# onnx version: 1.20.1
+
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+onnx:TreeEnsemble a onnx:Operator ;
+  skos:prefLabel "TreeEnsemble" ;
+  onnx:domain <https://ns.onnx.cloud/onnx/domain/ai.onnx.ml> ;
+  onnx:sinceVersion "5"^^xsd:integer ;
+  onnx:hasInput [ a onnx:OperatorInput ; onnx:name "X" ; onnx:required "true"^^xsd:boolean ] ;
+  onnx:hasOutput [ a onnx:OperatorOutput ; onnx:name "Y" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "aggregate_function" ; onnx:attrType "INT" ; onnx:default "1"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "post_transform" ; onnx:attrType "INT" ; onnx:default "0"^^xsd:integer ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "tree_roots" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_hitrates" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_missing_value_tracks_true" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_modes" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "leaf_weights" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "leaf_targetids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_falsenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "n_targets" ; onnx:attrType "INT" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_trueleafs" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_featureids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_splits" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_falseleafs" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "nodes_truenodeids" ; onnx:attrType "INTS" ; onnx:default "" ; ] ;
+  onnx:hasAttribute [ a onnx:OperatorAttribute ; onnx:name "membership_values" ; onnx:attrType "TENSOR" ; onnx:default "" ; ] ;
+  .

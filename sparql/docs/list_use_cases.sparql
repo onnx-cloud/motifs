@@ -1,0 +1,17 @@
+# List all use cases
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?useCase ?label ?definition ?domain ?domainLabel (COUNT(DISTINCT ?motif) AS ?motifCount)
+WHERE {
+  ?useCase a motif:UseCase ;
+    skos:prefLabel ?label .
+  OPTIONAL { ?useCase skos:definition ?definition . }
+  OPTIONAL { 
+    ?useCase motif:hasDomain ?domain .
+    ?domain skos:prefLabel ?domainLabel .
+  }
+  OPTIONAL { ?useCase motif:usesMotif ?motif . }
+}
+GROUP BY ?useCase ?label ?definition ?domain ?domainLabel
+ORDER BY ?domainLabel ?label

@@ -1,0 +1,270 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Motif Redundancy",
+  "description": "Derived motifs and derivation complexity (number of B* primitives)",
+  "data": {
+    "values": [
+      {
+        "derived": "Sub",
+        "primitives": "Op + Op",
+        "complexity": "2",
+        "category": "Algebraic"
+      },
+      {
+        "derived": "Div",
+        "primitives": "Op + Op",
+        "complexity": "2",
+        "category": "Algebraic"
+      },
+      {
+        "derived": "ReduceSum",
+        "primitives": "Reduce",
+        "complexity": "1",
+        "category": "Algebraic"
+      },
+      {
+        "derived": "ReduceMax",
+        "primitives": "Reduce",
+        "complexity": "1",
+        "category": "Algebraic"
+      },
+      {
+        "derived": "Squeeze",
+        "primitives": "Reshape",
+        "complexity": "1",
+        "category": "Algebraic"
+      },
+      {
+        "derived": "ExpandDims",
+        "primitives": "Reshape",
+        "complexity": "1",
+        "category": "Algebraic"
+      },
+      {
+        "derived": "Flatten",
+        "primitives": "Reshape",
+        "complexity": "1",
+        "category": "Algebraic"
+      },
+      {
+        "derived": "Transpose",
+        "primitives": "Reshape",
+        "complexity": "1",
+        "category": "Algebraic"
+      },
+      {
+        "derived": "Residual",
+        "primitives": "Fork + Join",
+        "complexity": "2",
+        "category": "Topology"
+      },
+      {
+        "derived": "Fork-Join",
+        "primitives": "Fork + Join",
+        "complexity": "2",
+        "category": "Topology"
+      },
+      {
+        "derived": "Concat",
+        "primitives": "Join",
+        "complexity": "1",
+        "category": "Topology"
+      },
+      {
+        "derived": "Split",
+        "primitives": "Fork",
+        "complexity": "1",
+        "category": "Topology"
+      },
+      {
+        "derived": "Map",
+        "primitives": "Fork + Join",
+        "complexity": "2",
+        "category": "Topology"
+      },
+      {
+        "derived": "Fanout",
+        "primitives": "Fork",
+        "complexity": "1",
+        "category": "Topology"
+      },
+      {
+        "derived": "Fan-in",
+        "primitives": "Join",
+        "complexity": "1",
+        "category": "Topology"
+      },
+      {
+        "derived": "While",
+        "primitives": "Loop + If",
+        "complexity": "2",
+        "category": "Control"
+      },
+      {
+        "derived": "For",
+        "primitives": "Loop",
+        "complexity": "1",
+        "category": "Control"
+      },
+      {
+        "derived": "Scan",
+        "primitives": "Loop + Read + Write",
+        "complexity": "3",
+        "category": "Control"
+      },
+      {
+        "derived": "Break",
+        "primitives": "If + Call",
+        "complexity": "2",
+        "category": "Control"
+      },
+      {
+        "derived": "Continue",
+        "primitives": "If",
+        "complexity": "1",
+        "category": "Control"
+      },
+      {
+        "derived": "Switch",
+        "primitives": "If + If",
+        "complexity": "2",
+        "category": "Control"
+      },
+      {
+        "derived": "Attention",
+        "primitives": "Fork + Op + Reduce + Join",
+        "complexity": "4",
+        "category": "Routing"
+      },
+      {
+        "derived": "Hard Routing",
+        "primitives": "Op + If",
+        "complexity": "2",
+        "category": "Routing"
+      },
+      {
+        "derived": "Stochastic",
+        "primitives": "Sample + If",
+        "complexity": "2",
+        "category": "Routing"
+      },
+      {
+        "derived": "MoE",
+        "primitives": "Op + Fork + Join",
+        "complexity": "3",
+        "category": "Routing"
+      },
+      {
+        "derived": "Gather",
+        "primitives": "Read + Op",
+        "complexity": "2",
+        "category": "Memory"
+      },
+      {
+        "derived": "Scatter",
+        "primitives": "Write + Op",
+        "complexity": "2",
+        "category": "Memory"
+      },
+      {
+        "derived": "RMW",
+        "primitives": "Read + Op + Write",
+        "complexity": "3",
+        "category": "Memory"
+      },
+      {
+        "derived": "KV Memory",
+        "primitives": "Read + Op",
+        "complexity": "2",
+        "category": "Memory"
+      },
+      {
+        "derived": "Recursive",
+        "primitives": "Call",
+        "complexity": "1",
+        "category": "Meta"
+      },
+      {
+        "derived": "Self-Modifying",
+        "primitives": "Mutate",
+        "complexity": "1",
+        "category": "Meta"
+      },
+      {
+        "derived": "Graph-of-Graphs",
+        "primitives": "Mutate + Call",
+        "complexity": "2",
+        "category": "Meta"
+      },
+      {
+        "derived": "AllReduce",
+        "primitives": "Comm + Reduce",
+        "complexity": "2",
+        "category": "Distributed"
+      },
+      {
+        "derived": "AllGather",
+        "primitives": "Comm + Fork",
+        "complexity": "2",
+        "category": "Distributed"
+      },
+      {
+        "derived": "Barrier",
+        "primitives": "Comm",
+        "complexity": "1",
+        "category": "Distributed"
+      },
+      {
+        "derived": "VectorSearch",
+        "primitives": "Extern",
+        "complexity": "1",
+        "category": "Memory"
+      },
+      {
+        "derived": "Quantize",
+        "primitives": "Cast",
+        "complexity": "1",
+        "category": "Misc"
+      }
+    ]
+  },
+  "width": 700,
+  "height": 900,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "derived",
+      "type": "nominal",
+      "sort": {
+        "field": "complexity",
+        "order": "descending"
+      }
+    },
+    "x": {
+      "field": "complexity",
+      "type": "quantitative",
+      "title": "Derivation Complexity (# B* primitives)"
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "legend": {
+        "title": "Category"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "derived",
+        "title": "Motif"
+      },
+      {
+        "field": "primitives",
+        "title": "B* Expression"
+      },
+      {
+        "field": "complexity",
+        "title": "Complexity"
+      }
+    ]
+  }
+}

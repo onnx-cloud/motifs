@@ -1,0 +1,126 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Security & Defense Domain Applications
+# Maps security and defense applications to motifs
+##################################
+
+motif:FacialRecognition a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Facial Recognition"@en ;
+  skos:definition "Identity verification and identification from facial features."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:Linear ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:relatedUseCase motif:DenseRetrieval .
+
+motif:SurveillanceAnalytics a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Video Surveillance Analytics"@en ;
+  skos:definition "Real-time analysis of surveillance video for anomaly and threat detection."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EarlyExit ;
+  motif:relatedUseCase motif:ObjectDetection .
+
+motif:ThreatDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Weapon & Threat Detection"@en ;
+  skos:definition "Detecting weapons and dangerous objects in X-ray scans and video."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:HardRouting ;
+  motif:relatedUseCase motif:ObjectDetection .
+
+motif:CyberThreatDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Cyber Threat Detection"@en ;
+  skos:definition "Detecting malware, intrusions, and network attacks using behavioral analysis."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EarlyExit ;
+  motif:usesMotif motif:EmbeddingLookup .
+
+motif:DroneDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Drone Detection & Tracking"@en ;
+  skos:definition "Detecting and tracking unauthorized drones using radar, RF, and vision."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:If .
+
+motif:SatelliteAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Satellite Image Analysis"@en ;
+  skos:definition "Analyzing satellite imagery for change detection and reconnaissance."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Sub ;
+  motif:relatedUseCase motif:SemanticSegmentation .
+
+motif:PhishingDetection a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Phishing & Spam Detection"@en ;
+  skos:definition "Identifying phishing emails, malicious URLs, and spam content."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:SequenceClassification .
+
+motif:AccessControl a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Biometric Access Control"@en ;
+  skos:definition "Multi-modal biometric authentication (face, fingerprint, iris)."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:If .
+
+motif:BehaviorAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Behavioral Anomaly Detection"@en ;
+  skos:definition "Detecting suspicious behavior patterns in crowds and public spaces."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:PoseEstimation .
+
+motif:SignalIntelligence a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Signal Intelligence (SIGINT)"@en ;
+  skos:definition "Processing and analyzing communications and electronic signals."@en ;
+  motif:belongsTo motif:Security ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:If .
+

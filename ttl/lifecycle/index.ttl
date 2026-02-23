@@ -1,0 +1,57 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motifs#> .
+#################
+# MLOps / Lifecycle Motifs
+# Purpose: Versioning, deployment, monitoring, retraining, CI/CD patterns
+#################
+motif:Lifecycle a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Lifecycle / MLOps"@en ;
+  skos:definition "Patterns for model deployment, monitoring, versioning, and retraining." .
+
+motif:ModelVersion a motif:Motif ;
+  skos:prefLabel "Model Versioning"@en ;
+  motif:hasCategory motif:Lifecycle ;
+  motif:hasSemantics motif:Sem_ModelVersion ;
+  motif:hasConstraint motif:Constraint_ModelVersion_Provenance .
+
+motif:CanaryDeploy a motif:Motif ;
+  skos:prefLabel "Canary Deployment"@en ;
+  motif:hasCategory motif:Lifecycle ;
+  motif:hasSemantics motif:Sem_CanaryDeploy ;
+  motif:hasConstraint motif:Constraint_CanaryDeploy_TrafficPolicy .
+
+motif:Monitoring a motif:Motif ;
+  skos:prefLabel "Monitoring and Drift Detection"@en ;
+  motif:hasCategory motif:Lifecycle ;
+  motif:hasSemantics motif:Sem_Monitoring ;
+  motif:hasConstraint motif:Constraint_Monitoring_Alerts .
+
+motif:A_BTesting a motif:Motif ;
+  skos:prefLabel "A/B Testing"@en ;
+  motif:hasCategory motif:Lifecycle ;
+  motif:hasSemantics motif:Sem_ABTesting ;
+  motif:hasConstraint motif:Constraint_ABTesting_Stats .
+
+motif:RetrainingPipeline a motif:Motif ;
+  skos:prefLabel "Automated Retraining"@en ;
+  motif:hasCategory motif:Lifecycle ;
+  motif:hasSemantics motif:Sem_RetrainingPipeline ;
+  motif:hasConstraint motif:Constraint_RetrainingPipeline_Governance .
+
+motif:ModelProvenance a motif:Motif ;
+  skos:prefLabel "Model Provenance"@en ;
+  motif:hasCategory motif:Lifecycle ;
+  motif:hasSemantics motif:Sem_ModelVersion ;
+  motif:hasConstraint motif:Constraint_ModelVersion_Provenance .
+
+motif:Rollback a motif:Motif ;
+  skos:prefLabel "Rollback"@en ;
+  motif:hasCategory motif:Lifecycle ;
+  motif:hasSemantics motif:Sem_Rollback ;
+  motif:hasConstraint motif:Constraint_Rollback_Integrity .
+

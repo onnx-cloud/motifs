@@ -1,0 +1,190 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Fingerprint Coverage",
+  "description": "Frequency of fingerprint dimensions across motifs",
+  "data": {
+    "values": [
+      {
+        "dimension": "M_Memory",
+        "frequency": "14"
+      },
+      {
+        "dimension": "T_reuse_plus_1",
+        "frequency": "14"
+      },
+      {
+        "dimension": "C_feedback_eq_1",
+        "frequency": "12"
+      },
+      {
+        "dimension": "R_Routing",
+        "frequency": "11"
+      },
+      {
+        "dimension": "M_sparse_eq_1",
+        "frequency": "7"
+      },
+      {
+        "dimension": "S_State",
+        "frequency": "7"
+      },
+      {
+        "dimension": "M_cache_eq_1",
+        "frequency": "7"
+      },
+      {
+        "dimension": "S_aligned_eq_1",
+        "frequency": "7"
+      },
+      {
+        "dimension": "T_cycles_eq_1_C_loop_eq_1",
+        "frequency": "6"
+      },
+      {
+        "dimension": "X_attribution_eq_1",
+        "frequency": "6"
+      },
+      {
+        "dimension": "X_probing_eq_1",
+        "frequency": "6"
+      },
+      {
+        "dimension": "R_reasoning_eq_1",
+        "frequency": "6"
+      },
+      {
+        "dimension": "C_speculative_eq_1",
+        "frequency": "5"
+      },
+      {
+        "dimension": "X_interpretable_eq_1",
+        "frequency": "5"
+      },
+      {
+        "dimension": "T_depth_plus_1",
+        "frequency": "4"
+      },
+      {
+        "dimension": "T_width_plus_N",
+        "frequency": "4"
+      },
+      {
+        "dimension": "T_Topology",
+        "frequency": "4"
+      },
+      {
+        "dimension": "S_guarded_eq_1",
+        "frequency": "4"
+      },
+      {
+        "dimension": "C_planning_eq_1",
+        "frequency": "4"
+      },
+      {
+        "dimension": "D_Dynamics",
+        "frequency": "3"
+      },
+      {
+        "dimension": "C_Control",
+        "frequency": "3"
+      },
+      {
+        "dimension": "S_robust_eq_1",
+        "frequency": "3"
+      },
+      {
+        "dimension": "C_adaptive_eq_1",
+        "frequency": "3"
+      },
+      {
+        "dimension": "M_retrieval_eq_1",
+        "frequency": "3"
+      },
+      {
+        "dimension": "S_checkpoint_eq_1",
+        "frequency": "2"
+      },
+      {
+        "dimension": "T_Transform_Time",
+        "frequency": "1"
+      },
+      {
+        "dimension": "C_Nondeterministic",
+        "frequency": "1"
+      },
+      {
+        "dimension": "M_HigherOrder",
+        "frequency": "1"
+      },
+      {
+        "dimension": "T_block_sparse",
+        "frequency": "1"
+      },
+      {
+        "dimension": "T_cycles_eq_1_S_carried_eq_1",
+        "frequency": "1"
+      },
+      {
+        "dimension": "S_incremental_eq_1",
+        "frequency": "1"
+      },
+      {
+        "dimension": "M_mutable_eq_1",
+        "frequency": "1"
+      },
+      {
+        "dimension": "M_addressable_eq_1_S_persistent_eq_1",
+        "frequency": "1"
+      },
+      {
+        "dimension": "R_hard_eq_1",
+        "frequency": "1"
+      },
+      {
+        "dimension": "T_width_plus_1",
+        "frequency": "1"
+      },
+      {
+        "dimension": "C_stable_eq_1",
+        "frequency": "1"
+      }
+    ]
+  },
+  "width": 800,
+  "height": 400,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "dimension",
+      "type": "nominal",
+      "axis": {
+        "labelAngle": -45,
+        "title": "Fingerprint Dimension"
+      }
+    },
+    "y": {
+      "field": "frequency",
+      "type": "quantitative",
+      "axis": {
+        "title": "Number of Motifs"
+      }
+    },
+    "color": {
+      "field": "frequency",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "viridis"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "dimension",
+        "type": "nominal"
+      },
+      {
+        "field": "frequency",
+        "type": "quantitative"
+      }
+    ]
+  }
+}

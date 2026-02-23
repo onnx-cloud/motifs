@@ -1,0 +1,32 @@
+\OnePageSectionStart
+\section{Type System}
+
+Traditional type systems (Hindley-Milner \citep{hindley1969}, System F \citep{girard1972}) encode properties of computation. Dependent types \citep{coq2023, agda2023} allow types to encode propositions about values. We extend this paradigm: types encode properties of \emph{meaning}. A Measurement type is not merely a numeric constraint but a statement about grounding in physical reality.
+
+\subsection{Core Tensor Type}
+A tensor is a triple:
+\[ \text{Tensor}\langle \text{DType}, \text{Shape}, \text{Semantics} \rangle \]
+which we express in the AST as \texttt{DType[Shape] Sem}. For example, \texttt{f32[B,128] ⊥} denotes a float32 tensor of shape $[B, 128]$ with Atomic semantics. DType $\in \{\texttt{f16}, \texttt{f32}, \texttt{i8}, \texttt{bool}, \ldots\}$. Shape is determined by a dimension list (constant, symbolic, or range). Semantics grounds meaning in observable reality or abstract knowledge.
+
+\subsection{Semantic Domains}
+\begin{itemize}
+  \item \textbf{Atomic} (\texttt{⊥}): unstructured numeric substrate; generic latent vectors without semantic commitment
+  \item \textbf{Measurement} (\texttt{M}): grounds tensors in physical reality via IRIs---radiance (\texttt{qudt:Radiance}), pressure (\texttt{qudt:Pressure}), temperature (\texttt{qudt:Temperature})---with unit, valid range, and observational frame (sensor IRI). Follows SOSA/SSN \citep{sosa2017} and QUDT \citep{qudt2023} standards.
+  \item \textbf{Distribution} (\texttt{D}): encodes probabilistic knowledge: unnormalized (logits over support), normalized (probabilities), or samples from a stochastic process (IRI reference to Gaussian, Poisson, etc.)
+  \item \textbf{Enum} (\texttt{E}): grounds tensors in symbolic knowledge via SKOS concept schemes \citep{skos2009}: discrete vocabulary (BPE tokens, class labels, entity IRIs) with fixed cardinality
+  \item \textbf{Structured} (\texttt{\{...\}}): composite types combining Measurements, Distributions, and Enums; enables fusing heterogeneous knowledge (e.g., visual features + textual embedding + pose measurement)
+\end{itemize}
+\textbf{Key principle:} Semantics are \emph{not} erased. They flow through the computation graph and are enforced at type check and lowering time. A tensor's semantic grounding is invariant: a Measurement remains grounded in physical reality; a Distribution preserves probabilistic constraints; an Enum maintains symbolic vocabulary. This enables the system to detect semantic mismatches (e.g., attempting to average class indices) that would silently corrupt untyped systems like PyTorch \citep{pytorch2019} or TensorFlow \citep{tensorflow2016}.
+
+\subsection{Subtyping and Compatibility}
+Edge compatibility enforces the fusion of knowledge realms. When connecting two morphs, the system checks:
+\begin{enumerate}
+  \item \textbf{DType match}: no implicit numeric casts; \texttt{f32} fuses with \texttt{f32}, not \texttt{i32}
+  \item \textbf{Shape unification}: symbolic dimensions refined, ranges narrowed; no shape conflict reaches runtime
+  \item \textbf{Semantic subsumption}: Measurements match in frame and unit; Distributions normalize correctly; Enums share vocabulary or use explicit mappings; Structured types align field-by-field
+\end{enumerate}
+\textbf{Example of semantic fusion:} A vision encoder outputs \texttt{image\_emb : f32[B,512] ⊥}. A language model outputs \texttt{text\_emb : f32[B,512] E\{BPE50k, 50000\}}. Direct concatenation is rejected by the type system because Atomic (\texttt{⊥}) and Enum (\texttt{E}) semantics are incompatible. An explicit bridge morph must be used: \texttt{Embed(text) -> f32[B,512] ⊥}, which projects symbolic knowledge (tokens) into latent space. Only after this projection can the embeddings be fused.
+
+Implicit unit conversion, enum widening, or dimension mismatch is rejected. This preserves auditability: every knowledge realm crossing is explicit and auditable.
+
+\OnePageSectionEnd

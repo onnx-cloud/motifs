@@ -1,0 +1,11 @@
+# Operators (motifs) that are not referenced by any parent motif via motif:isComponentOf
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?opLabel
+WHERE {
+  ?op a motif:Motif ;
+      skos:prefLabel ?opLabel .
+  FILTER NOT EXISTS { ?op motif:isComponentOf ?parent }
+}
+ORDER BY ?opLabel

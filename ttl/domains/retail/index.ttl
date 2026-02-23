@@ -1,0 +1,126 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Retail & E-Commerce Domain Applications
+# Maps retail and commerce applications to motifs
+##################################
+
+motif:ProductRecommendation a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Product Recommendation"@en ;
+  skos:definition "Personalized product suggestions based on user behavior and preferences."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Mul ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:relatedUseCase motif:CollaborativeFiltering .
+
+motif:DemandForecasting a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Demand Forecasting"@en ;
+  skos:definition "Predicting product demand for inventory planning and supply chain management."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Fork .
+
+motif:PricingOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Dynamic Pricing"@en ;
+  skos:definition "Real-time price optimization based on demand, competition, and inventory."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:Loop ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:PolicyGradient .
+
+motif:VisualSearch a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Visual Product Search"@en ;
+  skos:definition "Finding similar products from images using visual similarity matching."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:motif_VectorSearch ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Gather ;
+  motif:relatedUseCase motif:DenseRetrieval .
+
+motif:ReviewAnalysis a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Product Review Analysis"@en ;
+  skos:definition "Sentiment analysis and aspect extraction from customer reviews."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:relatedUseCase motif:SequenceClassification .
+
+motif:CustomerSegmentation a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Customer Segmentation"@en ;
+  skos:definition "Clustering customers by behavior, demographics, and purchase patterns."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Concat .
+
+motif:ChatbotCommerce a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Conversational Commerce"@en ;
+  skos:definition "AI-powered shopping assistants for product discovery and support."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:KVMemory ;
+  motif:usesMotif motif:Sampler ;
+  motif:relatedUseCase motif:AutoregressiveDecoding .
+
+motif:InventoryOptimization a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Inventory Optimization"@en ;
+  skos:definition "Optimizing stock levels across warehouses and stores."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Gather .
+
+motif:ShelfMonitoring a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Shelf Monitoring & Planogram"@en ;
+  skos:definition "Automated shelf compliance checking and out-of-stock detection."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:ForkJoin ;
+  motif:usesMotif motif:ForkJoin ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:If ;
+  motif:relatedUseCase motif:ObjectDetection .
+
+motif:PersonalizationEngine a motif:Application, skos:Concept ;
+  skos:inScheme motif:ApplicationScheme ;
+  skos:prefLabel "Real-time Personalization"@en ;
+  skos:definition "Dynamic content and offer personalization based on user context."@en ;
+  motif:belongsTo motif:Retail ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:If .
+

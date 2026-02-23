@@ -1,0 +1,19 @@
+# Cookbook: Namespacing note (how exporter can apply stable prefixes)
+# Ops: Add (simple identity-style demo)
+
+@fuse 1.2
+@opset onnx 18
+@domain examples.cookbook
+
+# Notes on namespacing: the exporter can optionally apply stable prefixes like `file:function`.
+# This example is a simple function demonstrating that behaviour is controlled by the CLI flags
+# `--domain-by` and `--no-ns` rather than the source files themselves.
+
+node demo_ns(x: f32[3]) -> f32[3] {
+  Add(x, x)
+}
+
+@proof node test_ns() {
+  out = demo_ns([1.0, 1.0, 1.0])
+  assert out == [2.0, 2.0, 2.0]
+}

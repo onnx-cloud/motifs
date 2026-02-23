@@ -1,0 +1,15 @@
+# For each (domain, motif) pair count how many applications reference the motif in that domain
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX domain: <https://ns.onnx.cloud/motifs/domains#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?domainLabel ?motifLabel (COUNT(?app) AS ?count)
+WHERE {
+  ?app a domain:Application ;
+       domain:belongsTo ?domain ;
+       domain:usesMotif ?motif .
+  ?domain skos:prefLabel ?domainLabel .
+  ?motif skos:prefLabel ?motifLabel .
+}
+GROUP BY ?domainLabel ?motifLabel
+ORDER BY ?domainLabel DESC(?count)

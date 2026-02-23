@@ -1,0 +1,135 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Architectural Patterns — High-Level Compositions
+# Purpose: Named compositions of motifs forming recognizable ML architectures
+#################
+
+motif:PatternsOntology a owl:Ontology ;
+  skos:definition "Architectural Patterns ontology: high-level named compositions of primitive motifs." .
+#################
+# Pattern Class
+#################
+
+motif:Pattern a rdfs:Class ;
+  skos:prefLabel "Pattern" ;
+  skos:definition "A named architectural pattern composed of multiple motifs." .
+
+motif:composedOf a rdfs:Property ;
+  skos:prefLabel "composedOf" ;
+  rdfs:domain motif:Pattern ;
+  rdfs:range motif:Motif ;
+  skos:definition "Links a pattern to its constituent motifs." .
+
+motif:hasMotifCount a rdfs:Property ;
+  skos:prefLabel "hasMotifCount" ;
+  rdfs:domain motif:Pattern ;
+  skos:definition "Number of motif instances in the pattern." .
+#################
+# Transformer Patterns
+#################
+
+motif:TransformerBlock a motif:Pattern ;
+  skos:prefLabel "Transformer Block"@en ;
+  motif:hasMotifCount 12 ;
+  motif:composedOf motif:Fork, motif:QueryKeyValue, motif:MultiHeadAttention, 
+                     motif:Join, motif:Residual, motif:Linear, motif:LayerNorm ;
+  skos:definition "Standard transformer encoder/decoder block." .
+
+motif:MultiHeadAttentionPattern a motif:Pattern ;
+  skos:prefLabel "Multi-Head Attention Pattern"@en ;
+  motif:hasMotifCount 5 ;
+  motif:composedOf motif:Fork, motif:Linear, motif:QueryKeyValue, 
+                     motif:Attention, motif:Join, motif:Linear ;
+  skos:definition "Parallel attention heads with projection." .
+
+motif:FeedForwardPattern a motif:Pattern ;
+  skos:prefLabel "Feed-Forward Pattern"@en ;
+  motif:hasMotifCount 3 ;
+  motif:composedOf motif:Linear, motif:ScalarOp, motif:Linear ;
+  skos:definition "MLP block: Linear -> Activation -> Linear." .
+
+motif:PreNormBlock a motif:Pattern ;
+  skos:prefLabel "Pre-Norm Block"@en ;
+  motif:composedOf motif:LayerNorm, motif:Attention, motif:Residual ;
+  skos:definition "Pre-LayerNorm transformer variant (GPT-style)." .
+
+motif:PostNormBlock a motif:Pattern ;
+  skos:prefLabel "Post-Norm Block"@en ;
+  motif:composedOf motif:Attention, motif:Residual, motif:LayerNorm ;
+  skos:definition "Post-LayerNorm transformer variant (original BERT)." .
+#################
+# CNN Patterns
+#################
+
+motif:ResNetBottleneck a motif:Pattern ;
+  skos:prefLabel "ResNet Bottleneck"@en ;
+  motif:hasMotifCount 7 ;
+  motif:composedOf motif:Fork, motif:Linear, motif:Linear, motif:Linear, 
+                     motif:Join, motif:Residual ;
+  skos:definition "1x1 -> 3x3 -> 1x1 conv with skip connection." ;
+  rdfs:seeAlso <https://arxiv.org/abs/1512.03385> .
+
+motif:InceptionModule a motif:Pattern ;
+  skos:prefLabel "Inception Module"@en ;
+  motif:composedOf motif:Fork, motif:Linear, motif:Linear, motif:Linear, 
+                     motif:Linear, motif:Concat ;
+  skos:definition "Parallel convolutions with different kernel sizes." ;
+  rdfs:seeAlso <https://arxiv.org/abs/1409.4842> .
+
+motif:DenseBlock a motif:Pattern ;
+  skos:prefLabel "DenseNet Block"@en ;
+  motif:composedOf motif:Fork, motif:Linear, motif:Concat ;
+  skos:definition "Dense connections between all layers in block." ;
+  rdfs:seeAlso <https://arxiv.org/abs/1608.06993> .
+#################
+# RNN Patterns
+#################
+
+motif:LSTMCell a motif:Pattern ;
+  skos:prefLabel "LSTM Cell"@en ;
+  motif:hasMotifCount 8 ;
+  motif:composedOf motif:Fork, motif:Linear, motif:ScalarOp, motif:Mul, 
+                     motif:Add, motif:Join ;
+  skos:definition "Long Short-Term Memory cell: forget, input, output gates + cell state." ;
+  rdfs:seeAlso <https://www.bioinf.jku.at/publications/older/2604.pdf> .
+
+motif:GRUCell a motif:Pattern ;
+  skos:prefLabel "GRU Cell"@en ;
+  motif:hasMotifCount 6 ;
+  motif:composedOf motif:Fork, motif:Linear, motif:ScalarOp, motif:Mul, motif:Add ;
+  skos:definition "Gated Recurrent Unit: reset and update gates." ;
+  rdfs:seeAlso <https://arxiv.org/abs/1406.1078> .
+#################
+# MoE Patterns
+#################
+
+motif:MixtureOfExperts a motif:Pattern ;
+  skos:prefLabel "Mixture of Experts"@en ;
+  motif:composedOf motif:Fork, motif:HardRouting, motif:Linear, motif:WeightedSum ;
+  skos:definition "Sparse MoE: route tokens to top-K experts, aggregate outputs." ;
+  rdfs:seeAlso <https://arxiv.org/abs/1701.06538> .
+
+motif:SwitchTransformer a motif:Pattern ;
+  skos:prefLabel "Switch Transformer"@en ;
+  motif:composedOf motif:Fork, motif:HardRouting, motif:Linear, motif:Join ;
+  skos:definition "Simplified MoE with top-1 routing." ;
+  rdfs:seeAlso <https://arxiv.org/abs/2101.03961> .
+#################
+# GNN Patterns
+#################
+
+motif:GATLayer a motif:Pattern ;
+  skos:prefLabel "Graph Attention Layer"@en ;
+  motif:composedOf motif:Fork, motif:Linear, motif:Attention, motif:Join ;
+  skos:definition "Graph Attention Network layer with multi-head attention over neighbors." ;
+  rdfs:seeAlso <https://arxiv.org/abs/1710.10903> .
+
+motif:MessagePassingLayer a motif:Pattern ;
+  skos:prefLabel "Message Passing Layer"@en ;
+  motif:composedOf motif:Gather, motif:Linear, motif:ReduceSum, motif:Add ;
+  skos:definition "Generic MPNN layer: aggregate neighbor messages, update node." ;
+  rdfs:seeAlso <https://arxiv.org/abs/1704.01212> .
+

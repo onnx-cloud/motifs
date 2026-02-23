@@ -1,0 +1,454 @@
+# Inferred triples from query: iterative.sparql
+# generated: 2026-01-29T07:08:24.294010Z
+# source ttl: ttl
+
+@prefix ns1: <https://ns.onnx.cloud/motif#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ns1:AlgorithmicTrading a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:AntiMoneyLaundering a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:AquacultureMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:AudioTextAlignment a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:AutonomousDriving a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:AutoregressiveDecoding a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:BatteryManagement a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:BeamForming a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:BeamSearch a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:BehaviorAnalysis a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:BioSequenceAnalysis a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:BuildingEnergy a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:CallCenterAnalytics a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:CellularHandover a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:ChatbotCommerce a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:ChurnPrediction a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:ClimateModeling a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:CyberThreatDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:DeepSpeech a ns1:ModelArchitecture ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:DemandForecasting a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:DiffusionDenoising a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:DigitalTwin a skos:Concept,
+        ns1:Application,
+        ns1:Motif,
+        ns1:UnmappedMotif ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:DriverMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:DroneDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:DrugDiscovery a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:EVCharging a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:EnergyOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:EnergyTrading a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:FlashAttention a skos:Concept,
+        ns1:Motif,
+        ns1:UnmappedMotif,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:FleetManagement a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:FlowMatching a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:FoodSupplyChain a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:FraudDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:GAE a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:GameAI a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:GenomicsAnalysis a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:GradientCheckpointing a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:GraphGeneration a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:GridForecasting a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:GridOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:HarvestRobotics a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:ImageCaptioning a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:ImageInpainting a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:InventoryOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:KnowledgeGraphRetrieval a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:LSTM_LanguageModel a ns1:ModelFamily ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:LatentDiffusion a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:LegalDocGen a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:LivestockMonitoring a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:MachineTranslation a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:Mamba a ns1:ModelFamily ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:MarketForecasting a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:MessagePassing a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:MeterAnalytics a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:MolecularDynamics a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:MonteCarloTreeSearch a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:MotionPlanning a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:MusicGeneration a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:NeighborSampling a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:NetworkAnomaly a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:NetworkOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:NeuralPDE a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:OpticalFlow a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:OutageDetection a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:ParkingAssist a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:PipelineParallelism a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:PolicyGradient a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:PortfolioOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:PrecisionIrrigation a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:PredictiveMaintenance a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:PricingOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:ProcessOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:ProteinFolding a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:QoSPrediction a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:RAGRetrieval a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:RL_PPO a ns1:ModelArchitecture ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:RWKV a ns1:ModelFamily ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:RadiologyReport a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:RenewableForecasting a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:RingAllReduce a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:RiskModeling a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:RobotControl a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:SeismicAnalysis a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:SequentialRecommendation a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:SignalIntelligence a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:SignalProcessing a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:SlidingWindowAttention a skos:Concept,
+        ns1:Motif,
+        ns1:UnmappedMotif,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:SpectrumManagement a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:SpeculativeDecoding a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:StreamOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:StyleTransfer a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:SubtitleGeneration a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:SupplyChainOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop,
+        ns1:Scan .
+
+ns1:SurveillanceAnalytics a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:SurvivalAnalysis a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:TemporalGraph a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:TextToImage a skos:Concept,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:TrafficOptimization a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:VehicleDiagnostics a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:VideoGeneration a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:VideoTranscoding a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Loop .
+
+ns1:VisionLanguageModel a skos:Concept,
+        ns1:Pattern,
+        ns1:UseCase ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:VoiceAssistant a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:VoiceCloning a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:YieldPrediction a skos:Concept,
+        ns1:Application ;
+    ns1:hasIterative ns1:Scan .
+
+ns1:Loop a ns1:Iterative ;
+    skos:prefLabel "Loop"@en .
+
+ns1:Scan a ns1:Iterative ;
+    skos:prefLabel "Scan"@en .
+

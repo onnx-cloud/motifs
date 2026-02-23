@@ -1,0 +1,117 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Core classes and properties
+#################
+
+motif:Application a rdfs:Class ;
+  skos:prefLabel "Domain Application" ;
+  skos:definition "A real-world industrial, commercial, or scientific application that employs computation graph motifs." .
+
+motif:IndustryDomain a rdfs:Class ;
+  skos:prefLabel "Industry Domain" ;
+  skos:definition "A sector or field of industry, commerce, or science." .
+
+motif:usesMotif a rdf:Property ;
+  skos:prefLabel "uses motif" ;
+  rdfs:domain motif:Application ;
+  rdfs:range motif:Motif ;
+  skos:definition "Links a domain application to a motif it employs." .
+
+motif:primaryMotif a rdf:Property ;
+  rdfs:subPropertyOf motif:usesMotif ;
+  skos:prefLabel "primary motif" ;
+  rdfs:domain motif:Application ;
+  rdfs:range motif:Motif ;
+  skos:definition "The dominant or characteristic motif for this application." .
+
+motif:belongsTo a rdf:Property ;
+  skos:prefLabel "belongs to" ;
+  rdfs:domain motif:Application ;
+  rdfs:range motif:IndustryDomain ;
+  skos:definition "Links an application to its industry domain." .
+
+motif:relatedUseCase a rdf:Property ;
+  skos:prefLabel "related use case" ;
+  rdfs:domain motif:Application ;
+  rdfs:range motif:UseCase ;
+  skos:definition "Links a domain application to a related technical use case." .
+#################
+# SKOS Concept Schemes
+#################
+
+motif:DomainScheme a skos:ConceptScheme ;
+  skos:prefLabel "Industrial Domain Catalog"@en ;
+  skos:definition "Catalog of industrial, commercial, and scientific domains using computation graph motifs." .
+
+motif:ApplicationScheme a skos:ConceptScheme ;
+  skos:prefLabel "Domain Applications"@en ;
+  skos:definition "Real-world applications within industrial domains mapped to motifs." .
+#################
+# Top-level Industry Domains (SKOS concepts)
+#################
+
+motif:Healthcare a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Healthcare & Life Sciences"@en ;
+  skos:definition "Medical diagnostics, drug discovery, genomics, and clinical applications."@en .
+
+motif:Finance a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Finance & Trading"@en ;
+  skos:definition "Algorithmic trading, risk assessment, fraud detection, and financial forecasting."@en .
+
+motif:Manufacturing a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Manufacturing & Industrial"@en ;
+  skos:definition "Quality control, predictive maintenance, robotics, and process optimization."@en .
+
+motif:Automotive a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Automotive & Transportation"@en ;
+  skos:definition "Autonomous vehicles, traffic optimization, and logistics."@en .
+
+motif:Retail a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Retail & E-Commerce"@en ;
+  skos:definition "Product recommendations, demand forecasting, and customer analytics."@en .
+
+motif:Energy a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Energy & Utilities"@en ;
+  skos:definition "Grid optimization, renewable forecasting, and energy trading."@en .
+
+motif:Telecommunications a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Telecommunications"@en ;
+  skos:definition "Network optimization, signal processing, and customer service automation."@en .
+
+motif:Media a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Media & Entertainment"@en ;
+  skos:definition "Content creation, streaming optimization, and audience analytics."@en .
+
+motif:Agriculture a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Agriculture & Food"@en ;
+  skos:definition "Crop monitoring, yield prediction, and supply chain optimization."@en .
+
+motif:Security a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Security & Defense"@en ;
+  skos:definition "Surveillance, threat detection, and cybersecurity."@en .
+
+motif:Science a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Scientific Research"@en ;
+  skos:definition "Physics simulation, climate modeling, and materials science."@en .
+
+motif:Legal a skos:Concept, motif:IndustryDomain ;
+  skos:inScheme motif:DomainScheme ;
+  skos:prefLabel "Legal & Compliance"@en ;
+  skos:definition "Contract analysis, regulatory compliance, and legal research."@en .
+

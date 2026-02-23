@@ -1,0 +1,15 @@
+# For each model, compute how many distinct motifs it uses and the coverage fraction relative to the total motif catalog
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?modelLabel (COUNT(DISTINCT ?m) AS ?usedMotifs) ?totalMotifs ( (COUNT(DISTINCT ?m) / ?totalMotifs) AS ?coverage )
+WHERE {
+  {
+    SELECT (COUNT(DISTINCT ?all) AS ?totalMotifs) WHERE { ?all a motif:Motif }
+  }
+  ?model a ?type ;
+         skos:prefLabel ?modelLabel ;
+         motif:usesMotif ?m .
+}
+GROUP BY ?modelLabel ?totalMotifs
+ORDER BY DESC(?coverage)

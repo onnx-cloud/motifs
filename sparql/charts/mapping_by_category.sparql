@@ -1,0 +1,13 @@
+# Mapping coverage (mapped/unmapped) per category
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?categoryLabel (IF(BOUND(?op), "mapped", "unmapped") AS ?status) (COUNT(?motif) AS ?count)
+WHERE {
+  ?motif a motif:Motif ;
+         motif:hasCategory ?category .
+  ?category skos:prefLabel ?categoryLabel .
+  OPTIONAL { ?motif skos:exactMatch ?op . }
+}
+GROUP BY ?categoryLabel ?status
+ORDER BY ?categoryLabel

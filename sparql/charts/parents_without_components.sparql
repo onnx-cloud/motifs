@@ -1,0 +1,11 @@
+# Parent motifs (patterns / models) that have no lower-level components referenced via motif:isComponentOf
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?parentLabel
+WHERE {
+  ?parent a ?t ;
+          skos:prefLabel ?parentLabel .
+  FILTER NOT EXISTS { ?op motif:isComponentOf ?parent }
+}
+ORDER BY ?parentLabel

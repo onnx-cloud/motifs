@@ -1,0 +1,123 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# NLP Use Cases
+# Links natural language processing applications to motifs
+##################################
+
+motif:Transformer a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Transformer Architecture"@en ;
+  skos:definition "Self-attention based architecture for sequence-to-sequence modeling with parallel processing of input tokens."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:motif_MultiHead ;
+  motif:usesMotif motif:motif_QKV ;
+  motif:usesMotif motif:Residual ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Join .
+
+motif:AutoregressiveDecoding a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Autoregressive Decoding"@en ;
+  skos:definition "Sequential token generation where each output depends on previously generated tokens, using KV-cache for efficiency."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:KVMemory ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:EarlyExit ;
+  motif:usesMotif motif:Sampler .
+
+motif:BeamSearch a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Beam Search Decoding"@en ;
+  skos:definition "Search algorithm maintaining top-k hypotheses at each decoding step to find high-probability sequences."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:HardRouting ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:Fork ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:ReduceMax .
+
+motif:TokenEmbedding a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Token Embedding Lookup"@en ;
+  skos:definition "Mapping discrete tokens to dense vector representations via embedding table lookup."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:EmbeddingLookup ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Add .
+
+motif:PositionalEncoding a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Positional Encoding"@en ;
+  skos:definition "Injecting sequence position information into token embeddings for position-aware processing."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Add ;
+  motif:usesMotif motif:Add ;
+  motif:usesMotif motif:Broadcast ;
+  motif:usesMotif motif:Slice .
+
+motif:MaskedLanguageModeling a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Masked Language Modeling"@en ;
+  skos:definition "Pre-training objective predicting masked tokens from bidirectional context (BERT-style)."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:PredicateMask ;
+  motif:usesMotif motif:PredicateMask ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Linear .
+
+motif:SequenceClassification a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Sequence Classification"@en ;
+  skos:definition "Classifying entire sequences into categories (sentiment analysis, topic classification)."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:ReduceSum ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:SoftmaxEdge .
+
+motif:NamedEntityRecognition a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Named Entity Recognition"@en ;
+  skos:definition "Token-level classification identifying entities (persons, organizations, locations) in text."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Map ;
+  motif:usesMotif motif:Map ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:If .
+
+motif:MachineTranslation a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Machine Translation"@en ;
+  skos:definition "Sequence-to-sequence translation between languages using encoder-decoder architecture."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:KVMemory .
+
+motif:QuestionAnswering a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Extractive Question Answering"@en ;
+  skos:definition "Identifying answer spans within context passages given a question."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Attention ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Slice ;
+  motif:usesMotif motif:ReduceMax .
+

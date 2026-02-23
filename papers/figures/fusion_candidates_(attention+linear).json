@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Fusion Candidates (Attention+Linear)",
+  "description": "Containers that match conservative fusion heuristics (use both Attention and Linear motifs)",
+  "data": {
+    "values": []
+  },
+  "width": 900,
+  "height": 800,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "containerLabel",
+      "type": "nominal",
+      "axis": {
+        "title": "Container (Model or Motif)"
+      }
+    },
+    "x": {
+      "field": "pattern",
+      "type": "nominal",
+      "axis": {
+        "title": "Fusion Pattern"
+      }
+    },
+    "color": {
+      "field": "pattern",
+      "type": "nominal"
+    }
+  }
+}

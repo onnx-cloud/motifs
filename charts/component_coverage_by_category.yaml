@@ -1,0 +1,28 @@
+# Figure: Component coverage by category
+
+title: Component coverage by category
+description: Number of distinct operator motifs referenced by parents grouped by parent category
+
+query: ./sparql/charts/component_coverage_by_category.sparql
+
+vega:
+  width: 900
+  height: 420
+  mark: bar
+  encoding:
+    x:
+      field: catLabel
+      type: nominal
+      axis: {title: "Category"}
+      sort: -y
+    y:
+      field: componentCount
+      type: quantitative
+      title: "Distinct components"
+    color:
+      field: componentCount
+      type: quantitative
+    tooltip:
+      - field: catLabel
+      - field: componentCount
+      - field: parentCount

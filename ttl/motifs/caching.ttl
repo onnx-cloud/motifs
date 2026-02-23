@@ -1,0 +1,112 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+#################
+# Caching / Incremental Computation Motifs
+# Purpose: KV-cache, memoization, incremental update patterns
+#################
+
+motif:Caching a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Caching / Incremental"@en ;
+  skos:definition "KV-cache, memoization, incremental computation patterns for efficient inference." .
+
+# New fingerprints for caching
+motif:M_cache_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "M.cache=1"@en ;
+  skos:definition "Cache flmotif: result is stored for reuse." .
+
+motif:S_incremental_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "S.incremental=1"@en ;
+  skos:definition "Incremental computation flmotif: only processes delta from previous state." .
+#################
+# Caching Motif Instances
+#################
+
+motif:KVCacheAppend a motif:Motif ;
+  skos:prefLabel "KV-Cache Append"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Caching ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasFingerprint motif:M_cache_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Core pattern in autoregressive LLM inference." .
+
+motif:KVCacheLookup a motif:Motif ;
+  skos:prefLabel "KV-Cache Lookup"@en ;
+  motif:hasSignature motif:Sig_2_to_N ;
+  motif:hasCategory motif:Caching ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:R_Routing ;
+  motif:hasFingerprint motif:M_cache_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Attention over KV-cache in autoregressive generation." .
+
+motif:IncrementalUpdate a motif:Motif ;
+  skos:prefLabel "Incremental Update"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Caching ;
+  motif:hasFingerprint motif:S_State ;
+  motif:hasFingerprint motif:S_incremental_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Efficient for streaming or real-time processing." .
+
+motif:Memoize a motif:Motif ;
+  skos:prefLabel "Memoize"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Caching ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:M_cache_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Classic memoization pattern for expensive computations." .
+
+motif:CacheEvict a motif:Motif ;
+  skos:prefLabel "Cache Evict"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Caching ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:M_cache_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Memory management for bounded caches." .
+
+motif:PagedKVCache a motif:Motif ;
+  skos:prefLabel "Paged KV-Cache"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Caching ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:M_cache_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  rdfs:seeAlso <https://arxiv.org/abs/2309.06180> ;
+  skos:definition "vLLM PagedAttention pattern (Kwon et al., 2023)." .
+
+motif:PrefixCache a motif:Motif ;
+  skos:prefLabel "Prefix Cache"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Caching ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:M_cache_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Optimization for batched inference with shared system prompts." .
+
+motif:SlidingWindowCache a motif:Motif ;
+  skos:prefLabel "Sliding Window Cache"@en ;
+  motif:hasSignature motif:Sig_2_to_1 ;
+  motif:hasCategory motif:Caching ;
+  motif:hasFingerprint motif:M_Memory ;
+  motif:hasFingerprint motif:M_cache_eq_1 ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint ;
+  skos:definition "Bounded memory attention for long sequences (Mistral-style)." .
+

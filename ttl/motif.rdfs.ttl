@@ -1,0 +1,117 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################################################################
+# ONNX.cloud RDFS schema for the `motif:` namespace
+# Note: This is an initial, conservative sketch suitable for use in
+# documentation, validation, and tooling. It is intentionally
+# conservative about domain/range to avoid inferring incorrect types.
+#################################################################
+
+motif: a rdfs:Resource ;
+  rdfs:label "Motif Models RDFS Schema (initial)"@en ;
+  rdfs:comment "Initial RDFS declarations for classes and properties used in the Motif Models ontology."@en .
+################################################################################
+# Classes
+################################################################################
+
+motif:ModelArchitecture a rdfs:Class ;
+  rdfs:label "Model Architecture"@en ;
+  rdfs:comment "Concrete model architecture (an implementation/entry in the models catalog)."@en .
+
+motif:ModelFamily a rdfs:Class ;
+  rdfs:label "Model Family"@en ;
+  rdfs:comment "Semantic grouping of related model architectures (family)."@en .
+
+motif:Motif a rdfs:Class ;
+  rdfs:label "Motif"@en ;
+  rdfs:comment "A composable computation graph pattern (signature, semantics, fingerprints)."@en .
+
+motif:Signature a rdfs:Class ;
+  rdfs:label "Signature"@en ;
+  rdfs:comment "I→O signature for a motif (may be a literal or structured resource)."@en .
+
+motif:Semantics a rdfs:Class ;
+  rdfs:label "Semantics"@en ;
+  rdfs:comment "Reference to machine- or human-readable motif semantics (e.g., link to formal spec)."@en .
+
+motif:Constraint a rdfs:Class ;
+  rdfs:label "Constraint"@en ;
+  rdfs:comment "Rewrite, shape, or side-effect constraints associated with motifs."@en .
+
+motif:Implementation a rdfs:Class ;
+  rdfs:label "Implementation"@en ;
+  rdfs:comment "An artifact that implements or demonstrates a motif (example code, ONNX model, test)."@en .
+################################################################################
+# Properties (conservative domains/ranges)
+################################################################################
+
+motif:usesMotif a rdf:Property ;
+  rdfs:label "uses motif"@en ;
+  rdfs:comment "Relates a container (model, motif, or artifact) to motifs it uses."@en ;
+  rdfs:range motif:Motif .
+
+motif:composedOf a rdf:Property ;
+  rdfs:label "composed of"@en ;
+  rdfs:comment "Lists constituent motifs that compose a higher-level motif or model. Order is not enforced by this property."@en ;
+  rdfs:range motif:Motif .
+
+motif:primaryMotif a rdf:Property ;
+  rdfs:label "primary motif"@en ;
+  rdfs:comment "Designates the primary/core motif for a model or motif entry."@en ;
+  rdfs:range motif:Motif .
+
+motif:hasSignature a rdf:Property ;
+  rdfs:label "has signature"@en ;
+  rdfs:comment "Links a motif (or model) to a `motif:Signature` resource describing its I→O mapping."@en ;
+  rdfs:range motif:Signature .
+
+motif:hasCategory a rdf:Property ;
+  rdfs:label "has category"@en ;
+  rdfs:comment "Assigns a motif to a category (SKOS concept from motif:CategoryScheme)."@en ;
+  rdfs:range skos:Concept .
+
+motif:hasFingerprint a rdf:Property ;
+  rdfs:label "has fingerprint"@en ;
+  rdfs:comment "Attaches fingerprint tags (SKOS concepts) used for analysis (T,C,S,R,M,D dimensions)."@en ;
+  rdfs:range skos:Concept .
+
+motif:hasSemantics a rdf:Property ;
+  rdfs:label "has semantics"@en ;
+  rdfs:comment "Points to a `motif:Semantics` resource describing semantics for the motif."@en ;
+  rdfs:range motif:Semantics .
+
+motif:hasConstraint a rdf:Property ;
+  rdfs:label "has constraint"@en ;
+  rdfs:comment "Connects a motif to operational constraints (e.g., determinism, no side-effects)."@en ;
+  rdfs:range motif:Constraint .
+
+motif:githubRepo a rdf:Property ;
+  rdfs:label "GitHub repository"@en ;
+  rdfs:comment "Link to a canonical implementation repository or example for a model."@en ;
+  rdfs:range rdfs:Resource .
+
+motif:huggingFaceRepo a rdf:Property ;
+  rdfs:label "GitHub repository"@en ;
+  rdfs:comment "Link to a canonical implementation repository or example for a model."@en ;
+  rdfs:range rdfs:Resource .
+
+motif:hasImplementation a rdf:Property ;
+  rdfs:label "has implementation"@en ;
+  rdfs:comment "Links a motif to an implementation artifact (ONNX model, code, test case)."@en ;
+  rdfs:range motif:Implementation .
+################################################################################
+# Convenience / Data-quality properties
+################################################################################
+
+motif:hasExample a rdf:Property ;
+  rdfs:label "has example"@en ;
+  rdfs:comment "Short example or pointer (URI) demonstrating the motif usage."@en ;
+  rdfs:range rdfs:Resource .
+
+motif:notes a rdf:Property ;
+  rdfs:label "notes"@en ;
+  rdfs:comment "Free-form notes or curator comments (literal)."@en ;
+  rdfs:range rdfs:Literal .

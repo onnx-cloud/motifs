@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motifs — Motif Models</title>
+  <meta name="description" content="">
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-semibold mb-4">Motifs</h1>
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="cache-evict/index.html">
+      <div class="font-semibold text-blue-800">Cache Evict</div>
+      <div class="text-sm text-gray-600">Memory management for bounded caches.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="incremental-update/index.html">
+      <div class="font-semibold text-blue-800">Incremental Update</div>
+      <div class="text-sm text-gray-600">Efficient for streaming or real-time processing.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="kv-cache-append/index.html">
+      <div class="font-semibold text-blue-800">KV-Cache Append</div>
+      <div class="text-sm text-gray-600">Core pattern in autoregressive LLM inference.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="kv-cache-lookup/index.html">
+      <div class="font-semibold text-blue-800">KV-Cache Lookup</div>
+      <div class="text-sm text-gray-600">Attention over KV-cache in autoregressive generation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="memoize/index.html">
+      <div class="font-semibold text-blue-800">Memoize</div>
+      <div class="text-sm text-gray-600">Classic memoization pattern for expensive computations.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="paged-kv-cache/index.html">
+      <div class="font-semibold text-blue-800">Paged KV-Cache</div>
+      <div class="text-sm text-gray-600">vLLM PagedAttention pattern (Kwon et al., 2023).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="prefix-cache/index.html">
+      <div class="font-semibold text-blue-800">Prefix Cache</div>
+      <div class="text-sm text-gray-600">Optimization for batched inference with shared system prompts.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="sliding-window-cache/index.html">
+      <div class="font-semibold text-blue-800">Sliding Window Cache</div>
+      <div class="text-sm text-gray-600">Bounded memory attention for long sequences (Mistral-style).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="beam-search/index.html">
+      <div class="font-semibold text-blue-800">Beam Search</div>
+      <div class="text-sm text-gray-600">Approximate best-first search for sequence generation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="chain-of-thought/index.html">
+      <div class="font-semibold text-blue-800">Chain-of-Thought</div>
+      <div class="text-sm text-gray-600">Chain-of-Thought prompting (Wei et al., 2022).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="hypothetical-document-embedding/index.html">
+      <div class="font-semibold text-blue-800">Hypothetical Document Embedding</div>
+      <div class="text-sm text-gray-600">HyDE retrieval pattern (Gao et al., 2022).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="iterative-retrieval/index.html">
+      <div class="font-semibold text-blue-800">Iterative Retrieval</div>
+      <div class="text-sm text-gray-600">Multi-hop retrieval for complex questions.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="monte-carlo-tree-search/index.html">
+      <div class="font-semibold text-blue-800">Monte Carlo Tree Search</div>
+      <div class="text-sm text-gray-600">MCTS for reasoning and game playing.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="react/index.html">
+      <div class="font-semibold text-blue-800">ReAct</div>
+      <div class="text-sm text-gray-600">Reasoning + Acting pattern (Yao et al., 2022).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="reflection/index.html">
+      <div class="font-semibold text-blue-800">Reflection</div>
+      <div class="text-sm text-gray-600">Reflexion pattern (Shinn et al., 2023).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="retrieval-augmented-generation/index.html">
+      <div class="font-semibold text-blue-800">Retrieval-Augmented Generation</div>
+      <div class="text-sm text-gray-600">RAG pattern (Lewis et al., 2020).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="scratchpad/index.html">
+      <div class="font-semibold text-blue-800">Scratchpad</div>
+      <div class="text-sm text-gray-600">Explicit working memory for complex reasoning.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="self-consistency/index.html">
+      <div class="font-semibold text-blue-800">Self-Consistency</div>
+      <div class="text-sm text-gray-600">Self-Consistency decoding (Wang et al., 2022).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="task-decomposition/index.html">
+      <div class="font-semibold text-blue-800">Task Decomposition</div>
+      <div class="text-sm text-gray-600">Hierarchical task planning.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="tree-of-thoughts/index.html">
+      <div class="font-semibold text-blue-800">Tree-of-Thoughts</div>
+      <div class="text-sm text-gray-600">Tree-of-Thoughts reasoning (Yao et al., 2023).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="activation-sparsification/index.html">
+      <div class="font-semibold text-blue-800">Activation Sparsification</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="knowledge-distillation/index.html">
+      <div class="font-semibold text-blue-800">Knowledge Distillation</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="neural-architecture-search-nas/index.html">
+      <div class="font-semibold text-blue-800">Neural Architecture Search (NAS)</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="post-training-quantization/index.html">
+      <div class="font-semibold text-blue-800">Post-Training Quantization</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="quantization-aware-training/index.html">
+      <div class="font-semibold text-blue-800">Quantization-Aware Training</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="structured-pruning/index.html">
+      <div class="font-semibold text-blue-800">Structured Pruning</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="unstructured-pruning/index.html">
+      <div class="font-semibold text-blue-800">Unstructured Pruning</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="weight-packing/index.html">
+      <div class="font-semibold text-blue-800">Weight Packing</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="break/index.html">
+      <div class="font-semibold text-blue-800">Break</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="conditional-merge/index.html">
+      <div class="font-semibold text-blue-800">Conditional Merge</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="conditional-scan/index.html">
+      <div class="font-semibold text-blue-800">Conditional Scan</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="continue/index.html">
+      <div class="font-semibold text-blue-800">Continue</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="dynamic-loop-unroll/index.html">
+      <div class="font-semibold text-blue-800">Dynamic Loop Unroll</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="early-exit/index.html">
+      <div class="font-semibold text-blue-800">Early Exit</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="for/index.html">
+      <div class="font-semibold text-blue-800">For</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="guarded-ops/index.html">
+      <div class="font-semibold text-blue-800">Guarded Ops</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="if/index.html">
+      <div class="font-semibold text-blue-800">If</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="loop/index.html">
+      <div class="font-semibold text-blue-800">Loop</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="multi-branch-loop/index.html">
+      <div class="font-semibold text-blue-800">Multi-Branch Loop</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="predicate-mask/index.html">
+      <div class="font-semibold text-blue-800">Predicate Mask</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="scan/index.html">
+      <div class="font-semibold text-blue-800">Scan</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="switch/index.html">
+      <div class="font-semibold text-blue-800">Switch</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="while/index.html">
+      <div class="font-semibold text-blue-800">While</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="adaptive-gain/index.html">
+      <div class="font-semibold text-blue-800">Adaptive Gain</div>
+      <div class="text-sm text-gray-600">Gain scheduling, self-tuning control.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="dead-zone/index.html">
+      <div class="font-semibold text-blue-800">Dead Zone</div>
+      <div class="text-sm text-gray-600">Ignore small errors, prevent chatter.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="derivative-control-d/index.html">
+      <div class="font-semibold text-blue-800">Derivative Control (D)</div>
+      <div class="text-sm text-gray-600">D controller for damping.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="extremum-seeking/index.html">
+      <div class="font-semibold text-blue-800">Extremum Seeking</div>
+      <div class="text-sm text-gray-600">Real-time optimization without explicit model.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="feedback-loop/index.html">
+      <div class="font-semibold text-blue-800">Feedback Loop</div>
+      <div class="text-sm text-gray-600">Fundamental closed-loop control pattern.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="integral-control-i/index.html">
+      <div class="font-semibold text-blue-800">Integral Control (I)</div>
+      <div class="text-sm text-gray-600">I controller with accumulated state.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="kalman-filter/index.html">
+      <div class="font-semibold text-blue-800">Kalman Filter</div>
+      <div class="text-sm text-gray-600">Recursive Bayesian estimation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="linear-quadratic-regulator/index.html">
+      <div class="font-semibold text-blue-800">Linear-Quadratic Regulator</div>
+      <div class="text-sm text-gray-600">Optimal control for linear systems.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="model-predictive-control/index.html">
+      <div class="font-semibold text-blue-800">Model Predictive Control</div>
+      <div class="text-sm text-gray-600">Receding horizon optimal control.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="model-reference-adaptive-control/index.html">
+      <div class="font-semibold text-blue-800">Model Reference Adaptive Control</div>
+      <div class="text-sm text-gray-600">Adaptive control with explicit reference.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="negative-feedback/index.html">
+      <div class="font-semibold text-blue-800">Negative Feedback</div>
+      <div class="text-sm text-gray-600">Standard error-correcting feedback.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="pid-control/index.html">
+      <div class="font-semibold text-blue-800">PID Control</div>
+      <div class="text-sm text-gray-600">Workhorse of industrial control.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="positive-feedback/index.html">
+      <div class="font-semibold text-blue-800">Positive Feedback</div>
+      <div class="text-sm text-gray-600">Self-reinforcing loops; use with caution.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="proportional-control-p/index.html">
+      <div class="font-semibold text-blue-800">Proportional Control (P)</div>
+      <div class="text-sm text-gray-600">P controller.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="rate-limiter/index.html">
+      <div class="font-semibold text-blue-800">Rate Limiter</div>
+      <div class="text-sm text-gray-600">Prevent sudden changes in control signal.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="saturation/index.html">
+      <div class="font-semibold text-blue-800">Saturation</div>
+      <div class="text-sm text-gray-600">Actuator limits, anti-windup.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="state-observer/index.html">
+      <div class="font-semibold text-blue-800">State Observer</div>
+      <div class="text-sm text-gray-600">Luenberger observer, Kalman filter.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="data-augmentation/index.html">
+      <div class="font-semibold text-blue-800">Data Augmentation</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="dynamic-batching/index.html">
+      <div class="font-semibold text-blue-800">Dynamic Batching</div>
+      <div class="text-sm text-gray-600">Grouping inference requests with similar sequence lengths for efficient batch processing.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="normalization/index.html">
+      <div class="font-semibold text-blue-800">Normalization</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="sharding-partition/index.html">
+      <div class="font-semibold text-blue-800">Sharding / Partition</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="tokenization/index.html">
+      <div class="font-semibold text-blue-800">Tokenization</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="benchmark-suite/index.html">
+      <div class="font-semibold text-blue-800">Benchmark Suite</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="calibration/index.html">
+      <div class="font-semibold text-blue-800">Calibration</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="holdout-test/index.html">
+      <div class="font-semibold text-blue-800">Holdout Test</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="latency-p95p99/index.html">
+      <div class="font-semibold text-blue-800">Latency P95/P99</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="robustness-benchmark/index.html">
+      <div class="font-semibold text-blue-800">Robustness Benchmark</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="delay-z¹/index.html">
+      <div class="font-semibold text-blue-800">Delay (Z⁻¹)</div>
+      <div class="text-sm text-gray-600">Explicit temporal delay for streaming/recurrent graphs.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="race-any/index.html">
+      <div class="font-semibold text-blue-800">Race (Any)</div>
+      <div class="text-sm text-gray-600">Asynchronous merge (first-to-finish arbiter).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="ref-quote/index.html">
+      <div class="font-semibold text-blue-800">Ref (Quote)</div>
+      <div class="text-sm text-gray-600">Produces a first-class handle to a subgraph.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="activation-patching/index.html">
+      <div class="font-semibold text-blue-800">Activation Patching</div>
+      <div class="text-sm text-gray-600">Causal tracing via activation surgery.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="attention-rollout/index.html">
+      <div class="font-semibold text-blue-800">Attention Rollout</div>
+      <div class="text-sm text-gray-600">Visualize transformer attention as attribution.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="causal-probe/index.html">
+      <div class="font-semibold text-blue-800">Causal Probe</div>
+      <div class="text-sm text-gray-600">Causal tracing, activation patching.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="circuit-analysis/index.html">
+      <div class="font-semibold text-blue-800">Circuit Analysis</div>
+      <div class="text-sm text-gray-600">Mechanistic interpretability via circuit discovery.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="concept-bottleneck/index.html">
+      <div class="font-semibold text-blue-800">Concept Bottleneck</div>
+      <div class="text-sm text-gray-600">Concept Bottleneck Models (Koh et al., 2020).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="concept-whitening/index.html">
+      <div class="font-semibold text-blue-800">Concept Whitening</div>
+      <div class="text-sm text-gray-600">Concept Whitening for Interpretable Image Recognition.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="contrastive-explanation/index.html">
+      <div class="font-semibold text-blue-800">Contrastive Explanation</div>
+      <div class="text-sm text-gray-600">Why X and not Y? explanations.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="counterfactual-explanation/index.html">
+      <div class="font-semibold text-blue-800">Counterfactual Explanation</div>
+      <div class="text-sm text-gray-600">What-if explanations via minimal perturbation.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="grad-cam/index.html">
+      <div class="font-semibold text-blue-800">Grad-CAM</div>
+      <div class="text-sm text-gray-600">Gradient-weighted Class Activation Mapping (Selvaraju et al., 2017).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="gradient-attribution/index.html">
+      <div class="font-semibold text-blue-800">Gradient Attribution</div>
+      <div class="text-sm text-gray-600">Vanilla gradients, Saliency maps.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="integrated-gradients/index.html">
+      <div class="font-semibold text-blue-800">Integrated Gradients</div>
+      <div class="text-sm text-gray-600">Axiomatic attribution method (Sundararajan et al., 2017).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="lime/index.html">
+      <div class="font-semibold text-blue-800">LIME</div>
+      <div class="text-sm text-gray-600">Local Interpretable Model-agnostic Explanations (Ribeiro et al., 2016).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="linear-probe/index.html">
+      <div class="font-semibold text-blue-800">Linear Probe</div>
+      <div class="text-sm text-gray-600">Standard probing methodology.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="representation-similarity/index.html">
+      <div class="font-semibold text-blue-800">Representation Similarity</div>
+      <div class="text-sm text-gray-600">CKA, SVCCA for comparing representations.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="shap-values/index.html">
+      <div class="font-semibold text-blue-800">SHAP Values</div>
+      <div class="text-sm text-gray-600">SHAP (Lundberg &amp; Lee, 2017).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="superposition-analysis/index.html">
+      <div class="font-semibold text-blue-800">Superposition Analysis</div>
+      <div class="text-sm text-gray-600">Understanding polysemantic neurons.</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="tcav/index.html">
+      <div class="font-semibold text-blue-800">TCAV</div>
+      <div class="text-sm text-gray-600">Testing with Concept Activation Vectors (Kim et al., 2018).</div>
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="asynchronous-dma/index.html">
+      <div class="font-semibold text-blue-800">Asynchronous DMA</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="hbm-streaming/index.html">
+      <div class="font-semibold text-blue-800">HBM Streaming</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="quantized-compute/index.html">
+      <div class="font-semibold text-blue-800">Quantized Compute</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="simdvector/index.html">
+      <div class="font-semibold text-blue-800">SIMD/Vector</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="systolic-array/index.html">
+      <div class="font-semibold text-blue-800">Systolic Array</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="tensor-core-fused/index.html">
+      <div class="font-semibold text-blue-800">Tensor Core Fused</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="add/index.html">
+      <div class="font-semibold text-blue-800">Add</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="broadcast/index.html">
+      <div class="font-semibold text-blue-800">Broadcast</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="div/index.html">
+      <div class="font-semibold text-blue-800">Div</div>
+      
+    </a>
+    <a class="block bg-white border rounded-lg p-4 hover:shadow-md h-full" href="expanddims/index.html">
+      <div class="font-semibold text-blue-800">ExpandDims</div>
+      
+    </a>
+  </div>
+</div>
+
+  </main>
+</body>
+</html>

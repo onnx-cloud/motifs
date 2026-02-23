@@ -1,0 +1,20 @@
+# Category detail (expects ?targetCategory bound)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?categoryLabel ?categoryDefinition ?motif ?motifLabel ?signature ?definition ?isPrimitive
+WHERE {
+  # bound variable: ?targetCategory
+  ?targetCategory a skos:Concept .
+  OPTIONAL { ?targetCategory skos:prefLabel ?categoryLabel. }
+  OPTIONAL { ?targetCategory skos:definition ?categoryDefinition. }
+
+  OPTIONAL {
+    ?motif a motif:Motif ; motif:hasCategory ?targetCategory .
+    OPTIONAL { ?motif skos:prefLabel ?motifLabel . }
+    OPTIONAL { ?motif motif:hasSignature ?signature . }
+    OPTIONAL { ?motif skos:definition ?definition . }
+    OPTIONAL { ?motif motif:isPrimitive ?isPrimitive . }
+  }
+}
+ORDER BY ?motifLabel

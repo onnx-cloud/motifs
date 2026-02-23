@@ -1,0 +1,41 @@
+\OnePageSectionStart
+\section{Semantic-Preserving Lowering to Runtime}
+
+The typed AST is lowered to any target runtime (ONNX IR, custom GPU kernels, CPU code, hardware accelerators, or domain-specific interpreters) while preserving semantic invariants. Assertions are explicit; runtime checks are elided only when provably safe; modality semantics are preserved in metadata for downstream auditing and validation.
+
+\paragraph{Type $\to$ Runtime Mapping}
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\textbf{Typed Tensor} & \textbf{Runtime Encoding} & \textbf{Assertions} \\
+\hline
+Measurement (\texttt{M}) & Tensor + metadata & Clip, Assert on range and unit \\  
+Distribution (\texttt{D}) & float32/float64 tensor & \emph{normalization}; constraint is semantic \\
+Enum (\texttt{E}) & int32 tensor & Assert bounds and vocabulary \\  
+Atomic (\texttt{⊥}) & float32/float64 tensor & generic numeric range \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{ONNX as default target}: ONNX IR provides an extensible format for intermediate representation. Tensors are lowered to ONNX tensors with semantic metadata stored as attributes or external schema references. Assertions (on Measurement ranges, Enum bounds, Distribution normalization) are encoded as ONNX op graphs (Clip, Greater, Assert nodes).
+
+\textbf{Alternative runtimes}: The same typed AST can lower to GPU-optimized code (CUDA kernels with semantic metadata in comments), CPU code (with explicit runtime checks inlined), or specialized accelerators (custom instruction sequences with semantic annotations).
+
+\paragraph{Assertion Elision and Symbolic Analysis}
+Compile-time shape and range analysis determines which runtime assertions are redundant:
+\begin{itemize}
+  \item If range $[0,1]$ is guaranteed by prior Softmax, subsequent Clip is elided.
+  \item If Enum bounds are verified statically, vocabulary check is removed.
+  \item If symbolic dimension is never refined, shape Assert remains at runtime.
+\end{itemize}
+
+\paragraph{Semantic Preservation and Auditability}
+Regardless of target runtime, the lowered code carries semantic annotations for every tensor:
+\begin{itemize}
+  \item \textbf{Auditing}: trace back any output to its sensor input and all intermediate semantic types.
+  \item \textbf{Test/Train Consistency}: graph topology and type constraints are deterministic and runtime-agnostic; train and test graphs share identical lowered semantics.
+  \item \textbf{Model Debugging}: when output is unexpected, the semantic types and assertions narrow culprit to a specific morph, knowledge realm crossing, or measurement constraint violation.
+  \item \textbf{Runtime Flexibility}: same ABI/AST can be deployed on different hardware (edge device with lightweight interpreter, cloud GPU with ONNX Runtime, custom accelerator with custom lowering) without changing the semantic contract.
+\end{itemize}
+
+\OnePageSectionEnd

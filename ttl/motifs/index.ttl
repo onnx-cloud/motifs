@@ -1,0 +1,533 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix onnx: <https://ns.onnx.cloud/onnx#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex:    <https://ns.onnx.cloud/examples##> .
+##################################
+# Motif Models — RDFS + SKOS skeleton (index.ttl)
+# Purpose: outline core classes, SKOS schemes, fingerprints, and
+#          basic properties to be extended by ttl/motifs.ttl
+##################################
+
+motif: a owl:Ontology ;
+  skos:prefLabel "Motif Models Ontology (skeleton)" ;
+  skos:definition "Motif Models authors" ;
+  skos:definition "2026-01-29"^^xsd:date ;
+  skos:definition "RDFS + SKOS concepts for describing computation graph motifs, categories, fingerprints, and implementations." .
+#################
+# Core classes / SKOS schemes
+#################
+
+# Motif class: a composable computation graph pattern
+motif:Motif a rdfs:Class ;
+  skos:prefLabel "Motif" ;
+  skos:definition "A computation graph motif: a composable pattern with signature, semantics, and fingerprints." .
+
+# Implementation artifact (Python function, ONNX model, test)
+motif:Implementation a rdfs:Class ;
+  skos:prefLabel "Implementation" ;
+  skos:definition "Artifact that implements or tests a motif (e.g., Python function, ONNX example, unit test)." .
+
+# Signature, Semantics, Constraint as lightweight resources
+motif:Signature a rdfs:Class ; skos:prefLabel "Signature" ; skos:definition "I->O signature for a motif, expressed as a literal or structured object." .
+motif:Semantics a rdfs:Class ; skos:prefLabel "Semantics" ; skos:definition "Human- and machine-readable semantic description or URI to formal semantics." .
+motif:Constraint a rdfs:Class ; skos:prefLabel "Constraint" ; skos:definition "Composition or rewrite constraints (shape, side-effects, determinism)." .
+
+# SKOS concept schemes for categories and fingerprints
+motif:CategoryScheme a skos:ConceptScheme ;
+  skos:prefLabel "Motif categories"@en ;
+  skos:definition "Top-level grouping for motif types (Linear, Topology, Control, Routing, Memory, Programmatic, Misc)." .
+
+motif:FingerprintScheme a skos:ConceptScheme ;
+  skos:prefLabel "Fingerprint dimensions"@en ;
+  skos:definition "Fingerprint dimensions (T,C,S,R,M,D) describing structural and semantic properties." .
+#################
+# Categories (SKOS concepts)
+#################
+
+motif:Linear a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Linear / Algebraic"@en ;
+  skos:definition "Mathematical tensor operatiomotif: MatMul, Add, Reduce, Reshape." .
+
+motif:Topology a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Topology / Composition"@en ;
+  skos:definition "Structural motifs: Fork, Join, Residual, Concat." .
+
+motif:Control a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Control / Conditional"@en ;
+  skos:definition "Control-flow and iteration motifs: If, Loop, Scan." .
+
+motif:Routing a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Routing / Attention"@en ;
+  skos:definition "Routing and attention motifs: Query-Key-Value, Multi-Head Attention." .
+
+motif:Memory a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Memory / State"@en ;
+  skos:definition "Mutable or persistent memory motifs: Read, Write, Gather, KV Memory." .
+
+motif:Programmatic a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Programmatic / Meta"@en ;
+  skos:definition "Meta and dynamic motifs: Call, Subgraph generation, Self-modifying graphs." .
+
+motif:Misc a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Miscellaneous / Utility"@en ;
+  skos:definition "Utility and hybrid motifs." .
+
+# Extended categories (from OPUS.md proposals)
+
+motif:Speculative a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Speculative / Predictive"@en ;
+  skos:definition "Speculative execution, draft-verify, rollback patterns for predictive computation." .
+
+motif:Caching a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Caching / Incremental"@en ;
+  skos:definition "KV-cache, memoization, incremental computation patterns." .
+
+motif:Sparse a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Sparse / Structured"@en ;
+  skos:definition "Sparse computation : block-sparse, masked attention, dynamic pruning." .
+
+motif:MultiModal a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Multi-Modal / Fusion"@en ;
+  skos:definition "Patterns for combining multiple modalities (vision, language, audio)." .
+
+motif:Cognition a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Cognition / Reasoning"@en ;
+  skos:definition "Higher-level reasoning : chain-of-thought, planning, retrieval-augmented generation." .
+
+motif:ControlTheory a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Control Theory"@en ;
+  skos:definition "Feedback loops, stability, adaptive control patterns from classical and modern control theory." .
+
+motif:XAI a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Explainable AI"@en ;
+  skos:definition "Patterns for model interpretability: attribution, probing, concept bottlenecks." .
+
+motif:Training a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Training / Optimization"@en ;
+  skos:definition "Patterns for model training: gradients, optimizers, distributed training." .
+
+motif:Safety a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Safety / Alignment"@en ;
+  skos:definition "Patterns for AI safety: RLHF, guardrails, robustness, watermarking." .
+
+# Additional categories added 2026-01-29
+motif:Hardware a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Hardware / Execution"@en ;
+  skos:definition "Hardware-specific execution and memory patterns (GPU, TPU, NPU, memory hierarchies)." .
+
+motif:Temporal a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Temporal / Streaming"@en ;
+  skos:definition "Streaming, real-time, and online computation patterns." .
+
+motif:Probabilistic a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Probabilistic / Bayesian"@en ;
+  skos:definition "Sampling, inference, and uncertainty quantification patterns." .
+
+motif:NeuroSymbolic a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Neuro-Symbolic"@en ;
+  skos:definition "Neural + symbolic integration patterns (KG lookup, differentiable logic)." .
+
+motif:Compression a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Compression / Efficiency"@en ;
+  skos:definition "Pruning, quantization, distillation, and NAS patterns." .
+
+motif:Simulation a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Simulation / Scientific"@en ;
+  skos:definition "Physics-informed and simulation patterns." .
+
+motif:Agents a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Systems / Embodied"@en ;
+  skos:definition "Embodied systems and tool-use patterns." .
+
+motif:Data a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Data / Preprocessing"@en ;
+  skos:definition "Data pipeline and preprocessing : tokenization, augmentation, batching." .
+
+motif:Evaluation a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Evaluation / Metrics"@en ;
+  skos:definition "Evaluation protocols, benchmarks, and metric patterns." .
+
+motif:Lifecycle a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Lifecycle / MLOps"@en ;
+  skos:definition "Model lifecycle, deployment, monitoring, and retraining patterns." .
+#################
+# Fingerprint concepts (SKOS concepts for each dimension)
+#################
+
+motif:T_Topology a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T: Topology"@en ;
+  skos:definition "Topological properties (e.g., width, depth, reuse)." .
+
+motif:C_Control a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "C: Control"@en ;
+  skos:definition "Control-flow properties (predicates, loops, early-exit)." .
+
+motif:S_State a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "S: State"@en ;
+  skos:definition "State carrying properties (carried state, persistent state)." .
+
+motif:R_Routing a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "R: Routing"@en ;
+  skos:definition "Routing and attention properties (soft/hard routing, sparsity)." .
+
+motif:M_Memory a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "M: Memory"@en ;
+  skos:definition "Memory properties (local/shared, mutable, addressable)." .
+
+motif:D_Dynamics a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "D: Dynamics"@en ;
+  skos:definition "Dynamic graph properties (graph-dynamic, self-modifying)." .
+
+# Concrete fingerprint values (instances as SKOS concepts)
+motif:T_depth_plus_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.depth+1"@en ;
+  skos:definition "Topological depth increment marker (used to indicate 'depth + 1' topology property for motifs such as Linear)." .
+
+# Additional fingerprint instances
+motif:T_reuse_plus_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.reuse+1"@en ;
+  skos:definition "Topology reuse marker indicating a reuse count increment." .
+
+motif:T_width_plus_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.width+1"@en ;
+  skos:definition "Topology width marker indicating expansion by 1." .
+
+motif:T_width_plus_N a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.width+N"@en ;
+  skos:definition "Topology width marker indicating expansion by N" .
+
+motif:T_cycles_eq_1_C_loop_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.cycles=1, C.loop=1"@en ;
+  skos:definition "Single-cycle loop motif." .
+
+motif:T_cycles_eq_1_S_carried_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "T.cycles=1, S.carried=1"@en ;
+  skos:definition "Loop motif with carried state." .
+
+motif:M_mutable_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "M.mutable=1"@en ;
+  skos:definition "Mutable memory property." .
+
+motif:M_addressable_eq_1_S_persistent_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "M.addressable=1, S.persistent=1"@en ;
+  skos:definition "Addressable and persistent memory." .
+
+motif:R_hard_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "R.hard=1"@en ;
+  skos:definition "Hard (discrete) routing." .
+
+# Signatures as resources
+motif:Sig_1_to_N a motif:Signature ; skos:prefLabel "1->N" .
+motif:Sig_1_to_1 a motif:Signature ; skos:prefLabel "1->1" .
+motif:Sig_2_to_1 a motif:Signature ; skos:prefLabel "2->1" .
+motif:Sig_N_to_1 a motif:Signature ; skos:prefLabel "N->1" .
+motif:Sig_1_to_N_to_1 a motif:Signature ; skos:prefLabel "1->N->1" .
+motif:Sig_1_to_N_optional a motif:Signature ; skos:prefLabel "1->N?" .
+motif:Sig_1_to_0_or_1 a motif:Signature ; skos:prefLabel "1->0/1" .
+motif:Sig_many_to_many a motif:Signature ; skos:prefLabel "many->many" .
+motif:Sig_idx_to_vec a motif:Signature ; skos:prefLabel "idx->vec" .
+
+# Semantics resources (per motif)
+motif:Sem_Fork a motif:Semantics ; skos:prefLabel "Fork" ; skos:definition "Split a tensor into N parallel paths (fanout)." .
+motif:Sem_Add a motif:Semantics ; skos:prefLabel "Add" ; skos:definition "Element-wise addition (broadcastable)." .
+motif:Sem_Sub a motif:Semantics ; skos:prefLabel "Sub" ; skos:definition "Element-wise subtraction." .
+motif:Sem_Mul a motif:Semantics ; skos:prefLabel "Mul" ; skos:definition "Element-wise multiplication." .
+motif:Sem_Div a motif:Semantics ; skos:prefLabel "Div" ; skos:definition "Element-wise division." .
+motif:Sem_ReduceSum a motif:Semantics ; skos:prefLabel "ReduceSum" ; skos:definition "Summation along an axis." .
+motif:Sem_ReduceMax a motif:Semantics ; skos:prefLabel "ReduceMax" ; skos:definition "Maximum reduction along an axis." .
+motif:Sem_Broadcast a motif:Semantics ; skos:prefLabel "Broadcast" ; skos:definition "Broadcast input to multiple parallel paths or shapes." .
+motif:Sem_Reshape a motif:Semantics ; skos:prefLabel "Reshape" ; skos:definition "Change tensor shape (may be dynamic)." .
+motif:Sem_Transpose a motif:Semantics ; skos:prefLabel "Transpose" ; skos:definition "Permute tensor axes." .
+motif:Sem_Slice a motif:Semantics ; skos:prefLabel "Slice" ; skos:definition "Select a sub-tensor by index ranges." .
+motif:Sem_ExpandDims a motif:Semantics ; skos:prefLabel "ExpandDims" ; skos:definition "Add singleton dimension." .
+motif:Sem_Squeeze a motif:Semantics ; skos:prefLabel "Squeeze" ; skos:definition "Remove singleton dimension." .
+motif:Sem_Identity a motif:Semantics ; skos:prefLabel "Identity" ; skos:definition "Pass-through operator." .
+motif:Sem_ScalarOp a motif:Semantics ; skos:prefLabel "ScalarOp" ; skos:definition "Unary scalar operation (sin, exp, log)." .
+motif:Sem_Join a motif:Semantics ; skos:prefLabel "Join" ; skos:definition "Merge multiple paths (e.g., Add, Concat)." .
+motif:Sem_ForkJoin a motif:Semantics ; skos:prefLabel "Fork-Join" ; skos:definition "Parallel processing: fork, independent ops, join." .
+motif:Sem_Residual a motif:Semantics ; skos:prefLabel "Residual" ; skos:definition "Skip connection adding input to transformed output." .
+motif:Sem_Concat a motif:Semantics ; skos:prefLabel "Concat" ; skos:definition "Concatenate tensors along an axis." .
+
+# Control semantics
+motif:Sem_If a motif:Semantics ; skos:prefLabel "If" ; skos:definition "Conditional branching executing one of several subgraphs based on a predicate." .
+motif:Sem_Switch a motif:Semantics ; skos:prefLabel "Switch" ; skos:definition "Multi-branch selection based on predicate value." .
+motif:Sem_EarlyExit a motif:Semantics ; skos:prefLabel "Early Exit" ; skos:definition "Exit loop or computation early based on a condition." .
+motif:Sem_Loop a motif:Semantics ; skos:prefLabel "Loop" ; skos:definition "Iteration motif with loop body as subgraph." .
+motif:Sem_Scan a motif:Semantics ; skos:prefLabel "Scan" ; skos:definition "Sequence accumulation (e.g., RNN scan)." .
+motif:Sem_While a motif:Semantics ; skos:prefLabel "While" ; skos:definition "Indefinite loop executed while predicate holds." .
+motif:Sem_For a motif:Semantics ; skos:prefLabel "For" ; skos:definition "Bounded iteration over a range." .
+
+# Routing semantics
+motif:Sem_Attention a motif:Semantics ; skos:prefLabel "Attention" ; skos:definition "Weighted aggregation of values using soft attention weights." .
+motif:Sem_HardRouting a motif:Semantics ; skos:prefLabel "Hard Routing" ; skos:definition "Discrete top-K selection of paths/experts." .
+motif:Sem_WeightedSum a motif:Semantics ; skos:prefLabel "Weighted Sum" ; skos:definition "Weighted aggregation of N tensors." .
+motif:Sem_QKV a motif:Semantics ; skos:prefLabel "Query-Key-Value" ; skos:definition "Primitive for attention: computes attention weights and aggregates values." .
+motif:Sem_MultiHead a motif:Semantics ; skos:prefLabel "Multi-Head Attention" ; skos:definition "Parallel attention heads aggregated together." .
+motif:Sem_StochasticRouting a motif:Semantics ; skos:prefLabel "Stochastic Routing" ; skos:definition "Randomized selection of paths or routing with stochasticity." .
+motif:Sem_SparseMoE a motif:Semantics ; skos:prefLabel "Sparse MoE" ; skos:definition "Mixture-of-experts style selection with sparse gating." .
+motif:Sem_RouteMerge a motif:Semantics ; skos:prefLabel "Route & Merge" ; skos:definition "Routing paths with final merge step." .
+#################
+# ONNX integration annotations
+#################
+
+onnx:Operator a rdfs:Class ;
+  skos:prefLabel "ONNX Operator" ;
+  skos:definition "An operator schema defined in the ONNX standard." .
+
+onnx:CustomOp a rdfs:Class ;
+  rdfs:subClassOf onnx:Operator ;
+  skos:prefLabel "Custom Operator" ;
+  skos:definition "Out-of-spec operator implemented by a runtime or extension." .
+
+onnx:RuntimeCapability a rdfs:Class ;
+  skos:prefLabel "Runtime Capability" ;
+  skos:definition "A capability that must be provided by the ONNX runtime beyond static graphs." .
+
+# Use SKOS mapping to relate motifs to canonical ONNX operators. Use `skos:exactMatch` for one-to-one semantic alignment.
+# Example: motif:Identity skos:exactMatch onnx:Identity .
+
+
+onnx:requiresRuntime a rdf:Property ;
+  rdfs:domain motif:Motif ;
+  rdfs:range onnx:RuntimeCapability ;
+  skos:prefLabel "requires runtime capability" ;
+  skos:definition "Indicates additional runtime support needed beyond pure ONNX operators." .
+
+# Runtime capability instances
+onnx:MutableStateRuntime a onnx:RuntimeCapability ;
+  skos:prefLabel "Mutable State" ;
+  skos:definition "Supports stateful memory updates during execution." .
+
+onnx:ExternalIORuntime a onnx:RuntimeCapability ;
+  skos:prefLabel "External IO" ;
+  skos:definition "Allows interaction with external services or data sources." .
+
+onnx:DistributedRuntime a onnx:RuntimeCapability ;
+  skos:prefLabel "Distributed Communication" ;
+  skos:definition "Provides collectives or device-to-device communication." .
+
+onnx:GraphMutationRuntime a onnx:RuntimeCapability ;
+  skos:prefLabel "Graph Mutation" ;
+  skos:definition "Allows runtime graph editing or self-modifying behavior." .
+
+onnx:StreamingRuntime a onnx:RuntimeCapability ;
+  skos:prefLabel "Streaming / Temporal" ;
+  skos:definition "Supports temporal buffering and stream processing primitives." .
+
+onnx:AsyncRuntime a onnx:RuntimeCapability ;
+  skos:prefLabel "Asynchronous Scheduling" ;
+  skos:definition "Allows asynchronous task scheduling and arbitration." .
+
+onnx:HigherOrderRuntime a onnx:RuntimeCapability ;
+  skos:prefLabel "Higher-Order Graphs" ;
+  skos:definition "Supports first-class graph handles and dynamic dispatch." .
+motif:Sem_AttentionResidual a motif:Semantics ; skos:prefLabel "Attention Residual" ; skos:definition "Residual + attention hybrid (common in transformer blocks)." .
+motif:Sem_SoftmaxEdge a motif:Semantics ; skos:prefLabel "Softmax Edge" ; skos:definition "Normalization op used to produce attention weights." .
+
+# Memory semantics
+motif:Sem_Read a motif:Semantics ; skos:prefLabel "Read" ; skos:definition "Access tensor from local or shared memory." .
+motif:Sem_Write a motif:Semantics ; skos:prefLabel "Write" ; skos:definition "Store tensor into mutable memory." .
+motif:Sem_Gather a motif:Semantics ; skos:prefLabel "Gather" ; skos:definition "Indexed read (gather) from tensor or memory." .
+motif:Sem_Scatter a motif:Semantics ; skos:prefLabel "Scatter" ; skos:definition "Indexed write (scatter) to tensor or memory." .
+motif:Sem_KVMemory a motif:Semantics ; skos:prefLabel "Key-Value Memory" ; skos:definition "Addressable key/value memory for read/write access." .
+motif:Sem_PersistentState a motif:Semantics ; skos:prefLabel "Persistent State" ; skos:definition "State that persists across invocations." .
+motif:Sem_EphemeralState a motif:Semantics ; skos:prefLabel "Ephemeral State" ; skos:definition "Loop-carried state (ephemeral within execution)." .
+motif:Sem_CircularBuffer a motif:Semantics ; skos:prefLabel "Circular Buffer" ; skos:definition "Ring buffer access pattern for streaming workloads." .
+motif:Sem_DifferentiableQueue a motif:Semantics ; skos:prefLabel "Differentiable Queue" ; skos:definition "Soft queue structure with differentiable read/write." .
+motif:Sem_ReadModifyWrite a motif:Semantics ; skos:prefLabel "Read-Modify-Write" ; skos:definition "Atomic update of memory contents." .
+motif:Sem_MemoryAccumulate a motif:Semantics ; skos:prefLabel "Memory Accumulate" ; skos:definition "Accumulate values into memory buffers." .
+motif:Sem_MemoryBranch a motif:Semantics ; skos:prefLabel "Memory Branch" ; skos:definition "Memory accessed across multiple parallel paths." .
+motif:Sem_AttentionMemory a motif:Semantics ; skos:prefLabel "Attention Memory" ; skos:definition "Soft-attention access over an addressable memory." .
+motif:Sem_MemoryMerge a motif:Semantics ; skos:prefLabel "Memory Merge" ; skos:definition "Combine multiple memory states into one." .
+motif:Sem_MemoryLoop a motif:Semantics ; skos:prefLabel "Memory Loop" ; skos:definition "Loop interacting with mutable memory." .
+
+# Programmatic semantics
+motif:Sem_Call a motif:Semantics ; skos:prefLabel "Call" ; skos:definition "Invoke a subgraph or function (parameterized)." .
+motif:Sem_Return a motif:Semantics ; skos:prefLabel "Return" ; skos:definition "Return from a subgraph or function invocation." .
+motif:Sem_GenerateDispatch a motif:Semantics ; skos:prefLabel "Generate/Dispatch" ; skos:definition "Dynamically generate or dispatch subgraphs." .
+motif:Sem_RecursiveCall a motif:Semantics ; skos:prefLabel "Recursive Call" ; skos:definition "Function that calls itself (recursive semantics)." .
+motif:Sem_SubgraphMerge a motif:Semantics ; skos:prefLabel "Subgraph Merge" ; skos:definition "Merge outputs from multiple subgraph invocations." .
+motif:Sem_ConditionalSubgraph a motif:Semantics ; skos:prefLabel "Conditional Subgraph" ; skos:definition "Select subgraph at runtime based on predicate." .
+motif:Sem_LoopSubgraph a motif:Semantics ; skos:prefLabel "Loop Subgraph" ; skos:definition "Loop whose body is a subgraph." .
+motif:Sem_FunctionTemplate a motif:Semantics ; skos:prefLabel "Function Template" ; skos:definition "Parameterized motif template for reuse." .
+motif:Sem_MetaAttention a motif:Semantics ; skos:prefLabel "Meta Attention" ; skos:definition "Attention applied over dynamically generated tensors." .
+motif:Sem_ShapeDispatch a motif:Semantics ; skos:prefLabel "Shape-Based Dispatch" ; skos:definition "Dispatch behavior based on tensor shapes." .
+motif:Sem_SubgraphFork a motif:Semantics ; skos:prefLabel "Subgraph Fork" ; skos:definition "Branch via subgraph invocation." .
+motif:Sem_SubgraphJoin a motif:Semantics ; skos:prefLabel "Subgraph Join" ; skos:definition "Join outputs from multiple subgraphs." .
+motif:Sem_ProgrammaticLoop a motif:Semantics ; skos:prefLabel "Programmatic Loop" ; skos:definition "Loop where the body is generated programmatically." .
+motif:Sem_RecursiveAttention a motif:Semantics ; skos:prefLabel "Recursive Attention" ; skos:definition "Attention used within a recursive context." .
+motif:Sem_SelfModifying a motif:Semantics ; skos:prefLabel "Self-Modifying Subgraph" ; skos:definition "Subgraph that can alter its own topology at runtime." .
+motif:Sem_GraphOfGraphs a motif:Semantics ; skos:prefLabel "Graph-of-Graphs" ; skos:definition "Graph whose nodes are subgraphs (higher-order graph structure)." .
+
+# Misc semantics
+motif:Sem_IdentityResidual a motif:Semantics ; skos:prefLabel "Identity Residual" ; skos:definition "Residual path that is identity; simplifies skip paths." .
+motif:Sem_FlattenResidual a motif:Semantics ; skos:prefLabel "Flatten Residual" ; skos:definition "Residual with a flatten operation." .
+motif:Sem_BroadcastedResidual a motif:Semantics ; skos:prefLabel "Broadcasted Residual" ; skos:definition "Residual applied with broadcasting to match shapes." .
+motif:Sem_NestedLoop a motif:Semantics ; skos:prefLabel "Nested Loop" ; skos:definition "Loop inside another loop (nested iteration)." .
+motif:Sem_NestedConditional a motif:Semantics ; skos:prefLabel "Nested Conditional" ; skos:definition "Conditional inside another conditional." .
+motif:Sem_AttentionResidualMemory a motif:Semantics ; skos:prefLabel "Attention + Residual + Memory" ; skos:definition "Hybrid motif combining attention, residuals, and memory." .
+
+# Distributed semantics
+motif:Sem_AllReduce a motif:Semantics ; skos:prefLabel "AllReduce" ; skos:definition "Collective reduction across multiple devices." .
+motif:Sem_AllGather a motif:Semantics ; skos:prefLabel "AllGather" ; skos:definition "Gather data from all devices into concatenated output." .
+motif:Sem_QuantizeDequant a motif:Semantics ; skos:prefLabel "Quantize-Dequantize" ; skos:definition "Low-precision encoding and decoding of tensors." .
+motif:Sem_VectorSearch a motif:Semantics ; skos:prefLabel "Vector Search" ; skos:definition "ANN/KNN lookup into external vector store." .
+motif:Sem_PipelineSendRecv a motif:Semantics ; skos:prefLabel "Pipeline Send/Recv" ; skos:definition "Device-to-device transfer in a pipelined execution." .
+motif:Sem_ReduceScatter a motif:Semantics ; skos:prefLabel "ReduceScatter" ; skos:definition "Sharded reduction across devices." .
+motif:Sem_Barrier a motif:Semantics ; skos:prefLabel "Barrier" ; skos:definition "Execution synchronization point across devices." .
+motif:Sem_WeightPacking a motif:Semantics ; skos:prefLabel "Weight Packing" ; skos:definition "Packing low-bit weights into higher precision format for SIMD use." .
+motif:Sem_EmbeddingLookup a motif:Semantics ; skos:prefLabel "Embedding Lookup" ; skos:definition "Sparse index-to-vector lookup from embedding tables." .
+motif:Sem_Sampler a motif:Semantics ; skos:prefLabel "Sampler / Multinomial" ; skos:definition "Stochastic sampling operation (non-deterministic)." .
+
+# Constraint resources
+motif:Constraint_PreservesData_Broadcasting a motif:Constraint ; skos:prefLabel "Preserves data and supports broadcasting" ; skos:definition "Preserves data (no side effects), supports broadcasting where applicable." .
+motif:Constraint_Boundary_Communication a motif:Constraint ; skos:prefLabel "Boundary communication" ; skos:definition "Boundary/communication semantics must be preserved." .
+
+# Additional signatures (used by various motifs)
+motif:Sig_0_to_1 a motif:Signature ; skos:prefLabel "0->1" .
+motif:Sig_3_to_1 a motif:Signature ; skos:prefLabel "3->1" .
+motif:Sig_many_to_N a motif:Signature ; skos:prefLabel "many->N" .
+motif:Sig_many_to_1 a motif:Signature ; skos:prefLabel "many->1" .
+motif:Sig_N_to_N a motif:Signature ; skos:prefLabel "N->N" .
+motif:Sig_1_to_k a motif:Signature ; skos:prefLabel "1->k" .
+motif:Sig_1_to_N_to_N a motif:Signature ; skos:prefLabel "1->N->N" .
+motif:Sig_N_to_N_to_1 a motif:Signature ; skos:prefLabel "N->N->1" .
+motif:Sig_1_to_N_opt_to_1 a motif:Signature ; skos:prefLabel "1->N?->1" .
+
+# Fingerprint: speculative marker
+motif:C_speculative_eq_1 a skos:Concept ;
+  skos:inScheme motif:FingerprintScheme ;
+  skos:prefLabel "C.speculative=1"@en ;
+  skos:definition "Speculative execution fingerprint (used for speculative motifs)." .
+
+# Semantics and constraints for speculative example
+motif:Sem_SpeculativeFork a motif:Semantics ; skos:prefLabel "Speculative Fork" ; skos:definition "Execute multiple branches before condition is resolved; discard incorrect paths." .
+motif:Constraint_Speculative_Rollback a motif:Constraint ; skos:prefLabel "Speculative rollback requirement" ; skos:definition "All branches must be side-effect free or support rollback." .
+#################
+# Core properties (RDFS) — lightweight, easy to query
+#################
+
+motif:hasCategory a rdf:Property ;
+  skos:prefLabel "has category"@en ;
+  rdfs:domain motif:Motif ;
+  rdfs:range skos:Concept ;
+  skos:definition "Associate a motif with one or more categories." .
+
+motif:hasFingerprint a rdf:Property ;
+  skos:prefLabel "has fingerprint"@en ;
+  rdfs:domain motif:Motif ;
+  rdfs:range skos:Concept ;
+  skos:definition "Assign fingerprint concept(s) to a motif (e.g., T.reuse, C.loop)." .
+
+motif:hasSignature a rdf:Property ;
+  skos:prefLabel "has signature"@en ;
+  rdfs:domain motif:Motif ;
+  rdfs:range rdfs:Literal ;
+  skos:definition "I->O signature encoded as a string (e.g., '1->N', '3->1')." .
+
+motif:hasSemantics a rdf:Property ;
+  skos:prefLabel "has semantics"@en ;
+  rdfs:domain motif:Motif ;
+  rdfs:range rdfs:Literal ;
+  skos:definition "Short human-readable semantic description or URI to formal semantics." .
+
+motif:hasConstraint a rdf:Property ;
+  skos:prefLabel "has constraint"@en ;
+  rdfs:domain motif:Motif ;
+  rdfs:range rdfs:Literal ;
+  skos:definition "Constraint on composition or rewrite (e.g., 'shapes must broadcast')." .
+
+motif:implementedBy a rdf:Property ;
+  skos:prefLabel "implemented by"@en ;
+  rdfs:domain motif:Motif ;
+  rdfs:range motif:Implementation ;
+  skos:definition "Links to implementation artifacts (Python, ONNX, tests)." .
+
+motif:example a rdf:Property ;
+  skos:prefLabel "example"@en ;
+  rdfs:domain motif:Motif ;
+  rdfs:range rdfs:Resource ;
+  skos:definition "Link to an example resource (ONNX file, notebook, or script)." .
+
+motif:relatedMotif a rdf:Property ;
+  skos:prefLabel "related motif"@en ;
+  rdfs:domain motif:Motif ;
+  rdfs:range motif:Motif ;
+  skos:definition "Useful for capturing generalization, specialization or composition relationships." .
+#################
+# Small example: Fork motif (bootstrap content for queries)
+#################
+
+ex:Fork a motif:Motif ;
+  skos:prefLabel "Fork"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Topology ;
+  motif:hasFingerprint motif:T_Topology ;
+  motif:hasSemantics motif:Sem_Fork ;
+  motif:hasConstraint motif:Constraint_PreservesData_Broadcasting ;
+  motif:implementedBy ex:Fork_py, ex:Fork_onnx ;
+  motif:example <https://github.com/your-repo/examples/fork_join.fuse> .
+
+ex:Fork_py a motif:Implementation ;
+  skos:prefLabel "Fork (Python prototype)" ;
+  skos:definition "Implementation: src/fork/motif.py (function fork(inputs, n))" .
+
+ex:Fork_onnx a motif:Implementation ;
+  skos:prefLabel "Fork ONNX example" ;
+  skos:definition "examples/fork_join.fuse (minimal model showing fork + join pattern)" .
+#################
+# Notes / Usage
+#################
+
+# - Use skos:Concepts for categories and fingerprint dimensions so users can
+#   perform faceted queries (e.g., find all motifs with motif:hasFingerprint motif:M_Memory).
+# - Extend this skeleton with concrete motif instances in ttl/motifs.ttl.
+# - Keep fingerprint sub-properties (e.g., T.reuse+1) as literals or as sub-concepts
+#   depending on query needs; this file defines the high-level dimensions.
+
+# End of file

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Motif-to-ONNX Operator Mapping",
+  "description": "Canonical mapping from motifs to ONNX operators (skos:exactMatch)",
+  "data": {
+    "values": [
+      {
+        "motifLabel": "Call",
+        "operator": "CallSubgraph"
+      },
+      {
+        "motifLabel": "Delay (Z\u207b\u00b9)",
+        "operator": "DelayOp"
+      },
+      {
+        "motifLabel": "Fork",
+        "operator": "Split"
+      },
+      {
+        "motifLabel": "Identity",
+        "operator": "Identity"
+      },
+      {
+        "motifLabel": "If",
+        "operator": "If"
+      },
+      {
+        "motifLabel": "Join",
+        "operator": "Concat"
+      },
+      {
+        "motifLabel": "Loop",
+        "operator": "Loop"
+      },
+      {
+        "motifLabel": "Race (Any)",
+        "operator": "RaceOp"
+      },
+      {
+        "motifLabel": "Read",
+        "operator": "ReadMemory"
+      },
+      {
+        "motifLabel": "Ref (Quote)",
+        "operator": "RefOp"
+      },
+      {
+        "motifLabel": "Reshape",
+        "operator": "Reshape"
+      },
+      {
+        "motifLabel": "Sample",
+        "operator": "RandomNormal"
+      },
+      {
+        "motifLabel": "Write",
+        "operator": "WriteMemory"
+      }
+    ]
+  },
+  "width": 800,
+  "height": 800,
+  "mark": "text",
+  "encoding": {
+    "y": {
+      "field": "motifLabel",
+      "type": "nominal",
+      "axis": {
+        "title": "Motif"
+      }
+    },
+    "x": {
+      "field": "operator",
+      "type": "nominal",
+      "axis": {
+        "title": "ONNX Operator"
+      }
+    },
+    "text": {
+      "field": "operator",
+      "type": "nominal"
+    },
+    "color": {
+      "field": "operator",
+      "type": "nominal"
+    }
+  }
+}

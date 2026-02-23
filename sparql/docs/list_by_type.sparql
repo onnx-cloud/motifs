@@ -1,0 +1,11 @@
+# Generic list-by-type query; expects a bound ?type (CURIE or IRI via VALUES injection)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?item ?label ?definition
+WHERE {
+  ?item a ?type ;
+    skos:prefLabel ?label .
+  OPTIONAL { ?item skos:definition ?definition }
+}
+ORDER BY ?label

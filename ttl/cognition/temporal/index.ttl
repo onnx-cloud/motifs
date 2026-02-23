@@ -1,0 +1,46 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+#################
+# Temporal / Streaming / Real-Time Motifs
+# Purpose: Streaming, online inference/training, event-driven patterns
+#################
+
+motif:Temporal a skos:Concept ;
+  skos:inScheme motif:CategoryScheme ;
+  skos:prefLabel "Temporal / Streaming"@en ;
+  skos:definition "Patterns for streaming, real-time, and online systems." .
+
+motif:StreamingWindow a motif:Motif ;
+  skos:prefLabel "Streaming Window"@en ;
+  motif:hasCategory motif:Temporal ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:OnlineUpdate a motif:Motif ;
+  skos:prefLabel "Online Update"@en ;
+  motif:hasCategory motif:Temporal ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:EventTrigger a motif:Motif ;
+  skos:prefLabel "Event Trigger"@en ;
+  motif:hasCategory motif:Temporal ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:RealTimeDeadline a motif:Motif ;
+  skos:prefLabel "Real-Time Deadline"@en ;
+  motif:hasCategory motif:Temporal ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+
+motif:StreamFusion a motif:Motif ;
+  skos:prefLabel "Stream Fusion"@en ;
+  motif:hasCategory motif:Temporal ;
+  motif:hasSemantics motif:Sem_hasSemantics ;
+  motif:hasConstraint motif:Constraint_hasConstraint .
+

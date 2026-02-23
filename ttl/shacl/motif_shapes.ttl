@@ -1,0 +1,97 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# SHACL shapes for Motif TTLs
+# - Enforce only allowed namespaces for predicates
+# - Require motif: properties to have IRI (not literal) values
+# - Allow minimal literals (skos:prefLabel, skos:prefLabel, rdfs:comment)
+##################################
+
+# Shape for motif:Motif instances
+motif:MotifShape a sh:NodeShape ;
+  sh:targetClass motif:Motif ;
+  sh:property [
+    sh:path skos:prefLabel ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path motif:hasCategory ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path motif:hasSignature ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path motif:hasSemantics ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path motif:hasConstraint ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path motif:hasFingerprint ;
+    sh:nodeKind sh:IRI ;
+  ] .
+
+  # Restrict allowed properties on motif nodes (closed shape)
+  # Closed shape disabled to allow auxiliary properties like rdf:type, rdfs:comment, rdfs:seeAlso, etc.
+  # sh:closed true ;
+  # sh:ignoredProperties rdf:type, skos:prefLabel, rdfs:comment, skos:prefLabel .
+
+# Constraint: No motif: predicate should have a literal object
+motif:MotifPredicatesNoLiterals a sh:SPARQLConstraint ;
+  sh:message "Values of motif:* predicates must be IRIs, not literals." ;
+  sh:select """
+SELECT ?s ?p ?o WHERE {
+  ?s ?p ?o .
+  FILTER( STRSTARTS(STR(?p), "https://ns.onnx.cloud/motifs#") && isLiteral(?o) )
+}
+""" .
+
+# Constraint: Only allowed predicate namespaces may be used
+motif:AllowedPredicateNamespaces a sh:SPARQLConstraint ;
+  sh:message "Predicate namespace not allowed. Allowed: motif:, onnx:, skos:, rdfs:, rdf:, owl:, xsd:." ;
+  sh:select """
+SELECT ?s ?p WHERE {
+  ?s ?p ?o .
+  FILTER( ! ( STRSTARTS(STR(?p),'https://ns.onnx.cloud/motif#') || STRSTARTS(STR(?p),'https://ns.onnx.cloud/onnx#') || STRSTARTS(STR(?p),'http://www.w3.org/2000/01/rdf-schema#') || STRSTARTS(STR(?p),'http://www.w3.org/2004/02/skos/core#') || STRSTARTS(STR(?p),'http://www.w3.org/1999/02/22-rdf-syntax-ns#') || STRSTARTS(STR(?p),'http://www.w3.org/2002/07/owl#') || STRSTARTS(STR(?p),'http://www.w3.org/2001/XMLSchema#') ) )
+}
+""" .
+
+# Constraint: No use of Dublin Core Terms (dct:)
+motif:NoDCTerms a sh:SPARQLConstraint ;
+  sh:message "Use of Dublin Core Terms (dct:) is prohibited. Use rdfs: or motif: properties instead." ;
+  sh:select """
+SELECT ?s ?p ?o WHERE {
+  ?s ?p ?o .
+  FILTER( STRSTARTS(STR(?s),'http://purl.org/dc/terms/') || STRSTARTS(STR(?p),'http://purl.org/dc/terms/') || STRSTARTS(STR(?o),'http://purl.org/dc/terms/') )
+}
+""" .
+
+# Constraint: Literals only allowed for a small set of predicates
+motif:AllowedLiterals a sh:SPARQLConstraint ;
+  sh:message "Literal objects are only allowed for skos:prefLabel, skos:prefLabel, and rdfs:comment." ;
+  sh:select """
+SELECT ?s ?p ?o WHERE {
+  ?s ?p ?o .
+  FILTER( isLiteral(?o) && ! ( STRSTARTS(STR(?p),'http://www.w3.org/2004/02/skos/core#') || STRSTARTS(STR(?p),'http://www.w3.org/2000/01/rdf-schema#') ) )
+}
+""" .
+
+# Constraint: No literal objects for motif semantics or constraints
+motif:NoLiteralSemanticsConstraints a sh:SPARQLConstraint ;
+  sh:message "Literal objects are not allowed for motif:hasSemantics or motif:hasConstraint; use IRIs instead." ;
+  sh:select """
+SELECT ?s ?p ?o WHERE {
+  ?s ?p ?o .
+  FILTER( (?p = motif:hasSemantics || ?p = motif:hasConstraint) && isLiteral(?o) )
+}
+""" .

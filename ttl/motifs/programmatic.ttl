@@ -1,0 +1,104 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+@prefix ex: <https://ns.onnx.cloud/examples##> .
+
+# Programmatic / Meta / Recursive motif instances
+
+
+motif:Call a motif:Motif ;
+  skos:prefLabel "Call"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_Call .
+
+motif:motif_Return a motif:Motif ;
+  skos:prefLabel "Return"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_Return .
+
+motif:motif_GenerateDispatch a motif:Motif ;
+  skos:prefLabel "Generate / Dispatch"@en ;
+  motif:hasSignature motif:Sig_0_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_GenerateDispatch .
+
+motif:RecursiveCall a motif:Motif ;
+  skos:prefLabel "Recursive Call"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_RecursiveCall .
+
+motif:SubgraphMerge a motif:Motif ;
+  skos:prefLabel "Subgraph Merge"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_SubgraphMerge .
+
+motif:ConditionalSubgraph a motif:Motif ;
+  skos:prefLabel "Conditional Subgraph"@en ;
+  motif:hasSignature motif:Sig_1_to_N_optional ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_ConditionalSubgraph .
+
+motif:LoopSubgraph a motif:Motif ;
+  skos:prefLabel "Loop Subgraph"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_LoopSubgraph .
+
+motif:FunctionTemplate a motif:Motif ;
+  skos:prefLabel "Function Template"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_FunctionTemplate .
+
+motif:motif_MetaAttention a motif:Motif ;
+  skos:prefLabel "Meta Attention"@en ;
+  motif:hasSignature motif:Sig_many_to_many ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_MetaAttention .
+
+motif:motif_ShapeDispatch a motif:Motif ;
+  skos:prefLabel "Shape-Based Dispatch"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_ShapeDispatch .
+
+motif:SubgraphFork a motif:Motif ;
+  skos:prefLabel "Subgraph Fork"@en ;
+  motif:hasSignature motif:Sig_1_to_N ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_SubgraphFork .
+
+motif:motif_SubgraphJoin a motif:Motif ;
+  skos:prefLabel "Subgraph Join"@en ;
+  motif:hasSignature motif:Sig_N_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_SubgraphJoin .
+
+motif:motif_ProgrammaticLoop a motif:Motif ;
+  skos:prefLabel "Programmatic Loop"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_ProgrammaticLoop .
+
+motif:RecursiveAttention a motif:Motif ;
+  skos:prefLabel "Recursive Attention"@en ;
+  motif:hasSignature motif:Sig_many_to_many ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_RecursiveAttention .
+
+motif:SelfModifying a motif:Motif ;
+  skos:prefLabel "Self-Modifying Subgraph"@en ;
+  motif:hasSignature motif:Sig_1_to_1 ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_SelfModifying .
+
+motif:GraphOfGraphs a motif:Motif ;
+  skos:prefLabel "Graph-of-Graphs"@en ;
+  motif:hasSignature motif:Sig_N_to_N ;
+  motif:hasCategory motif:Programmatic ;
+  motif:hasSemantics motif:Sem_GraphOfGraphs .

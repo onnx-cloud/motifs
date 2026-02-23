@@ -1,0 +1,64 @@
+\OnePageSectionStart
+\section{The Formally Bound Latent Space}
+
+The unification of observation, reasoning, and learning creates a new kind of computational environment: the \emph{Formally Bound Latent Space}.
+
+\begin{definition}[Praxis]
+A \emph{praxis} is a bounded cognitive configuration described by: 
+\begin{verbatim}
+praxis <Name> {
+  input: [Sensor, ...]
+  output: [Actuator, ...]
+  transform: [Transform, ...]     // primative computational transforms
+  model: Graph                     // self-model of computation and observation
+  constraint: [Constraint, ...]
+  attributes: {} // arbitrary metadata
+}
+\end{verbatim}
+where each field is annotated with ontology IRIs. A praxis is the minimal unit that can be fused, trained, and audited in the Fused Fabric.
+
+\paragraph{Praxis Checklist (safe reconfiguration)}
+To enable practical, auditable self-modification we recommend the following checklist for every praxis that exposes reconfiguration: 
+\begin{enumerate}
+  \item Declare the reconfiguration \texttt{scope} (S/A/C) and the invariants that must hold post-update.
+  \item Provide a verification artifact (assertion graph or test-suite) that can be executed automatically after any update.
+  \item Sandboxed trial: allow candidate updates to be evaluated in an isolated environment with conservative time/resource budgets.
+  \item Commit policy: only atomically commit updates that pass verifiers and whose reconfiguration cost is within acceptable bounds.
+  \item Provenance & audit: record the update, its rationale, and verification outcome in the Praxis provenance graph.
+\end{enumerate}
+
+These pragmatic steps align praxis with real-world deployment constraints and make self-modifying behavior auditable and reversible.
+
+In untyped deep learning, the latent space is an uninterpretable "black box." In the Fused Fabric the latent space is a topological map whose coordinates are associated with semantic descriptors from the Reality Fabric. Below we provide a formal treatment that supports provable invariants, projection-based updates, and human-participant interaction.
+
+\begin{definition}[Formally Bound Latent Space]
+Let $\mathcal{X}$ be the observation space and $\mathcal{L}=\mathbb{R}^d$ a finite-dimensional latent space. A \emph{Formally Bound Latent Space} is a tuple $(\mathcal{L},E,\phi)$ where
+\begin{itemize}
+  \item $E:\mathcal{X}\to\mathcal{L}$ is an embedding induced by a fused graph, and
+  \item $\phi:\mathcal{L}\to\mathcal{S}$ maps latent points to semantic descriptors $s\in\mathcal{S}$ (OWL/RDF IRIs and associated constraints).
+\end{itemize}
+We require that for any observation $x$, assertions($E(x)$) \models $\phi(E(x))$ (semantic fidelity).
+\end{definition}
+
+\paragraph{Semantic Projection and Typed Updates}
+Let $\Sigma(s)$ be the constraint set associated with a semantic descriptor $s$. The semantic projection operator
+\[ \Pi_{\Sigma}:\mathbb{R}^d \to \Sigma \]
+maps an unconstrained vector to the nearest semantically-feasible point. Typed updates are then defined by
+\[ z_{t+1} = \Pi_{\Sigma}\left(z_t - \eta \nabla_z \mathcal{L}(z_t)\right). \]
+This update rule guarantees that iterates remain feasible at every step and that the projection is applied atomically at the parameter commit boundary.
+
+\paragraph{Quantitative Metrics}
+We measure the quality of a bound latent space using:
+\begin{itemize}
+  \item \textbf{Semantic Fidelity Rate (SFR)}: fraction of test latents satisfying their RDF constraints.
+  \item \textbf{Axis Interpretability (AI)}: accuracy of probes that predict ontology labels from coordinates.
+  \item \textbf{Projection Stability (PS)}: expected change in model outputs under projection cycles.
+\end{itemize}
+
+\paragraph{Guarantees}
+Under standard smoothness and convexity assumptions on $\mathcal{L}$ and $\Sigma$, Typed Projected Gradient Descent converges to stationary points constrained to $\Sigma$ (see Section 10). The lowering pass emits assertion graphs and Project_Sigma operations such that runtime enforcement ensures any committed state respects encoded semantics.
+
+\paragraph{Human-Participant Interaction}
+The map $\phi$ gives human participants the ability to label, query, and constrain latent regions. Collaboration primitives include axis labeling, human-reviewed projection policies, and provenance-based audits that trace latent regions back to praxis and fused motifs.
+
+\OnePageSectionEnd

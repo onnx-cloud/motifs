@@ -1,0 +1,19 @@
+# Infer Parallel relations: two motifs co-occur in composedOf but do not use each other (heuristic for independent branches)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+CONSTRUCT {
+  ?container a ?containerType .
+  ?container motif:hasParallel ?pair .
+  ?pair a motif:Parallel .
+  ?pair motif:member ?a ;
+        motif:member ?b .
+}
+WHERE {
+  ?container motif:composedOf ?a, ?b .
+  FILTER(str(?a) < str(?b)) # canonical order to avoid duplicates
+  FILTER(?a != ?b)
+  FILTER NOT EXISTS { ?a motif:usesMotif ?b . }
+  FILTER NOT EXISTS { ?b motif:usesMotif ?a . }
+  OPTIONAL { ?container rdf:type ?containerType }
+}

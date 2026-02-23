@@ -1,0 +1,42 @@
+# Figure: Motifs used by Domain Applications (Bar Chart)
+# Shows how many domain applications reference each motif
+title: Motifs used by Domain Applications
+description: Number of industrial/academic applications (domain apps) that reference each motif
+
+query: ./sparql/charts/domains_motif_usage.sparql
+
+transform:
+  rename:
+    motifLabel: motif
+    domainAppCount: count
+  keep:
+    - motif
+    - count
+
+vega:
+  width: 800
+  height: 350
+  mark: bar
+  encoding:
+    x:
+      field: motif
+      type: nominal
+      axis:
+        labelAngle: -45
+        title: Motif
+    y:
+      field: count
+      type: quantitative
+      axis:
+        title: Number of Domain Applications
+    color:
+      field: motif
+      type: nominal
+      scale:
+        scheme: category10
+      legend: false
+    tooltip:
+      - field: motif
+        type: nominal
+      - field: count
+        type: quantitative

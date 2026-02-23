@@ -1,0 +1,13 @@
+# Pairwise motif co-occurrence across models (how often two motifs appear together)
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?m1Label ?m2Label (COUNT(DISTINCT ?model) AS ?count)
+WHERE {
+  ?model motif:usesMotif ?m1, ?m2 .
+  FILTER (?m1 != ?m2)
+  ?m1 skos:prefLabel ?m1Label .
+  ?m2 skos:prefLabel ?m2Label .
+}
+GROUP BY ?m1Label ?m2Label
+ORDER BY DESC(?count)

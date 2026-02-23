@@ -1,0 +1,120 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+##################################
+# Inference Optimization Use Cases
+# Links inference-time patterns and optimizations to motifs
+##################################
+
+motif:KVCache a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "KV-Cache for Autoregressive Inference"@en ;
+  skos:definition "Caching key-value projections from previous tokens to avoid redundant computation during generation."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:KVMemory ;
+  motif:usesMotif motif:KVMemory ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Read ;
+  motif:usesMotif motif:Write .
+
+motif:PagedAttention a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Paged Attention"@en ;
+  skos:definition "Managing KV-cache memory in non-contiguous blocks for efficient memory utilization."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Gather ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:KVMemory ;
+  motif:usesMotif motif:Attention .
+
+motif:ContinuousBatching a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Continuous Batching"@en ;
+  skos:definition "Dynamically adding and removing sequences from inference batch for maximum throughput."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:DifferentiableQueue ;
+  motif:usesMotif motif:DifferentiableQueue ;
+  motif:usesMotif motif:Scatter ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:PredicateMask .
+
+motif:SpeculativeDecoding a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Speculative Decoding"@en ;
+  skos:definition "Using draft model to propose tokens verified in parallel by target model for faster generation."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Call ;
+  motif:usesMotif motif:Call ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:EarlyExit ;
+  motif:usesMotif motif:Sampler .
+
+motif:Quantization a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Model Quantization"@en ;
+  skos:definition "Reducing numerical precision of weights and activations for faster inference and lower memory."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:motif_QuantizeDequant ;
+  motif:usesMotif motif:motif_QuantizeDequant ;
+  motif:usesMotif motif:WeightPacking ;
+  motif:usesMotif motif:Linear .
+
+motif:DynamicBatching a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Dynamic Batching"@en ;
+  skos:definition "Grouping inference requests with similar sequence lengths for efficient batch processing."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Concat ;
+  motif:usesMotif motif:Concat ;
+  motif:usesMotif motif:Split ;
+  motif:usesMotif motif:PredicateMask ;
+  motif:usesMotif motif:Gather .
+
+motif:FlashAttention a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Flash Attention"@en ;
+  skos:definition "Memory-efficient attention using tiling and recomputation to avoid materializing full attention matrix."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Scan ;
+  motif:usesMotif motif:Scan ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:ReduceSum ;
+  motif:usesMotif motif:Loop .
+
+motif:TokenPruning a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Token Pruning"@en ;
+  skos:definition "Dynamically removing less important tokens during inference to reduce computation."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:HardRouting ;
+  motif:usesMotif motif:HardRouting ;
+  motif:usesMotif motif:Gather ;
+  motif:usesMotif motif:ReduceMax ;
+  motif:usesMotif motif:PredicateMask .
+
+motif:EarlyExitInference a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Early Exit Inference"@en ;
+  skos:definition "Terminating inference at intermediate layers when confidence threshold is reached."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:EarlyExit ;
+  motif:usesMotif motif:EarlyExit ;
+  motif:usesMotif motif:If ;
+  motif:usesMotif motif:Linear ;
+  motif:usesMotif motif:ReduceMax .
+
+motif:SlidingWindowAttention a motif:UseCase, skos:Concept ;
+  skos:inScheme motif:UseCaseScheme ;
+  skos:prefLabel "Sliding Window Attention"@en ;
+  skos:definition "Restricting attention to local context window for linear complexity in sequence length."@en ;
+  motif:hasDomain motif:NLP ;
+  motif:primaryMotif motif:Slice ;
+  motif:usesMotif motif:Slice ;
+  motif:usesMotif motif:Attention ;
+  motif:usesMotif motif:Loop ;
+  motif:usesMotif motif:CircularBuffer .
+

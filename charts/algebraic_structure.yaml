@@ -1,0 +1,29 @@
+# Figure: Algebraic Structure of Motif Algebra
+# Encodes properties of sequential (∘) and parallel (∥) composition
+
+title: Algebraic Structure
+description: Closure, associativity, identity, commutativity, and distributivity properties
+
+query: ./sparql/charts/algebraic_structure.sparql
+
+vega:
+  width: 700
+  height: 200
+  mark: text
+  encoding:
+    y:
+      field: property
+      type: nominal
+      axis: {title: null}
+    x:
+      field: sequential
+      type: nominal
+      title: Sequential (∘)
+    text:
+      field: sequential
+      type: nominal
+    color:
+      field: structure
+      type: nominal
+  config:
+    text: {fontSize: 14, align: "left"}

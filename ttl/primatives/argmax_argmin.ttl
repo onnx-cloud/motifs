@@ -1,0 +1,11 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix motif: <https://ns.onnx.cloud/motif#> .
+
+# ArgMax / ArgMin
+
+motif:ArgMaxArgMin a motif:Motif ;
+  skos:prefLabel "ArgMax / ArgMin"@en ;
+  skos:definition "Operators returning indices of maximum or minimum values along specified axes; used for decision outputs and selection."@en ;
+  motif:isComponentOf motif:SequenceClassification , motif:DenseRetrieval .

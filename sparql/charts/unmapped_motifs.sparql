@@ -1,0 +1,10 @@
+# List motifs without SKOS exact mapping to ONNX
+PREFIX motif: <https://ns.onnx.cloud/motif#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?motifLabel WHERE {
+  ?motif a motif:Motif ;
+         skos:prefLabel ?motifLabel .
+  FILTER NOT EXISTS { ?motif skos:exactMatch ?op . }
+}
+ORDER BY ?motifLabel

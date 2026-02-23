@@ -1,0 +1,20 @@
+# Figure: Unmapped Motifs
+# A simple table listing motifs without a canonical ONNX operator mapping
+
+title: Unmapped Motifs
+description: Motifs that lack `skos:exactMatch` mapping to ONNX
+
+query: ./sparql/charts/unmapped_motifs.sparql
+
+vega:
+  width: 600
+  height: 800
+  mark: text
+  encoding:
+    y:
+      field: motifLabel
+      type: nominal
+      axis: {title: "Motif"}
+    text:
+      field: motifLabel
+      type: nominal

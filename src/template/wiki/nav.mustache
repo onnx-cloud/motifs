@@ -1,0 +1,7 @@
+<nav class="bg-white border-b">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex gap-6 flex-wrap">
+    {{#navigation}}
+      <a href="{{href}}" class="text-sm font-medium text-gray-700 px-1 py-1 hover:text-blue-800 {{#active}}border-b-2 border-blue-800{{/active}}">{{label}}</a>
+    {{/navigation}}
+  </div>
+</nav>

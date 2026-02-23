@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Motifs used by Domain Applications",
+  "description": "Number of industrial/academic applications (domain apps) that reference each motif",
+  "data": {
+    "values": []
+  },
+  "width": 800,
+  "height": 350,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "motif",
+      "type": "nominal",
+      "axis": {
+        "labelAngle": -45,
+        "title": "Motif"
+      }
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "axis": {
+        "title": "Number of Domain Applications"
+      }
+    },
+    "color": {
+      "field": "motif",
+      "type": "nominal",
+      "scale": {
+        "scheme": "category10"
+      },
+      "legend": false
+    },
+    "tooltip": [
+      {
+        "field": "motif",
+        "type": "nominal"
+      },
+      {
+        "field": "count",
+        "type": "quantitative"
+      }
+    ]
+  }
+}

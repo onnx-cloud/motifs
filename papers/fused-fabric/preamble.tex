@@ -1,0 +1,72 @@
+\documentclass[11pt,oneside,article]{memoir}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{semantic}
+% ebproof is optional; provide a safe fallback when it's not available
+\IfFileExists{ebproof.sty}{\usepackage{ebproof}}{%
+  \PackageWarningNoLine{fused-fabric}{ebproof.sty not found — proof trees will be omitted}%
+  % Define minimal stubs to avoid compilation errors when ebproof is missing
+  \newenvironment{ebproof}{}{}
+  \newcommand{\hypo}[1]{}
+  \newcommand{\infer}[3]{}
+}
+\IfFileExists{stmaryrd.sty}{\usepackage{stmaryrd}}{\PackageWarningNoLine{fused-fabric}{stmaryrd.sty not found — bracket symbols may be missing}}
+
+% Geometry
+\geometry{margin=1in, headheight=14pt}
+
+% Bibliography (Plain Natbib for compatibility)
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+% Metadata
+\def\ReportTitle{The Fused Fabric of Reality: Unifying Ontological Grounding and Computational Cognition}
+\def\ReportAuthors{Anonymous}
+\def\ReportDate{\today}
+
+% Commands
+\newcommand{\OnePageSectionStart}{}
+\newcommand{\OnePageSectionEnd}{}
+\newcommand{\RealityFabric}{\mathcal{R}}
+\newcommand{\CognitiveFabric}{\mathcal{C}}
+\newcommand{\FusedFabric}{\RealityFabric \otimes \CognitiveFabric}
+\newcommand{\Tensor}[3]{\ensuremath{\mathrm{Tensor}\langle #1, #2, #3 \rangle}}
+
+% Code listing style
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=flexible,
+  keywordstyle=\color{blue!80!black}\bfseries,
+  commentstyle=\color{gray!80!black}\itshape,
+  stringstyle=\color{red!70!black},
+  showstringspaces=false,
+  tabsize=2,
+  frame=single,
+  backgroundcolor=\color{gray!5}
+}
+
+% Headers/footers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{\ReportTitle}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{axiom}{Axiom}

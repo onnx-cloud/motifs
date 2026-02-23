@@ -1,0 +1,1799 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Model Motif Coverage",
+  "description": "Fraction of motif catalog used by each model (used motifs / total motifs)",
+  "data": {
+    "values": [
+      {
+        "modelLabel": "Transformer Architecture",
+        "usedMotifs": "7",
+        "totalMotifs": "247",
+        "coverage": "0.02834008097165991902834008097"
+      },
+      {
+        "modelLabel": "Vision Transformer (ViT)",
+        "usedMotifs": "7",
+        "totalMotifs": "247",
+        "coverage": "0.02834008097165991902834008097"
+      },
+      {
+        "modelLabel": "Autoregressive Decoding",
+        "usedMotifs": "6",
+        "totalMotifs": "247",
+        "coverage": "0.02429149797570850202429149798"
+      },
+      {
+        "modelLabel": "Protein Structure Prediction",
+        "usedMotifs": "6",
+        "totalMotifs": "247",
+        "coverage": "0.02429149797570850202429149798"
+      },
+      {
+        "modelLabel": "GPT-2",
+        "usedMotifs": "6",
+        "totalMotifs": "247",
+        "coverage": "0.02429149797570850202429149798"
+      },
+      {
+        "modelLabel": "Algorithmic Trading",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Autonomous Vehicle Perception",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Beam Search Decoding",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Climate & Weather Modeling",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Cyber Threat Detection",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Diffusion Denoising",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Digital Twin",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Digital Twin Simulation",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "AI-Driven Drug Discovery",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Flash Attention",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Transaction Fraud Detection",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Genomics & Variant Analysis",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Latent Diffusion",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Message Passing Neural Network",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Molecular Dynamics Simulation",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Monte Carlo Tree Search",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Motion Planning & Prediction",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Neural PDE Solvers",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Predictive Maintenance",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Financial Risk Modeling",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Speculative Decoding",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Supply Chain Optimization",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Text-to-Image Generation",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Vision-Language Model",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Vision-Language Model (VLM)",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Target Network Update",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Real-time Personalization",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Credit Risk Scoring",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Sparse Mixture of Experts",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Sparse MoE Routing",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Expert Parallelism",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "VAE Encoding/Decoding",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Object Detection",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Medical Image Diagnosis",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "GPT-Neo",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "GPT-NeoX",
+        "usedMotifs": "5",
+        "totalMotifs": "247",
+        "coverage": "0.02024291497975708502024291498"
+      },
+      {
+        "modelLabel": "Anti-Money Laundering (AML)",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Aquaculture Monitoring",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Audio-Text Alignment",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Battery State Estimation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Beamforming Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Behavioral Anomaly Detection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Biological Sequence Analysis",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Building Energy Management",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Call Center Analytics",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Intelligent Handover",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Conversational Commerce",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Customer Churn Prediction",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Demand Forecasting",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Driver Monitoring System",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Drone Detection & Tracking",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "EV Charging Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Factory Energy Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Energy Market Trading",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Fleet Route Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Flow Matching",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Food Supply Chain Tracking",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Generalized Advantage Estimation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Game AI & NPCs",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Gradient Checkpointing",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Graph Generation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Power Grid Load Forecasting",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Smart Grid Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Automated Harvesting",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Image Captioning",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Image Inpainting",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Inventory Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Knowledge Graph Retrieval",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Legal Document Generation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Livestock Health Monitoring",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Machine Translation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Market Price Forecasting",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Smart Meter Analytics",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "AI Music Generation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Neighbor Sampling",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Network Anomaly Detection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Network Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Optical Flow Estimation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Outage Detection & Prediction",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Automated Parking",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Pipeline Parallelism",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Policy Gradient",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Portfolio Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Precision Irrigation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Dynamic Pricing",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Manufacturing Process Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "QoS Prediction & Management",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Retrieval-Augmented Generation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Radiology Report Generation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Renewable Energy Forecasting",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Ring AllReduce",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Industrial Robot Control",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Seismic Event Analysis",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Sequential Recommendation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Signal Intelligence (SIGINT)",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Wireless Signal Processing",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Sliding Window Attention",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Spectrum Management",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Adaptive Bitrate Streaming",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Neural Style Transfer",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Automatic Subtitling",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Video Surveillance Analytics",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Patient Survival Prediction",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Temporal Graph Network",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Traffic Flow Optimization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Predictive Vehicle Diagnostics",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "AI Video Generation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "AI-Enhanced Video Encoding",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Voice Assistant Integration",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Voice Cloning & TTS",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Crop Yield Prediction",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Asynchronous SGD",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "ControlNet Conditioning",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Experience Replay Buffer",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Generative Adversarial Network",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Hierarchical Mixture of Experts",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "KV-Cache for Autoregressive Inference",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Biometric Access Control",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Assembly Verification",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Astronomical Image Analysis",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Expert Capacity Limiting",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Clinical Text Mining",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Regulatory Compliance Monitoring",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Content Moderation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Crop Health Monitoring",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Deepfake Detection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Visual Defect Detection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "E-Discovery Document Review",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Early Exit Inference",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Food Quality Inspection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Insurance Claims Processing",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "KYC/AML Verification",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Named Entity Recognition",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "PPO Clipped Objective",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Phishing & Spam Detection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Shelf Monitoring & Planogram",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Weapon & Threat Detection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Weed Detection & Control",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Biomarker Discovery",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Clinical Trial Patient Matching",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Contract Analysis",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Cross-Modal Attention",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Cross-Encoder Reranking",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Financial Document Processing",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Legal Research & Discovery",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Masked Language Modeling",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Materials Discovery",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Seismic Data Interpretation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Patent Analysis & Search",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Quantum Chemistry Prediction",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Product Review Analysis",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Legal Risk Assessment",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Financial Sentiment Analysis",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Sequence Classification",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Soft Mixture of Experts",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Soil Analysis & Mapping",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Visual Question Answering",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Top-K Expert Gating",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Shared Expert Layer",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Image Super-Resolution",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Paged Attention",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Continuous Batching",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Dynamic Batching",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Token Pruning",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Data Parallelism",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Tensor Parallelism",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "ZeRO Optimizer State Sharding",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Model Sharding",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Synchronized Batch Normalization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Actor-Critic",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Temporal Difference Learning",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Environment Vectorization",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "RLHF Reward Modeling",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Extractive Question Answering",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Graph Attention Network",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Graph Pooling",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Hierarchical Graph Pooling",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Node Classification",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Link Prediction",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Edge-Conditioned Convolution",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Dense Passage Retrieval",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Two-Tower Retrieval Model",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "ColBERT Late Interaction",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Hybrid Sparse-Dense Retrieval",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Neural Collaborative Filtering",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Approximate Nearest Neighbor Search",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Image Classification",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Semantic Segmentation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Instance Segmentation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Feature Pyramid Network",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Monocular Depth Estimation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Human Pose Estimation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Image Patching",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "CLIP-style Contrastive Learning",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Audio-Visual Fusion",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Open-Vocabulary Object Detection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Video-Text Retrieval",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Facial Recognition",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Satellite Image Analysis",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "LiDAR Point Cloud Processing",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Lane Detection & Tracking",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Vehicle-to-Everything (V2X)",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Particle Physics Analysis",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "CFD Surrogate Modeling",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Product Recommendation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Visual Product Search",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Customer Segmentation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Video/Music Recommendation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Due Diligence Automation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Trademark Similarity Search",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Digital Pathology Segmentation",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Weld Quality Inspection",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Robotic Bin Picking",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "CLIP",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Detectron2",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "GPT-J / mesh-transformer-jax",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Stable Diffusion",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "T5",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "BERT",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "BLOOM",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "LLaMA",
+        "usedMotifs": "4",
+        "totalMotifs": "247",
+        "coverage": "0.01619433198380566801619433198"
+      },
+      {
+        "modelLabel": "Expert Load Balancing",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Model Quantization",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Token Embedding Lookup",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Positional Encoding",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Modality Projection Layer",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "DeepSpeech",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "PPO (RL)",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "BART",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "DETR",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "DINOv2",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "DistilBERT",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Fairseq",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Faster R-CNN",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Mask R-CNN",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "OpenNMT",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Perceiver IO",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "RoBERTa",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "StyleGAN2-ADA",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Swin Transformer",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Transformer-XL",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Whisper",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "XLNet",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "YOLOv5",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "llama.cpp",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "LSTM language model",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "RWKV",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Flamingo Pattern",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Flamingo",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "DenseNet",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Falcon",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Graph Attention Network (GAT)",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Graph Convolutional Network (GCN)",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Inception",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "InternLM",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Mistral",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Mixture of Experts",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Mixture of Experts (MoE) / DeepSpeed",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "OPT",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Perceiver",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "Qwen",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "U-Net",
+        "usedMotifs": "3",
+        "totalMotifs": "247",
+        "coverage": "0.01214574898785425101214574899"
+      },
+      {
+        "modelLabel": "AlexNet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "FCOS",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "LLaVA",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "MobileNetV2",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "RetinaNet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "SSD",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "SqueezeNet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "TimeSformer",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "ELECTRA",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "DeBERTa",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "DALL\u00b7E Mini / Craiyon",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "Wav2Vec 2.0",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "MarianNMT",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "ESPnet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "CenterNet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "ViViT",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "Mamba",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "ConvNeXt",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "EfficientNet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "ResNet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "VGG",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "CycleGAN",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "BigGAN",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "GraphSAGE",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "EfficientDet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "DeepLab",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      },
+      {
+        "modelLabel": "ShuffleNet",
+        "usedMotifs": "2",
+        "totalMotifs": "247",
+        "coverage": "0.008097165991902834008097165992"
+      }
+    ]
+  },
+  "width": 900,
+  "height": 800,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "modelLabel",
+      "type": "nominal",
+      "axis": {
+        "title": "Model"
+      }
+    },
+    "x": {
+      "field": "coverage",
+      "type": "quantitative",
+      "axis": {
+        "title": "Coverage (fraction of motifs used)"
+      }
+    },
+    "color": {
+      "field": "coverage",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues"
+      }
+    }
+  }
+}
