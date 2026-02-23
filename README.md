@@ -1,12 +1,38 @@
 # Motif Models
 
-Graph motifs are used to:
+This repository is the research artifact for a series of academic papers on **computation‑graph motifs**. It provides a comprehensive taxonomy, formal ontology, 
+implementations, and experimental data that support the claims in our publications.
 
-* Prove **equivalence and rewrites** (graph normalization)
-* Define **legal transformations** (fusion, fission)
-* Reason about **parallelism bounds**
-* Specify **IR semantics** without control flow
-* Analyze **memory, latency, and determinism**
+The motif catalog and accompanying tools are intended for **researchers** who are exploring
+optimizations, verification, or theoretical properties of graph‑based models.  You will
+find:
+
+* a formal RDF/TTL ontology of 100 + motifs, with ONNX/Python reference
+  implementations
+* tools to visualise motif coverage, generate fusion snippets, and validate graphs
+* experiments, proofs, and notebooks that underpin the papers listed below
+
+
+## Peer‑reviewed artifacts & PDFs
+
+Our work is documented in a set of papers; the PDF versions are built with `make pdf` and
+appear in the repository root.  Each PDF includes a self‑contained summary of the
+motifs, motivations, and experimental results.
+
+| Paper | Description | PDF |
+|-------|-------------|-----|
+| Motif Models | Taxonomy of 100+ computation graph motifs, signatures, ontology, and
+  case‑studies. | [motif-models.pdf](./motif-models.pdf) |
+| Compiled Cognition | How motifs inform compiler transformations and fission/fusion rules. | [compiled-cognition.pdf](./compiled-cognition.pdf) |
+| Fused Fabric | Analysis of fusion opportunities, runtime patterns, and hardware
+  mapping. | [fused-fabric.pdf](./fused-fabric.pdf) |
+| Cognitive Closure | Higher‑order motif composition and theoretical limits of expressivity. | [cognitive-closure.pdf](./cognitive-closure.pdf) |
+| Typed Reality | (Early draft) formal type system for graph motifs and LLM generation. | [typed-reality.pdf](./typed-reality.pdf) |
+
+> **Tip:** run `make pdf` to regenerate these files after editing the LaTeX sources in the
+> `papers/` directory.
+
+
 
 ## Algorithmic Graph Motifs
 
