@@ -1,11 +1,10 @@
 # Motif Models
 
-This repository is the research artifact for a series of academic papers on **computation‑graph motifs**. It provides a comprehensive taxonomy, formal ontology, 
-implementations, and experimental data that support the claims in our publications.
+This repository is the research artifact for a series of academic papers on **computation‑graph motifs**. It provides a comprehensive taxonomy, formal ontology,  implementations, and experimental data that support the claims in our publications.
 
-The motif catalog and accompanying tools are intended for **researchers** who are exploring
-optimizations, verification, or theoretical properties of graph‑based models.  You will
-find:
+The motif catalog and accompanying tools are intended for **researchers** who are exploring machine intelligence, graph optimizations, verification, or theoretical properties of graph‑based models.  
+
+You will find:
 
 * a formal RDF/TTL ontology of 100 + motifs, with ONNX/Python reference
   implementations
@@ -21,11 +20,9 @@ motifs, motivations, and experimental results.
 
 | Paper | Description | PDF |
 |-------|-------------|-----|
-| Motif Models | Taxonomy of 100+ computation graph motifs, signatures, ontology, and
-  case‑studies. | [motif-models.pdf](./motif-models.pdf) |
+| Motif Models | Taxonomy of 100+ computation graph motifs, signatures, ontology, and case‑studies. | [motif-models.pdf](./motif-models.pdf) |
 | Compiled Cognition | How motifs inform compiler transformations and fission/fusion rules. | [compiled-cognition.pdf](./compiled-cognition.pdf) |
-| Fused Fabric | Analysis of fusion opportunities, runtime patterns, and hardware
-  mapping. | [fused-fabric.pdf](./fused-fabric.pdf) |
+| Fused Fabric | Analysis of fusion opportunities, runtime patterns, and hardware mapping. | [fused-fabric.pdf](./fused-fabric.pdf) |
 | Cognitive Closure | Higher‑order motif composition and theoretical limits of expressivity. | [cognitive-closure.pdf](./cognitive-closure.pdf) |
 | Typed Reality | (Early draft) formal type system for graph motifs and LLM generation. | [typed-reality.pdf](./typed-reality.pdf) |
 
