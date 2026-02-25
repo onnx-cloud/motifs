@@ -1,4 +1,4 @@
-# 01 — The Problem
+# 01 — Towards Tensor-centric Cognition
 
 Tensors in machine learning models encode both data and meaning, but these are handled separately. A number exists; what it represents is elsewhere. This creates silent corruption: a temperature value might accidentally become an index, units vanish, and semantic constraints are lost during optimization.
 
